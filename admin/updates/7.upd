@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Update>
+	<id>7</id>
+	<Date>01.05.2012</Date>
+	<Author>rincewind</Author>
+	<Description>Move CoO to seperate database table</Description>
+	<ExecSQL>CREATE TABLE IF NOT EXISTS `pmp_countries_of_origin` ( `id` varchar(20) NOT NULL, `country` varchar(35), PRIMARY KEY (`id`), INDEX `idx_country_of_origin` (`country`) ) ENGINE=MyISAM  DEFAULT CHARSET=utf8</ExecSQL>
+	<ExecSQL>INSERT INTO `pmp_countries_of_origin` (`id`, `country`) SELECT `id`, `origin` FROM `pmp_film`</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_film` DROP `origin`</ExecSQL>
+</Update>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Update>
+	<id>2</id>
+	<Date>14.06.2009</Date>
+	<Author>rincewind</Author>
+	<Description>Database Updates for phpMyProfiler 0.9.10</Description>
+	<ExecSQL>ALTER TABLE `pmp_film` MODIFY `collectionnumber` int(5)</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_discs` MODIFY `location` varchar(250)</ExecSQL>
+	<ExecSQL>DELETE FROM `pmp_statistics` WHERE type = 'last_login'</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_features` ADD COLUMN `pip` tinyint(1) NOT NULL default '0' AFTER `thx`</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_features` ADD COLUMN `bdlive` tinyint(1) NOT NULL default '0' AFTER `pip`</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_audio` ADD COLUMN `channels` varchar(45) AFTER `format`</ExecSQL>
+	<ExecSQL>CREATE INDEX `idx_audio_channels` ON `pmp_audio` (`channels`)</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_film` ADD COLUMN `countas` int(4) NOT NULL default '0' AFTER `wishpriority`</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_features` ADD COLUMN `digitalcopy` tinyint(1) NOT NULL default '0' AFTER `bdlive`</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_features` ADD COLUMN `bonustrailer` tinyint(1) NOT NULL default '0' AFTER `trailer`</ExecSQL>
+</Update>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Update>
+	<id>4</id>
+	<Date>30.03.2012</Date>
+	<Author>rincewind</Author>
+	<Description>Database Updates / Some index updates</Description>
+	<ExecSQL>CREATE INDEX `idx_actors_actor_id` ON `pmp_actors` (`actor_id`)</ExecSQL>
+	<ExecSQL>CREATE INDEX `idx_actors_creditedas` ON `pmp_actors` (`creditedas`)</ExecSQL>
+	<ExecSQL>CREATE INDEX `idx_credits_credit_id` ON `pmp_credits` (`credit_id`)</ExecSQL>
+	<ExecSQL>CREATE INDEX `idx_credits_creditedas` ON `pmp_credits` (`creditedas`)</ExecSQL>
+	<ExecSQL>CREATE INDEX `idx_counter_date` ON `pmp_counter` (`date`)</ExecSQL>
+	<ExecSQL>CREATE INDEX `idx_counter_sid` ON `pmp_counter` (`sid`)</ExecSQL>
+</Update>

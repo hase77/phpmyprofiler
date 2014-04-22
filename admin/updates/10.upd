@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Update>
+	<id>10</id>
+	<Date>15.05.2012</Date>
+	<Author>Whistler</Author>
+	<Description>Implemented custom categories</Description>
+	<ExecSQL>CREATE TABLE IF NOT EXISTS `pmp_collection` ( `collection` varchar(20) NOT NULL UNIQUE, `partofowned` boolean NOT NULL DEFAULT TRUE, INDEX `idx_collection` (`collection`) ) ENGINE=MyISAM  DEFAULT CHARSET=utf8</ExecSQL>
+	<ExecSQL>INSERT INTO `pmp_collection` ( `collection`, `partofowned`) VALUES ( 'Owned', TRUE ), ( 'Ordered', FALSE ), ( 'Wish List', FALSE )</ExecSQL>
+	<ExecSQL>INSERT INTO `pmp_collection` ( `collection` ) SELECT DISTINCT ( `collectiontype` ) FROM `pmp_film` WHERE ( `collectiontype` != 'Owned' AND `collectiontype` != 'Ordered' AND `collectiontype` != 'WishList' )</ExecSQL>
+</Update>

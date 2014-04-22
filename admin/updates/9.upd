@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Update>
+	<id>9</id>
+	<Date>09.05.2012</Date>
+	<Author>rincewind</Author>
+	<Description>Add notes field to events table</Description>
+	<ExecSQL>ALTER TABLE `pmp_events` ADD COLUMN `note` varchar(100) AFTER `timestamp`</ExecSQL>
+</Update>

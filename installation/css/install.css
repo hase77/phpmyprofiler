@@ -1,0 +1,226 @@
+@charset "utf-8";
+
+/* Default Font */
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	background-color: #ffffff;
+}
+
+/* Links */
+a:link, a:visited, a:focus {
+	color: blue;
+	text-decoration: none;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+a:active {
+	color: red;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* Headers */
+
+h1 {
+	font-size: 18px;
+}
+
+h2 {
+	font-size: 16px;
+}
+
+/* Mainframes */
+
+#mainerror {
+	padding-top: 12px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+#mainover {
+	width: 760px;
+	padding: 10px 10px 10px 10px;
+	background-color: #fcfcfc;
+	border: 1px solid #9b9b9b;
+	text-align: left;
+	margin-top: 10px;
+}
+
+#mainpanel {
+	width: 760px;
+	padding: 0px 0px 0px 0px;
+	background-color: #ececec;
+	border: 1px solid #9b9b9b;
+	vertical-align: middle; 
+	margin-bottom: 1px;
+}
+
+#mainstep {
+	padding: 0px 0px 0px 0px;
+	background-color: #ffffff;
+	border: 1px solid #9b9b9b;
+	vertical-align: middle;
+	margin-bottom: 1px;
+}
+
+.maintext {
+	width: 740px;
+	padding: 10px 10px 10px 10px;
+	background-color: #ececec;
+	border: 1px solid #9b9b9b;
+	vertical-align: middle; 
+	margin-bottom: 1px;
+}
+
+.maintests {
+	padding: 5px;
+	background-color: #fcfcfc;
+	border: 1px solid #9b9b9b;
+}
+
+.mainheader {
+	border-bottom: 2px solid #ffa800;
+	padding-bottom: 3px;
+	padding-top: 15px;
+	padding-left: 3px;
+	font-size: 14px;
+}
+
+/* Steps */
+
+.step-off {
+	background-color: #fcfcfc;
+	height: 30px;
+	width: 150px;
+	text-align: center;
+	padding: 0px 5px 0px 5px;
+	border-top: 1px solid #9b9b9b;
+	border-left: 1px solid #9b9b9b;
+	border-right: 1px solid #9b9b9b;
+}
+
+.step-on {
+	background-color: #cccccc;
+	height: 30px;
+	width: 150px;
+	text-align: center;
+	padding: 0px 5px 0px 5px;
+	border-top: 1px solid #9b9b9b;
+	border-left: 1px solid #9b9b9b;
+	border-right: 1px solid #9b9b9b;
+}
+
+/*** Informations & Errors & Warnings ***/
+
+/* ErrorBox */
+
+.error_box {
+	background: white url('../images/messagebox_error.jpg') no-repeat top left;
+	padding-left: 36px;
+	padding-top: 0px;
+}
+
+.error_headline {
+	background-color: red;
+	padding: 5px 5px 5px 5px;
+	color: #FFFFFF;
+	font-size: 16px;
+	height: 21px;
+	margin-bottom: 1px;
+}
+
+.error_msg {
+	border: 1px solid red;
+	padding: 5px 5px 5px 5px;
+}
+
+/* InformationBox */
+
+.info_box {
+	background: white url('../images/messagebox_info.jpg') no-repeat top left;
+	padding-left: 36px;
+	padding-top: 0px;
+}
+
+.info_headline {
+	background-color: blue;
+	padding: 5px 5px 5px 5px;
+	color: #FFFFFF;
+	font-size: 16px;
+	height: 21px;
+	margin-bottom: 1px;
+}
+
+.info_msg {
+	border: 1px solid blue;
+	padding: 5px 5px 5px 5px;
+}
+
+/* WarningBox */
+
+.warn_box {
+	background: white url('../images/messagebox_warning.jpg') no-repeat top left;
+	padding-left: 36px;
+	padding-top: 0px;
+}
+
+.warn_headline {
+	background-color: #ffa800;
+	padding: 5px 5px 5px 5px;
+	color: #FFFFFF;
+	font-size: 16px;
+	height: 21px;
+	margin-bottom: 1px;
+}
+
+.warn_msg {
+	border: 1px solid #ffa800;
+	padding: 5px 5px 5px 5px;
+}
+
+/* SuccessBox */
+
+.success_box {
+	background: white url('../images/messagebox_success.jpg') no-repeat top left;
+	padding-left: 36px;
+	padding-top: 0px;
+}
+
+.success_headline {
+	background-color: #228b22;
+	padding: 5px 5px 5px 5px;
+	color: #FFFFFF;
+	font-size: 16px;
+	height: 21px;
+	margin-bottom: 1px;
+}
+
+.success_msg {
+	border: 1px solid #228b22;
+	padding: 5px 5px 5px 5px;
+}
+
+/* Bottons */
+
+.next {
+	border: solid 1px #ccc;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 28px;
+	background: #fff url(../images/next.jpg) no-repeat left;
+}
+
+.reload {
+	border: solid 1px #ccc;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 28px;
+	background: #fff url(../images/reload.jpg) no-repeat left;
+}

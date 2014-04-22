@@ -1,0 +1,22 @@
+<Files ~ "\.tpl$">
+Order allow,deny
+Deny from all
+</Files>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{QUERY_STRING} ^(.*)wget%20 [OR]
+RewriteCond %{QUERY_STRING} ^(.*)fetch%20 [OR]
+RewriteCond %{QUERY_STRING} ^(.*)=http://(.*) [OR]
+RewriteCond %{QUERY_STRING} ^(.*)=ftp://(.*) [OR]
+RewriteCond %{QUERY_STRING} ^(.*)=https://(.*)
+RewriteRule ^.*$ http://127.0.0.1/ [L,R=301]
+</IfModule>
+
+<IfModule mod_deflate.c>
+SetOutputFilter DEFLATE
+</IfModule>
+
+<IfModule mod_autoindex.c>
+Options -Indexes
+</ifModule>

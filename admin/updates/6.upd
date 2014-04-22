@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Update>
+	<id>6</id>
+	<Date>20.04.2012</Date>
+	<Author>rincewind</Author>
+	<Description>Database Updates / Some index updates for external reviews</Description>
+	<ExecSQL>CREATE INDEX `idx_reviews_connect_id` ON `pmp_reviews_connect` (`id`)</ExecSQL>
+	<ExecSQL>CREATE INDEX `idx_reviews_external_type` ON `pmp_reviews_external` (`type`)</ExecSQL>
+	<ExecSQL>CREATE INDEX `idx_reviews_external_lastupdate` ON `pmp_reviews_external` (`lastupdate`)</ExecSQL>
+</Update>

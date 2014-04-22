@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Update>
+	<id>15</id>
+	<Date>25.01.2013</Date>
+	<Author>Rincewind</Author>
+	<Description>Add fields for media banner</Description>
+	<ExecSQL>ALTER TABLE `pmp_film` ADD COLUMN `banner_front` varchar(10)</ExECSQL>
+	<ExecSQL>ALTER TABLE `pmp_film` ADD COLUMN `banner_back` varchar(10)</ExECSQL>
+</Update>

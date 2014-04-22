@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Update>
+	<id>8</id>
+	<Date>09.05.2012</Date>
+	<Author>rincewind</Author>
+	<Description>Database updates for DVDProfiler 3.8</Description>
+	<ExecSQL>ALTER TABLE `pmp_film` MODIFY `ratingdetails` varchar(255)</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_format` ADD COLUMN `dim2d` tinyint(1) NOT NULL default '0' AFTER `duallayer`</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_format` ADD COLUMN `anaglyph` tinyint(1) NOT NULL default '0' AFTER `dim2d`</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_format` ADD COLUMN `bluray3d` tinyint(1) NOT NULL default '0' AFTER `anaglyph`</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_format` ADD COLUMN `color` varchar(25) NOT NULL default '' AFTER `video`</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_countries_of_origin` DROP PRIMARY KEY</ExecSQL>
+	<ExecSQL>CREATE INDEX `idx_country_of_origin_id` ON `pmp_countries_of_origin` (`id`)</ExecSQL>
+</Update>
