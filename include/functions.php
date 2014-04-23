@@ -255,7 +255,7 @@ function getFlagName($state) {
 	$flags['south korea'] = 'South_Korea.png';
 	$flags['korea'] = 'South_Korea.png';
 	$flags['canada (quebec)'] = 'Quebec.png';
-	$flags['south afrika'] = 'South_Africa.png';
+	$flags['south africa'] = 'South_Africa.png';
 	$flags['hong kong'] = 'Hong_Kong.png';
 	$flags['switzerland'] = 'Switzerland.png';
 	$flags['brazil'] = 'Brazil.png';
