@@ -80,9 +80,10 @@ if ( (isset($_GET['action'])) && ($_GET['action'] == 'doupdate') ) {
 				$php_ver = explode("-", phpversion());
 				$piwikTracker->setCustomVariable( 1, 'php_version', $php_ver[0] );
 				$piwikTracker->setCustomVariable( 2, 'pmp_version', $pmp_version );
-				// Don't send referer and user agent!
-				$piwikTracker->setUrlReferer('');
-				$piwikTracker->setUserAgent('');
+				// Don't send url, referrer and user agent!
+				$piwikTracker->setUrl('none');
+				$piwikTracker->setUrlReferrer('none');
+				$piwikTracker->setUserAgent('unknown');
 				$piwikTracker->doTrackPageView( 'Update completed' );
 			}
 
