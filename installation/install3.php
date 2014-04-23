@@ -51,13 +51,18 @@ if( (isset($_POST['action'])) && ($_POST['action'] == 'save') ) {
 		}
 		else {
 			// Try and track new installs to see if it is worthwhile continueing development
-			include_once('../admin/include/PiwikTracker.php');
+			@include_once('../admin/include/PiwikTracker.php');
 
 			if ( class_exists( 'PiwikTracker' ) ) {
 				$piwikTracker = new PiwikTracker( $idSite = 1 , 'http://www.phpmyprofiler.de/piwik/');
-				$piwikTracker->setCustomVariable( 1, 'php_version', phpversion() );
+				// We don't need or want the dist-version
+				$php_ver = explode("-", phpversion());
+				$piwikTracker->setCustomVariable( 1, 'php_version', $php_ver[0] );
 				$piwikTracker->setCustomVariable( 2, 'pmp_version', $pmp_version );
-				$piwikTracker->doTrackPageView( 'Install Completed' );
+				// Don't send referer and user agent!
+				$piwikTracker->setUrlReferer('');
+				$piwikTracker->setUserAgent('');
+				$piwikTracker->doTrackPageView( 'Installation completed' );
 			}
 
 			header("Location:install4.php");

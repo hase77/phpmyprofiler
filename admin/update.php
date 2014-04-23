@@ -73,13 +73,17 @@ if ( (isset($_GET['action'])) && ($_GET['action'] == 'doupdate') ) {
 		if ( $res !== false) {
 
 			// Try and track new installs to see if it is worthwhile continueing development
-			include_once('../admin/include/PiwikTracker.php');
+			@include_once('../admin/include/PiwikTracker.php');
 
 			if ( class_exists( 'PiwikTracker' ) ) {
 				$piwikTracker = new PiwikTracker( $idSite = 1 , 'http://www.phpmyprofiler.de/piwik/');
-				$piwikTracker->setCustomVariable( 1, 'php_version', phpversion() );
+				$php_ver = explode("-", phpversion());
+				$piwikTracker->setCustomVariable( 1, 'php_version', $php_ver[0] );
 				$piwikTracker->setCustomVariable( 2, 'pmp_version', $pmp_version );
-				$piwikTracker->doTrackPageView( 'Update Completed' );
+				// Don't send referer and user agent!
+				$piwikTracker->setUrlReferer('');
+				$piwikTracker->setUserAgent('');
+				$piwikTracker->doTrackPageView( 'Update completed' );
 			}
 
 			$smarty->assign('type', 'S');
