@@ -54,10 +54,10 @@ $report[$i]['translate'][] = '';
 $i++;
 $report[$i]['title'] = 'Year of Purchase';
 if ( $pmp_statistic_showprice == true ) {
-	$report[$i]['sql'] = 'SELECT YEAR(purchdate) AS year, MONTHNAME(purchdate) AS month, SUM(purchprice) AS price, COUNT(id) AS count FROM pmp_film WHERE collectiontype != \'Ordered\' AND collectiontype != \'Wish List\' AND year(purchdate) !=1899 GROUP BY MONTH(purchdate), YEAR(purchdate) ORDER BY purchdate ASC';
+	$report[$i]['sql'] = 'SELECT YEAR(purchdate) AS year, MONTHNAME(purchdate) AS month, SUM(purchprice) AS price, COUNT(id) AS count FROM pmp_film WHERE collectiontype != \'Ordered\' AND collectiontype != \'Wish List\' AND year(purchdate) > 0 AND year(purchdate) != 1899 GROUP BY MONTH(purchdate), YEAR(purchdate) ORDER BY purchdate ASC';
 }
 else {
-	$report[$i]['sql'] = 'SELECT YEAR(purchdate) AS year, MONTHNAME(purchdate) AS month, COUNT(id) AS count FROM pmp_film WHERE collectiontype != \'Ordered\' AND collectiontype != \'Wish List\' AND year(purchdate) !=1899 GROUP BY MONTH(purchdate), YEAR(purchdate) ORDER BY purchdate ASC';
+	$report[$i]['sql'] = 'SELECT YEAR(purchdate) AS year, MONTHNAME(purchdate) AS month, COUNT(id) AS count FROM pmp_film WHERE collectiontype != \'Ordered\' AND collectiontype != \'Wish List\' AND year(purchdate) > 0 AND year(purchdate) != 1899 GROUP BY MONTH(purchdate), YEAR(purchdate) ORDER BY purchdate ASC';
 }
 $report[$i]['column'][] = 'Year';
 $report[$i]['column'][] = 'Month';
