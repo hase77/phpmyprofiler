@@ -1564,17 +1564,17 @@
     <string>Vorlage</string>
   </message>
   <message module="subtype">
+    <id>Story By</id>
+    <string>Story</string>
+  </message>
+  <message module="subtype">
     <id>Original Characters By</id>
     <string>Charakterdesign</string>
   </message>
   <message module="subtype">
     <id>Screenwriter</id>
     <string>Drehbuchautor</string>
-  </message>
-  <message module="subtype">
-    <id>Writer</id>
-    <string>Autor</string>
-  </message>
+  </message>    
   <message module="subtype">
     <id>Producer</id>
     <string>Produzent</string>
@@ -1602,6 +1602,10 @@
   <message module="subtype">
     <id>Song Writer</id>
     <string>Songschreiber</string>
+  </message>
+  <message module="subtype">
+    <id>Theme By</id>
+    <string>Titelmusik</string>
   </message>
   <message module="subtype">
     <id>Supervising Sound Editor</id>
