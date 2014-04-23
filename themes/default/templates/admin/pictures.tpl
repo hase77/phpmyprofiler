@@ -57,7 +57,7 @@
 			{/if}
 		    </td>
 		    <td class="td{$sch%2}">{$pic->title}</td>
-		    <td class="td{$sch%2}" align="center" style="text-align:center">{if $pic->fileexist}{$pic->size/1024|round|number_format:0:',':'.'} kB{/if}</td>
+		    <td class="td{$sch%2}" align="center" style="text-align:center">{if $pic->fileexist}{$pic->size/1024*1024|round|number_format:0:$pmp_dec_point:$pmp_thousands_sep} kB{/if}</td>
 		    <td class="td{$sch%2}" align="center" style="text-align:center">{if $pic->fileexist}{$pic->x}x{$pic->y}{/if}</td>
 		    <td class="td{$sch%2}">
 			<a href="pictures.php?action=delete&amp;id={$pic->id}&amp;{$session}" class="button"><img src="../themes/{$pmp_theme}/images/recyclebin.gif" alt="{t}Delete{/t}" border="0" />{t}Delete{/t}</a>
