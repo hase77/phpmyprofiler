@@ -3554,8 +3554,8 @@
     <string>Ihr Google Analytics Tracking Code</string>
   </message>
   <message module="options">
-    <id>No support for Google Universal Analytics! </id>
-    <string>Keine Unterst&uuml;tzung von Google Universal Analytics! </string>
+    <id>No support for Google Universal Analytics!</id>
+    <string>Keine Unterst&uuml;tzung von Google Universal Analytics!</string>
   </message>
   <message module="options">
     <id>Turn on gzip output buffer</id>

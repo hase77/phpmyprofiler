@@ -79,17 +79,10 @@ if ( (isset($_GET['action'])) && ($_GET['action'] == 'add') ) {
 							$_POST['filename'] = str_replace($notallow[$x], '', $_POST['filename']);
 						}
 
-						$_POST['filename'] = ereg_replace('ß', 'ss', $_POST['filename']);
-						$_POST['filename'] = ereg_replace('ä', 'ae', $_POST['filename']);
-						$_POST['filename'] = ereg_replace('ö', 'oe', $_POST['filename']);
-						$_POST['filename'] = ereg_replace('ü', 'ue', $_POST['filename']);
-						$_POST['filename'] = ereg_replace('Ä', 'Ae', $_POST['filename']);
-						$_POST['filename'] = ereg_replace('Ü', 'Ue', $_POST['filename']);
-						$_POST['filename'] = ereg_replace('Ö', 'Oe', $_POST['filename']);
-
-						while ( strstr($_POST['filename'], '  ') ) {
-							$_POST['filename'] = ereg_replace('  ', ' ', $_POST['filename']);
-						}
+						$search = array('/ä/', '/ö/', '/Ü/', '/Ä/', '/Ö/', '/Ü/', '/ß/');
+						$replace = array('ae', 'oe', 'ue', 'Ae', 'Oe', 'Ue', 'ss');
+						$_POST['filename'] = preg_replace($search, $replace, $_POST['filename']);
+						$_POST['filename'] = preg_replace('/[ ]+/', ' ', $_POST['filename']);
 
 						$name = trim($_POST['filename']) . $ext;
 					}
