@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Update>
+	<id>3</id>
+	<Date>19.04.2010</Date>
+	<Author>rincewind</Author>
+	<Description>Database Updates for phpMyProfiler 0.9.11</Description>
+	<ExecSQL>ALTER TABLE `pmp_film` DROP `media`</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_film` ADD COLUMN `media_dvd` tinyint(1) NOT NULL AFTER `locality`</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_film` ADD COLUMN `media_hddvd` tinyint(1) NOT NULL AFTER `media_dvd`</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_film` ADD COLUMN `media_bluray` tinyint(1) NOT NULL AFTER `media_hddvd`</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_film` ADD COLUMN `media_custom` varchar(35) NOT NULL AFTER `media_bluray`</ExecSQL>
+	<ExecSQL>CREATE INDEX `idx_media_dvd` ON `pmp_film` (`media_dvd`)</ExecSQL>
+	<ExecSQL>CREATE INDEX `idx_media_hddvd` ON `pmp_film` (`media_hddvd`)</ExecSQL>
+	<ExecSQL>CREATE INDEX `idx_media_bluray` ON `pmp_film` (`media_bluray`)</ExecSQL>
+	<ExecSQL>CREATE INDEX `idx_media_custom` ON `pmp_film` (`media_custom`)</ExecSQL>
+	<ExecSQL>CREATE TABLE `pmp_hash` (`id` varchar(20) NOT NULL, `hash` varchar(65) NOT NULL, PRIMARY KEY (`id`)) ENGINE=MyISAM DEFAULT CHARSET=utf8</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_film` ADD FULLTEXT(`title`,`originaltitle`,`sorttitle`)</ExecSQL>
+	<ExecSQL>CREATE INDEX `idx_sid` ON `pmp_counter` (`sid`)</ExecSQL>
+	<ExecSQL>CREATE INDEX `idx_date` ON `pmp_counter` (`date`)</ExecSQL>
+</Update>

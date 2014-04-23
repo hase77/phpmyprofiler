@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<!DOCTYPE locale [
+    <!ELEMENT locale (message*)>
+    <!ATTLIST locale
+    	lang CDATA #REQUIRED
+    >
+    <!ELEMENT message (id, string)>
+    <!ATTLIST message
+    	module CDATA #REQUIRED
+    >
+    <!ELEMENT id (#PCDATA)>
+    <!ELEMENT string (#PCDATA)>
+]>
+<locale lang="en"> 
+</locale>

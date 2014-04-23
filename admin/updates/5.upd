@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Update>
+	<id>5</id>
+	<Date>xx.03.2011</Date>
+	<Author>whistler</Author>
+	<Description>Database Updates for phpMyProfiler 0.9.11 revision 1342</Description>
+	<ExecSQL>CREATE TABLE IF NOT EXISTS `pmp_reviews_external` ( `id` int(11) NOT NULL AUTO_INCREMENT, `type` varchar(8) NOT NULL, `ext_id` varchar(150) NOT NULL, `review` DECIMAL(4,2) NOT NULL, `votes` int(11) NOT NULL, `top250` varchar(4) DEFAULT NULL, `bottom100` varchar(4) DEFAULT NULL, `lastupdate` date NOT NULL DEFAULT '0000-00-00', PRIMARY KEY (`id`) ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1</ExecSQL>
+	<ExecSQL>INSERT INTO pmp_reviews_external (ext_id, review, votes, top250, bottom100) SELECT imdbid, rating, votes, top250, bottom100 FROM pmp_imdb</ExecSQL>
+	<ExecSQL>UPDATE `pmp_reviews_external` SET `type` = 'imdb',`lastupdate` = CURDATE()</ExecSQL>
+	<ExecSQL>UPDATE `pmp_reviews_external` SET `top250` = NULL WHERE `top250` = ''</ExecSQL>
+	<ExecSQL>UPDATE `pmp_reviews_external` SET `bottom100` = NULL WHERE `bottom100` = ''</ExecSQL>
+	<ExecSQL>DROP TABLE pmp_imdb</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_film` DROP `imdbid`</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_film` ADD `review` DECIMAL(4,2) DEFAULT NULL</ExecSQL>
+	<ExecSQL>CREATE TABLE IF NOT EXISTS `pmp_reviews_connect` ( `id` varchar(20) NOT NULL, `review_id` int(11) NOT NULL, `title` varchar(150) DEFAULT NULL ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1</ExecSQL>
+	<ExecSQL>CREATE TABLE IF NOT EXISTS `pmp_videos` ( `id` varchar(20) NOT NULL, `type` varchar(8) NOT NULL, `ext_id` varchar(150) NOT NULL, `title` varchar(150) DEFAULT NULL ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1</ExecSQL>
+</Update>

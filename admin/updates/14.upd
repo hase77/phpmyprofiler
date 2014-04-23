@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Update>
+	<id>14</id>
+	<Date>28.07.2012</Date>
+	<Author>Whistler</Author>
+	<Description>Update MyLinks-function</Description>
+	<ExecSQL>UPDATE `pmp_mylinks` SET `category` = '1' WHERE `category` = 'Official Websites'</ExecSQL>
+	<ExecSQL>UPDATE `pmp_mylinks` SET `category` = '2' WHERE `category` = 'Fan Sites'</ExecSQL>
+	<ExecSQL>UPDATE `pmp_mylinks` SET `category` = '3' WHERE `category` = 'Trailers and Clips'</ExecSQL>
+	<ExecSQL>UPDATE `pmp_mylinks` SET `category` = '4' WHERE `category` = 'Reviews'</ExecSQL>
+	<ExecSQL>UPDATE `pmp_mylinks` SET `category` = '5' WHERE `category` = 'Ratings'</ExecSQL>
+	<ExecSQL>UPDATE `pmp_mylinks` SET `category` = '6' WHERE `category` = 'General Information'</ExecSQL>
+	<ExecSQL>UPDATE `pmp_mylinks` SET `category` = '7' WHERE `category` = 'Games'</ExecSQL>
+	<ExecSQL>UPDATE `pmp_mylinks` SET `category` = '8' WHERE `category` = 'Other'</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_mylinks` MODIFY `category` TINYINT(1) NOT NULL</ExecSQL>
+</Update>

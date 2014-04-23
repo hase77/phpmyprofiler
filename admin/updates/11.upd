@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Update>
+	<id>11</id>
+	<Date>20.05.2012</Date>
+	<Author>Whistler</Author>
+	<Description>Implemented MyLinks</Description>
+	<ExecSQL>CREATE TABLE IF NOT EXISTS `pmp_mylinks` ( `id` varchar(20) NOT NULL, `url` varchar(250) NOT NULL, `description` varchar(50) NOT NULL, `category` varchar(30) NOT NULL, `score` decimal(5,2), INDEX `idx_description` (`description`), INDEX `idx_category` (`category`) ) ENGINE=MyISAM  DEFAULT CHARSET=utf8</ExecSQL>
+</Update>

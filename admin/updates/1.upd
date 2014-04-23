@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Update>
+	<id>1</id>
+	<Date>25.12.2008</Date>
+	<Author>rincewind</Author>
+	<Description>Database Updates for phpMyProfiler 0.9.9</Description>
+	<ExecSQL>ALTER TABLE `pmp_film` ADD COLUMN `ratingage` tinyint(2) DEFAULT NULL AFTER `rating`</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_film` ADD COLUMN `ratingvariant` tinyint(1) DEFAULT NULL AFTER `ratingage`</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_film` MODIFY `ratingdetails` varchar(200)</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_film` DROP `publisher`</ExecSQL>
+	<ExecSQL>CREATE TABLE `pmp_media_companies` (`id` varchar(20) NOT NULL, `company` varchar(85) NOT NULL, INDEX `idx_media_companies_id` (`id`), INDEX `idx_media_companies_company` (`company`)) TYPE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci</ExecSQL>
+</Update>

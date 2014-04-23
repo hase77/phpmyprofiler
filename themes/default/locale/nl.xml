@@ -1,0 +1,3288 @@
+  <?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE locale [
+    <!ELEMENT locale (message*)>
+    <!ATTLIST locale
+    	lang CDATA #REQUIRED
+    >
+    <!ELEMENT message (id, string)>
+    <!ATTLIST message
+    	module CDATA #REQUIRED
+    >
+    <!ELEMENT id (#PCDATA)>
+    <!ELEMENT string (#PCDATA)>
+    <!ENTITY auml "&amp;auml;">
+    <!ENTITY euml "&amp;euml;">
+    <!ENTITY iuml "&amp;iuml;">
+    <!ENTITY ouml "&amp;ouml;">
+    <!ENTITY uuml "&amp;uuml;">
+    <!ENTITY Auml "&amp;Auml;">
+    <!ENTITY Euml "&amp;Euml;">
+    <!ENTITY Auml "&amp;Iuml;">
+    <!ENTITY Ouml "&amp;Ouml;">
+    <!ENTITY Uuml "&amp;Uuml;">
+]>
+<locale lang="nl">
+
+  <message module="search_person">
+    <id>Person Details</id>
+    <string>Persoons Details</string>
+  </message>
+  <message module="search_person">
+    <id>Searched for</id>
+    <string>Zoeken naar</string>
+  </message>
+  <message module="search_person">
+    <id>records found in this DVD Collection</id>
+    <string>overeenkomsten gevonden in deze Film collectie</string>
+  </message>
+  <message module="search_person">
+    <id>IMDB Search</id>
+    <string>IMDB-Zoeken</string>
+  </message>
+  <message module="search_person">
+    <id>Wikipedia Search</id>
+    <string>Wikipedia-Zoeken</string>
+  </message>
+  <message module="search_person">
+    <id>OFDB Search</id>
+    <string>OFDB-Zoeken</string>
+  </message>
+  <message module="search_person">
+    <id>as</id>
+    <string>als</string>
+  </message>
+
+  <message module="search">
+    <id>Search DVD Collection</id>
+    <string>Film collectie doorzoeken</string>
+  </message>
+  <message module="search">
+    <id>Find Movie</id>
+    <string>Vind Film</string>
+  </message>
+  <message module="search">
+    <id>Search for Movie</id>
+    <string>Zoek op Film</string>
+  </message>
+  <message module="search">
+    <id>Find Person</id>
+    <string>Vind Persoon</string>
+  </message>
+  <message module="search">
+    <id>Search for Person</id>
+    <string>Zoek op Persoon</string>
+  </message>
+  <message module="search">
+    <id>Add Filters</id>
+    <string>Filters toevoegen</string>
+  </message>
+  <message module="search">
+    <id>Genre</id>
+    <string>Genre</string>
+  </message>
+  <message module="search">
+    <id>Media Type</id>
+    <string>Media Type</string>
+  </message>
+  <message module="search">
+    <id>please select</id>
+    <string>selecteer a.u.b.</string>
+  </message>
+  <message module="search">
+    <id>Studio</id>
+    <string>Studio</string>
+  </message>
+  <message module="search">
+    <id>Media Company</id>
+    <string>Media Maatschappij</string>
+  </message>
+  <message module="search">
+    <id>Tag</id>
+    <string>Label</string>
+  </message>
+  <message module="search">
+    <id>Audio Language</id>
+    <string>Gesproken Taal</string>
+  </message>
+  <message module="search">
+    <id>Region Code</id>
+    <string>Regio Code</string>
+  </message>
+  <message module="search">
+    <id>Remove all filters</id>
+    <string>Alle Filters wissen</string>
+  </message>
+
+  <message module="start">
+    <id>Summary</id>
+    <string>Samenvatting</string>
+  </message>
+  <message module="start">
+    <id>News</id>
+    <string>Nieuws</string>
+  </message>
+  <message module="start">
+    <id>The %c latest DVDs</id>
+    <string>De laatste %c DVD's</string>
+  </message>
+  <message module="start">
+    <id>Cover</id>
+    <string>Cover</string>
+  </message>
+  <message module="start">
+    <id>Movie Information</id>
+    <string>Film Informatie</string>
+  </message>
+  <message module="start">
+    <id>Purchase Information</id>
+    <string>Aankoop Informatie</string>
+  </message>
+  <message module="start">
+    <id>Year of Production</id>
+    <string>Produktie jaar</string>
+  </message>
+  <message module="start">
+    <id>Running Time</id>
+    <string>Speelduur</string>
+  </message>
+  <message module="start">
+    <id>Minutes</id>
+    <string>Minuten</string>
+  </message>
+  <message module="start">
+    <id>Bought</id>
+    <string>Gekocht</string>
+  </message>
+  <message module="start">
+    <id>Ordered </id>
+    <string>Besteld</string>
+  </message>
+  <message module="start">
+    <id>on</id>
+    <string>op</string>
+  </message>
+  <message module="start">
+    <id>Release Date</id>
+    <string>Uitgebracht</string>
+  </message>
+  <message module="start">
+    <id>The %c last ordered DVDs</id>
+    <string>De laatste %c bestelde DVD's</string>
+  </message>
+  <message module="start">
+    <id>the</id>
+    <string>de</string>
+  </message>
+  <message module="start">
+    <id>today</id>
+    <string>vandaag</string>
+  </message>
+  <message module="start">
+    <id>Built by</id>
+    <string>Gemaakt met</string>
+  </message>
+  <message module="start">
+    <id>published under General Public License (GPL)</id>
+    <string>gepubliceerd onder General Public License (GPL)</string>
+  </message>
+  <message module="start">
+    <id>Last update</id>
+    <string>Laatste Update</string>
+  </message>
+
+  <message module="coverlist">
+    <id>Cover Gallery</id>
+    <string>Cover Gallerij</string>
+  </message>
+  <message module="coverlist">
+    <id>Number of covers</id>
+    <string>Aantal Covers</string>
+  </message>
+
+  <message module="top">
+    <id>Please activate JavaScript for all functions!</id>
+    <string>Activeer Javascript voor alle functies!</string>
+  </message>
+  <message module="top">
+    <id>Home</id>
+    <string>Startpagina</string>
+  </message>
+  <message module="top">
+    <id>Search</id>
+    <string>Zoeken</string>
+  </message>
+  <message module="top">
+    <id>Administration</id>
+    <string>Beheer</string>
+  </message>
+  <message module="top">
+    <id>phpMyProfiler Home</id>
+    <string>phpMyProfiler Home</string>
+  </message>
+  <message module="top">
+    <id>phpMyProfiler Forum</id>
+    <string>phpMyProfiler Forum</string>
+  </message>
+  <message module="top">
+    <id>Credits</id>
+    <string>Credits</string>
+  </message>
+
+  <message module="credits">
+    <id>Credits - phpMyProfiler</id>
+    <string>Credits - phpMyProfiler</string>
+  </message>
+  <message module="credits">
+    <id>Name</id>
+    <string>Naam</string>
+  </message>
+  <message module="credits">
+    <id>Nick</id>
+    <string>Nick</string>
+  </message>
+  <message module="credits">
+    <id>Developer</id>
+    <string>Programmeur</string>
+  </message>
+  <message module="credits">
+    <id>Developer, graphics (till march 2005)</id>
+    <string>Programmeur, Grafisch (tot maart 2005)</string>
+  </message>
+  <message module="credits">
+    <id>Developer of myProfiler (till december 2004)</id>
+    <string>Programmeur myProfiler (tot december 2004)</string>
+  </message>
+  <message module="credits">
+    <id>Translations</id>
+    <string>Vertalingen</string>
+  </message>
+  <message module="credits">
+    <id>Norwegian translation</id>
+    <string>Noorse vertaling</string>
+  </message>
+  <message module="credits">
+    <id>Danish translation</id>
+    <string>Deense vertaling</string>
+  </message>
+  <message module="credits">
+    <id>Dutch translation</id>
+    <string>Nederlandse vertaling</string>
+  </message>
+  <message module="credits">
+    <id>Code contributions</id>
+    <string>Code bijdrage</string>
+  </message>
+  <message module="credits">
+    <id>Original parser for DVDProfiler 3.X</id>
+    <string>Originele Parser voor DVDProfiler 3.X</string>
+  </message>
+  <message module="credits">
+    <id>Testing, GFX and misc. improvements</id>
+    <string>Tester, Grafieken en verschillende Verbeteringen</string>
+  </message>
+  <message module="credits">
+    <id>Used scripts and libraries in phpMyProfiler</id>
+    <string>Gebruikte scripts en bibliotheken in phpMyProfiler</string>
+  </message>
+  <message module="credits">
+    <id>Script/library</id>
+    <string>Script/Bibliotheek</string>
+  </message>
+  <message module="credits">
+    <id>URL</id>
+    <string>URL</string>
+  </message>
+  <message module="credits">
+    <id>License</id>
+    <string>Licentie</string>
+  </message>
+  <message module="credits">
+    <id>Icons</id>
+    <string>Iconen</string>
+  </message>
+  <message module="credits">
+    <id>All used scripts are liable to the copyright of the corresponding author.</id>
+    <string>Alle gebruikte scripts zijn gebonden aan de copyrights van de corresponderende auteurs.</string>
+  </message>
+  <message module="credits">
+    <id>phpMyProfiler is adapted from</id>
+    <string>phpMyProfiler is gebasseerd op</string>
+  </message>
+  <message module="credits">
+    <id>by</id>
+    <string>van</string>
+  </message>
+
+  <message module="picturelist">
+    <id>Picture Gallery</id>
+    <string>Afbeeldingen Gallerij</string>
+  </message>
+  <message module="picturelist">
+    <id>Number of pictures</id>
+    <string>Aantal Afbeeldingen</string>
+  </message>
+
+  <message module="filmprofile">
+    <id>Features</id>
+    <string>Eigenschappen</string>
+  </message>
+  <message module="filmprofile">
+    <id>This DVD is currently loaned</id>
+    <string>Deze DVD is momenteel uitgeleend</string>
+  </message>
+  <message module="filmprofile">
+    <id>Details</id>
+    <string>Details</string>
+  </message>
+  <message module="filmprofile">
+    <id>Overview</id>
+    <string>Overzicht</string>
+  </message>
+  <message module="filmprofile">
+    <id>Cast &amp; Crew</id>
+    <string>Cast &amp; Crew</string>
+  </message>
+  <message module="filmprofile">
+    <id>Events</id>
+    <string>Uitleenstatus</string>
+  </message>
+  <message module="filmprofile">
+    <id>Episode Guide</id>
+    <string>Episode Gids</string>
+  </message>
+  <message module="filmprofile">
+    <id>Cover Images</id>
+    <string>Hoesafbeeldingen</string>
+  </message>
+  <message module="filmprofile">
+    <id>Boxset Contents</id>
+    <string>Box Set-inhoud</string>
+  </message>
+  <message module="filmprofile">
+    <id>Part of boxset</id>
+    <string>Deel van Box Set</string>
+  </message>
+  <message module="filmprofile">
+    <id>External Links</id>
+    <string>Externe Links</string>
+  </message>
+  <message module="filmprofile">
+    <id>International</id>
+    <string>International</string>
+  </message>
+
+  <message module="filmprofile_page1">
+    <id>Country of Origin</id>
+    <string>Land van herkomst</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>hrs</id>
+    <string>uren</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>minutes</id>
+    <string>minuten</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>Rating</id>
+    <string>Kijkwijzer</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>Rating Details</id>
+    <string>Kijkwijzer Details</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>Information</id>
+    <string>Informatie</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>Edition</id>
+    <string>Editie</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>ID</id>
+    <string>ID</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>UPC</id>
+    <string>EAN</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>Profile Date</id>
+    <string>Profiel Datum</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>Last Edited</id>
+    <string>Laatst bijgewerkt</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>Country</id>
+    <string>Land</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>Regions</id>
+    <string>Regio Code</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>DVD Release</id>
+    <string>Uitgebracht</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>Case Type</id>
+    <string>Soort Doos</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>Media Companies</id>
+    <string>Media bedrijven</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>Slipcover</id>
+    <string>Slipcover</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>State</id>
+    <string>Status</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>Collection Number</id>
+    <string>Collectie nummer</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>Notes</id>
+    <string>Notitie</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>Purchased</id>
+    <string>Gekocht</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>at</id>
+    <string>bij</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>for</id>
+    <string>voor</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>SRP</id>
+    <string>GVP</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>Rented by</id>
+    <string>Uitgeleend aan</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>Return Date</id>
+    <string>Datum retour</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>Tags</id>
+    <string>Labels</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>Review</id>
+    <string>Recensie</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>Movie</id>
+    <string>Film</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>DVD</id>
+    <string>DVD</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>Audio</id>
+    <string>Audio</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>Extras</id>
+    <string>Extras</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>votes</id>
+    <string>Stemmen</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>Extern Reviews</id>
+    <string>Externe Recensies</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>IMDB User Rating</id>
+    <string>IMDB gebruikers waardering</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>IMDB Top 250</id>
+    <string>IMDB Top 250</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>IMDB Bottom 100</id>
+    <string>IMDB Laagste 100</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>User Reviews</id>
+    <string>Recensies van gebruikers</string>
+  </message>
+  <message module="filmprofile_page1">
+    <id>Compose a review</id>
+    <string>Schrijf een recensie</string>
+  </message>
+
+  <message module="filmprofile_page2">
+    <id>Format</id>
+    <string>Formaat</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Compression</id>
+    <string>Compressie</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Content</id>
+    <string>Taal</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Subtitles</id>
+    <string>Ondertitels</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Video Information</id>
+    <string>Video Informatie</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Video Format</id>
+    <string>Video Standaard</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Aspect Ratio</id>
+    <string>Beeldverhouding</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>THX Certified</id>
+    <string>THX Gecertiviceerd</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Scene Access</id>
+    <string>Scenetoegang</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Commentary</id>
+    <string>Commentaar</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Trailers</id>
+    <string>Trailers</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Deleted Scenes</id>
+    <string>Verwijderde Scenes</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Featurettes</id>
+    <string>Featurettes</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Interviews</id>
+    <string>Interviews</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Storyboard Comparisons</id>
+    <string>Storyboard vergelijkingen</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>DVD-ROM Content</id>
+    <string>DVD-ROM Inhoud</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Interactive Games</id>
+    <string>Interactive Spellen</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Multi-angle</id>
+    <string>Multi-Hoek</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Music Videos</id>
+    <string>Muziek Videos</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Prod. Notes</id>
+    <string>Prod. Notities</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Photo Gallery</id>
+    <string>Foto Galerij</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Outtakes/Bloopers</id>
+    <string>Missers/Bloopers</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Closed Captioned</id>
+    <string>Closed Captioned</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Bonus Trailers</id>
+    <string>Bonus Trailers</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Picture-in-Picture</id>
+    <string>Picture-in-Picture</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>BD-Live</id>
+    <string>BD-Live</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Digital Copy</id>
+    <string>Digital Copy</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Other Features</id>
+    <string>Overige Features</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Additional Information</id>
+    <string>Aanvullende Informatie</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Studios</id>
+    <string>Studios</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Genres</id>
+    <string>Genres</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Media Info</id>
+    <string>Media Info</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Description Side A</id>
+    <string>Beschrijving Kant A</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Label Side A</id>
+    <string>Label Kant A</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Duallayer Side A</id>
+    <string>Duallayer Kant A</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>DiscID Side A</id>
+    <string>DiscID Kant A</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Description Side B</id>
+    <string>Beschrijving Kant B</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Label Side B</id>
+    <string>Label Kant B</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>DiscID Side B</id>
+    <string>DiscID Kant B</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Duallayer Side B</id>
+    <string>Duallayer Kant B</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Dualsided</id>
+    <string>Dubbelzijdig</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Dual Layered</id>
+    <string>Dubbellaags</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Single Layered</id>
+    <string>Enkellaags</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Location</id>
+    <string>Locatie</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Slot</id>
+    <string>Slot</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Various Information</id>
+    <string>Overige Informatie</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Easter Egg</id>
+    <string>Easter Egg</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Awards</id>
+    <string>Awards</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Winner</id>
+    <string>Winnaar</string>
+  </message>
+  <message module="filmprofile_page2">
+    <id>Nominee for</id>
+    <string>Genomineerd voor</string>
+  </message>
+
+  <message module="filmprofile_page3">
+    <id>Cast</id>
+    <string>Cast</string>
+  </message>
+  <message module="filmprofile_page3">
+    <id>uncredited</id>
+    <string>Niet genoemd</string>
+  </message>
+  <message module="filmprofile_page3">
+    <id>voice</id>
+    <string>Stemmen</string>
+  </message>
+  <message module="filmprofile_page3">
+    <id>credited as</id>
+    <string>credited as</string>
+  </message>
+  <message module="filmprofile_page3">
+    <id>Crew</id>
+    <string>Crew</string>
+  </message>
+
+  <message module="filmprofile_page4">
+    <id>Date</id>
+    <string>Datum</string>
+  </message>
+  <message module="filmprofile_page4">
+    <id>Event</id>
+    <string>Uitleenstatus</string>
+  </message>
+  <message module="filmprofile_page4">
+    <id>Phone</id>
+    <string>Telefoon</string>
+  </message>
+  <message module="filmprofile_page4">
+    <id>Borrowed</id>
+    <string>Uitgeleend</string>
+  </message>
+  <message module="filmprofile_page4">
+    <id>Returned</id>
+    <string>Terug</string>
+  </message>
+
+  <message module="filmprofile_status">
+    <id>Owned</id>
+    <string>In bezit</string>
+  </message>
+  <message module="filmprofile_status">
+    <id>Ordered</id>
+    <string>Besteld</string>
+  </message>
+  <message module="filmprofile_status">
+    <id>WishList</id>
+    <string>Verlanglijst</string>
+  </message>
+
+  <message module="filmprofile_wishpriority">
+    <id>Vague Interest</id>
+    <string>Vage Interesse</string>
+  </message>
+  <message module="filmprofile_wishpriority">
+    <id>Like to Have It</id>
+    <string>Leuk te hebben</string>
+  </message>
+  <message module="filmprofile_wishpriority">
+    <id>Want It</id>
+    <string>Wil ik hebben</string>
+  </message>
+  <message module="filmprofile_wishpriority">
+    <id>Really Want</id>
+    <string>Moet ik hebben</string>
+  </message>
+  <message module="filmprofile_wishpriority">
+    <id>Need It</id>
+    <string>Kan niet zonder</string>
+  </message>
+  <message module="filmprofile_wishpriority">
+    <id>Watched</id>
+    <string>Gezien</string>
+  </message>
+
+  <message module="statistics">
+    <id>Statistics</id>
+    <string>Statistieken</string>
+  </message>
+  <message module="statistics">
+    <id>Other Statistics</id>
+    <string>Andere Statistieken</string>
+  </message>
+  <message module="statistics">
+    <id>Director Statistic</id>
+    <string>Regisseurs</string>
+  </message>
+  <message module="statistics">
+    <id>Producer Statistic</id>
+    <string>Producenten</string>
+  </message>
+  <message module="statistics">
+    <id>Writer &amp; Screenwriter Statistic</id>
+    <string>Auteurs &amp; Scriptschrijvers</string>
+  </message>
+  <message module="statistics">
+    <id>Composer Statistic</id>
+    <string>Componisten</string>
+  </message>
+  <message module="statistics">
+    <id>Actor Statistic</id>
+    <string>Acteurs</string>
+  </message>
+  <message module="statistics">
+    <id>Number of DVDs</id>
+    <string>Aantal DVD's</string>
+  </message>
+  <message module="statistics">
+    <id>With Pricing Information</id>
+    <string>DVD's met Prijsinfo</string>
+  </message>
+  <message module="statistics">
+    <id>DVDs without a Child Profile</id>
+    <string>DVD's zonder kinder Profiel</string>
+  </message>
+  <message module="statistics">
+    <id>Boxset Profiles</id>
+    <string>Box Set Profiel</string>
+  </message>
+  <message module="statistics">
+    <id>Child Profiles</id>
+    <string>Kinder Profiel</string>
+  </message>
+  <message module="statistics">
+    <id>DVDs with Collection Number</id>
+    <string>DVD's met Collectie Nummer</string>
+  </message>
+  <message module="statistics">
+    <id>DVDs with Rating Information</id>
+    <string>DVD's met Kijkwijzer Informatie</string>
+  </message>
+  <message module="statistics">
+    <id>Price of all DVDs</id>
+    <string>Prijs van alle DVD's</string>
+  </message>
+  <message module="statistics">
+    <id>Average price</id>
+    <string>Gemiddelde prijs</string>
+  </message>
+  <message module="statistics">
+    <id>Most expensive DVDs</id>
+    <string>De duurste DVD's</string>
+  </message>
+  <message module="statistics">
+    <id>Cheapest DVDs</id>
+    <string>De goedkoopste DVD's</string>
+  </message>
+  <message module="statistics">
+    <id>Length of all DVDs</id>
+    <string>Gezamelijke speelduur</string>
+  </message>
+  <message module="statistics">
+    <id>DVDs with Length Information</id>
+    <string>DVD's met opgegeven speelduur</string>
+  </message>
+  <message module="statistics">
+    <id>Hours: about</id>
+    <string>&plusmn;</string>
+  </message>
+  <message module="statistics">
+    <id>hours</id>
+    <string>uur</string>
+  </message>
+  <message module="statistics">
+    <id>Days: about</id>
+    <string>&plusmn;</string>
+  </message>
+  <message module="statistics">
+    <id>days</id>
+    <string>dagen</string>
+  </message>
+  <message module="statistics">
+    <id>Weeks: about</id>
+    <string>&plusmn;</string>
+  </message>
+  <message module="statistics">
+    <id>weeks</id>
+    <string>weken</string>
+  </message>
+  <message module="statistics">
+    <id>Months: about</id>
+    <string>&plusmn;</string>
+  </message>
+  <message module="statistics">
+    <id>months</id>
+    <string>maanden</string>
+  </message>
+  <message module="statistics">
+    <id>Years: about</id>
+    <string>&plusmn;</string>
+  </message>
+  <message module="statistics">
+    <id>years</id>
+    <string>jaar</string>
+  </message>
+  <message module="statistik">
+    <id>Average Length</id>
+    <string>Gemiddelde speelduur</string>
+  </message>
+  <message module="statistics">
+    <id>Longest DVDs</id>
+    <string>De DVD's met de langste speelduur</string>
+  </message>
+  <message module="statistics">
+    <id>Shortest DVDs</id>
+    <string>De DVD's met de kortste speelduur</string>
+  </message>
+  <message module="statistics">
+    <id>Regioncode</id>
+    <string>Regio code</string>
+  </message>
+  <message module="statistics">
+    <id>Localities of DVDs</id>
+    <string>Herkomst van de DVD's</string>
+  </message>
+  <message module="statistics">
+    <id>Localities</id>
+    <string>Landen</string>
+  </message>
+  <message module="statistics">
+    <id>Origins of Movies</id>
+    <string>Land van Productie</string>
+  </message>
+  <message module="statistics">
+    <id>Origins</id>
+    <string>Orgineel</string>
+  </message>
+  <message module="statistics">
+    <id>Ratings</id>
+    <string>Kijkwijzer</string>
+  </message>
+  <message module="statistics">
+    <id>DVDs</id>
+    <string>DVD's</string>
+  </message>
+  <message module="statistics">
+    <id>Year of Purchase</id>
+    <string>Jaar van aankoop</string>
+  </message>
+  <message module="statistics">
+    <id>Detailed Statistic</id>
+    <string>Gedetaileerde Statistiek</string>
+  </message>
+  <message module="statistics">
+    <id>Production Decade</id>
+    <string>Produktieperiode</string>
+  </message>
+  <message module="statistics">
+    <id>Place of Purchase (Top 10)</id>
+    <string>Gekocht bij (Top 10)</string>
+  </message>
+  <message module="statistics">
+    <id>Place of Purchase</id>
+    <string>Gekocht bij</string>
+  </message>
+  <message module="statistics">
+    <id>Genre (Top 10)</id>
+    <string>Genre (Top 10)</string>
+  </message>
+  <message module="statistics">
+    <id>Studio (Top 10)</id>
+    <string>Studio (Top 10)</string>
+  </message>
+  <message module="statistics">
+    <id>Media Companies (Top 10)</id>
+    <string>Media Maatschappijen (Top 10)</string>
+  </message>
+  <message module="statistics">
+    <id>Visitors</id>
+    <string>Bezoekers</string>
+  </message>
+  <message module="statistics">
+    <id>Visited DVDs</id>
+    <string>Bezochte DVD-Profielen</string>
+  </message>
+
+  <message module="statistics_graph">
+    <id>owned</id>
+    <string>In bezit</string>
+  </message>
+  <message module="statistics_graph">
+    <id>ordered</id>
+    <string>Besteld</string>
+  </message>
+  <message module="statistics_graph">
+    <id>wishlist</id>
+    <string>Verlanglijst</string>
+  </message>
+
+  <message module="statisticsdetail">
+    <id>Visitor Statistic</id>
+    <string>Bezoekers Statistiek</string>
+  </message>
+  <message module="statisticsdetail">
+    <id>Profile Statistic</id>
+    <string>Profiel Statistiek</string>
+  </message>
+  <message module="statisticsdetail">
+    <id>Result</id>
+    <string>Resultaat</string>
+  </message>
+  <message module="statisticsdetail">
+    <id>Month</id>
+    <string>Maand</string>
+  </message>
+  <message module="statisticsdetail">
+    <id>January</id>
+    <string>Januari</string>
+  </message>
+  <message module="statisticsdetail">
+    <id>February</id>
+    <string>Februari</string>
+  </message>
+  <message module="statisticsdetail">
+    <id>March</id>
+    <string>Maart</string>
+  </message>
+  <message module="statisticsdetail">
+    <id>May</id>
+    <string>Mei</string>
+  </message>
+  <message module="statisticsdetail">
+    <id>April</id>
+    <string>April</string>
+  </message>
+  <message module="statisticsdetail">
+    <id>June</id>
+    <string>Juni</string>
+  </message>
+  <message module="statisticsdetail">
+    <id>July</id>
+    <string>Juli</string>
+  </message>
+  <message module="statisticsdetail">
+    <id>August</id>
+    <string>Augustus</string>
+  </message>
+  <message module="statisticsdetail">
+    <id>September</id>
+    <string>September</string>
+  </message>
+  <message module="statisticsdetail">
+    <id>October</id>
+    <string>Oktober</string>
+  </message>
+  <message module="statisticsdetail">
+    <id>November</id>
+    <string>November</string>
+  </message>
+  <message module="statisticsdetail">
+    <id>December</id>
+    <string>December</string>
+  </message>
+  <message module="statisticsdetail">
+    <id>Picture</id>
+    <string>Afbeelding</string>
+  </message>
+  <message module="statisticsdetail">
+    <id>Writer/Screenwriter</id>
+    <string>Auteur/Scriptschrijver</string>
+  </message>
+
+  <message module="news">
+    <id>News Archive</id>
+    <string>Nieuws archief</string>
+  </message>
+  <message module="news">
+    <id>Number of news</id>
+    <string>Aantal Nieuws berichten</string>
+  </message>
+
+  <message module="review">
+    <id>Write a review for</id>
+    <string>Schrijf een recensie voor</string>
+  </message>
+  <message module="review">
+    <id>Please enter your name!</id>
+    <string>Typ uw naam a.u.b.</string>
+  </message>
+  <message module="review">
+    <id>Please enter a valid email address!</id>
+    <string>Geef a.u.b. een geldig e-Mailadres op!</string>
+  </message>
+  <message module="review">
+    <id>Please enter a title for your review!</id>
+    <string>Geeft a.u.b. een titel voor uw recensie</string>
+  </message>
+  <message module="review">
+    <id>Please enter a text for your review!</id>
+    <string>Typ hier uw resensie</string>
+  </message>
+  <message  module="review">
+    <id>Thank you for your review.</id>
+    <string>Hartelijk bedankt voor uw recensie.</string>
+  </message>
+  <message module="review">
+    <id>Sorry, an error has occurred</id>
+    <string>Sorry, er is een fout opgetreden</string>
+  </message>
+  <message module="review">
+    <id>Someone added a new review:</id>
+    <string>Iemand heeft een nieuwe recensie toegevoegd:</string>
+  </message>
+  <message module="review">
+    <id>Author</id>
+    <string>Recencent</string>
+  </message>
+  <message module="review">
+    <id>Please activate or delete this pending review:</id>
+    <string>Activeer of delete a.u.b. deze in de wacht staande recensie:</string>
+  </message>
+  <message module="review">
+    <id>New pending review:</id>
+    <string>Nieuwe recensie in wachtrij:</string>
+  </message>
+  <message module="review">
+    <id>Add your review</id>
+    <string>Recensie toevoegen</string>
+  </message>
+  <message module="review">
+    <id>E-mail</id>
+    <string>E-mail</string>
+  </message>
+  <message module="review">
+    <id>Title of review</id>
+    <string>Titel</string>
+  </message>
+  <message module="review">
+    <id>Review text (without format strings!)</id>
+    <string>Text (zonder opmaak!)</string>
+  </message>
+  <message module="review">
+    <id>Review</id>
+    <string>Waardering</string>
+  </message>
+  <message module="review">
+    <id>excellent</id>
+    <string>zeer goed</string>
+  </message>
+  <message module="review">
+    <id>fair</id>
+    <string>middelmatig</string>
+  </message>
+  <message module="review">
+    <id>bad</id>
+    <string>slecht</string>
+  </message>
+  <message module="review">
+    <id>Submit</id>
+    <string>Verzenden</string>
+  </message>
+  <message module="review">
+    <id>Important</id>
+    <string>Belangrijk</string>
+  </message>
+  <message module="review">
+    <id>Your submitted review will show up, as soon as the administrator has activated it. You'll receive an e-mail, when your review is activated</id>
+    <string>Uw recensie word pas zichtbaar na activatie door de beheerder. U krijgt een e-mail wanneer uw recensie is geactiveerd.</string>
+  </message>
+
+  <message module="guestbook">
+    <id>Guestbook</id>
+    <string>Gastenboek</string>
+  </message>
+  <message module="guestbook">
+    <id>%name added a new guestbook entry</id>
+    <string>%name heeft een nieuw bericht in het gastenboek achtergelaten</string>
+  </message>
+  <message module="guestbook">
+    <id>Thank you. The guest book entry was stored.</id>
+    <string>Hartelijk Dank. Uw bijdrage is opgeslagen.</string>
+  </message>
+  <message module="guestbook">
+    <id>When storing in the data base unfortunately an error occurs.</id>
+    <string>Bij het opslaan in de data base is helaas iets fout gegaan.</string>
+  </message>
+  <message module="guestbook">
+    <id>Number of comments</id>
+    <string>Aantal berichten</string>
+  </message>
+  <message module="guestbook">
+    <id>Add your comment</id>
+    <string>Bericht toevoegen</string>
+  </message>
+  <message module="guestbook">
+    <id>New comments will be invisible until the administrator activates them.</id>
+    <string>Nieuwe bijdragen blijven onzichtbaar tot de beheerder deze heeft geactiveerd.</string>
+  </message>
+  <message module="guestbook">
+    <id>Homepage</id>
+    <string>Homepage</string>
+  </message>
+  <message module="guestbook">
+    <id>Comment</id>
+    <string>Bericht</string>
+  </message>
+  <message module="guestbook">
+    <id>Enter security code, please</id>
+    <string>Geeft de veiligheids code, a.u.b.</string>
+  </message>
+  <message module="guestbook">
+    <id>Security code</id>
+    <string>Veiligheids-Code</string>
+  </message>
+  <message module="guestbook">
+    <id>Add comment</id>
+    <string>Bericht toevoegen</string>
+  </message>
+  <message module="guestbook">
+    <id>Guest Book Entries</id>
+    <string>Gastenboek bijdragen</string>
+  </message>
+  <message module="guestbook">
+    <id>wrote</id>
+    <string>schrijf</string>
+  </message>
+  <message module="guestbook">
+    <id>Reply by</id>
+    <string>Antwoord van</string>
+  </message>
+  <message module="guestbook">
+    <id>Please enter a message to send!</id>
+    <string>Typ hier uw bericht!</string>
+  </message>
+
+  <message module="peoplelist">
+    <id>People Gallery</id>
+    <string>Cast &amp; Crew Gallerij</string>
+  </message>
+  <message module="peoplelist">
+    <id>Filter</id>
+    <string>Filter</string>
+  </message>
+  <message module="peoplelist">
+    <id>Cast and Crew Images</id>
+    <string>Cast &amp; Crew Afbeeldingen</string>
+  </message>
+  <message module="peoplelist">
+    <id>starting with</id>
+    <string>beginnend met</string>
+  </message>
+
+  <message module="contact">
+    <id>Contact</id>
+    <string>Contact</string>
+  </message>
+  <message module="contact">
+    <id>Wrong security code!</id>
+    <string>Foutieve Veiligheids-Code!</string>
+  </message>
+  <message module="contact">
+    <id>Thank you for your message.</id>
+    <string>Hartelijk Dank voor uw bericht.</string>
+  </message>
+  <message module="contact">
+    <id>Please fill all fields.</id>
+    <string>A.u.b. alle velden invullen.</string>
+  </message>
+  <message module="contact">
+    <id>Administrator</id>
+    <string>Beheerder</string>
+  </message>
+  <message module="contact">
+    <id>At this point you have the opportunity to contact the administrator of this DVD collection.</id>
+    <string>Hier heeft u de mogelijkheid, de beheerder van deze DVD-Collectie te contacteren.</string>
+  </message>
+  <message module="contact">
+    <id>Write your message</id>
+    <string>Schrijf uw bericht</string>
+  </message>
+  <message module="contact">
+    <id>Please fill out the form and submit ...</id>
+    <string>Vult u a.u.b. het formulier in en klik op 'Verzenden'...</string>
+  </message>
+  <message module="contact">
+    <id>Subject</id>
+    <string>Onderwerp</string>
+  </message>
+    <message module="contact">
+    <id>Message</id>
+    <string>Bericht</string>
+  </message>
+  <message module="contact">
+    <id>Send Message</id>
+    <string>Verzenden</string>
+  </message>
+  <message module="contact">
+    <id>Failed to send E-mail.</id>
+    <string>E-mail kon niet verzondent worden.</string>
+  </message>
+  <message module="contact">
+    <id>Please enter a subject!</id>
+    <string>Typ a.u.b. een onderwerp!</string>
+  </message>
+  <message module="contact">
+    <id>Bot Attack!</id>
+    <string>Bot Aanval!</string>
+  </message>
+
+  <message module="menue">
+    <id>An error occured during your query. To continue working all filters will be set to default values.</id>
+    <string>Bij het uitvoeren van de filters is een fout opgetreden. Om verder te kunnen werken zijn alle filters op de standaard waarden gezet.</string>
+  </message>
+   <message module="menue">
+    <id>DVD Collection</id>
+    <string>Film Collectie</string>
+  </message>
+  <message module="menue">
+    <id>Active Filters</id>
+    <string>Actieve Filters</string>
+  </message>
+  <message module="menue">
+    <id>Remove all</id>
+    <string>Alles wissen</string>
+  </message>
+  <message module="menue">
+    <id>(click filter to remove)</id>
+    <string>(Klik op een filter om deze te wissen)</string>
+  </message>
+  <message module="menue">
+    <id>Add</id>
+    <string>Toevoegen</string>
+  </message>
+  <message module="menue">
+    <id>Owned DVDs</id>
+    <string>In bezit</string>
+  </message>
+  <message module="menue">
+    <id>Ordered DVDs</id>
+    <string>Besteld</string>
+  </message>
+  <message module="menue">
+    <id>Wish List</id>
+    <string>Verlanglijst</string>
+  </message>
+  <message module="menue">
+    <id>Navigation</id>
+    <string>Navigatie</string>
+  </message>
+  <message module="menue">
+    <id>Page</id>
+    <string>Pagina</string>
+  </message>
+  <message module="menue">
+    <id>of</id>
+    <string>van</string>
+  </message>
+
+  <message module="type">
+    <id>Direction</id>
+    <string>Regie</string>
+  </message>
+  <message module="type">
+    <id>Writing</id>
+    <string>Verhaal</string>
+  </message>
+  <message module="type">
+    <id>Production</id>
+    <string>Produktie</string>
+  </message>
+  <message module="type">
+    <id>Cinematography</id>
+    <string>Camera</string>
+  </message>
+  <message module="type">
+    <id>Film Editing</id>
+    <string>Montage</string>
+  </message>
+  <message module="type">
+    <id>Music</id>
+    <string>Muziek</string>
+  </message>
+  <message module="type">
+    <id>Sound</id>
+    <string>Geluid</string>
+  </message>
+  <message module="type">
+    <id>Art</id>
+    <string>Decors</string>
+  </message>
+
+  <message module="subtype">
+    <id>Actor</id>
+    <string>Acteur</string>
+  </message>
+  <message module="subtype">
+    <id>Director</id>
+    <string>Regisseur</string>
+  </message>
+  <message module="subtype">
+    <id>Writer</id>
+    <string>Auteur</string>
+  </message>
+  <message module="subtype">
+    <id>Original Material By</id>
+    <string>Auteur orgineel</string>
+  </message>
+  <message module="subtype">
+    <id>Original Characters By</id>
+    <string>Orginele Karakters</string>
+  </message>
+  <message module="subtype">
+    <id>Screenwriter</id>
+    <string>Scriptschrijver</string>
+  </message>
+  <message module="subtype">
+    <id>Writer</id>
+    <string>Auteur</string>
+  </message>
+  <message module="subtype">
+    <id>Producer</id>
+    <string>Producent</string>
+  </message>
+  <message module="subtype">
+    <id>Executive Producer</id>
+    <string>Uitvoerend Producent</string>
+  </message>
+  <message module="subtype">
+    <id>Director of Photography</id>
+    <string>Camera-voering</string>
+  </message>
+  <message module="subtype">
+    <id>Cinematographer</id>
+    <string>Cinematographer</string>
+  </message>
+  <message module="subtype">
+    <id>Film Editor</id>
+    <string>Beeldbewerker</string>
+  </message>
+  <message module="subtype">
+    <id>Composer</id>
+    <string>Componist</string>
+  </message>
+  <message module="subtype">
+    <id>Song Writer</id>
+    <string>Song Writer</string>
+  </message>
+  <message module="subtype">
+    <id>Supervising Sound Editor</id>
+    <string>Opnameleider</string>
+  </message>
+
+  <message module="languages">
+    <id>Africaans</id>
+    <string>Afrikaans</string>
+  </message>
+  <message module="languages">
+    <id>Arabic</id>
+    <string>Arabisch</string>
+  </message>
+  <message module="languages">
+    <id>Bulgarian</id>
+    <string>Bulgaars</string>
+  </message>
+  <message module="languages">
+    <id>Chinese</id>
+    <string>Chinees</string>
+  </message>
+  <message module="languages">
+    <id>Cantonese</id>
+    <string>Cantonees</string>
+  </message>
+  <message module="languages">
+    <id>Commentary</id>
+    <string>Commentaar</string>
+  </message>
+  <message module="languages">
+    <id>Croatian</id>
+    <string>Kroatisch</string>
+  </message>
+  <message module="languages">
+    <id>Czech</id>
+    <string>Tsjechisch</string>
+  </message>
+  <message module="languages">
+    <id>Danish</id>
+    <string>Deens</string>
+  </message>
+  <message module="languages">
+    <id>Dutch</id>
+    <string>Nederlands</string>
+  </message>
+  <message module="languages">
+    <id>English</id>
+    <string>Engels</string>
+  </message>
+  <message module="languages">
+    <id>Farsi</id>
+    <string>Persisch</string>
+  </message>
+  <message module="languages">
+    <id>Finnish</id>
+    <string>Fins</string>
+  </message>
+  <message module="languages">
+    <id>French</id>
+    <string>Frans</string>
+  </message>
+  <message module="languages">
+    <id>German</id>
+    <string>Duits</string>
+  </message>
+  <message module="languages">
+    <id>Greek</id>
+    <string>Grieks</string>
+  </message>
+  <message module="languages">
+    <id>Hebrew</id>
+    <string>Hebreeuws</string>
+  </message>
+  <message module="languages">
+    <id>Hindi</id>
+    <string>Hindi</string>
+  </message>
+  <message module="languages">
+    <id>Hungarian</id>
+    <string>Hongaars</string>
+  </message>
+  <message module="languages">
+    <id>Icelandic</id>
+    <string>IJslands</string>
+  </message>
+  <message module="languages">
+    <id>Italian</id>
+    <string>Italiaans</string>
+  </message>
+  <message module="languages">
+    <id>Japanese</id>
+    <string>Japans</string>
+  </message>
+  <message module="languages">
+    <id>Korean</id>
+    <string>Koreaans</string>
+  </message>
+  <message module="languages">
+    <id>Mandarin</id>
+    <string>Mandarijns</string>
+  </message>
+  <message module="languages">
+    <id>Music only</id>
+    <string>Muziek</string>
+  </message>
+  <message module="languages">
+    <id>Norwegian</id>
+    <string>Noors</string>
+  </message>
+  <message module="languages">
+    <id>Other</id>
+    <string>Overige</string>
+  </message>
+  <message module="languages">
+    <id>Polish</id>
+    <string>Pools</string>
+  </message>
+  <message module="languages">
+    <id>Portuguese</id>
+    <string>Portugees</string>
+  </message>
+  <message module="languages">
+    <id>Romanian</id>
+    <string>Romeens</string>
+  </message>
+  <message module="languages">
+    <id>Russian</id>
+    <string>Russisch</string>
+  </message>
+  <message module="languages">
+    <id>Slovakian</id>
+    <string>Slowaaks</string>
+  </message>
+  <message module="languages">
+    <id>Slovenian</id>
+    <string>Sloveens</string>
+  </message>
+  <message module="languages">
+    <id>Spanish</id>
+    <string>Spaans</string>
+  </message>
+  <message module="languages">
+    <id>Swedish</id>
+    <string>Zweeds</string>
+  </message>
+  <message module="languages">
+    <id>Tagalog</id>
+    <string>Fillepijns</string>
+  </message>
+  <message module="languages">
+    <id>Thai</id>
+    <string>Thais</string>
+  </message>
+  <message module="languages">
+    <id>Trivia</id>
+    <string>Trivia</string>
+  </message>
+  <message module="languages">
+    <id>Turkish</id>
+    <string>Turks</string>
+  </message>
+  <message module="languages">
+    <id>Xhosa</id>
+    <string>Xhosa</string>
+  </message>
+  <message module="languages">
+    <id>Zulu</id>
+    <string>Zulu</string>
+  </message>
+
+  <message module="countries">
+    <id>United States</id>
+    <string>Verenigde Staten</string>
+  </message>
+  <message module="countries">
+    <id>New Zealand</id>
+    <string>Nieuw-Zeeland</string>
+  </message>
+  <message module="countries">
+    <id>Australia</id>
+    <string>Australi&euml;</string>
+  </message>
+  <message module="countries">
+    <id>Canada</id>
+    <string>Canada</string>
+  </message>
+  <message module="countries">
+    <id>United Kingdom</id>
+    <string>Verenigd Koninkrijk</string>
+  </message>
+  <message module="countries">
+    <id>Germany</id>
+    <string>Duitsland</string>
+  </message>
+  <message module="countries">
+    <id>China</id>
+    <string>China</string>
+  </message>
+  <message module="countries">
+    <id>Former Soviet Union</id>
+    <string>Voormalig Sovjet Unie</string>
+  </message>
+  <message module="countries">
+    <id>France</id>
+    <string>Frankrijk</string>
+  </message>
+  <message module="countries">
+    <id>Netherlands</id>
+    <string>Nederland</string>
+  </message>
+  <message module="countries">
+    <id>Spain</id>
+    <string>Spanje</string>
+  </message>
+  <message module="countries">
+    <id>Sweden</id>
+    <string>Zweden</string>
+  </message>
+  <message module="countries">
+    <id>Norway</id>
+    <string>Noorwegen</string>
+  </message>
+  <message module="countries">
+    <id>Italy</id>
+    <string>Itali&euml;</string>
+  </message>
+  <message module="countries">
+    <id>Denmark</id>
+    <string>Denemarken</string>
+  </message>
+  <message module="countries">
+    <id>Portugal</id>
+    <string>Portugal</string>
+  </message>
+  <message module="countries">
+    <id>Finland</id>
+    <string>Finland</string>
+  </message>
+  <message module="countries">
+    <id>Japan</id>
+    <string>Japan</string>
+  </message>
+  <message module="countries">
+    <id>Korea</id>
+    <string>Korea</string>
+  </message>
+  <message module="countries">
+    <id>Kanada (Quebec)</id>
+    <string>Quebec</string>
+  </message>
+  <message module="countries">
+    <id>South Afrika</id>
+    <string>Zuid Afrika</string>
+  </message>
+  <message module="countries">
+    <id>Hong Kong</id>
+    <string>Hong Kong</string>
+  </message>
+  <message module="countries">
+    <id>Switzerland</id>
+    <string>Zwitzerland</string>
+  </message>
+  <message module="countries">
+    <id>Brazil</id>
+    <string>Brasili&euml;</string>
+  </message>
+  <message module="countries">
+    <id>Israel</id>
+    <string>Isra&euml;l</string>
+  </message>
+  <message module="countries">
+    <id>Mexico</id>
+    <string>Mexico</string>
+  </message>
+  <message module="countries">
+    <id>Iceland</id>
+    <string>IJsland</string>
+  </message>
+  <message module="countries">
+    <id>Indonesia</id>
+    <string>Indonesi&euml;</string>
+  </message>
+  <message module="countries">
+    <id>Taiwan</id>
+    <string>Taiwan</string>
+  </message>
+  <message module="countries">
+    <id>Poland</id>
+    <string>Polen</string>
+  </message>
+  <message module="countries">
+    <id>Belgium</id>
+    <string>Belgi&euml;</string>
+  </message>
+  <message module="countries">
+    <id>Turkey</id>
+    <string>Turkij&euml;</string>
+  </message>
+  <message module="countries">
+    <id>Argentina</id>
+    <string>Argentini&euml;</string>
+  </message>
+  <message module="countries">
+    <id>Slovakia</id>
+    <string>Slowakij&euml;</string>
+  </message>
+  <message module="countries">
+    <id>Hungary</id>
+    <string>Hongarij&euml;</string>
+  </message>
+  <message module="countries">
+    <id>Singapore</id>
+    <string>Singapore</string>
+  </message>
+  <message module="countries">
+    <id>Czech Republic</id>
+    <string>Tschechi&euml;</string>
+  </message>
+  <message module="countries">
+    <id>Malaysia</id>
+    <string>Malaysi&euml;</string>
+  </message>
+  <message module="countries">
+    <id>Thailand</id>
+    <string>Thailand</string>
+  </message>
+  <message module="countries">
+    <id>India</id>
+    <string>India</string>
+  </message>
+  <message module="countries">
+    <id>Austria</id>
+    <string>Oostenrijk</string>
+  </message>
+  <message module="countries">
+    <id>Greece</id>
+    <string>Griekenland</string>
+  </message>
+  <message module="countries">
+    <id>Vietnam</id>
+    <string>Vietnam</string>
+  </message>
+  <message module="countries">
+    <id>Philippines</id>
+    <string>Philipijnen</string>
+  </message>
+  <message module="countries">
+    <id>Ireland</id>
+    <string>Ierland</string>
+  </message>
+  <message module="countries">
+    <id>Estonia</id>
+    <string>Estland</string>
+  </message>
+
+  <message module="admin_getcover">
+    <id>Get Cover</id>
+    <string>Cover Downloaden</string>
+  </message>
+  <message module="admin_getcover">
+    <id>No write access in folder "cover".</id>
+    <string>Geen schrijfrechten in de map "cover".</string>
+  </message>
+  <message module="admin_getcover">
+    <id>Can\'t download the cover. Perhaps there is no cover for this DVD or your webserver doesn\'t allow accessing remote content.</id>
+    <string>De cover kon niet worden gedownload. Mogelijk is er geen cover voor deze DVD beschikbaar of Uw webserver staat geen externe inhoud toe.</string>
+  </message>
+
+  <message module="admin_updaterates">
+    <id>Exchange Rates</id>
+    <string>Wisselkoers</string>
+  </message>
+  <message module="admin_updaterates">
+    <id>Rates updated.</id>
+    <string>Koersen geupdate.</string>
+  </message>
+  <message module="admin_updaterates">
+    <id>Rates not updated.</id>
+    <string>Koersen niet geupdate.</string>
+  </message>
+  <message module="admin_updaterates">
+    <id>Actual Rates (Base: Euro)</id>
+    <string>Actuele Koers (Basis: Euro)</string>
+  </message>
+  <message module="admin_updaterates">
+    <id>Currency</id>
+    <string>Valuta</string>
+  </message>
+  <message module="admin_updaterates">
+    <id>Rate</id>
+    <string>Koers</string>
+  </message>
+  <message module="admin_updaterates">
+    <id>Rates last updated:</id>
+    <string>Laatste update koersen:</string>
+  </message>
+  <message module="admin_updaterates">
+    <id>Found no rates in database. Please update with the button below.</id>
+    <string>Geen koersen gevonden in de database. Update a.u.b. met de knop onderin.</string>
+  </message>
+  <message module="admin_updaterates">
+    <id>Click here to update your rates.</id>
+    <string>Klik hier om de koeren te actualiseren.</string>
+  </message>
+  <message module="admin_updaterates">
+    <id>We're using rates from the European Central Bank (ECB).</id>
+    <string>We gebruiken de koersen van de Europese Centrale Bank(ECB).</string>
+  </message>
+
+  <message module="admin_report">
+    <id>DVD list</id>
+    <string>DVD-Lijst</string>
+  </message>
+  <message module="admin_report">
+    <id>Generated by</id>
+    <string>Gegenereerd met</string>
+  </message>
+  <message module="admin_report">
+    <id>Report</id>
+    <string>Bericht</string>
+  </message>
+  <message module="admin_report">
+    <id>Generated by </id>
+    <string>Gegenereerd met </string>
+  </message>
+  <message module="admin_report">
+    <id>Please select the columns that will appear in the report:</id>
+    <string>Sellecteer a.u.b. de colommen die u in het rapport wilt hebben:</string>
+  </message>
+ <message module="admin_report">
+    <id>Sort Order</id>
+    <string>Sorteer volgorde</string>
+  </message>
+  <message module="admin_report">
+    <id>Sort Order Direction</id>
+    <string>Sorteer richting</string>
+  </message>
+  <message module="admin_report">
+    <id>Ascending</id>
+    <string>Oplopend</string>
+  </message>
+  <message module="admin_report">
+    <id>Descending</id>
+    <string>Aflopend</string>
+  </message>
+  <message module="admin_report">
+    <id>Owned, Ordered, WishList or all DVDs</id>
+    <string>In bezit, Besteld, Verlanglijst of alle DVD's</string>
+  </message>
+  <message module="admin_report">
+    <id>All</id>
+    <string>Alle</string>
+  </message>
+  <message module="admin_report">
+    <id>Generate PDF-Report</id>
+    <string>Genereer PDF-Rapport</string>
+  </message>
+  <message module="admin_report">
+    <id>Generate HTML-Report</id>
+    <string>Genereer HTML-Rapport</string>
+  </message>
+  <message module="admin_report">
+    <id>Use filters from main list</id>
+    <string>Gebruik filters uit de hoofdlijst</string>
+  </message>
+  <message module="admin_report">
+    <id>Generate Report</id>
+    <string>Genereer Rapport</string>
+  </message>
+
+  <message module="admin_review">
+    <id>Review deleted.</id>
+    <string>Recensie verwijderd.</string>
+  </message>
+  <message module="admin_review">
+    <id>Review activated.</id>
+    <string>Recensie geactiveerd.</string>
+  </message>
+  <message module="admin_review">
+    <id>All Review entries activated.</id>
+    <string>Alle recensies geactiveerd.</string>
+  </message>
+  <message module="admin_review">
+    <id>Pending reviews</id>
+    <string>Niet geactiveerde recensies</string>
+  </message>
+  <message module="admin_review">
+    <id>Activate all review entries</id>
+    <string>Activeer alle recensies</string>
+  </message>
+  <message module="admin_review">
+    <id>From</id>
+    <string>Van</string>
+  </message>
+  <message module="admin_review">
+    <id>Title</id>
+    <string>Titel</string>
+  </message>
+  <message module="admin_review">
+    <id>Text</id>
+    <string>Text</string>
+  </message>
+  <message module="admin_review">
+    <id>Function</id>
+    <string>Funktie</string>
+  </message>
+  <message module="admin_review">
+    <id>Activate</id>
+    <string>Activeren</string>
+  </message>
+  <message module="admin_review">
+    <id>Delete</id>
+    <string>Verwijderen</string>
+  </message>
+  <message module="admin_review">
+    <id>There are no pending reviews.</id>
+    <string>Er wachten geen recensies op activering.</string>
+  </message>
+  <message module="admin_review">
+    <id>Active reviews</id>
+    <string>Active recensies</string>
+  </message>
+  <message module="admin_review">
+    <id>There are no active reviews.</id>
+    <string>Er zijn geen actieve recensies.</string>
+  </message>
+
+  <message module="admin_nocover">
+    <id>Cover overview</id>
+    <string>Cover overzicht</string>
+  </message>
+  <message module="admin_nocover">
+    <id>Click on</id>
+    <string>Klik op</string>
+  </message>
+  <message module="admin_nocover">
+    <id>-symbol to load missing covers from the Invelos server.</id>
+    <string>-Symbol om de missende Covers van Invelos server te laden.</string>
+  </message>
+  <message module="admin_nocover">
+    <id>Front</id>
+    <string>Voorkant</string>
+  </message>
+  <message module="admin_nocover">
+    <id>Back</id>
+    <string>Achterkant</string>
+  </message>
+
+  <message module="admin_index">
+    <id>is available at</id>
+    <string>is beschikbaar op</string>
+  </message>
+  <message module="admin_index">
+    <id>New update %update is available. Please refresh your database.</id>
+    <string>Nieuwe Update %update is beschikbaar. Actualiseer a.u.b. uw database.</string>
+  </message>
+  <message module="admin_index">
+    <id>You have %gb new guestbook entries to activate.</id>
+    <string>U heeft %gb nieuwe Gastenboek bijdragen om te activeren.</string>
+  </message>
+  <message module="admin_index">
+    <id>You have %review new review entries to activate.</id>
+    <string>U heeft %review nieuwe recensie(s) om te activeren.</string>
+  </message>
+  <message module="admin_index">
+    <id>Common preferences:</id>
+    <string>Algemene Instellingen:</string>
+  </message>
+  <message module="admin_index">
+    <id>Change preferences</id>
+    <string>Instellingen wijzigen</string>
+  </message>
+  <message module="admin_index">
+    <id>Change password for admin area</id>
+    <string>Wijzig wachtwoord voor beheerder</string>
+  </message>
+  <message module="admin_index">
+    <id>Call PHP-info</id>
+    <string>Toon PHP Info</string>
+  </message>
+  <message module="admin_index">
+    <id>Insert/refresh data:</id>
+    <string>Toevoegen/actualiseren data:</string>
+  </message>
+  <message module="admin_index">
+    <id>Parse new collection</id>
+    <string>Nieuwe collectie inlezen</string>
+  </message>
+  <message module="admin_index">
+    <id>Additional functions</id>
+    <string>Aanvullende funkties</string>
+  </message>
+  <message module="admin_index">
+    <id>Collection Pictures</id>
+    <string>Collectie Afbeeldingen</string>
+  </message>
+  <message module="admin_index">
+    <id>Reviews</id>
+    <string>Recensies</string>
+  </message>
+  <message module="admin_index">
+    <id>Check pictures of covers</id>
+    <string>Controleer Covers</string>
+  </message>
+  <message module="admin_index">
+    <id>Print listing</id>
+    <string>Lijst afdrukken</string>
+  </message>
+  <message module="admin_index">
+    <id>Update award table</id>
+    <string>Award Tabel actualiseren</string>
+  </message>
+  <message module="admin_index">
+    <id>Update exchange rates</id>
+    <string>Wisselkoersen actualiseren</string>
+  </message>
+  <message module="admin_index">
+    <id>Update IMDB table</id>
+    <string>IMDB Tabel actualiseren</string>
+  </message>
+  <message module="admin_index">
+    <id>Refresh database</id>
+    <string>Database actualiseren</string>
+  </message>
+  <message module="admin_index">
+    <id>Check translations</id>
+    <string>Contoleer vertalingen</string>
+  </message>
+
+  <message module="admin_passwd">
+    <id>Change the Administrator Password</id>
+    <string>Wijzig Beheerders-Wachtwoord</string>
+  </message>
+  <message module="admin_passwd">
+    <id>Configuration File</id>
+    <string>Configuratie Bestand</string>
+  </message>
+  <message module="admin_passwd">
+    <id>not found.</id>
+    <string>niet gevonden.</string>
+  </message>
+  <message module="admin_passwd">
+    <id>is not writeable.</id>
+    <string>is niet schrijfbaar.</string>
+  </message>
+  <message module="admin_passwd">
+    <id>You must enter a username and a password.</id>
+    <string>U moet een gebruikersnaam en wachtwoord opgeven.</string>
+  </message>
+  <message module="admin_passwd">
+    <id>You must enter a username.</id>
+    <string>U moet een gebruikersnaam opgeven.</string>
+  </message>
+  <message module="admin_passwd">
+    <id>You must enter a password.</id>
+    <string>U moet een wachtwoord opgeven.</string>
+  </message>
+  <message module="admin_passwd">
+    <id>The username or the password is wrong.</id>
+    <string>De gebruikersnaam of het wachtwoord is onjuist.</string>
+  </message>
+  <message module="admin_passwd">
+    <id>You must enter the new username and the new password.</id>
+    <string>U moet een nieuwe gebruikersnaam / wachtwoord opgeven.</string>
+  </message>
+  <message module="admin_passwd">
+    <id>You must enter the new username.</id>
+    <string>U moet een nieuwe gebruikersnaam opgeven.</string>
+  </message>
+  <message module="admin_passwd">
+    <id>You must enter the new password.</id>
+    <string>U moet een nieuw wachtwoord opgeven.</string>
+  </message>
+  <message module="admin_passwd">
+    <id>The new Password do not match.</id>
+    <string>Het nieuwe wachtwoord komt niet overeen.</string>
+  </message>
+  <message module="admin_passwd">
+    <id>Configuration File of Administration</id>
+    <string>Configuratie bestand van de Beheerder</string>
+  </message>
+  <message module="admin_passwd">
+    <id>Generated:</id>
+    <string>Samengesteld:</string>
+  </message>
+  <message module="admin_passwd">
+    <id>An error occurs while writing to</id>
+    <string>Er is een fout opgetreden, bij het opslaan van</string>
+  </message>
+  <message module="admin_passwd">
+    <id>Settings saved.</id>
+    <string>Instelingen opgeslagen.</string>
+  </message>
+  <message module="admin_passwd">
+    <id>Success</id>
+    <string>Succes</string>
+  </message>
+  <message module="admin_passwd">
+    <id>Current Username</id>
+    <string>Actuele Gebruikersnaam</string>
+  </message>
+  <message module="admin_passwd">
+    <id>Current Password</id>
+    <string>Actuele Wachtwoord</string>
+  </message>
+  <message module="admin_passwd">
+    <id>New Username</id>
+    <string>Nieuwe Gebruikersnaam</string>
+  </message>
+  <message module="admin_passwd">
+    <id>New Password</id>
+    <string>Nieuw Wachtwoord</string>
+  </message>
+  <message module="admin_passwd">
+    <id>Retype new Password</id>
+    <string>Nieuw Wachtwoord herhalen</string>
+  </message>
+  <message module="admin_passwd">
+    <id>Save changes</id>
+    <string>Verandering opslaan</string>
+  </message>
+  <message module="admin_passwd">
+    <id>Clear</id>
+    <string>Wissen</string>
+  </message>
+
+  <message module="admin_update">
+    <id>Processing update</id>
+    <string>Update uitvoeren</string>
+  </message>
+  <message module="admin_update">
+    <id>Process update</id>
+    <string>Database update</string>
+  </message>
+  <message module="admin_update">
+    <id>Version database:</id>
+    <string>Versie database:</string>
+  </message>
+  <message module="admin_update">
+    <id>no information available</id>
+    <string>geen informatie beschikbaar</string>
+  </message>
+  <message module="admin_update">
+    <id>latest changes:</id>
+    <string>laatste wijzigingen:</string>
+  </message>
+  <message module="admin_update">
+    <id>Version Update</id>
+    <string>Updateversie</string>
+  </message>
+  <message module="admin_update">
+    <id>Warning</id>
+    <string>Waarschuwing</string>
+  </message>
+  <message module="admin_update">
+    <id>Error</id>
+    <string>Fout</string>
+  </message>
+  <message module="admin_update">
+    <id>Error: The update was not successful!</id>
+    <string>Fout: De Update was niet succesvol!</string>
+  </message>
+  <message module="admin_update">
+    <id>Success. The database is now up-to-date</id>
+    <string>De Update is gelukt. De database is nu actueel</string>
+  </message>
+  <message module="admin_update">
+    <id>Please backup your installation before you proceed!</id>
+    <string>Backup uw installatie a.u.b voordat u verder gaat!</string>
+  </message>
+  <message module="admin_update">
+    <id>Your database is up-to-date</id>
+    <string>Uw database is actueel</string>
+  </message>
+
+  <message module="admin_preferences">
+    <id>Preferences</id>
+    <string>Instellingen</string>
+  </message>
+  <message module="admin_preferences">
+    <id>No write acccess to config.inc.php. Settings not saved.</id>
+    <string>Geen schrijfrechten op config.inc.php. Instellingen konden niet worden opgeslagen.</string>
+  </message>
+  <message module="admin_preferences">
+    <id>Generated:</id>
+    <string>Samengesteld:</string>
+  </message>
+  <message module="admin_preferences">
+    <id>An error occurs while writing to "config.inc.php".</id>
+    <string>Er is een fout opgetreden bij het schrijven naar "config.inc.php".</string>
+  </message>
+  <message module="admin_preferences">
+    <id>Settings saved.</id>
+    <string>Instellingen opgeslagen.</string>
+  </message>
+  <message module="admin_preferences">
+    <id>Reset</id>
+    <string>Herstel</string>
+  </message>
+  <message module="admin_preferences">
+    <id>Save configuration</id>
+    <string>Configuratie opslaan</string>
+  </message>
+
+  <message module="admin_parse">
+    <id>Parse XML file</id>
+    <string>Lees XML-Data in</string>
+  </message>
+  <message module="admin_parse">
+    <id>deleted.</id>
+    <string>verwijderd.</string>
+  </message>
+  <message module="admin_parse">
+    <id>can\'t be deleted.</id>
+    <string>kan niet verwijderd worden.</string>
+  </message>
+  <message module="admin_parse">
+    <id>not found.</id>
+    <string>niet gevonden.</string>
+  </message>
+  <message module="admin_parse">
+    <id>First of all you have to upload the exported XML-file to the xml directory. Also you can compress this file and upload a zip-file with the form of this page.</id>
+    <string>Als eerste moet u het geexporteerde XML-bestand uploaden naar de xml directory. U kunt het geexporteerde bestand ook comprimeren en het gecomprimeerde Zip bestand met dit formulier uploaden.</string>
+  </message>
+  <message module="admin_parse">
+    <id>Parsed Finish</id>
+    <string>Inlezen be&euml;indigd</string>
+  </message>
+  <message module="admin_parse">
+    <id>The Collection was splitted in %split pieces.</id>
+    <string>De collectie werd in %split delen opgesplitst.</string>
+  </message>
+  <message module="admin_parse">
+    <id> Parsed %dvd DVDs in %sec seconds.</id>
+    <string>%dvd DVD's in %sec seconden ingelezen.</string>
+  </message>
+    <message module="admin_parse">
+    <id>Deleted %del unneeded thumbnails.</id>
+    <string>%del niet gebruikte Thumbnails verwijderd.</string>
+  </message>
+  <message module="admin_parse">
+    <id>Parse</id>
+    <string>Inlezen</string>
+  </message>
+  <message module="admin_parse">
+    <id>Term</id>
+    <string>Funktie</string>
+  </message>
+  <message module="admin_parse">
+    <id>Description</id>
+    <string>Beschrijving</string>
+  </message>
+  <message module="admin_parse">
+    <id>Empty the database and parse the XML-file into the database. For parsing the XML-file will be split in pieces. If you have a large amount of DVDs or your web server is a little bit slow, the parsing may fail (timeout-error or blank page). When the parsing fails you can decrease the number of DVDs for every split file on the preferences page. With the current setting phpMyprofiler will split after every %split DVDs.</id>
+    <string>Leegt de database en zal het XML Bestand inlezen in de database. Bij het verwerken wordt het XML bestand opgesplitst in kleinere delen. Wanneer u veel DVD's heeft of wanneer uw web server te langzaam is, kan het inlezen mislukken (timeout-error of blanco pagina). Als het inlezen mislukt kunt u het aantal DVD's voor het opsplitsen kleiner maken op de instellingen pagina. Met de huidige instelling wordt het XML bestand na elke %split DVD's opgesplitst.</string>
+  </message>
+  <message module="admin_parse">
+    <id>Use this to delete uneeded files.</id>
+    <string>gebruik deze funktie om ongebruikte bestanden te verwijderen. </string>
+  </message>
+  <message module="admin_parse">
+    <id>File</id>
+    <string>Bestand</string>
+  </message>
+  <message module="admin_parse">
+    <id>Size</id>
+    <string>Grootte</string>
+  </message>
+  <message module="admin_parse">
+    <id>Byte</id>
+    <string>Byte</string>
+  </message>
+  <message module="admin_parse">
+    <id>Upload compressed (zip or bz2) or uncompressed Collection XML file</id>
+    <string>Upload gecomprimeerd (zip of bz2) of niet-gecomprimeerde Collectie XML-bestand</string>
+  </message>
+  <message module="admin_parse">
+    <id>Upload file</id>
+    <string>Bestand uploaden</string>
+  </message>
+
+  <message module="admin_phpinfo">
+    <id>PHP-Info</id>
+    <string>PHP-Info</string>
+  </message>
+
+  <message module="admin_news">
+    <id>News deleted.</id>
+    <string>Nieuws verwijderd.</string>
+  </message>
+  <message module="admin_news">
+    <id>Title / Text is missing</id>
+    <string>Titel en Text ontbreken!</string>
+  </message>
+  <message module="admin_news">
+    <id>News successfully added.</id>
+    <string>Nieuws succesvol toegevoegd.</string>
+  </message>
+  <message module="admin_news">
+    <id>News successfully edited.</id>
+    <string>Nieuws succesvol bewerkt.</string>
+  </message>
+  <message module="admin_news">
+    <id>No News available.</id>
+    <string>Geen nieuws beschikbaar.</string>
+  </message>
+  <message module="admin_news">
+    <id>Add news</id>
+    <string>Nieuws toevoegen</string>
+  </message>
+  <message module="admin_news">
+    <id>Edit</id>
+    <string>Bewerken</string>
+  </message>
+  <message module="admin_news">
+    <id>Add new news</id>
+    <string>Nieuw nieuwsbericht toevoegen</string>
+  </message>
+  <message module="admin_news">
+    <id>Edit news</id>
+    <string>Nieuws bewerken</string>
+  </message>
+  <message module="admin_news">
+    <id>Apply Changes</id>
+    <string>Veranderingen uitvoeren</string>
+  </message>
+
+  <message module="admin_uploadxml">
+    <id>Upload</id>
+    <string>Upload</string>
+  </message>
+  <message module="admin_uploadxml">
+    <id>The directory xml is not writeable.</id>
+    <string>De XML-directory is niet schrijfbaar.</string>
+  </message>
+  <message module="admin_uploadxml">
+    <id>Can\'t delete compressed collection file</id>
+    <string>Kan het gecomprimeerde collectiebestand niet verwijderen.</string>
+  </message>
+  <message module="admin_uploadxml">
+    <id>Added new Collection.</id>
+    <string>Nieuwe collectie toegevoegd.</string>
+  </message>
+  <message module="admin_uploadxml">
+    <id>Something went wrong.</id>
+    <string>Er is iets fout gegaan.</string>
+  </message>
+  <message module="admin_uploadxml">
+    <id>You need to select a file first!</id>
+    <string>U moet eerst een bestand selecteren!</string>
+  </message>
+  <message module="admin_uploadxml">
+    <id>Error %error encountered: %error_str.</id>
+    <string>Fout %error opgetreden: %error_str.</string>
+  </message>
+  <message module="admin_uploadxml">
+    <id>Unable to decompress collection file.</id>
+    <string>Kan collectie bestand niet decomprimeren.</string>
+  </message>
+
+  <message module="admin_checklang">
+    <id>Translation status</id>
+    <string>Vertalings status</string>
+  </message>
+  <message module="admin_checklang">
+    <id>Choose language to check:</id>
+    <string>Selecteer te controleren taal:</string>
+  </message>
+  <message module="admin_checklang">
+    <id>Detailed overview</id>
+    <string>Gedetailleerd overzicht</string>
+  </message>
+  <message module="admin_checklang">
+    <id>Unused Translations</id>
+    <string>Ongebruikte vertaling</string>
+  </message>
+  <message module="admin_checklang">
+    <id>Missing Translations</id>
+    <string>Ontbrekende vertaling</string>
+  </message>
+  <message module="admin_checklang">
+    <id>Used Translations</id>
+    <string>Gebruikte vertaling</string>
+  </message>
+
+  <message module="admin_updateawards">
+    <id>Update Awards</id>
+    <string>Film-awards actualiseren</string>
+  </message>
+  <message module="admin_updateawards">
+    <id>parsed.</id>
+    <string>ingelezen.</string>
+  </message>
+  <message module="admin_updateawards">
+    <id>First of all you have to upload an award file to the award directory.</id>
+    <string>U moet eerst een award bestand uploaden naar de award directory.</string>
+  </message>
+  <message module="admin_updateawards">
+    <id>upload award file</id>
+    <string>upload award bestand</string>
+  </message>
+  <message module="admin_updateawards">
+    <id>Parse file into awards table.</id>
+    <string>Data in de Database inlezen.</string>
+  </message>
+  <message module="admin_updateawards">
+    <id>Upload compressed (zip or bz2) or uncompressed award file</id>
+    <string>Upload gecomprimeerd (zip of bz2) of niet-gecomprimeerde bestand award</string>
+  </message>
+
+  <message module="admin_uploadaward">
+    <id>Upload Awards</id>
+    <string>Upload Awards</string>
+  </message>
+  <message module="admin_uploadaward">
+    <id>Added new award file.</id>
+    <string>Nieuw Award-bestand toegevoegd.</string>
+  </message>
+  <message module="admin_uploadaward">
+    <id>Wrong file type!</id>
+    <string>Verkeerd bestandstype!</string>
+  </message>
+  <message module="admin_uploadaward">
+    <id>Upload failed!</id>
+    <string>Upload mislukt!</string>
+  </message>
+  <message module="admin_uploadaward">
+    <id>Error No:</id>
+    <string>Fout Nummer:</string>
+  </message>
+  <message module="admin_uploadaward">
+    <id>The directory awards is not writeable.</id>
+    <string>De Awards-directory is niet schrijfbaar.</string>
+  </message>
+  <message module="admin_uploadaward">
+    <id>Unable to decompress award file.</id>
+    <string>Kan award bestand niet decomprimeren.</string>
+  </message>
+
+  <message module="admin_pictures">
+    <id>Photos</id>
+    <string>Foto's</string>
+  </message>
+  <message module="admin_pictures">
+    <id>The picture was successfully removed.</id>
+    <string>De afbeelding is succesvol verwijderd.</string>
+  </message>
+  <message module="admin_pictures">
+    <id>Filename is wrong and can't be used. New Filename generated.</id>
+    <string>Bestandsnaam is fout en kan niet worden gebruikt. Nieuwe bestandsnaam gegenereerd.</string>
+  </message>
+  <message module="admin_pictures">
+    <id>Added a new picture.</id>
+    <string>Nieuwe afbeelding toegevoegd.</string>
+  </message>
+  <message module="admin_pictures">
+    <id>File exists.</id>
+    <string>Bestaand bestand.</string>
+  </message>
+  <message module="admin_pictures">
+    <id>Can't identify file type</id>
+    <string>Kan bestands type niet identificeren.</string>
+  </message>
+  <message module="admin_pictures">
+    <id>Upload pictures</id>
+    <string>Afbeeldingen uploaden</string>
+  </message>
+  <message module="admin_pictures">
+    <id>Filename</id>
+    <string>Bestandsnaam</string>
+  </message>
+  <message module="admin_pictures">
+    <id>Upload picture</id>
+    <string>Afbeelding uploaden</string>
+  </message>
+  <message module="admin_pictures">
+    <id>Dimension</id>
+    <string>Verhouding</string>
+  </message>
+  <message module="admin_pictures">
+    <id>The directory pictures is not writeable.</id>
+    <string>De directory "pictures" is niet schrijfbaar.</string>
+  </message>
+  <message module="admin_pictures">
+    <id>Can not move file from tmp into pictures dir.</id>
+    <string>Kan de data uit de "tmp" directory niet verplaatsen naar de "pictures" directory</string>
+  </message>
+
+  <message module="admin_guestbook">
+    <id>Guestbook entry deleted.</id>
+    <string>Bericht verwijderd uit gastenboek.</string>
+  </message>
+  <message module="admin_guestbook">
+    <id>Guestbook entry activated.</id>
+    <string>Bericht uit gastenboek geactiveerd.</string>
+  </message>
+  <message module="admin_guestbook">
+    <id>Comment changed.</id>
+    <string>Commentaar gewijzigd.</string>
+  </message>
+  <message module="admin_guestbook">
+    <id>All Guestbook entries activated.</id>
+    <string>Alle berichten uit het gastenboek geactiveerd.</string>
+  </message>
+  <message module="admin_guestbook">
+    <id>Pending guestbook entries</id>
+    <string>Niet geactiveerde berichten in het gastenboek</string>
+  </message>
+  <message module="admin_guestbook">
+    <id>Activate all guestbook entries</id>
+    <string>Alle berichten in het gastenboek activeren</string>
+  </message>
+  <message module="admin_guestbook">
+    <id>OK</id>
+    <string>OK</string>
+  </message>
+  <message module="admin_guestbook">
+    <id>There are no pending guestbook entries.</id>
+    <string>Er wachten geen gastenboek bijdragen op activering.</string>
+  </message>
+  <message module="admin_guestbook">
+    <id>Active guestbook entries</id>
+    <string>Active gastebboek bijdragen</string>
+  </message>
+  <message module="admin_guestbook">
+    <id>There are no active guestbook entries.</id>
+    <string>Er zijn geen active gastenboek bijdragen.</string>
+  </message>
+
+  <message module="admin_login">
+    <id>Logon</id>
+    <string>Login</string>
+  </message>
+  <message module="admin_login">
+    <id>Username</id>
+    <string>Gebruikernaam</string>
+  </message>
+  <message module="admin_login">
+    <id>Password</id>
+    <string>Wachtwoord</string>
+  </message>
+  <message module="admin_login">
+    <id>Login</id>
+    <string>Inloggen</string>
+  </message>
+  <message module="admin_login">
+    <id>Use a valid username and password to gain access to the administration console.</id>
+    <string>Gebruik een geldige gebruikersnaam en wachtwoord voor de toegang tot de beheerders console.</string>
+  </message>
+
+  <message module="admin_updateimdb">
+    <id>IMDB table updated.</id>
+    <string>IMDB Tabel geactualiceerd.</string>
+  </message>
+  <message module="admin_updateimdb">
+    <id>This feature takes a lot time and need access to remote files. Not every server satisfy this requirements.</id>
+    <string>Deze funktie gebruikt veel tijd en heeft externe bestands toegang nodig. Niet iedere server voldoet aan deze eisen.</string>
+  </message>
+  <message module="admin_updateimdb">
+    <id>Click here to update your IMDB table.</id>
+    <string>Klik hier om de IMDB tabel te actualiseren.</string>
+  </message>
+  <message module="admin_updateimdb">
+    <id>Click here to create IMDB Top 250 Tags.</id>
+    <string>Klik hier om de IMDB Top 250 Labels te cre&euml;ren</string>
+  </message>
+  <message module="admin_updateimdb">
+    <id>Tags table updated.</id>
+    <string>Labels zijn actueel.</string>
+  </message>
+
+  <message module="header">
+     <id>Logout</id>
+    <string>Afmelden</string>
+  </message>
+  <message module="header">
+    <id>Back to Cover overview</id>
+    <string>Terug naar cover overzicht</string>
+  </message>
+  <message module="header">
+    <id>Back to headshots</id>
+    <string>Terug naar pasfotos</string>
+  </message>
+  <message module="header">
+    <id>Back to the News</id>
+    <string>Terug naar nieuws</string>
+  </message>
+  <message module="header">
+    <id>Back to admin menu</id>
+    <string>Terug naar beheerders console</string>
+  </message>
+  <message module="header">
+    <id>Back to parsing menu...</id>
+    <string>Terug naar verwerkings menu...</string>
+  </message>
+  <message module="header">
+    <id>Back to award menu...</id>
+    <string>Terug naar award menu...</string>
+  </message>
+  <message module="header">
+    <id>Close</id>
+    <string>Sluiten</string>
+  </message>
+
+  <message module="options">
+    <id>Main settings</id>
+    <string>Hoofd Instellingen</string>
+  </message>
+  <message module="options">
+    <id>Database server</id>
+    <string>Database server</string>
+  </message>
+  <message module="options">
+    <id>Database user</id>
+    <string>Database gebruiker</string>
+  </message>
+  <message module="options">
+    <id>Database password</id>
+    <string>Database wachtwoord</string>
+  </message>
+  <message module="options">
+    <id>Database name</id>
+    <string>Database naam</string>
+  </message>
+  <message module="options">
+    <id>Table prefix</id>
+    <string>Tabel prefix</string>
+  </message>
+  <message module="options">
+    <id>URL to phpMyprofiler</id>
+    <string>URL naar phpmyProfiler</string>
+  </message>
+  <message module="options">
+    <id>e.g. http://www.example.com/pmp (without / at the end!)</id>
+    <string>Bijv. http://www.voorbeeld.nl/pmp (zonder / aan het eind!)</string>
+  </message>
+  <message module="options">
+    <id>Basic settings</id>
+    <string>Basis Instellingen</string>
+  </message>
+  <message module="options">
+    <id>Administrator's name</id>
+    <string>Naam van de beheerder</string>
+  </message>
+  <message module="options">
+    <id>Administrator's Email</id>
+    <string>E-mail van de beheerder</string>
+  </message>
+  <message module="options">
+    <id>Page title</id>
+    <string>Paginatitel</string>
+  </message>
+  <message module="options">
+    <id>Cache templates</id>
+    <string>Cache templates</string>
+  </message>
+  <message module="options">
+    <id>Cache templates in cache directory (must be writeable). This will speed up your phpMyProfiler a lot, but you will need som additional webspace for the chached templates.</id>
+    <string>Cache templates in cache directory (moet schrijfbaar zijn). Dit komt de snelheid van phpMyProfiler sterk ten goede, maar zal wel meer ruimte op de webserver kosten.</string>
+  </message>
+  <message module="options">
+    <id>Cache lifetime</id>
+    <string>Cache levensduur</string>
+  </message>
+  <message module="options">
+    <id>Lifetime of a cached template. After this time the template will rendered new. When parsing a new collection, the cache is flushed automatically, so using unlimited should be no problem.</id>
+    <string>Levensduur van de cached template. Na deze tijd wordt de template opnieuw opgebouwd. Wanneer u een nieuwe collectie inleest wordt de cache automatisch geleegd, daarom kunt u gerust "ongelimiteerd" gebruiken.</string>
+  </message>
+  <message module="options">
+    <id>Check for updates</id>
+    <string>Op updates controleren</string>
+  </message>
+  <message module="options">
+    <id>Contact www.phpmyprofiler.de when entering the admin-menu and check if a new version is available.</id>
+    <string>Maak contact met "www.phpmyprofiler.de" om te controleren of er updates zijn wanneer u het beheer-menu oproept.</string>
+  </message>
+  <message module="options">
+    <id>Imprint</id>
+    <string>Adres collectie eigenaar</string>
+  </message>
+  <message module="options">
+    <id>Show imprint?</id>
+    <string>Adres van eigenaar tonen?</string>
+  </message>
+  <message module="options">
+    <id>If you you choose no, you can skip this category.</id>
+    <string>Wanneer u "Nee" selecteerd kunt u deze categorie overslaan.</string>
+  </message>
+  <message module="options">
+    <id>Full name</id>
+    <string>Voor- en Achternaam</string>
+  </message>
+  <message module="options">
+    <id>Place of residence</id>
+    <string>Woonplaats</string>
+  </message>
+  <message module="options">
+    <id>Zip code</id>
+    <string>Postcode</string>
+  </message>
+  <message module="options">
+    <id>Adress</id>
+    <string>Straat / huisnummer</string>
+  </message>
+  <message module="options">
+    <id>Language settings</id>
+    <string>Taal Instellingen</string>
+  </message>
+  <message module="options">
+    <id>Default language</id>
+    <string>Standaard taal</string>
+  </message>
+  <message module="options">
+    <id>Date format</id>
+    <string>Datum formaat</string>
+  </message>
+  <message module="options">
+    <id>MM/DD/YY</id>
+    <string>MM/DD/JJ</string>
+  </message>
+  <message module="options">
+    <id>DD.MM.YYYY</id>
+    <string>DD.MM.JJJJ</string>
+  </message>
+  <message module="options">
+    <id>YYYY-MM-DD</id>
+    <string>JJJJ-MM-DD</string>
+  </message>
+  <message module="options">
+    <id>Preferred currency</id>
+    <string>Voorkeurs valuta</string>
+  </message>
+  <message module="options">
+    <id>Decimal point</id>
+    <string>Decimalen</string>
+  </message>
+  <message module="options">
+    <id>point</id>
+    <string>Punt</string>
+  </message>
+  <message module="options">
+    <id>comma</id>
+    <string>Comma</string>
+  </message>
+  <message module="options">
+    <id>Thousands seperator</id>
+    <string>Scheidingsteken voor duizendtallen</string>
+  </message>
+  <message module="options">
+    <id>Timezone</id>
+    <string>Tijdzone</string>
+  </message>
+  <message module="options">
+    <id>Parser settings</id>
+    <string>Verwerkings Instellingen</string>
+  </message>
+  <message module="options">
+    <id>Split collection after x DVDs</id>
+    <string>Splits collectie na x DVD's.</string>
+  </message>
+  <message module="options">
+    <id>If your server is too slow to parse all dvds at once (timeout error occurs), you can split the file into smaller pieces.</id>
+    <string>Als uw server te langzaam is om uw hele collectie ineens in te lezen (timeout fouten), kunt u het bestand in kleinere delen opsplitsen.</string>
+  </message>
+  <message module="options">
+    <id>Graphic settings</id>
+    <string>Grafiek Instellingen</string>
+  </message>
+  <message module="options">
+    <id>Use graphic funtions</id>
+    <string>Gebruik grafiek funkties</string>
+  </message>
+  <message module="options">
+    <id>Set to yes, if GD-Libs are installed</id>
+    <string>Sellecteer "Ja" wanneer de GD-Bibliotheken geinstalleert zijn</string>
+  </message>
+  <message module="options">
+    <id>Yes</id>
+    <string>Ja</string>
+  </message>
+  <message module="options">
+    <id>No</id>
+    <string>Nee</string>
+  </message>
+  <message module="options">
+    <id>Cache thumbnails</id>
+    <string>Cache thumbnails</string>
+  </message>
+  <message module="options">
+    <id>Cached thumbnails in cache directory (must be writeable). This will speed up your phpMyProfiler but you will need some additional webspace for the thumbnails.</id>
+    <string>Cache thumbnails in cache directory (moet schrijfbaar zijn). Dit komt de snelheid van phpMyProfiler sterk ten goede, maar zal wel meer ruimte op de webserver kosten..</string>
+  </message>
+  <message module="options">
+    <id>Use true type fonts in graphs</id>
+    <string>Gebruik True-Type lettertypes in de grafieken.</string>
+  </message>
+  <message module="options">
+    <id>You need to use true type fonts for languages with special characters (eg. Norwegian &Oslash;)</id>
+    <string>U moet True-Type lettertypes gebruiken wanneer een taal gebruikt met speciale karakters (Bijv. de Noorse &Oslash;)</string>
+  </message>
+  <message module="options">
+    <id>Display settings</id>
+    <string>Weergave Instellingen</string>
+  </message>
+  <message module="options">
+    <id>Theme</id>
+    <string>Thema</string>
+  </message>
+  <message module="options">
+    <id>default</id>
+    <string>standaard</string>
+  </message>
+  <message module="options">
+    <id>Number of DVDs at start page</id>
+    <string>Aantal DVD's op de startpagina</string>
+  </message>
+  <message module="options">
+    <id>Number of DVDs in DVD list per page</id>
+    <string>Aantal DVD's per pagina in de DVD-lijst</string>
+  </message>
+  <message module="options">
+    <id>Number of entries in guestbook per page</id>
+    <string>Aantal bijdragen per pagina in het gastenboek</string>
+  </message>
+  <message module="options">
+    <id>Number of photos in photo gallery per page</id>
+    <string>Aantal foto's per pagina in fotogallerij</string>
+  </message>
+  <message module="options">
+    <id>Number of news in news archive per page</id>
+    <string>Aantal nieuwsberichten per pagina in het nieuws archief</string>
+  </message>
+  <message module="options">
+    <id>Number of covers in cover gallery per page</id>
+    <string>Aantal covers per pagina in de covergallerij</string>
+  </message>
+  <message module="options">
+    <id>Number of covers in cover gallery per line</id>
+    <string>Aantal covers per rij in de covergallerij</string>
+  </message>
+  <message module="options">
+    <id>Number of pictures in person gallery per line</id>
+    <string>Aantal afbeeldingen per rij in de Cast &amp; Crew gallerij</string>
+  </message>
+  <message module="options">
+    <id>Number of pictures in person gallery per page</id>
+    <string>Aantal afbeeldingen per pagina in de Cast &amp; Crew gallerij</string>
+  </message>
+  <message module="options">
+    <id>Show time information on event page</id>
+    <string>Toon tijd op de uitleen statuspagina</string>
+  </message>
+  <message module="options">
+    <id>Use HTML-Code in notices</id>
+    <string>Gebruik HTML-Code in Berichten</string>
+  </message>
+  <message module="options">
+    <id>Show HD banner</id>
+    <string>Toon HD Banner</string>
+  </message>
+  <message module="options">
+    <id>Will only work if GD-Libs are enabled</id>
+    <string>Werkt alleen wanneer de GD-Bibliotheken geactiveerd zijn</string>
+  </message>
+  <message module="options">
+    <id>Activate external reviews</id>
+    <string>Activeer externe recensies</string>
+  </message>
+  <message module="options">
+    <id>Exclude tag</id>
+    <string>Exclusief tag</string>
+  </message>
+  <message module="options">
+    <id>Don't show media with this selected tag</id>
+    <string>Toon geen media met deze geselecteerde tag</string>
+  </message>
+  <message module="options">
+    <id>Show media type before title</id>
+    <string>Toon media type voor titel</string>
+  </message>
+  <message module="options">
+    <id>Disable newsarchive</id>
+    <string>Uitschakelen nieuwsarchief</string>
+  </message>
+  <message module="options">
+    <id>Disable guestbook</id>
+    <string>Uitschakelen gastenboek</string>
+  </message>
+  <message module="options">
+    <id>Disable contact</id>
+    <string>Uitschakelen contact</string>
+  </message>
+  <message module="options">
+    <id>Disable phpMyProfiler website and forum links</id>
+    <string>Uitschakelen phpMyProfiler website en forum links</string>
+  </message>
+  <message module="options">
+    <id>Disable reviews</id>
+    <string>Uitschakelen beoordelingen</string>
+  </message>
+  <message module="options">
+    <id>Other settings</id>
+    <string>Overige Instellingen</string>
+  </message>
+  <message module="options">
+    <id>Activate guestbooks entries automatically</id>
+    <string>Activeer gastenboek bijdragen automatisch</string>
+  </message>
+  <message module="options">
+    <id>Use security code in guestbook</id>
+    <string>Gebruik veiligheidscode in gastenboek</string>
+  </message>
+  <message module="options">
+    <id>Activate reviews automatically</id>
+    <string>Activeer recensies automatisch</string>
+  </message>
+  <message module="options">
+    <id>Sort order of latest DVDs</id>
+    <string>Sorteer volgorde laatste DVD's</string>
+  </message>
+  <message module="options">
+    <id>Date of purchase</id>
+    <string>Datum van aankoop</string>
+  </message>
+  <message module="options">
+    <id>Number</id>
+    <string>Nummer</string>
+  </message>
+  <message module="options">
+    <id>Show price informations in statistics</id>
+    <string>Toon prijsinformatie in statestieken</string>
+  </message>
+  <message module="options">
+    <id>Relative path to cast directory</id>
+    <string>Relatief pad naar cast-directory</string>
+  </message>
+  <message module="options">
+    <id>Change this value only if you know what your are doing.</id>
+    <string>Verander deze waarde alleen wanneer u weet wat u doet.</string>
+  </message>
+  <message module="options">
+    <id>Enable Google Analytics</id>
+    <string>Gebruik Google Analytics</string>
+  </message>
+  <message module="options">
+    <id>Google Analytics Tracking Code</id>
+    <string>Google Analytics Tracking Code</string>
+  </message>
+  <message module="options">
+    <id>Turn on gzip output buffer</id>
+    <string>Zet gzip output buffer aan</string>
+  </message>
+  <message module="options">
+    <id>DVD-List</id>
+    <string>DVD-Lijst</string>
+  </message>
+  <message module="options">
+    <id>Default sort order</id>
+    <string>Standaard sortering - Volgorde</string>
+  </message>
+  <message module="options">
+    <id>Default sort order direction</id>
+    <string>Standaard sortering - Richting</string>
+  </message>
+  <message module="options">
+    <id>Movie Title</id>
+    <string>Filmtitel</string>
+  </message>
+  <message module="options">
+    <id>Year</id>
+    <string>Jaar</string>
+  </message>
+  <message module="options">
+    <id>Nr.</id>
+    <string>Nr.</string>
+  </message>
+  <message module="options">
+    <id>Length</id>
+    <string>Speelduur</string>
+  </message>
+  <message module="options">
+    <id>Price</id>
+    <string>Prijs</string>
+  </message>
+  <message module="options">
+    <id>Place of purchase</id>
+    <string>Gekocht bij</string>
+  </message>
+  <message module="options">
+    <id>Origin</id>
+    <string>Herkomst</string>
+  </message>
+  <message module="options">
+    <id>Media</id>
+    <string>Media</string>
+  </message>
+  <message module="options">
+    <id>Default sort order of child profiles</id>
+    <string>Standaard sorteervolgorde van kind profielen</string>
+  </message>
+  <message module="options">
+    <id>Show sequential number</id>
+    <string>Toon volgnummer</string>
+  </message>
+  <message module="options">
+    <id>Column 1</id>
+    <string>Kolom 1</string>
+  </message>
+  <message module="options">
+    <id>Hide column 1 also hide the "+" before Boxsets and the films are not clickable.</id>
+    <string>Verbergen van kolom 1 verbergt ook de "+" voor Boxsets deze Films zijn dan niet meer klikbaar.</string>
+  </message>
+  <message module="options">
+    <id>Column 2</id>
+    <string>Kolom 2</string>
+  </message>
+  <message module="options">
+    <id>Column 3</id>
+    <string>Kolom 3</string>
+  </message>
+  <message module="options">
+    <id>Column 4</id>
+    <string>Kolom 4</string>
+  </message>
+  <message module="options">
+    <id>Column 5</id>
+    <string>Kolom 5</string>
+  </message>
+  <message module="options">
+    <id>Column 6</id>
+    <string>Kolom 6</string>
+  </message>
+  <message module="options">
+    <id>1 hour</id>
+    <string>1 uur</string>
+  </message>
+  <message module="options">
+    <id>2 hours</id>
+    <string>2 uur</string>
+  </message>
+  <message module="options">
+    <id>3 hours</id>
+    <string>3 uur</string>
+  </message>
+  <message module="options">
+    <id>12 hours</id>
+    <string>12 uur</string>
+  </message>
+  <message module="options">
+    <id>24 hours</id>
+    <string>24 uur</string>
+  </message>
+  <message module="options">
+    <id>unlimited</id>
+    <string>Ongelimiteerd</string>
+  </message>
+  <message module="options">
+    <id>Possible values:</id>
+    <string>Mogelijke waarden:</string>
+  </message>
+  <message module="options">
+    <id>empty</id>
+    <string>Leeg</string>
+  </message>
+
+  <message module="install">
+    <id>Pre-Installation Check</id>
+    <string>Pre-Installatie Check</string>
+  </message>
+  <message module="install">
+    <id>Step 1</id>
+    <string>Stap 1</string>
+  </message>
+  <message module="install">
+    <id>Step 2</id>
+    <string>Stap 2</string>
+  </message>
+  <message module="install">
+    <id>Step 3</id>
+    <string>Stap 3</string>
+  </message>
+  <message module="install">
+    <id>Frontpage</id>
+    <string>Startpagina</string>
+  </message>
+  <message module="install">
+    <id>Available</id>
+    <string>Beschikbaar</string>
+  </message>
+  <message module="install">
+    <id>Unavailable</id>
+    <string>Niet beschikbaar</string>
+  </message>
+  <message module="install">
+    <id>Requirements</id>
+    <string>Systeemeisen</string>
+  </message>
+  <message module="install">
+    <id>Writeable</id>
+    <string>Schrijfbaar</string>
+  </message>
+  <message module="install">
+    <id>Unwriteable</id>
+    <string>Onschrijfbaar</string>
+  </message>
+  <message module="install">
+    <id>Finish</id>
+    <string>Einde</string>
+  </message>
+  <message module="install">
+    <id>To install phpMyProfiler you must have this requirements.</id>
+    <string>Om phpMyProfiler te installeren heeft u de volgende systeemeisen nodig.</string>
+  </message>
+  <message module="install">
+    <id>Directory and File Permissions</id>
+    <string>Bestands en directory rechten</string>
+  </message>
+  <message module="install">
+    <id>This folders/files must be writeable to install phpMyProfiler.</id>
+    <string>Deze mappem/bestanden moeten schrijfbaar zijn om phMyProfiler te installeren.</string>
+  </message>
+  <message module="install">
+    <id>Check Again</id>
+    <string>Check nogmaals</string>
+  </message>
+  <message module="install">
+    <id>Next</id>
+    <string>Volgende</string>
+  </message>
+  <message module="install">
+    <id>If some requirements are not available and colored red, the installation will not start.</id>
+    <string>Wanneer sommige systeemonderdelen niet beschikbaar en rood gekleurd zijn zal de installatie niet starten.</string>
+  </message>
+  <message module="install">
+    <id>When its colored orange, the installation will starts but not all functions are available.</id>
+    <string>Wanneer het oranje is gekleurd zal de installatie wel starten, maar niet alle funkties zullen dan beschikbaar zijn.</string>
+  </message>
+  <message module="install">
+    <id>The Installation has finished. For your security, you must delete the folder "installation".</id>
+    <string>De Installatie is be&euml;indigd. Voor uw veiligheid moet u de map "installation" verwijderen.</string>
+  </message>
+  <message module="install">
+    <id>Wrong access data for MySQL Database.</id>
+    <string>Foutieve toegangs gegevens voor de MySQL Database.</string>
+  </message>
+  <message module="install">
+    <id>Please enter the access data to the MySQL database.</id>
+    <string>Geeft u a.u.b de toegangs gegevens voor de MySQL Database.</string>
+  </message>
+  <message module="install">
+    <id>The Password do not match.</id>
+    <string>Het wachtwoord komt niet overeen.</string>
+  </message>
+  <message module="install">
+    <id>Retype Password</id>
+    <string>Wachtwoord opnieuw invoeren</string>
+  </message>
+  <message module="install">
+    <id>Password for Administration</id>
+    <string>Wachtwoord voor beheer</string>
+  </message>
+  <message module="install">
+    <id>Create phpMyProfiler Database</id>
+    <string>Cre&euml;er phpMyProfiler Database</string>
+  </message>
+  <message module="install">
+    <id>Unable to connect to database.</id>
+    <string>Onmogelijk om connectie met de database te maken.</string>
+  </message>
+  <message module="install">
+    <id>Connection to database established.</id>
+    <string>Connectie met de database gelukt.</string>
+  </message>
+  <message module="install">
+    <id>Can't select database. Trying to create...</id>
+    <string>Kan database niet selecteren. Probeer te cre&euml;ren...</string>
+  </message>
+  <message module="install">
+    <id>Can't create database.</id>
+    <string>Kan database niet cre&euml;ren.</string>
+  </message>
+  <message module="install">
+    <id>Database created.</id>
+    <string>Database gecre&euml;erd.</string>
+  </message>
+  <message module="install">
+    <id>Connected to existing database.</id>
+    <string>Verbonden met bestaande database.</string>
+  </message>
+  <message module="install">
+    <id>Start Creating tables.</id>
+    <string>Start met cre&euml;ren van tabellen.</string>
+  </message>
+  <message module="install">
+    <id>Tables created successfully.</id>
+    <string>Tabelen succesvol gecre&euml;erd.</string>
+  </message>
+  <message module="install">
+    <id>Starting importing data</id>
+    <string>Start met importeren van de data</string>
+  </message>
+  <message module="install">
+    <id>Data imported successfully.</id>
+    <string>Data succesvol ge&iuml;mporteerd.</string>
+  </message>
+  <message module="install">
+    <id>Installation finished</id>
+    <string>Installatie be&euml;indigd.</string>
+  </message>
+  <message module="install">
+    <id>Installation halted, check your Configuration.</id>
+    <string>Installatie onderbroken, controleer uw configuratie.</string>
+  </message>
+
+</locale>

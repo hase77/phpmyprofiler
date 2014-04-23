@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Update>
+	<id>16</id>
+	<Date>05.02.2014</Date>
+	<Author>Rincewind</Author>
+	<Description>Add title index</Description>
+	<ExecSQL>ALTER TABLE `pmp_film` DROP INDEX `title`</ExECSQL>
+	<ExecSQL>ALTER TABLE `pmp_film` ADD INDEX `idx_film_title` (`title`)</ExECSQL>
+</Update>

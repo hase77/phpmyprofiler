@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Update>
+	<id>12</id>
+	<Date>10.06.2012</Date>
+	<Author>Whistler</Author>
+	<Description>Moved users to pmp_users table</Description>
+	<ExecSQL>CREATE TABLE IF NOT EXISTS `pmp_users` ( `user_id` mediumint PRIMARY KEY AUTO_INCREMENT, `firstname` varchar(30), `lastname` varchar(30), `email` varchar(65), `phone` varchar(20), INDEX `idx_users_fullname` (`firstname`, `lastname`) ) ENGINE=MyISAM  DEFAULT CHARSET=utf8</ExecSQL>
+	<ExecSQL>INSERT INTO `pmp_users` (`firstname`, `lastname`, `email`, `phone`) SELECT DISTINCT `firstname`, `lastname`, `email`, `phone` FROM `pmp_events`</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_events` ADD `user_id` mediumint AFTER `note`</ExecSQL>
+	<ExecSQL>UPDATE `pmp_events`, `pmp_users` SET `pmp_events`.`user_id` = `pmp_users`.`user_id` WHERE `pmp_events`.`firstname` = `pmp_users`.`firstname` AND `pmp_events`.`lastname` = `pmp_users`.`lastname` AND `pmp_events`.`email` = `pmp_users`.`email` AND `pmp_events`.`phone` = `pmp_users`.`phone`</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_events` DROP `firstname`, DROP `lastname`, DROP `email`, DROP `phone`</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_film` ADD `loanedto_user_id` mediumint AFTER `loaneddue`, ADD `gift` boolean DEFAULT false AFTER `purchdate`, ADD `giftfrom` mediumint AFTER `gift`</ExecSQL>
+	<ExecSQL>UPDATE `pmp_film`, `pmp_users` SET `loanedto_user_id` = `user_id` WHERE `pmp_film`.`loanedto` = `pmp_users`.`firstname` OR `pmp_film`.`loanedto` = `pmp_users`.`lastname` OR `pmp_film`.`loanedto` = CONCAT(`pmp_users`.`firstname`,' ',`pmp_users`.`lastname`)</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_film` DROP `loanedto`</ExecSQL>
+	<ExecSQL>ALTER TABLE `pmp_film` CHANGE `loanedto_user_id` `loanedto` mediumint</ExecSQL>
+</Update>
