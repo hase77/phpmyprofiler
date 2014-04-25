@@ -25,20 +25,6 @@ require_once('../config.inc.php');
 
 $pmp_rel_path = '..';
 
-function entenc($text){
-	// This is needed for german umlauts
-	$res = '';
-	for ($i = 0; $i < strlen($text); $i++) {
-		$cc = ord($text{$i});
-		if ($cc >= 128 || $cc == 38) {
-			$res .= "&#$cc;";
-		} else {
-			$res .= chr($cc);
-		}
-	}
-	return $res;
-}
-
 function thumb($id) {
 	// Taken from thumbnail.php with minor changes
 	global $pmp_rel_path, $pmp_thumbnail_cache, $pmp_theme;
@@ -139,7 +125,6 @@ function buildBanner($sql, $title, $prefix) {
 	$font = "../include/font/arial.ttf";
 	$filename = '../cache/'.$prefix.'_banner.png';
 
-
 	// Getting info from database
 	$result = dbexec($sql);
 	$rows = mysql_num_rows($result);
@@ -173,7 +158,7 @@ function buildBanner($sql, $title, $prefix) {
 	}
 
 	// Creating text
-	$title = entenc(html_entity_decode($title));
+	$title = html_entity_decode($title, ENT_COMPAT, 'UTF-8');
 	$color = imagecolorallocate($dst_img, 255, 255, 255);
 	$the_box = calculateTextBox($title, $font, 11, 0); 
 	imagettftext($dst_img, 11, 0,
