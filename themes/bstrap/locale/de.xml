@@ -1,0 +1,4501 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE locale [
+    <!ELEMENT locale (message*)>
+    <!ATTLIST locale
+    	lang CDATA #REQUIRED
+    >
+    <!ELEMENT message (id, string)>
+    <!ATTLIST message
+    	module CDATA #REQUIRED
+    >
+    <!ELEMENT id (#PCDATA)>
+    <!ELEMENT string (#PCDATA)>
+    <!ENTITY auml "&amp;auml;">
+    <!ENTITY ouml "&amp;ouml;">
+    <!ENTITY uuml "&amp;uuml;">
+    <!ENTITY Auml "&amp;Auml;">
+    <!ENTITY Ouml "&amp;Ouml;">
+    <!ENTITY Uuml "&amp;Uuml;">
+    <!ENTITY szlig "&amp;szlig;">
+    <!ENTITY Oslash "&amp;Oslash;">
+]>
+<locale lang="de">
+
+	<message module="search_person">
+		<id>Person Details</id>
+		<string>Personen Details</string>
+	</message>
+	<message module="search_person">
+		<id>Searched for</id>
+		<string>Suche nach</string>
+	</message>
+	<message module="search_person">
+		<id>records found in this DVD Collection</id>
+		<string>Ergebnis(se) in dieser DVD Sammlung gefunden</string>
+	</message>
+	<message module="search_person">
+		<id>IMDB Search</id>
+		<string>IMDB-Suche</string>
+	</message>
+	<message module="search_person">
+		<id>Wikipedia Search</id>
+		<string>Wikipedia-Suche</string>
+	</message>
+	<message module="search_person">
+		<id>OFDB Search</id>
+		<string>OFDB-Suche</string>
+	</message>
+	<message module="search_person">
+		<id>as</id>
+		<string>als</string>
+	</message>
+	<message module="search_person">
+		<id>in</id>
+		<string>in</string>
+	</message>
+	<message module="search_person">
+		<id>episodes</id>
+		<string>Episoden</string>
+	</message>
+
+
+	<message module="search">
+		<id>Search DVD Collection</id>
+		<string>Durchsuche DVD Sammlung</string>
+	</message>
+	<message module="search">
+		<id>Find Movie</id>
+		<string>Filmsuche</string>
+	</message>
+	<message module="search">
+		<id>Search for Movie</id>
+		<string>Suche nach Film</string>
+	</message>
+	<message module="search">
+		<id>Find Person</id>
+		<string>Personensuche</string>
+	</message>
+	<message module="search">
+		<id>Search for Person</id>
+		<string>Suche nach Person</string>
+	</message>
+	<message module="search">
+		<id>Add Filters</id>
+		<string>Filter
+			hinzuf&uuml;gen
+		</string>
+	</message>
+	<message module="search">
+		<id>Genre</id>
+		<string>Genre</string>
+	</message>
+	<message module="search">
+		<id>Media Type</id>
+		<string>Medien Typ</string>
+	</message>
+	<message module="search">
+		<id>please select</id>
+		<string>Bitte
+			w&auml;hlen
+		</string>
+	</message>
+	<message module="search">
+		<id>Studio</id>
+		<string>Studio</string>
+	</message>
+	<message module="search">
+		<id>Media Company</id>
+		<string>Vertrieb</string>
+	</message>
+	<message module="search">
+		<id>Tag</id>
+		<string>Tag</string>
+	</message>
+	<message module="search">
+		<id>Audio Language</id>
+		<string>Audiosprache</string>
+	</message>
+	<message module="search">
+		<id>Region Code</id>
+		<string>Regionalcode</string>
+	</message>
+	<message module="search">
+		<id>Remove all filters</id>
+		<string>Alle Filter entfernen</string>
+	</message>
+
+	<message module="start">
+		<id>Summary</id>
+		<string>&Uuml;bersicht
+		</string>
+	</message>
+	<message module="start">
+		<id>News</id>
+		<string>Neuigkeiten</string>
+	</message>
+	<message module="start">
+		<id>The %c latest DVDs</id>
+		<string>
+			Die letzten %c Neuzug&auml;nge
+		</string>
+	</message>
+	<message module="start">
+		<id>Cover</id>
+		<string>Cover</string>
+	</message>
+	<message module="start">
+		<id>Movie Information</id>
+		<string>Filminformationen</string>
+	</message>
+	<message module="start">
+		<id>Purchase Information</id>
+		<string>Kaufinformationen</string>
+	</message>
+	<message module="start">
+		<id>Year of Production</id>
+		<string>Produktionsjahr</string>
+	</message>
+	<message module="start">
+		<id>Running Time</id>
+		<string>Laufzeit</string>
+	</message>
+	<message module="start">
+		<id>Minutes</id>
+		<string>Minuten</string>
+	</message>
+	<message module="start">
+		<id>Bought</id>
+		<string>Gekauft</string>
+	</message>
+	<message module="start">
+		<id>Ordered </id>
+		<string>Bestellt </string>
+	</message>
+	<message module="start">
+		<id>on</id>
+		<string>am</string>
+	</message>
+	<message module="start">
+		<id>Release Date</id>
+		<string>Ver&ouml;ffentlichung
+		</string>
+	</message>
+	<message module="start">
+		<id>The %c last ordered DVDs</id>
+		<string>Die letzten %c bestellten DVDs</string>
+	</message>
+	<message module="start">
+		<id>the</id>
+		<string>am</string>
+	</message>
+	<message module="start">
+		<id>today</id>
+		<string>heute</string>
+	</message>
+	<message module="start">
+		<id>Built by</id>
+		<string>Erstellt von</string>
+	</message>
+	<message module="start">
+		<id>published under General Public License (GPL)</id>
+		<string>ver&ouml;ffentlicht
+			unter General Public License (GPL)
+		</string>
+	</message>
+	<message module="start">
+		<id>Last update</id>
+		<string>Letzte Aktualisierung</string>
+	</message>
+
+	<message module="coverlist">
+		<id>Cover Gallery</id>
+		<string>Covergallerie</string>
+	</message>
+	<message module="coverlist">
+		<id>Number of covers</id>
+		<string>Anzahl Cover</string>
+	</message>
+
+	<message module="top">
+		<id>Please activate JavaScript for all functions!</id>
+		<string>Bitte
+			aktivieren Sie JavaScript f&uuml;r
+			alle Funktionen!
+		</string>
+	</message>
+	<message module="top">
+		<id>Home</id>
+		<string>Startseite</string>
+	</message>
+	<message module="top">
+		<id>Search</id>
+		<string>Suche</string>
+	</message>
+	<message module="top">
+		<id>Administration</id>
+		<string>Adminstration</string>
+	</message>
+	<message module="top">
+		<id>phpMyProfiler Home</id>
+		<string>phpMyProfiler Home</string>
+	</message>
+	<message module="top">
+		<id>phpMyProfiler Forum</id>
+		<string>phpMyProfiler Forum</string>
+	</message>
+	<message module="top">
+		<id>Credits</id>
+		<string>Credits</string>
+	</message>
+
+	<message module="credits">
+		<id>Credits - phpMyProfiler</id>
+		<string>Credits - phpMyProfiler</string>
+	</message>
+	<message module="credits">
+		<id>Name</id>
+		<string>Name</string>
+	</message>
+	<message module="credits">
+		<id>Nick</id>
+		<string>Nick</string>
+	</message>
+	<message module="credits">
+		<id>Developer</id>
+		<string>Programmierer</string>
+	</message>
+	<message module="credits">
+		<id>Developer, graphics (until March 2005)</id>
+		<string>Programmierer,
+			Grafiker (bis M&auml;rz
+			05)
+		</string>
+	</message>
+	<message module="credits">
+		<id>Developer of myProfiler (until December 2004)</id>
+		<string>Programmierer myProfiler (bis Dezember 04)</string>
+	</message>
+	<message module="credits">
+		<id>Translations</id>
+		<string>&Uuml;bersetzungen
+		</string>
+	</message>
+	<message module="credits">
+		<id>Norwegian translation</id>
+		<string>Norwegische &Uuml;bersetzung
+		</string>
+	</message>
+	<message module="credits">
+		<id>Danish translation</id>
+		<string>D&auml;nische &Uuml;bersetzung
+		</string>
+	</message>
+	<message module="credits">
+		<id>Dutch translation</id>
+		<string>Niederl&auml;ndische &Uuml;bersetzung
+		</string>
+	</message>
+	<message module="credits">
+		<id>Code contributions</id>
+		<string>Codebeitr&auml;ge
+		</string>
+	</message>
+	<message module="credits">
+		<id>Original parser for DVDProfiler 3.X</id>
+		<string>Originaler
+			Parser f&uuml;r
+			DVDProfiler 3.X
+		</string>
+	</message>
+	<message module="credits">
+		<id>Testing, GFX and misc. improvements</id>
+		<string>Tester, Grafiken und verschiedene Verbesserungen</string>
+	</message>
+	<message module="credits">
+		<id>Used scripts and libraries in phpMyProfiler</id>
+		<string>In phpMyProfiler verwendete Skripte und Bibliotheken</string>
+	</message>
+	<message module="credits">
+		<id>Script/library</id>
+		<string>Skript/Bibliothek</string>
+	</message>
+	<message module="credits">
+		<id>URL</id>
+		<string>URL</string>
+	</message>
+	<message module="credits">
+		<id>License</id>
+		<string>Lizenz</string>
+	</message>
+	<message module="credits">
+		<id>Icons</id>
+		<string>Icons</string>
+	</message>
+	<message module="credits">
+		<id>All used scripts are liable to the copyright of the corresponding
+			author.</id>
+		<string>Alle verwendeten Skripte unterliegen dem Copyright des
+			jeweilgen Autors.</string>
+	</message>
+	<message module="credits">
+		<id>phpMyProfiler is adapted from</id>
+		<string>phpMyProfiler basiert auf</string>
+	</message>
+	<message module="credits">
+		<id>by</id>
+		<string>von</string>
+	</message>
+
+	<message module="picturelist">
+		<id>Picture Gallery</id>
+		<string>Bildergallerie</string>
+	</message>
+	<message module="picturelist">
+		<id>Number of pictures</id>
+		<string>Anzahl Bilder</string>
+	</message>
+
+	<message module="filmprofile">
+		<id>Features</id>
+		<string>Eigenschaften</string>
+	</message>
+	<message module="filmprofile">
+		<id>This DVD is currently loaned</id>
+		<string>Diese DVD ist zur Zeit verliehen</string>
+	</message>
+	<message module="filmprofile">
+		<id>Details</id>
+		<string>Details</string>
+	</message>
+	<message module="filmprofile">
+		<id>Overview</id>
+		<string>&Uuml;berblick
+		</string>
+	</message>
+	<message module="filmprofile">
+		<id>Cast &amp; Crew</id>
+		<string>Cast &amp; Crew</string>
+	</message>
+	<message module="filmprofile">
+		<id>Events</id>
+		<string>Ereignisse</string>
+	</message>
+	<message module="filmprofile">
+		<id>Episode Guide</id>
+		<string>Episodenguide</string>
+	</message>
+	<message module="filmprofile">
+		<id>Cover Images</id>
+		<string>Coverbilder</string>
+	</message>
+	<message module="filmprofile">
+		<id>Boxset Contents</id>
+		<string>Boxsetinhalt</string>
+	</message>
+	<message module="filmprofile">
+		<id>Part of boxset</id>
+		<string>Teil von Boxset</string>
+	</message>
+	<message module="filmprofile">
+		<id>External Links</id>
+		<string>Externe Links</string>
+	</message>
+	<message module="filmprofile">
+		<id>International</id>
+		<string>International</string>
+	</message>
+	<message module="filmprofile">
+		<id>My Links</id>
+		<string>Meine Links</string>
+	</message>
+	<message module="filmprofile">
+		<id>Official Websites</id>
+		<string>Offizielle Webseiten</string>
+	</message>
+	<message module="filmprofile">
+		<id>Fan Sites</id>
+		<string>Fan-Seiten</string>
+	</message>
+	<message module="filmprofile">
+		<id>Trailers and Clips</id>
+		<string>Trailer und Clips</string>
+	</message>
+	<message module="filmprofile">
+		<id>Reviews</id>
+		<string>Bewertungen</string>
+	</message>
+	<message module="filmprofile">
+		<id>Ratings</id>
+		<string>Freigaben</string>
+	</message>
+	<message module="filmprofile">
+		<id>General Information</id>
+		<string>Allgemeine Informationen</string>
+	</message>
+	<message module="filmprofile">
+		<id>Games</id>
+		<string>Spiele</string>
+	</message>
+	<message module="filmprofile">
+		<id>Other</id>
+		<string>Sonstiges</string>
+	</message>
+	<message module="filmprofile">
+		<id>Hidden</id>
+		<string>Versteckt</string>
+	</message>
+
+	<message module="filmprofile_page1">
+		<id>Country of Origin</id>
+		<string>Produktionsland</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>hrs</id>
+		<string>Stunden</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>minutes</id>
+		<string>Minuten</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>Rating</id>
+		<string>Altersfreigabe</string>
+	</message>
+	<message module="filmprfilmprofile_page1ofile">
+		<id>Rating Details</id>
+		<string>Freigabe-Details</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>Information</id>
+		<string>Information</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>Edition</id>
+		<string>Edition</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>ID</id>
+		<string>ID</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>UPC</id>
+		<string>EAN</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>Profile Date</id>
+		<string>Profildatum</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>Last Edited</id>
+		<string>Letzte &Auml;nderung
+		</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>Country</id>
+		<string>Land</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>Regions</id>
+		<string>Regionalcodes</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>Release</id>
+		<string>Ver&ouml;ffentlichung
+		</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>Case Type</id>
+		<string>Verpackung</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>Media Companies</id>
+		<string>Vertrieb</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>Slipcover</id>
+		<string>Schutzh&uuml;lle
+		</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>State</id>
+		<string>Sammlungsstatus</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>Collection Number</id>
+		<string>Sammlungsnummer</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>Notes</id>
+		<string>Notizen</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>Purchased</id>
+		<string>Gekauft am</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>Gift from</id>
+		<string>Geschenkt von</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>at</id>
+		<string>bei</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>for</id>
+		<string>f&uuml;r
+		</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>SRP</id>
+		<string>UVP</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>Rented by</id>
+		<string>Ausgeliehen an</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>Return Date</id>
+		<string>R&uuml;ckgabedatum
+		</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>Tags</id>
+		<string>Tags</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>Review</id>
+		<string>Kurzkritik</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>Movie</id>
+		<string>Film</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>DVD</id>
+		<string>DVD</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>Audio</id>
+		<string>Tonformat</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>Extras</id>
+		<string>Extras</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>votes</id>
+		<string>Stimmen</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>External Reviews</id>
+		<string>Externe Kritiken</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>IMDB User Rating</id>
+		<string>IMDB Benutzer-Bewertung</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>IMDB Top 250</id>
+		<string>IMDB Top 250</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>IMDB Bottom 100</id>
+		<string>IMDB Bottom 100</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>OFDB User Rating</id>
+		<string>OFDB Benutzer-Bewertung</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>OFDB Top 250</id>
+		<string>OFDB Top 250</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>OFDB Bottom 100</id>
+		<string>OFDB Bottom 100</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>RottenTomatoes Critics Rating</id>
+		<string>RottenTomatoes Kritiker-Bewertung</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>RottenTomatoes User Rating</id>
+		<string>RottenTomatoes Benutzer-Bewertung</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>User Reviews</id>
+		<string>Benutzerkritiken</string>
+	</message>
+	<message module="filmprofile_page1">
+		<id>Compose a review</id>
+		<string>Verfasse eine Kurzkritik</string>
+	</message>
+
+	<message module="filmprofile_page2">
+		<id>Format</id>
+		<string>Format</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Channels</id>
+		<string>Kan&auml;le
+		</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Content</id>
+		<string>Inhalt</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Subtitles</id>
+		<string>Untertitel</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Video Information</id>
+		<string>Videoinformationen</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Video Format</id>
+		<string>Videostandard</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Aspect Ratio</id>
+		<string>Seitenverh&auml;ltnis
+		</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Color</id>
+		<string>Farbe</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Black &amp; White</id>
+		<string>Schwarz-wei&szlig;</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Colorized</id>
+		<string>Coloriert</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Multiple</id>
+		<string>Mehrere</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Mixed</id>
+		<string>Gemischt</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Dimensions</id>
+		<string>Dimensionen</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>THX Certified</id>
+		<string>THX zertifiziert</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Scene Access</id>
+		<string>Szenenanwahl</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Commentary</id>
+		<string>Kommentar</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Feature Trailers</id>
+		<string>Hauptfilm-Trailer</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Deleted Scenes</id>
+		<string>Gel&ouml;schte
+			Szenen
+		</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Featurettes</id>
+		<string>Featurettes</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Interviews</id>
+		<string>Interviews</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Storyboard Comparisons</id>
+		<string>Storyboardvergleiche</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>DVD-ROM Content</id>
+		<string>DVD-ROM Inhalt</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Interactive Games</id>
+		<string>Interaktive Spiele</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Multi-angle</id>
+		<string>Multi-Angle</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Music Videos</id>
+		<string>Musikvideos</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Prod. Notes</id>
+		<string>Prod. Notizen</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Photo Gallery</id>
+		<string>Photogalerie</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Outtakes/Bloopers</id>
+		<string>Outtakes/Bloopers</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Closed Captioned</id>
+		<string>Closed Captioned</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Bonus Trailers</id>
+		<string>Bonus-Trailer</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Picture-in-Picture</id>
+		<string>Bild-in-Bild</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>BD-Live</id>
+		<string>BD-Live</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Digital Copy</id>
+		<string>Digitale-Kopie</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Other Features</id>
+		<string>Weitere Features</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Additional Information</id>
+		<string>Zus&auml;tzliche
+			Informationen
+		</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Studios</id>
+		<string>Studios</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Genres</id>
+		<string>Genres</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Media Info</id>
+		<string>Medien Info</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Description Side A</id>
+		<string>Beschreibung Seite A</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Label Side A</id>
+		<string>Label Seite A</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Duallayer Side A</id>
+		<string>Duallayer Seite A</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>DiscID Side A</id>
+		<string>Disk-ID Seite A</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Description Side B</id>
+		<string>Beschreibung Seite B</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Label Side B</id>
+		<string>Label Seite B</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>DiscID Side B</id>
+		<string>Disk-ID Seite B</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Duallayer Side B</id>
+		<string>Duallayer Seite B</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Dualsided</id>
+		<string>Zweiseitig</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Dual Layered</id>
+		<string>Zweischichtig</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Single Layered</id>
+		<string>Einschichtig</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Location</id>
+		<string>Ort</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Slot</id>
+		<string>Slot</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Various Information</id>
+		<string>Verschiedene Informationen</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Easter Egg</id>
+		<string>Versteckte Features</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Awards</id>
+		<string>Filmpreise</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Winner</id>
+		<string>Gewinner</string>
+	</message>
+	<message module="filmprofile_page2">
+		<id>Nominee for</id>
+		<string>Nominiert
+			f&uuml;r
+		</string>
+	</message>
+
+	<message module="filmprofile_page3">
+		<id>Cast</id>
+		<string>Darsteller</string>
+	</message>
+	<message module="filmprofile_page3">
+		<id>uncredited</id>
+		<string>Nicht
+			aufgef&uuml;hrt
+		</string>
+	</message>
+	<message module="filmprofile_page3">
+		<id>voice</id>
+		<string>Stimme</string>
+	</message>
+	<message module="filmprofile_page3">
+		<id>credited as</id>
+		<string>aufgef&uuml;hrt
+			als
+		</string>
+	</message>
+	<message module="filmprofile_page3">
+		<id>Crew</id>
+		<string>Crew</string>
+	</message>
+
+	<message module="filmprofile_page4">
+		<id>Date</id>
+		<string>Datum</string>
+	</message>
+	<message module="filmprofile_page4">
+		<id>Event</id>
+		<string>Ereignis</string>
+	</message>
+	<message module="filmprofile_page4">
+		<id>Phone</id>
+		<string>Telefon</string>
+	</message>
+	<message module="filmprofile_page4">
+		<id>Borrowed</id>
+		<string>Ausgeliehen</string>
+	</message>
+	<message module="filmprofile_page4">
+		<id>Returned</id>
+		<string>Zur&uuml;ck
+		</string>
+	</message>
+
+	<message module="filmprofile_status">
+		<id>Owned</id>
+		<string>Besitz</string>
+	</message>
+	<message module="filmprofile_status">
+		<id>Ordered</id>
+		<string>Bestellt</string>
+	</message>
+	<message module="filmprofile_status">
+		<id>WishList</id>
+		<string>Wunschliste</string>
+	</message>
+
+	<message module="filmprofile_wishpriority">
+		<id>Vague Interest</id>
+		<string>Vages Interesse</string>
+	</message>
+	<message module="filmprofile_wishpriority">
+		<id>Like to Have It</id>
+		<string>Sch&ouml;n
+			zu haben
+		</string>
+	</message>
+	<message module="filmprofile_wishpriority">
+		<id>Want It</id>
+		<string>Will ich</string>
+	</message>
+	<message module="filmprofile_wishpriority">
+		<id>Really Want</id>
+		<string>Will ich wirklich</string>
+	</message>
+	<message module="filmprofile_wishpriority">
+		<id>Need It</id>
+		<string>Brauche ich</string>
+	</message>
+	<message module="filmprofile_wishpriority">
+		<id>Watched</id>
+		<string>Gesehen</string>
+	</message>
+
+	<message module="statistics">
+		<id>Statistics</id>
+		<string>Statistiken</string>
+	</message>
+	<message module="statistics">
+		<id>Other Statistics</id>
+		<string>Andere Statistiken</string>
+	</message>
+	<message module="statistics">
+		<id>Director Statistic</id>
+		<string>Regisseurstatistik</string>
+	</message>
+	<message module="statistics">
+		<id>Producer Statistic</id>
+		<string>Produzentstatistik</string>
+	</message>
+	<message module="statistics">
+		<id>Writer &amp; Screenwriter Statistic</id>
+		<string>Autor &amp; Drehbuchautor Statistik</string>
+	</message>
+	<message module="statistics">
+		<id>Composer Statistic</id>
+		<string>Komponisten Statistik</string>
+	</message>
+	<message module="statistics">
+		<id>Actor Statistic</id>
+		<string>Darstellerstatistik</string>
+	</message>
+	<message module="statistics">
+		<id>What's been watched</id>
+		<string>Was wurde gesehen</string>
+	</message>
+	<message module="statistics">
+		<id>Number of DVDs</id>
+		<string>Anzahl DVDs</string>
+	</message>
+	<message module="statistics">
+		<id>With Pricing Information</id>
+		<string>DVDs mit Preisangabe</string>
+	</message>
+	<message module="statistics">
+		<id>DVDs without a Child Profile</id>
+		<string>DVDs ohne ein Kind Profil</string>
+	</message>
+	<message module="statistics">
+		<id>Boxset Profiles</id>
+		<string>Boxset Profile</string>
+	</message>
+	<message module="statistics">
+		<id>Child Profiles</id>
+		<string>Kind Profile</string>
+	</message>
+	<message module="statistics">
+		<id>DVDs with Collection Number</id>
+		<string>DVDs mit Sammlungsnummer</string>
+	</message>
+	<message module="statistics">
+		<id>DVDs with Rating Information</id>
+		<string>DVDs mit Angaben zur Altersfreigabe</string>
+	</message>
+	<message module="statistics">
+		<id>Price of all DVDs</id>
+		<string>Gesamtpreis</string>
+	</message>
+	<message module="statistics">
+		<id>Average price</id>
+		<string>Durchschnittspreis</string>
+	</message>
+	<message module="statistics">
+		<id>Most expensive DVDs</id>
+		<string>Die teuersten DVDs</string>
+	</message>
+	<message module="statistics">
+		<id>Cheapest DVDs</id>
+		<string>Die
+			g&uuml;nstigsten
+			DVDs
+		</string>
+	</message>
+	<message module="statistics">
+		<id>Length of all DVDs</id>
+		<string>Gesamtl&auml;nge
+		</string>
+	</message>
+	<message module="statistics">
+		<id>DVDs with Length Information</id>
+		<string>DVDs
+			mit L&auml;ngenangabe
+		</string>
+	</message>
+	<message module="statistics">
+		<id>Hours: about</id>
+		<string>Stunden: ca.</string>
+	</message>
+	<message module="statistics">
+		<id>hours</id>
+		<string>Stunden</string>
+	</message>
+	<message module="statistics">
+		<id>Days: about</id>
+		<string>Tage: ca.</string>
+	</message>
+	<message module="statistics">
+		<id>days</id>
+		<string>Tage</string>
+	</message>
+	<message module="statistics">
+		<id>Weeks: about</id>
+		<string>Wochen: ca.</string>
+	</message>
+	<message module="statistics">
+		<id>weeks</id>
+		<string>Wochen</string>
+	</message>
+	<message module="statistics">
+		<id>Months: about</id>
+		<string>Monate: ca.</string>
+	</message>
+	<message module="statistics">
+		<id>months</id>
+		<string>Monate</string>
+	</message>
+	<message module="statistics">
+		<id>Years: about</id>
+		<string>Jahre: ca.</string>
+	</message>
+	<message module="statistics">
+		<id>years</id>
+		<string>Jahre</string>
+	</message>
+	<message module="statistik">
+		<id>Average Length</id>
+		<string>Durchschnittsl&auml;nge
+		</string>
+	</message>
+	<message module="statistics">
+		<id>Longest DVDs</id>
+		<string>Die
+			l&auml;ngsten
+			DVDs
+		</string>
+	</message>
+	<message module="statistics">
+		<id>Shortest DVDs</id>
+		<string>Die
+			k&uuml;rstesten
+			DVDs
+		</string>
+	</message>
+	<message module="statistics">
+		<id>Regioncode</id>
+		<string>Regionalcode</string>
+	</message>
+	<message module="statistics">
+		<id>Localities of DVDs</id>
+		<string>Herkunftsl&auml;nder
+			der DVDs
+		</string>
+	</message>
+	<message module="statistics">
+		<id>Localities</id>
+		<string>Herkunftsl&auml;nder
+		</string>
+	</message>
+	<message module="statistics">
+		<id>Origins of Movies</id>
+		<string>Produktionsl&auml;nder
+			der Filme
+		</string>
+	</message>
+	<message module="statistics">
+		<id>Origins</id>
+		<string>Produktionsl&auml;nder
+		</string>
+	</message>
+	<message module="statistics">
+		<id>Ratings</id>
+		<string>Altersfreigaben</string>
+	</message>
+	<message module="statistics">
+		<id>DVDs</id>
+		<string>DVDs</string>
+	</message>
+	<message module="statistics">
+		<id>Year of Purchase</id>
+		<string>Kaufjahr</string>
+	</message>
+	<message module="statistics">
+		<id>Detailed Statistic</id>
+		<string>Detailierte Statistik</string>
+	</message>
+	<message module="statistics">
+		<id>Production Decade</id>
+		<string>Produktionsdekade</string>
+	</message>
+	<message module="statistics">
+		<id>Place of Purchase (Top 10)</id>
+		<string>Kaufort (Top 10)</string>
+	</message>
+	<message module="statistics">
+		<id>Place of Purchase</id>
+		<string>Kaufort</string>
+	</message>
+	<message module="statistics">
+		<id>Genre (Top 10)</id>
+		<string>Genre (Top 10)</string>
+	</message>
+	<message module="statistics">
+		<id>Studio (Top 10)</id>
+		<string>Studio (Top 10)</string>
+	</message>
+	<message module="statistics">
+		<id>Media Companies (Top 10)</id>
+		<string>Vertrieb (Top 10)</string>
+	</message>
+	<message module="statistics">
+		<id>Visitors</id>
+		<string>Besucher</string>
+	</message>
+	<message module="statistics">
+		<id>Visited DVDs</id>
+		<string>Abgerufene DVD-Profile</string>
+	</message>
+
+	<message module="statistics_graph">
+		<id>owned</id>
+		<string>Eigene</string>
+	</message>
+	<message module="statistics_graph">
+		<id>ordered</id>
+		<string>Bestellte</string>
+	</message>
+	<message module="statistics_graph">
+		<id>wishlist</id>
+		<string>Wunschliste</string>
+	</message>
+
+	<message module="statisticsdetail">
+		<id>Visitor Statistic</id>
+		<string>Besucher Statistik</string>
+	</message>
+	<message module="statisticsdetail">
+		<id>Profile Statistic</id>
+		<string>Profil Statistik</string>
+	</message>
+	<message module="statisticsdetail">
+		<id>Result</id>
+		<string>Ergebnis</string>
+	</message>
+	<message module="statisticsdetail">
+		<id>Month</id>
+		<string>Monat</string>
+	</message>
+	<message module="statisticsdetail">
+		<id>January</id>
+		<string>Januar</string>
+	</message>
+	<message module="statisticsdetail">
+		<id>February</id>
+		<string>Februar</string>
+	</message>
+	<message module="statisticsdetail">
+		<id>March</id>
+		<string>M&auml;rz
+		</string>
+	</message>
+	<message module="statisticsdetail">
+		<id>May</id>
+		<string>Mai</string>
+	</message>
+	<message module="statisticsdetail">
+		<id>April</id>
+		<string>April</string>
+	</message>
+	<message module="statisticsdetail">
+		<id>June</id>
+		<string>Juni</string>
+	</message>
+	<message module="statisticsdetail">
+		<id>July</id>
+		<string>Juli</string>
+	</message>
+	<message module="statisticsdetail">
+		<id>August</id>
+		<string>August</string>
+	</message>
+	<message module="statisticsdetail">
+		<id>September</id>
+		<string>September</string>
+	</message>
+	<message module="statisticsdetail">
+		<id>October</id>
+		<string>Oktober</string>
+	</message>
+	<message module="statisticsdetail">
+		<id>November</id>
+		<string>November</string>
+	</message>
+	<message module="statisticsdetail">
+		<id>December</id>
+		<string>Dezember</string>
+	</message>
+	<message module="statisticsdetail">
+		<id>Picture</id>
+		<string>Bild</string>
+	</message>
+	<message module="statisticsdetail">
+		<id>Writer/Screenwriter</id>
+		<string>Autor/Drehbuchautor</string>
+	</message>
+
+	<message module="watched">
+		<id>Viewer</id>
+		<string>Zuschauer</string>
+	</message>
+	<message module="watched">
+		<id>Total Running Time</id>
+		<string>Gesamtspielzeit</string>
+	</message>
+	<message module="watched">
+		<id>Titles Watched</id>
+		<string>Gesehene Titel</string>
+	</message>
+	<message module="watched">
+		<id>Average Running Time</id>
+		<string>Durchschnittsspielzeit</string>
+	</message>
+	<message module="watched">
+		<id>Running Time</id>
+		<string>Spielzeit</string>
+	</message>
+	<message module="watched">
+		<id>Days</id>
+		<string>Tage</string>
+	</message>
+	<message module="watched">
+		<id>Hours</id>
+		<string>Stunden</string>
+	</message>
+	<message module="watched">
+		<id>Minutes</id>
+		<string>Minuten</string>
+	</message>
+
+	<message module="news">
+		<id>News Archive</id>
+		<string>Newsarchiv</string>
+	</message>
+	<message module="news">
+		<id>Number of news</id>
+		<string>Anzahl News</string>
+	</message>
+
+	<message module="review">
+		<id>Write a review for</id>
+		<string>Verfasse
+			eine Kurzkritik f&uuml;r
+		</string>
+	</message>
+	<message module="review">
+		<id>Please enter your name!</id>
+		<string>Bitte geben Sie Ihren Namen an!</string>
+	</message>
+	<message module="review">
+		<id>Please enter a valid email address!</id>
+		<string>Bitte
+			geben Sie eine g&uuml;ltige
+			E-mail Adresse an
+		</string>
+	</message>
+	<message module="review">
+		<id>Please enter a title for your review!</id>
+		<string>Bitte
+			geben Sie einen Titel f&uuml;r
+			Ihre Kritik ein!
+		</string>
+	</message>
+	<message module="review">
+		<id>Please enter a text for your review!</id>
+		<string>Bitte geben Sie einen Text zu Ihrer Kritik ein!</string>
+	</message>
+	<message module="review">
+		<id>Thank you for your review.</id>
+		<string>Vielen
+			Dank f&uuml;r
+			Ihre Kritik.
+		</string>
+	</message>
+	<message module="review">
+		<id>Sorry, an error has occurred</id>
+		<string>Es ist leider ein Fehler aufgetreten</string>
+	</message>
+	<message module="review">
+		<id>Someone added a new review:</id>
+		<string>Eine
+			neue Kurzkritik wurde hinzugef&uuml;gt.
+		</string>
+	</message>
+	<message module="review">
+		<id>Author</id>
+		<string>Autor</string>
+	</message>
+	<message module="review">
+		<id>Please activate or delete this pending review:</id>
+		<string>Bitte
+			aktivieren oder l&ouml;schen
+			Sie diese wartenen Kritik:
+		</string>
+	</message>
+	<message module="review">
+		<id>New pending review:</id>
+		<string>Neue wartende Kritik:</string>
+	</message>
+	<message module="review">
+		<id>Add your review</id>
+		<string>Kurzkritik
+			hinzuf&uuml;gen
+		</string>
+	</message>
+	<message module="review">
+		<id>E-mail</id>
+		<string>E-mail</string>
+	</message>
+	<message module="review">
+		<id>Title of review</id>
+		<string>Titel der Kurzkritik</string>
+	</message>
+	<message module="review">
+		<id>Review text (without format strings!)</id>
+		<string>Kurzkritik Text (ohne Formatierungen!)</string>
+	</message>
+	<message module="review">
+		<id>Review</id>
+		<string>Bewertung</string>
+	</message>
+	<message module="review">
+		<id>excellent</id>
+		<string>sehr gut</string>
+	</message>
+	<message module="review">
+		<id>fair</id>
+		<string>mittelm&auml;&szlig;ig
+		</string>
+	</message>
+	<message module="review">
+		<id>bad</id>
+		<string>schlecht</string>
+	</message>
+	<message module="review">
+		<id>Submit</id>
+		<string>Abschicken</string>
+	</message>
+	<message module="review">
+		<id>Important</id>
+		<string>Wichtig</string>
+	</message>
+	<message module="review">
+		<id>Your submitted review will show up, as soon as the administrator
+			has activated it. You'll receive an e-mail, when your review is
+			activated</id>
+		<string>Ihre Kurzkritik wird erst nach der Freischaltung durch den
+			Administrator angezeigt. Sie erhalten eine E-Mail, sobald Ihre Kritik
+			aktiviert wurde</string>
+	</message>
+
+	<message module="guestbook">
+		<id>Guestbook</id>
+		<string>G&auml;stebuch
+		</string>
+	</message>
+	<message module="guestbook">
+		<id>%name added a new guestbook entry</id>
+		<string>%name
+			hat einen neuen G&auml;stebucheintrag
+			hinterlassen
+		</string>
+	</message>
+	<message module="guestbook">
+		<id>Thank you. The guest book entry was stored.</id>
+		<string>Vielen Dank. Ihr Eintrag wurde gespeichert.</string>
+	</message>
+	<message module="guestbook">
+		<id>When storing in the data base unfortunately an error occurs.</id>
+		<string>Beim Speichern ist leider ein Fehler aufgetreten.</string>
+	</message>
+	<message module="guestbook">
+		<id>Number of comments</id>
+		<string>Anzahl Kommentare</string>
+	</message>
+	<message module="guestbook">
+		<id>Add your comment</id>
+		<string>F&uuml;ge
+			Kommentar hinzu
+		</string>
+	</message>
+	<message module="guestbook">
+		<id>New comments will be invisible until the administrator activates
+			them.</id>
+		<string>Neue Kommentare bleiben bis zur Freischaltung durch den
+			Administrator unsichtbar.</string>
+	</message>
+	<message module="guestbook">
+		<id>Homepage</id>
+		<string>Homepage</string>
+	</message>
+	<message module="guestbook">
+		<id>Comment</id>
+		<string>Kommentar</string>
+	</message>
+	<message module="guestbook">
+		<id>Enter security code, please</id>
+		<string>Bitte Sicherheits-Code eingeben</string>
+	</message>
+	<message module="guestbook">
+		<id>Security code</id>
+		<string>Sicherheits-Code</string>
+	</message>
+	<message module="guestbook">
+		<id>Add comment</id>
+		<string>F&uuml;ge
+			Kommentar hinzu
+		</string>
+	</message>
+	<message module="guestbook">
+		<id>Guest Book Entries</id>
+		<string>G&auml;stebucheintr&auml;ge
+		</string>
+	</message>
+	<message module="guestbook">
+		<id>wrote</id>
+		<string>schrieb</string>
+	</message>
+	<message module="guestbook">
+		<id>Reply by</id>
+		<string>Antwort von</string>
+	</message>
+	<message module="guestbook">
+		<id>Please enter a message to send!</id>
+		<string>Bitte geben Sie eine Nachricht zum Senden ein!</string>
+	</message>
+
+	<message module="peoplelist">
+		<id>People Gallery</id>
+		<string>Personengallerie</string>
+	</message>
+	<message module="peoplelist">
+		<id>Filter</id>
+		<string>Filter</string>
+	</message>
+	<message module="peoplelist">
+		<id>Cast and Crew Images</id>
+		<string>Darsteller und Crew Bilder</string>
+	</message>
+	<message module="peoplelist">
+		<id>starting with</id>
+		<string>angefangen mit</string>
+	</message>
+
+	<message module="contact">
+		<id>Contact</id>
+		<string>Kontakt</string>
+	</message>
+	<message module="contact">
+		<id>Wrong security code!</id>
+		<string>Falscher Sicherheits-Code!</string>
+	</message>
+	<message module="contact">
+		<id>Thank you for your message.</id>
+		<string>Vielen
+			Dank f&uuml;r
+			Ihre Nachricht.
+		</string>
+	</message>
+	<message module="contact">
+		<id>Please fill all fields.</id>
+		<string>Bitte
+			alle Felder ausf&uuml;llen.
+		</string>
+	</message>
+	<message module="contact">
+		<id>Administrator</id>
+		<string>Administrator</string>
+	</message>
+	<message module="contact">
+		<id>At this point you have the opportunity to contact the
+			administrator of this DVD collection.</id>
+		<string>Hier haben sie die Gelegenheit, den Administrator der
+			DVD-Sammlung zu kontaktieren.</string>
+	</message>
+	<message module="contact">
+		<id>Write your message</id>
+		<string>Schreiben Sie ihre Nachricht</string>
+	</message>
+	<message module="contact">
+		<id>Please fill out the form and submit ...</id>
+		<string>F&uuml;llen
+			sie bitte das Formular aus und klicken dann auf 'Nachricht senden'...
+		</string>
+	</message>
+	<message module="contact">
+		<id>Subject</id>
+		<string>Betreff</string>
+	</message>
+	<message module="contact">
+		<id>Message</id>
+		<string>Nachricht</string>
+	</message>
+	<message module="contact">
+		<id>Send Message</id>
+		<string>Nachricht senden</string>
+	</message>
+	<message module="contact">
+		<id>Failed to send E-mail.</id>
+		<string>E-mail konnte nicht versendet werden.</string>
+	</message>
+	<message module="contact">
+		<id>Please enter a subject!</id>
+		<string>Bitte geben Sie einen Betreff ein!</string>
+	</message>
+	<message module="contact">
+		<id>Bot Attack!</id>
+		<string>Bot Angriff!</string>
+	</message>
+
+	<message module="menue">
+		<id>An error occured during your query. To continue working all
+			filters will be set to default values.</id>
+		<string>Beim
+			Ausf&uuml;hren
+			des Filters ist ein Fehler aufgetreten. Um die Arbeit fortsetzen zu k&ouml;nnen
+			wurden alle Filter zur&uuml;ckgesetzt.
+		</string>
+	</message>
+	<message module="menue">
+		<id>DVD Collection</id>
+		<string>DVD Sammlung</string>
+	</message>
+	<message module="menue">
+		<id>Active Filters</id>
+		<string>Aktive Filter</string>
+	</message>
+	<message module="menue">
+		<id>Remove all</id>
+		<string>alle entfernen</string>
+	</message>
+	<message module="menue">
+		<id>(click filter to remove)</id>
+		<string>(Filter zum Entfernen anklicken)</string>
+	</message>
+	<message module="menue">
+		<id>Add</id>
+		<string>Hinzuf&uuml;gen
+		</string>
+	</message>
+	<message module="menue">
+		<id>Owned DVDs</id>
+		<string>Eigene DVDs</string>
+	</message>
+	<message module="menue">
+		<id>Ordered DVDs</id>
+		<string>Bestellte DVDs</string>
+	</message>
+	<message module="menue">
+		<id>Wish List</id>
+		<string>Wunschliste</string>
+	</message>
+	<message module="menue">
+		<id>Navigation</id>
+		<string>Navigation</string>
+	</message>
+	<message module="menue">
+		<id>Page</id>
+		<string>Seite</string>
+	</message>
+	<message module="menue">
+		<id>of</id>
+		<string>von</string>
+	</message>
+
+	<message module="type">
+		<id>Direction</id>
+		<string>Regie</string>
+	</message>
+	<message module="type">
+		<id>Writing</id>
+		<string>Vorlage</string>
+	</message>
+	<message module="type">
+		<id>Production</id>
+		<string>Produktion</string>
+	</message>
+	<message module="type">
+		<id>Cinematography</id>
+		<string>Kamera</string>
+	</message>
+	<message module="type">
+		<id>Film Editing</id>
+		<string>Filmbearbeitung</string>
+	</message>
+	<message module="type">
+		<id>Music</id>
+		<string>Musik</string>
+	</message>
+	<message module="type">
+		<id>Sound</id>
+		<string>Ton</string>
+	</message>
+	<message module="type">
+		<id>Art</id>
+		<string>Ausstattung</string>
+	</message>
+
+	<message module="subtype">
+		<id>Actor</id>
+		<string>Darsteller</string>
+	</message>
+	<message module="subtype">
+		<id>Director</id>
+		<string>Regisseur</string>
+	</message>
+	<message module="subtype">
+		<id>Writer</id>
+		<string>Autor</string>
+	</message>
+	<message module="subtype">
+		<id>Original Material By</id>
+		<string>Vorlage</string>
+	</message>
+	<message module="subtype">
+		<id>Original Characters By</id>
+		<string>Charakterdesign</string>
+	</message>
+	<message module="subtype">
+		<id>Screenwriter</id>
+		<string>Drehbuchautor</string>
+	</message>
+	<message module="subtype">
+		<id>Writer</id>
+		<string>Autor</string>
+	</message>
+	<message module="subtype">
+		<id>Producer</id>
+		<string>Produzent</string>
+	</message>
+	<message module="subtype">
+		<id>Executive Producer</id>
+		<string>Ausf&uuml;hrender
+			Produzent
+		</string>
+	</message>
+	<message module="subtype">
+		<id>Director of Photography</id>
+		<string>Kameraf&uuml;hrung
+		</string>
+	</message>
+	<message module="subtype">
+		<id>Cinematographer</id>
+		<string>Kinematograph</string>
+	</message>
+	<message module="subtype">
+		<id>Film Editor</id>
+		<string>Schnitt</string>
+	</message>
+	<message module="subtype">
+		<id>Composer</id>
+		<string>Komponist</string>
+	</message>
+	<message module="subtype">
+		<id>Song Writer</id>
+		<string>Songschreiber</string>
+	</message>
+	<message module="subtype">
+		<id>Supervising Sound Editor</id>
+		<string>Aufnahmeleiter</string>
+	</message>
+
+	<message module="languages">
+		<id>Audio Descriptive</id>
+		<string>Audio Beschreibend</string>
+	</message>
+	<message module="languages">
+		<id>Africaans</id>
+		<string>Afrikaans</string>
+	</message>
+	<message module="languages">
+		<id>Arabic</id>
+		<string>Arabisch</string>
+	</message>
+	<message module="languages">
+		<id>Bahasa</id>
+		<string>Malaysisch</string>
+	</message>
+	<message module="languages">
+		<id>Bambara</id>
+		<string>Bambara/Mali</string>
+	</message>
+	<message module="languages">
+		<id>Basque</id>
+		<string>Baskisch</string>
+	</message>
+	<message module="languages">
+		<id>Bulgarian</id>
+		<string>Bulgarisch</string>
+	</message>
+	<message module="languages">
+		<id>Chinese</id>
+		<string>Chinesisch</string>
+	</message>
+	<message module="languages">
+		<id>Cantonese</id>
+		<string>Kantonesisch</string>
+	</message>
+	<message module="languages">
+		<id>Catalonian</id>
+		<string>Katalanisch</string>
+	</message>
+	<message module="languages">
+		<id>Commentary</id>
+		<string>Kommentar</string>
+	</message>
+	<message module="languages">
+		<id>Croatian</id>
+		<string>Kroatisch</string>
+	</message>
+	<message module="languages">
+		<id>Czech</id>
+		<string>Tschechisch</string>
+	</message>
+	<message module="languages">
+		<id>Danish</id>
+		<string>D&auml;nisch
+		</string>
+	</message>
+	<message module="languages">
+		<id>Dutch</id>
+		<string>Niederl&auml;ndisch
+		</string>
+	</message>
+	<message module="languages">
+		<id>English</id>
+		<string>Englisch</string>
+	</message>
+	<message module="languages">
+		<id>Estonian</id>
+		<string>Estnisch</string>
+	</message>
+	<message module="languages">
+		<id>Farsi</id>
+		<string>Persisch</string>
+	</message>
+	<message module="languages">
+		<id>Finnish</id>
+		<string>Finnisch</string>
+	</message>
+	<message module="languages">
+		<id>Flemish</id>
+		<string>Flamisch</string>
+	</message>
+	<message module="languages">
+		<id>French</id>
+		<string>Franz&ouml;sisch
+		</string>
+	</message>
+	<message module="languages">
+		<id>Galician</id>
+		<string>Galicisch</string>
+	</message>
+	<message module="languages">
+		<id>Georgian</id>
+		<string>Georgisch</string>
+	</message>
+	<message module="languages">
+		<id>German</id>
+		<string>Deutsch</string>
+	</message>
+	<message module="languages">
+		<id>Greek</id>
+		<string>Griechisch</string>
+	</message>
+	<message module="languages">
+		<id>Hebrew</id>
+		<string>Hebr&auml;isch
+		</string>
+	</message>
+	<message module="languages">
+		<id>Hindi</id>
+		<string>Hindi</string>
+	</message>
+	<message module="languages">
+		<id>Hungarian</id>
+		<string>Ungarisch</string>
+	</message>
+	<message module="languages">
+		<id>Icelandic</id>
+		<string>Isl&auml;ndisch
+		</string>
+	</message>
+	<message module="languages">
+		<id>Italian</id>
+		<string>Italienisch</string>
+	</message>
+	<message module="languages">
+		<id>Japanese</id>
+		<string>Japanisch</string>
+	</message>
+	<message module="languages">
+		<id>Korean</id>
+		<string>Koreanisch</string>
+	</message>
+	<message module="languages">
+		<id>Latvian</id>
+		<string>Lettisch</string>
+	</message>
+	<message module="languages">
+		<id>Lithuanian</id>
+		<string>Litauisch</string>
+	</message>
+	<message module="languages">
+		<id>Mongolian</id>
+		<string>Mongolisch</string>
+	</message>
+	<message module="languages">
+		<id>Mandarin</id>
+		<string>Hochchinesisch</string>
+	</message>
+	<message module="languages">
+		<id>Music only</id>
+		<string>Isolierte Filmmusik</string>
+	</message>
+	<message module="languages">
+		<id>Norwegian</id>
+		<string>Norwegisch</string>
+	</message>
+	<message module="languages">
+		<id>Other</id>
+		<string>Andere</string>
+	</message>
+	<message module="languages">
+		<id>Pashtu</id>
+		<string>Paschtunisch</string>
+	</message>
+	<message module="languages">
+		<id>Polish</id>
+		<string>Polnisch</string>
+	</message>
+	<message module="languages">
+		<id>Portuguese</id>
+		<string>Portugiesisch</string>
+	</message>
+	<message module="languages">
+		<id>Rumantsch</id>
+		<string>R&auml;teromanisch
+		</string>
+	</message>
+	<message module="languages">
+		<id>Romanian</id>
+		<string>Rum&auml;nisch
+		</string>
+	</message>
+	<message module="languages">
+		<id>Russian</id>
+		<string>Russisch</string>
+	</message>
+	<message module="languages">
+		<id>Serbian</id>
+		<string>Serbisch</string>
+	</message>
+	<message module="languages">
+		<id>Slovakian</id>
+		<string>Slowakisch</string>
+	</message>
+	<message module="languages">
+		<id>Slovenian</id>
+		<string>Slowenisch</string>
+	</message>
+	<message module="languages">
+		<id>Spanish</id>
+		<string>Spanisch</string>
+	</message>
+	<message module="languages">
+		<id>Special Effects</id>
+		<string>Spezial Effekte</string>
+	</message>
+	<message module="languages">
+		<id>Swedish</id>
+		<string>Schwedisch</string>
+	</message>
+	<message module="languages">
+		<id>Swiss German</id>
+		<string>Schweizerdeutsch</string>
+	</message>
+	<message module="languages">
+		<id>Tagalog</id>
+		<string>Philipinisch</string>
+	</message>
+	<message module="languages">
+		<id>Thai</id>
+		<string>Thail&auml;ndisch
+		</string>
+	</message>
+	<message module="languages">
+		<id>Tibetian</id>
+		<string>Tibetisch</string>
+	</message>
+	<message module="languages">
+		<id>Trivia</id>
+		<string>Trivia</string>
+	</message>
+	<message module="languages">
+		<id>Turkish</id>
+		<string>T&uuml;rkisch
+		</string>
+	</message>
+	<message module="languages">
+		<id>Valencian</id>
+		<string>Valencianisch</string>
+	</message>
+	<message module="languages">
+		<id>Vietnamese</id>
+		<string>Vietnamesich</string>
+	</message>
+	<message module="languages">
+		<id>Xhosa</id>
+		<string>Xhosa</string>
+	</message>
+	<message module="languages">
+		<id>Zulu</id>
+		<string>Zulu</string>
+	</message>
+
+	<message module="countries">
+		<id>United States</id>
+		<string>Vereinigte Staaten</string>
+	</message>
+	<message module="countries">
+		<id>New Zealand</id>
+		<string>Neuseeland</string>
+	</message>
+	<message module="countries">
+		<id>Australia</id>
+		<string>Australien</string>
+	</message>
+	<message module="countries">
+		<id>Canada</id>
+		<string>Kanada</string>
+	</message>
+	<message module="countries">
+		<id>United Kingdom</id>
+		<string>Vereinigtes
+			K&ouml;nigreich
+		</string>
+	</message>
+	<message module="countries">
+		<id>Germany</id>
+		<string>Deutschland</string>
+	</message>
+	<message module="countries">
+		<id>China</id>
+		<string>China</string>
+	</message>
+	<message module="countries">
+		<id>Former Soviet Union</id>
+		<string>Ehemalige Sowjetunion</string>
+	</message>
+	<message module="countries">
+		<id>France</id>
+		<string>Frankreich</string>
+	</message>
+	<message module="countries">
+		<id>Netherlands</id>
+		<string>Niederlande</string>
+	</message>
+	<message module="countries">
+		<id>Spain</id>
+		<string>Spanien</string>
+	</message>
+	<message module="countries">
+		<id>Sweden</id>
+		<string>Schweden</string>
+	</message>
+	<message module="countries">
+		<id>Norway</id>
+		<string>Norwegen</string>
+	</message>
+	<message module="countries">
+		<id>Italy</id>
+		<string>Italien</string>
+	</message>
+	<message module="countries">
+		<id>Denmark</id>
+		<string>D&auml;nemark
+		</string>
+	</message>
+	<message module="countries">
+		<id>Portugal</id>
+		<string>Portugal</string>
+	</message>
+	<message module="countries">
+		<id>Finland</id>
+		<string>Finnland</string>
+	</message>
+	<message module="countries">
+		<id>Japan</id>
+		<string>Japan</string>
+	</message>
+	<message module="countries">
+		<id>Korea</id>
+		<string>Korea</string>
+	</message>
+	<message module="countries">
+		<id>Kanada (Quebec)</id>
+		<string>Quebec</string>
+	</message>
+	<message module="countries">
+		<id>South Afrika</id>
+		<string>S&uuml;dafrika
+		</string>
+	</message>
+	<message module="countries">
+		<id>Hong Kong</id>
+		<string>Hong Kong</string>
+	</message>
+	<message module="countries">
+		<id>Switzerland</id>
+		<string>Schweiz</string>
+	</message>
+	<message module="countries">
+		<id>Brazil</id>
+		<string>Brasilien</string>
+	</message>
+	<message module="countries">
+		<id>Israel</id>
+		<string>Israel</string>
+	</message>
+	<message module="countries">
+		<id>Mexico</id>
+		<string>Mexiko</string>
+	</message>
+	<message module="countries">
+		<id>Iceland</id>
+		<string>Island</string>
+	</message>
+	<message module="countries">
+		<id>Indonesia</id>
+		<string>Indonesien</string>
+	</message>
+	<message module="countries">
+		<id>Taiwan</id>
+		<string>Taiwan</string>
+	</message>
+	<message module="countries">
+		<id>Poland</id>
+		<string>Polen</string>
+	</message>
+	<message module="countries">
+		<id>Belgium</id>
+		<string>Belgien</string>
+	</message>
+	<message module="countries">
+		<id>Turkey</id>
+		<string>T&uuml;rkei
+		</string>
+	</message>
+	<message module="countries">
+		<id>Argentina</id>
+		<string>Argentinien</string>
+	</message>
+	<message module="countries">
+		<id>Slovakia</id>
+		<string>Slowakei</string>
+	</message>
+	<message module="countries">
+		<id>Hungary</id>
+		<string>Ungarn</string>
+	</message>
+	<message module="countries">
+		<id>Singapore</id>
+		<string>Singapur</string>
+	</message>
+	<message module="countries">
+		<id>Czech Republic</id>
+		<string>Tschechien</string>
+	</message>
+	<message module="countries">
+		<id>Malaysia</id>
+		<string>Malaysia</string>
+	</message>
+	<message module="countries">
+		<id>Thailand</id>
+		<string>Thailand</string>
+	</message>
+	<message module="countries">
+		<id>India</id>
+		<string>Indien</string>
+	</message>
+	<message module="countries">
+		<id>Austria</id>
+		<string>&Ouml;sterreich
+		</string>
+	</message>
+	<message module="countries">
+		<id>Greece</id>
+		<string>Griechenland</string>
+	</message>
+	<message module="countries">
+		<id>Vietnam</id>
+		<string>Vietnam</string>
+	</message>
+	<message module="countries">
+		<id>Philippines</id>
+		<string>Philippinen</string>
+	</message>
+	<message module="countries">
+		<id>Ireland</id>
+		<string>Irland</string>
+	</message>
+	<message module="countries">
+		<id>Estonia</id>
+		<string>Estland</string>
+	</message>
+	<message module="countries">
+		<id>Romania</id>
+		<string>Rum&auml;nien
+		</string>
+	</message>
+	<message module="countries">
+		<id>Iran</id>
+		<string>Iran</string>
+	</message>
+	<message module="countries">
+		<id>Russia</id>
+		<string>Russland</string>
+	</message>
+
+	<message module="admin_getcover">
+		<id>Get Cover</id>
+		<string>Cover holen</string>
+	</message>
+	<message module="admin_getcover">
+		<id>No write access in folder "cover".</id>
+		<string>Kein Schreibzugriff auf Ordner "cover".</string>
+	</message>
+	<message module="admin_getcover">
+		<id>Can\'t download the cover. Perhaps there is no cover for this DVD
+			or your webserver doesn\'t allow accessing remote content.</id>
+		<string>Das
+			Cover konnte leider nicht heruntergeladen werden. Entweder gibt es
+			kein Cover f&uuml;r
+			diese DVD oder Ihr Webserver verbietet Zugriffe auf externe Inhalte.
+		</string>
+	</message>
+
+	<message module="admin_updaterates">
+		<id>Exchange Rates</id>
+		<string>W&auml;hrungskurse
+		</string>
+	</message>
+	<message module="admin_updaterates">
+		<id>Rates updated.</id>
+		<string>Kurse aktualisiert.</string>
+	</message>
+	<message module="admin_updaterates">
+		<id>Rates not updated.</id>
+		<string>Kurse nicht aktualisiert.</string>
+	</message>
+	<message module="admin_updaterates">
+		<id>Actual Rates (Base: Euro)</id>
+		<string>Aktueller Kurs (Basis: Euro)</string>
+	</message>
+	<message module="admin_updaterates">
+		<id>Currency</id>
+		<string>W&auml;hrung
+		</string>
+	</message>
+	<message module="admin_updaterates">
+		<id>Rate</id>
+		<string>Kurs</string>
+	</message>
+	<message module="admin_updaterates">
+		<id>Rates last updated:</id>
+		<string>Stand:</string>
+	</message>
+	<message module="admin_updaterates">
+		<id>Found no rates in database. Please update with the button below.
+		</id>
+		<string>Keine Kurs in der Datenbank gefunden. Bitte aktualisieren Sie
+			die Kurse mit dem Knopf unten.</string>
+	</message>
+	<message module="admin_updaterates">
+		<id>Click here to update your rates.</id>
+		<string>Zum Aktualisieren der Kurse hier klicken.</string>
+	</message>
+	<message module="admin_updaterates">
+		<id>We're using rates from the European Central Bank (ECB).</id>
+		<string>Die
+			Kurse stammen von der Europ&auml;ischen
+			Zentralbank (EZB).
+		</string>
+	</message>
+
+	<message module="admin_report">
+		<id>DVD list</id>
+		<string>DVD-Liste</string>
+	</message>
+	<message module="admin_report">
+		<id>Generated by</id>
+		<string>Erstellt mit</string>
+	</message>
+	<message module="admin_report">
+		<id>Report</id>
+		<string>Bericht</string>
+	</message>
+	<message module="admin_report">
+		<id>Generated by </id>
+		<string>Erstellt von </string>
+	</message>
+	<message module="admin_report">
+		<id>Please select the columns that will appear in the report:</id>
+		<string>Bitte
+			w&auml;hlen
+			Sie die Spalten f&uuml;r
+			den Bericht.
+		</string>
+	</message>
+	<message module="admin_report">
+		<id>Sort Order</id>
+		<string>Sortierreihenfolge</string>
+	</message>
+	<message module="admin_report">
+		<id>Sort Order Direction</id>
+		<string>Richtung Sortierreihenfolge</string>
+	</message>
+	<message module="admin_report">
+		<id>Ascending</id>
+		<string>aufsteigend</string>
+	</message>
+	<message module="admin_report">
+		<id>Descending</id>
+		<string>absteigend</string>
+	</message>
+	<message module="admin_report">
+		<id>Owned, Ordered, WishList or all DVDs</id>
+		<string>Eigene DVDs, Bestellte DVDs, Wunschliste oder Gesamtliste
+		</string>
+	</message>
+	<message module="admin_report">
+		<id>All</id>
+		<string>Alle</string>
+	</message>
+	<message module="admin_report">
+		<id>Generate PDF-Report</id>
+		<string>Erzeuge Bericht als PDF</string>
+	</message>
+	<message module="admin_report">
+		<id>Generate HTML-Report</id>
+		<string>Erzeuge Bericht als HTML</string>
+	</message>
+	<message module="admin_report">
+		<id>Use filters from main list</id>
+		<string>&Uuml;bernehme
+			Filter aus der Hauptliste
+		</string>
+	</message>
+	<message module="admin_report">
+		<id>Generate Report</id>
+		<string>Erzeuge Bericht</string>
+	</message>
+
+	<message module="admin_review">
+		<id>Review deleted.</id>
+		<string>Kritik
+			gel&ouml;scht.
+		</string>
+	</message>
+	<message module="admin_review">
+		<id>Review activated.</id>
+		<string>Kritik aktiviert.</string>
+	</message>
+	<message module="admin_review">
+		<id>All Review entries activated.</id>
+		<string>Alle
+			Revieweintr&auml;ge
+			aktiviert.
+		</string>
+	</message>
+	<message module="admin_review">
+		<id>Pending reviews</id>
+		<string>Nicht aktivierte Reviews</string>
+	</message>
+	<message module="admin_review">
+		<id>Activate all review entries</id>
+		<string>Aktiviere
+			alle Revieweintr&auml;ge
+		</string>
+	</message>
+	<message module="admin_review">
+		<id>From</id>
+		<string>Von</string>
+	</message>
+	<message module="admin_review">
+		<id>Title</id>
+		<string>Titel</string>
+	</message>
+	<message module="admin_review">
+		<id>Text</id>
+		<string>Text</string>
+	</message>
+	<message module="admin_review">
+		<id>Function</id>
+		<string>Aktion</string>
+	</message>
+	<message module="admin_review">
+		<id>Activate</id>
+		<string>Aktivieren</string>
+	</message>
+	<message module="admin_review">
+		<id>Delete</id>
+		<string>L&ouml;schen
+		</string>
+	</message>
+	<message module="admin_review">
+		<id>There are no pending reviews.</id>
+		<string>Es warten keine Reviews auf Aktivierung.</string>
+	</message>
+	<message module="admin_review">
+		<id>Active reviews</id>
+		<string>Aktive Reviews</string>
+	</message>
+	<message module="admin_review">
+		<id>There are no active reviews.</id>
+		<string>Es existieren keine aktiven Reviews.</string>
+	</message>
+
+	<message module="admin_nocover">
+		<id>Cover overview</id>
+		<string>Cover&uuml;berblick
+		</string>
+	</message>
+	<message module="admin_nocover">
+		<id>Click on</id>
+		<string>Ein Klick auf das</string>
+	</message>
+	<message module="admin_nocover">
+		<id>-symbol to load missing covers from the Invelos server.</id>
+		<string>-Symbol
+			l&auml;dt
+			das fehlende Cover vom Invelos-Server.
+		</string>
+	</message>
+	<message module="admin_nocover">
+		<id>Front</id>
+		<string>Front</string>
+	</message>
+	<message module="admin_nocover">
+		<id>Back</id>
+		<string>Back</string>
+	</message>
+
+	<message module="admin_index">
+		<id>is available at</id>
+		<string>ist
+			verf&uuml;gbar
+			auf
+		</string>
+	</message>
+	<message module="admin_index">
+		<id>You are using phpMyProfiler version</id>
+		<string>Sie benutzen die phpMyProfiler Version</string>
+	</message>
+	<message module="admin_index">
+		<id>Last release version from www.phpmyprofiler.de is</id>
+		<string>Die
+			letzte ver&ouml;ffentlichte
+			Version auf www.phpmyprofiler ist die
+		</string>
+	</message>
+	<message module="admin_index">
+		<id>New update %update is available. Please refresh your database.
+		</id>
+		<string>
+			Neues Update %update ist verf&uuml;gbar.
+			Bitte aktualisieren sie ihre Datenbank.
+		</string>
+	</message>
+	<message module="admin_index">
+		<id>You have %gb new guestbook entries to activate.</id>
+		<string>
+			Es stehen %gb neue(r) G&auml;stebucheintrag-
+			eintr&auml;ge
+			f&uuml;r
+			sie zum Aktivieren bereit.
+		</string>
+	</message>
+	<message module="admin_index">
+		<id>You have %review new review entries to activate.</id>
+		<string>
+			Es stehen %review neue(r) Revieweintrag- eintr&auml;ge
+			f&uuml;r
+			sie zum Aktivieren bereit.
+		</string>
+	</message>
+	<message module="admin_index">
+		<id>Common preferences:</id>
+		<string>Allgemeine Einstellungen:</string>
+	</message>
+	<message module="admin_index">
+		<id>Change preferences</id>
+		<string>Einstellungen &auml;ndern
+		</string>
+	</message>
+	<message module="admin_index">
+		<id>Change password for admin area</id>
+		<string>&Auml;ndern
+			des Passworts f&uuml;r
+			den Admin-Bereich
+		</string>
+	</message>
+	<message module="admin_index">
+		<id>Call PHP-info</id>
+		<string>PHP Info aufrufen</string>
+	</message>
+	<message module="admin_index">
+		<id>Insert/refresh data:</id>
+		<string>Einf&uuml;gen/aktualisieren
+			der Daten:
+		</string>
+	</message>
+	<message module="admin_index">
+		<id>Parse new collection</id>
+		<string>Neue
+			Sammlung einf&uuml;gen
+		</string>
+	</message>
+	<message module="admin_index">
+		<id>Additional functions</id>
+		<string>Zus&auml;tzliche
+			Funktionen
+		</string>
+	</message>
+	<message module="admin_index">
+		<id>Collection Pictures</id>
+		<string>Bilder der Sammlung</string>
+	</message>
+	<message module="admin_index">
+		<id>Reviews</id>
+		<string>Kurzkritiken</string>
+	</message>
+	<message module="admin_index">
+		<id>Check pictures of covers</id>
+		<string>Coverbilder
+			pr&uuml;fen
+		</string>
+	</message>
+	<message module="admin_index">
+		<id>Print listing</id>
+		<string>Drucke Bericht</string>
+	</message>
+	<message module="admin_index">
+		<id>Update award table</id>
+		<string>Award Tabelle updaten</string>
+	</message>
+	<message module="admin_index">
+		<id>Update exchange rates</id>
+		<string>W&auml;hrungskurse
+			aktualisieren
+		</string>
+	</message>
+	<message module="admin_index">
+		<id>Update external reviews</id>
+		<string>Aktualisiere externe Wertungen</string>
+	</message>
+	<message module="admin_index">
+		<id>Refresh database</id>
+		<string>Datenbank aktualisieren</string>
+	</message>
+	<message module="admin_index">
+		<id>Check translations</id>
+		<string>&Uuml;bersetzungen
+			pr&uuml;fen
+		</string>
+	</message>
+	<!-- Additional Dropdown Menu -->
+	<message module="admin_index">
+		<id>Change password</id>
+		<string>Passwort &auml;ndern
+		</string>
+	</message>
+	<message module="admin_index">
+		<id>Refresh data</id>
+		<string>Daten aktualisieren</string>
+	</message>
+	<message module="admin_index">
+		<id>New collection</id>
+		<string>Neue Sammlung</string>
+	</message>
+	<message module="admin_index">
+		<id>Update awards</id>
+		<string>Awards updaten</string>
+	</message>
+	<message module="admin_index">
+		<id>Exchange rates</id>
+		<string>W&auml;hrungskurse
+		</string>
+	</message>
+	<message module="admin_index">
+		<id>Update external reviews</id>
+		<string>Aktualisiere externe Wertungen</string>
+	</message>
+	<message module="admin_index">
+		<id>Common preferences</id>
+		<string>Allgemeine Einstellungen</string>
+	</message>
+
+	<message module="admin_passwd">
+		<id>Change the Administrator Password</id>
+		<string>&Auml;ndern
+			des Administrator-Passworts
+		</string>
+	</message>
+	<message module="admin_passwd">
+		<id>Configuration File</id>
+		<string>Konfigurationsdatei</string>
+	</message>
+	<message module="admin_passwd">
+		<id>not found.</id>
+		<string>wurde nicht gefunden.</string>
+	</message>
+	<message module="admin_passwd">
+		<id>is not writeable.</id>
+		<string>ist nicht beschreibbar.</string>
+	</message>
+	<message module="admin_passwd">
+		<id>You must enter a username and a password.</id>
+		<string>Es muss ein Benutzername und ein Passwort eingegeben werden.
+		</string>
+	</message>
+	<message module="admin_passwd">
+		<id>You must enter a username.</id>
+		<string>Es muss ein Benutzername eingegeben werden.</string>
+	</message>
+	<message module="admin_passwd">
+		<id>You must enter a password.</id>
+		<string>Es muss ein Passwort eingegeben werden.</string>
+	</message>
+	<message module="admin_passwd">
+		<id>The username or the password is wrong.</id>
+		<string>Der Benutzername oder das Passwort ist falsch.</string>
+	</message>
+	<message module="admin_passwd">
+		<id>You must enter the new username and the new password.</id>
+		<string>Neuer Benutzername / Passwort muss eingegeben werden.</string>
+	</message>
+	<message module="admin_passwd">
+		<id>You must enter the new username.</id>
+		<string>Es muss ein neuer Benutzername eingegeben werden.</string>
+	</message>
+	<message module="admin_passwd">
+		<id>You must enter the new password.</id>
+		<string>Es muss ein neues Passwort eingegeben werden.</string>
+	</message>
+	<message module="admin_passwd">
+		<id>The new Password do not match.</id>
+		<string>Das
+			neue Passwort stimmt nicht &uuml;berein.
+		</string>
+	</message>
+	<message module="admin_passwd">
+		<id>Configuration File of Administration</id>
+		<string>Konfigurationsdatei der Administration</string>
+	</message>
+	<message module="admin_passwd">
+		<id>Generated:</id>
+		<string>Erstellt:</string>
+	</message>
+	<message module="admin_passwd">
+		<id>An error occurs while writing to</id>
+		<string>Es ist ein Fehler aufgetreten, beim Schreiben in die Datei:
+		</string>
+	</message>
+	<message module="admin_passwd">
+		<id>Settings saved.</id>
+		<string>Einstellungen wurden gespeichert.</string>
+	</message>
+	<message module="admin_passwd">
+		<id>Success</id>
+		<string>Erfolg</string>
+	</message>
+	<message module="admin_passwd">
+		<id>Current Username</id>
+		<string>Aktueller Benutzername</string>
+	</message>
+	<message module="admin_passwd">
+		<id>Current Password</id>
+		<string>Aktuelles Passwort</string>
+	</message>
+	<message module="admin_passwd">
+		<id>New Username</id>
+		<string>Neuer Benutzername</string>
+	</message>
+	<message module="admin_passwd">
+		<id>New Password</id>
+		<string>Neues Passwort</string>
+	</message>
+	<message module="admin_passwd">
+		<id>Retype new Password</id>
+		<string>Neues Passwort wiederholen</string>
+	</message>
+	<message module="admin_passwd">
+		<id>Save changes</id>
+		<string>&Auml;nderungen
+			speichern
+		</string>
+	</message>
+	<message module="admin_passwd">
+		<id>Clear</id>
+		<string>L&ouml;schen
+		</string>
+	</message>
+
+	<message module="admin_update">
+		<id>Processing update</id>
+		<string>F&uuml;hre
+			Update aus
+		</string>
+	</message>
+	<message module="admin_update">
+		<id>Process update</id>
+		<string>Update
+			ausf&uuml;hren
+		</string>
+	</message>
+	<message module="admin_update">
+		<id>Version database:</id>
+		<string>Version Datenbank:</string>
+	</message>
+	<message module="admin_update">
+		<id>no information available</id>
+		<string>Keine
+			Informationen verf&uuml;gbar
+		</string>
+	</message>
+	<message module="admin_update">
+		<id>latest changes:</id>
+		<string>Zuletzt aktualisiert:</string>
+	</message>
+	<message module="admin_update">
+		<id>Version Update</id>
+		<string>Updateversion</string>
+	</message>
+	<message module="admin_update">
+		<id>Warning</id>
+		<string>Warnung</string>
+	</message>
+	<message module="admin_update">
+		<id>Error</id>
+		<string>Fehler</string>
+	</message>
+	<message module="admin_update">
+		<id>Error: The update was not successful!</id>
+		<string>Fehler: Das Update war nicht erfolgreich!</string>
+	</message>
+	<message module="admin_update">
+		<id>Success. The database is now up-to-date</id>
+		<string>Das Update war erfolgreich. Die Datenbank ist jetzt auf dem
+			neusten Stand</string>
+	</message>
+	<message module="admin_update">
+		<id>Please backup your installation before you proceed!</id>
+		<string>Bitte sichern Sie Ihre Ihre Installation bevor Sie fortfahren!
+		</string>
+	</message>
+	<message module="admin_update">
+		<id>Your database is up-to-date</id>
+		<string>Ihre Datenbank ist auf dem neuesten Stand</string>
+	</message>
+
+	<message module="admin_preferences">
+		<id>Preferences</id>
+		<string>Einstellungen</string>
+	</message>
+	<message module="admin_preferences">
+		<id>No write acccess to config.inc.php. Settings not saved.</id>
+		<string>Kein Schreibzugriff auf config.inc.php. Einstellungen konnten
+			nicht gespeichert werden.</string>
+	</message>
+	<message module="admin_preferences">
+		<id>Generated:</id>
+		<string>Erstellt:</string>
+	</message>
+	<message module="admin_preferences">
+		<id>An error occurs while writing to "config.inc.php".</id>
+		<string>Es ist ein Fehler beim Speichern der Datei "config.inc.php"
+			aufgetreten.</string>
+	</message>
+	<message module="admin_preferences">
+		<id>Settings saved.</id>
+		<string>Einstellungen wurden gespeichert</string>
+	</message>
+	<message module="admin_preferences">
+		<id>Reset</id>
+		<string>R&uuml;cksetzen
+		</string>
+	</message>
+	<message module="admin_preferences">
+		<id>Save configuration</id>
+		<string>Einstellungen sichern</string>
+	</message>
+	<message module="admin_parse">
+		<id>Parse XML file</id>
+		<string>Verarbeite XML-Datei</string>
+	</message>
+	<message module="admin_parse">
+		<id>deleted.</id>
+		<string>gel&ouml;scht.
+		</string>
+	</message>
+	<message module="admin_parse">
+		<id>can\'t be deleted.</id>
+		<string>konnte
+			nicht gel&ouml;scht
+			werden.
+		</string>
+	</message>
+	<message module="admin_parse">
+		<id>not found.</id>
+		<string>nicht gefunden.</string>
+	</message>
+	<message module="admin_parse">
+		<id>First of all you have to upload the exported XML-file to the xml
+			directory. Also you can compress this file and upload a zip-file with
+			the form of this page.</id>
+		<string>Als
+			erstes laden Sie bitte die exportiere XML-Datei in das
+			xml-Verzeichnis. Es ist auch m&ouml;glich
+			die Datei zu komprimieren und das Zip-File mit dem Formular unten
+			hochzuladen.
+		</string>
+	</message>
+	<message module="admin_parse">
+		<id>Parsed Finish</id>
+		<string>Parsen beendet</string>
+	</message>
+	<message module="admin_parse">
+		<id>The Collection was splitted in %split pieces.</id>
+		<string>Die Sammlung wurde in %split Teile gesplittet.</string>
+	</message>
+	<message module="admin_parse">
+		<id> Parsed %dvd DVDs in %sec seconds.</id>
+		<string>%dvd DVDs in %sec Sekunden eingelesen.</string>
+	</message>
+	<message module="admin_parse">
+		<id>Deleted %del unneeded thumbnails.</id>
+		<string>%del
+			nicht mehr ben&ouml;tigte
+			Thumbnails gel&ouml;scht.
+		</string>
+	</message>
+	<message module="admin_parse">
+		<id>Parse</id>
+		<string>Parsen</string>
+	</message>
+	<message module="admin_parse">
+		<id>Term</id>
+		<string>Aktion</string>
+	</message>
+	<message module="admin_parse">
+		<id>Description</id>
+		<string>Funktion</string>
+	</message>
+	<message module="admin_parse">
+		<id>Empty the database and parse the XML-file into the database. For
+			parsing the XML-file will be split in pieces. If you have a large
+			amount of DVDs or your web server is a little bit slow, the parsing
+			may fail (timeout-error or blank page). When the parsing fails you
+			can decrease the number of DVDs for every split file on the
+			preferences page. With the current setting phpMyprofiler will split
+			after every %split DVDs.</id>
+		<string>Leert
+			die Datenbank und &uuml;bertr&auml;gt
+			die Daten aus der XML-Datei in die Datenbank. Die XML-Datei wird
+			dabei in kleine St&uuml;cke
+			aufgesplittet. Wenn sie sehr viele DVDs haben oder ihr Server etwas
+			langsam ist, kann die &Uuml;bertragung
+			fehlschlagen (timeout-error oder leere Seite). Sollte dies zutreffen,
+			k&ouml;nnen
+			sie die Anzahl der DVDs nach denen gesplittet wird in den
+			Einstellungen kleiner stellen. Zur Zeit wird nach %split DVDs
+			gesplittet.
+		</string>
+	</message>
+	<message module="admin_parse">
+		<id>Use this to delete uneeded files.</id>
+		<string>Mit
+			dieser Funktion k&ouml;nnen
+			Sie nicht mehr ben&ouml;tigte
+			Dateien l&ouml;schen.
+		</string>
+	</message>
+	<message module="admin_parse">
+		<id>File</id>
+		<string>Datei</string>
+	</message>
+	<message module="admin_parse">
+		<id>Size</id>
+		<string>Gr&ouml;&szlig;e
+		</string>
+	</message>
+	<message module="admin_parse">
+		<id>Byte</id>
+		<string>Byte</string>
+	</message>
+	<message module="admin_parse">
+		<id>Upload compressed (zip or bz2) or uncompressed Collection XML file
+		</id>
+		<string>Komprimierte (zip oder bz2) oder nichtkomprimierte XML-Datei
+			hochladen</string>
+	</message>
+	<message module="admin_parse">
+		<id>Upload file</id>
+		<string>Datei hochladen</string>
+	</message>
+	<message module="admin_parse">
+		<id>new profiles</id>
+		<string>neue Profile</string>
+	</message>
+	<message module="admin_parse">
+		<id>unaltered Profiles</id>
+		<string>unver&auml;nderte
+			Profile
+		</string>
+	</message>
+	<message module="admin_parse">
+		<id>altered Profiles</id>
+		<string>ver&auml;nderte
+			Profile
+		</string>
+	</message>
+	<message module="admin_parse">
+		<id>deleted Profiles</id>
+		<string>gel&ouml;schte
+			Profile
+		</string>
+	</message>
+	<message module="admin_parse">
+		<id>Parser Mode is</id>
+		<string>Parser Modus ist</string>
+	</message>
+	<message module="admin_parse">
+		<id>This mode will delete all profiles before importing all data from
+			xml-file.</id>
+		<string>Dieser
+			Modus l&ouml;scht
+			erst alle Profile und importiert dann alle Daten aus der xml-Datei.
+		</string>
+	</message>
+	<message module="admin_parse">
+		<id>You should use this mode if you don't have any data in your
+			database or if your xml-file contains a lot of updated or new
+			profiles.</id>
+		<string>Dieser
+			Modus sollte gew&auml;hlt
+			werden, wenn entweder keine Daten in der Datenbank oder viele ge&auml;nderte
+			oder neue Profile in der xml-Datei sind.
+		</string>
+	</message>
+	<message module="admin_parse">
+		<id>This mode will import only update and new profiles, while profiles
+			missing in xml-file will be deleted.</id>
+		<string>Dieser
+			Modus importiert lediglich ge&auml;nderte
+			und neue Profile, w&auml;hrend
+			fehlende Profile gel&ouml;scht
+			werden.
+		</string>
+	</message>
+	<message module="admin_parse">
+		<id>You should use this mode if you have data in your database and you
+			want to get rid of some profiles.</id>
+		<string>Dieser
+			Modus sollte gew&auml;hlt
+			werden, wenn bereits Daten in der Datenbank vorhanden sind und
+			Profile gel&ouml;scht
+			werden sollen.
+		</string>
+	</message>
+	<message module="admin_parse">
+		<id>This mode will import only update and new profiles, while profiles
+			missing in xml-file will not be deleted.</id>
+		<string>Dieser
+			Modus importiert lediglich ge&auml;nderte
+			und neue Profile, w&auml;hrend
+			fehlende Profile nicht gel&ouml;scht
+			werden.
+		</string>
+	</message>
+	<message module="admin_parse">
+		<id>You should use this mode if you have data in your database and you
+			want to keep all profiles.</id>
+		<string>Dieser
+			Modus sollte gew&auml;hlt
+			werden, wenn bereits Daten in der Datenbank vorhanden sind und keine
+			Profile gel&ouml;scht
+			werden sollen.
+		</string>
+	</message>
+
+	<message module="admin_phpinfo">
+		<id>PHP-Info</id>
+		<string>PHP-Info</string>
+	</message>
+
+	<message module="admin_news">
+		<id>News deleted.</id>
+		<string>News
+			wurde gel&ouml;scht.
+		</string>
+	</message>
+	<message module="admin_news">
+		<id>Title / Text is missing</id>
+		<string>Titel / Text fehlt</string>
+	</message>
+	<message module="admin_news">
+		<id>News successfully added.</id>
+		<string>News
+			erfolgreich hinzufgef&uuml;gt.
+		</string>
+	</message>
+	<message module="admin_news">
+		<id>News successfully edited.</id>
+		<string>News erfolgreich bearbeitet.</string>
+	</message>
+	<message module="admin_news">
+		<id>No News available.</id>
+		<string>Keine News vorhanden.</string>
+	</message>
+	<message module="admin_news">
+		<id>Add news</id>
+		<string>News
+			hinzuf&uuml;gen
+		</string>
+	</message>
+	<message module="admin_news">
+		<id>Edit</id>
+		<string>Bearbeiten</string>
+	</message>
+	<message module="admin_news">
+		<id>Add new news</id>
+		<string>Neue
+			News hinzuf&uuml;gen
+		</string>
+	</message>
+	<message module="admin_news">
+		<id>Edit news</id>
+		<string>News bearbeiten</string>
+	</message>
+	<message module="admin_news">
+		<id>Apply Changes</id>
+		<string>&Auml;nderungen &uuml;bernehmen
+		</string>
+	</message>
+
+	<message module="admin_uploadxml">
+		<id>Upload</id>
+		<string>Upload</string>
+	</message>
+	<message module="admin_uploadxml">
+		<id>The directory xml is not writeable.</id>
+		<string>Das XML-Verzeichnis ist nicht beschreibbar.</string>
+	</message>
+	<message module="admin_uploadxml">
+		<id>Can\'t delete compressed collection file</id>
+		<string>Kann
+			die komprimierte collection Datei nicht l&ouml;schen.
+		</string>
+	</message>
+	<message module="admin_uploadxml">
+		<id>Added new Collection.</id>
+		<string>Neue
+			Collection hinzugef&uuml;gt.
+		</string>
+	</message>
+	<message module="admin_uploadxml">
+		<id>Something went wrong.</id>
+		<string>Irgendetwas hat nicht funktioniert.</string>
+	</message>
+	<message module="admin_uploadxml">
+		<id>You need to select a file first!</id>
+		<string>Sie
+			m&uuml;ssen
+			zuerst eine Datei ausw&auml;hlen!
+		</string>
+	</message>
+	<message module="admin_uploadxml">
+		<id>Error %error encountered: %error_str.</id>
+		<string>Fehler %error aufgetreten: %error_str.</string>
+	</message>
+	<message module="admin_uploadxml">
+		<id>Unable to decompress collection file.</id>
+		<string>Kann collection Datei nicht entpacken.</string>
+	</message>
+
+	<message module="admin_checklang">
+		<id>Translation status</id>
+		<string>Status
+			der &Uuml;bersetzungen
+		</string>
+	</message>
+	<message module="admin_checklang">
+		<id>Choose language to check:</id>
+		<string>Sprache
+			zum &Uuml;berpr&uuml;fen
+			w&auml;hlen:
+		</string>
+	</message>
+	<message module="admin_checklang">
+		<id>Detailed overview</id>
+		<string>Detailierte &Uuml;bersicht
+		</string>
+	</message>
+	<message module="admin_checklang">
+		<id>Unused Translations</id>
+		<string>Unbenutzte &Uuml;bersetzungen
+		</string>
+	</message>
+	<message module="admin_checklang">
+		<id>Missing Translations</id>
+		<string>Fehlende &Uuml;bersetzungen
+		</string>
+	</message>
+	<message module="admin_checklang">
+		<id>Used Translations</id>
+		<string>Verwendete &Uuml;bersetzungen
+		</string>
+	</message>
+
+	<message module="admin_updateawards">
+		<id>Update Awards</id>
+		<string>Filmawards updaten</string>
+	</message>
+	<message module="admin_updateawards">
+		<id>parsed.</id>
+		<string>eingelesen.</string>
+	</message>
+	<message module="admin_updateawards">
+		<id>First of all you have to upload an award file to the award
+			directory.</id>
+		<string>Zuerst
+			m&uuml;ssen
+			sie eine Award-Datei in den award Ordner hochladen.
+		</string>
+	</message>
+	<message module="admin_updateawards">
+		<id>upload award file</id>
+		<string>Award-Datei hochladen</string>
+	</message>
+	<message module="admin_updateawards">
+		<id>Parse file into awards table.</id>
+		<string>Datei in die Datenbank eintragen.</string>
+	</message>
+	<message module="admin_updateawards">
+		<id>Upload compressed (zip or bz2) or uncompressed award file</id>
+		<string>Gepackte (zip oder bz2) oder ungepackte Award-Datei hochladen
+		</string>
+	</message>
+
+	<message module="admin_uploadaward">
+		<id>Upload Awards</id>
+		<string>Upload Awards</string>
+	</message>
+	<message module="admin_uploadaward">
+		<id>Added new award file.</id>
+		<string>Neue
+			Award-Datei hinzugef&uuml;gt.
+		</string>
+	</message>
+	<message module="admin_uploadaward">
+		<id>Wrong file type!</id>
+		<string>Falscher Datei Typ!</string>
+	</message>
+	<message module="admin_uploadaward">
+		<id>Upload failed!</id>
+		<string>Upload fehlgeschlagen!</string>
+	</message>
+	<message module="admin_uploadaward">
+		<id>Error No:</id>
+		<string>Fehler Nummer:</string>
+	</message>
+	<message module="admin_uploadaward">
+		<id>The directory awards is not writeable.</id>
+		<string>Das Awards-Verzeichnis ist nicht beschreibbar.</string>
+	</message>
+	<message module="admin_uploadaward">
+		<id>Unable to decompress award file.</id>
+		<string>Kann Award-Datei nicht entpacken.</string>
+	</message>
+
+	<message module="admin_pictures">
+		<id>Photos</id>
+		<string>Fotos</string>
+	</message>
+	<message module="admin_pictures">
+		<id>The picture was successfully removed.</id>
+		<string>Das Bild wurde erfolgreich entfernt.</string>
+	</message>
+	<message module="admin_pictures">
+		<id>Filename is wrong and can't be used. New Filename generated.</id>
+		<string>Dateiname ist falsch und kann nicht benutzt werden. Neuer
+			Dateiname generiert.</string>
+	</message>
+	<message module="admin_pictures">
+		<id>Added a new picture.</id>
+		<string>Ein
+			neues Bild hinzugef&uuml;gt.
+		</string>
+	</message>
+	<message module="admin_pictures">
+		<id>File exists.</id>
+		<string>Datei exisitiert.</string>
+	</message>
+	<message module="admin_pictures">
+		<id>Can't identify file type</id>
+		<string>Leider konnte der Dateityp nicht ermittelt werden.</string>
+	</message>
+	<message module="admin_pictures">
+		<id>Upload pictures</id>
+		<string>Bilder hochladen</string>
+	</message>
+	<message module="admin_pictures">
+		<id>Filename</id>
+		<string>Dateiname</string>
+	</message>
+	<message module="admin_pictures">
+		<id>Upload picture</id>
+		<string>Bild hochladen</string>
+	</message>
+	<message module="admin_pictures">
+		<id>Dimension</id>
+		<string>Dimension</string>
+	</message>
+	<message module="admin_pictures">
+		<id>The directory pictures is not writeable.</id>
+		<string>Das
+			Verzeichnis pictures ist schreibgesch&uuml;tzt.
+		</string>
+	</message>
+	<message module="admin_pictures">
+		<id>Can not move file from tmp into pictures dir.</id>
+		<string>Kann die Datei nicht von tmp ins das Bilderverzeichnis
+			verschieben.</string>
+	</message>
+
+	<message module="admin_guestbook">
+		<id>Guestbook entry deleted.</id>
+		<string>Der
+			G&auml;stebucheintrag
+			wurde gel&ouml;scht.
+		</string>
+	</message>
+	<message module="admin_guestbook">
+		<id>Guestbook entry activated.</id>
+		<string>Der
+			G&auml;stebucheintrag
+			wurde aktiviert.
+		</string>
+	</message>
+	<message module="admin_guestbook">
+		<id>Comment changed.</id>
+		<string>Kommentar &uuml;bernommen.
+		</string>
+	</message>
+	<message module="admin_guestbook">
+		<id>All Guestbook entries activated.</id>
+		<string>Alle
+			G&auml;stebucheintr&auml;ge
+			aktiviert.
+		</string>
+	</message>
+	<message module="admin_guestbook">
+		<id>Pending guestbook entries</id>
+		<string>Nicht
+			aktivierte G&auml;stebucheintr&auml;ge
+		</string>
+	</message>
+	<message module="admin_guestbook">
+		<id>Activate all guestbook entries</id>
+		<string>Alle
+			G&auml;stebucheintr&auml;ge
+			aktivieren
+		</string>
+	</message>
+	<message module="admin_guestbook">
+		<id>OK</id>
+		<string>OK</string>
+	</message>
+	<message module="admin_guestbook">
+		<id>There are no pending guestbook entries.</id>
+		<string>Es
+			warten keine G&auml;stebucheintr&auml;ge
+			auf Aktivierung.
+		</string>
+	</message>
+	<message module="admin_guestbook">
+		<id>Active guestbook entries</id>
+		<string>Aktive
+			G&auml;stebucheintr&auml;ge
+		</string>
+	</message>
+	<message module="admin_guestbook">
+		<id>There are no active guestbook entries.</id>
+		<string>Es
+			gibt keine aktiven G&auml;stebucheintr&auml;ge.
+		</string>
+	</message>
+
+	<message module="admin_login">
+		<id>Logon</id>
+		<string>Anmeldung</string>
+	</message>
+	<message module="admin_login">
+		<id>Username</id>
+		<string>Benutzername</string>
+	</message>
+	<message module="admin_login">
+		<id>Password</id>
+		<string>Passwort</string>
+	</message>
+	<message module="admin_login">
+		<id>Login</id>
+		<string>Einloggen</string>
+	</message>
+	<message module="admin_login">
+		<id>Use a valid username and password to gain access to the
+			administration console.</id>
+		<string>Bitte
+			geben sie den Benutzernamen und das Passwort ein, um Zugang zur
+			Administrations-Oberfl&auml;che
+			zu erhalten.
+		</string>
+	</message>
+
+	<message module="admin_updateimdb">
+		<id>External reviews updated.</id>
+		<string>Externe Wertungen aktualisiert.</string>
+	</message>
+	<message module="admin_updateimdb">
+		<id>This feature takes a lot time and need access to remote files. Not
+			every server satisfy this requirements.</id>
+		<string>Dieses
+			Feature ben&ouml;tigt
+			sehr viel Zeit und Zugriff auf entfernte Dateien. Nicht jeder Server
+			erf&uuml;llt
+			diese Bedingungen.
+		</string>
+	</message>
+	<message module="admin_updateimdb">
+		<id>Total</id>
+		<string>Insgesamt</string>
+	</message>
+	<message module="admin_updateimdb">
+		<id>Outdated</id>
+		<string>Veraltet</string>
+	</message>
+	<message module="admin_updateimdb">
+		<id>New</id>
+		<string>Neu</string>
+	</message>
+	<message module="admin_updateimdb">
+		<id>Click here to create IMDB/OFDB Tags.</id>
+		<string>Zum Erstellen von IMDB/OFDB Tags hier klicken.</string>
+	</message>
+	<message module="admin_updateimdb">
+		<id>Tags table updated.</id>
+		<string>Tags Tabelle aktualisiert.</string>
+	</message>
+
+	<message module="admin_screenshots">
+		<id>The directory screenshots is not writeable.</id>
+		<string>Das Verzeichnis screenshots ist nicht beschreibbar.</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Can\'t delete compressed file.</id>
+		<string>Die
+			komprimierte Datei kann nicht gel&ouml;scht
+			werden.
+		</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Added new Screenshots.</id>
+		<string>Neue
+			Screenshots wurden hinzugef&uuml;gt.
+		</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Unable to decompress file.</id>
+		<string>Die Datei kann nicht dekomprimiert werden.</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Something went wrong.</id>
+		<string>Irgendetwas hat nicht funktioniert.</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Wrong file type!</id>
+		<string>Falsches Dateiformat!</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Upload failed!</id>
+		<string>Das Hochladen ist fehlgeschlagen!</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Error No:</id>
+		<string>Fehlernummer:</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>You need to select a file first!</id>
+		<string>Sie
+			m&uuml;ssen
+			zuerst eine Datei ausw&auml;hlen!
+		</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Links must not end with a dot.</id>
+		<string>Verlinkungen
+			d&uuml;rfen
+			nicht mit einem Punkt enden.
+		</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Screenshots successfully relinked.</id>
+		<string>Screenshots erfolgreich verlinkt.</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Screenshots could not be relinked.</id>
+		<string>Screenshots konnten nicht verlinkt werden.</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Symlink successfully build.</id>
+		<string>Symlink erfolgreich erstellt.</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Symlink could not be build.</id>
+		<string>Symlink konnte nicht erstellt werden.</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Tags table updated.</id>
+		<string>Tag-Tabelle aktualisiert.</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Symlink successfully deleted.</id>
+		<string>Symlink erfolgreich entfernt.</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Symlink could not be deleted.</id>
+		<string>Symlink konnte nicht entfernt werden.</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Screenshots successfully moved to prior symlink.</id>
+		<string>Screenshots erfolgreich zum vorherigen Symlink verschoben.
+		</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Screenshots could not be moved to prior symlink.</id>
+		<string>Screenshots konnten nicht zum vorherigen Symlink verschoben
+			werden.</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Symlink could not be deleted.</id>
+		<string>Symlink konnte nicht entfernt werden.</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Screenshots successfully deleted.</id>
+		<string>Screenshots
+			erfolgreich gel&ouml;scht.
+		</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Screenshots could not be deleted.</id>
+		<string>Screenshots
+			konnten nicht gel&ouml;scht
+			werden.
+		</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Build tags</id>
+		<string>Erstelle Tags</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Show</id>
+		<string>Anzeigen</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Not linked to profiles</id>
+		<string>Nicht mit Profilen verlinkt</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Linked to profiles</id>
+		<string>Mit Profilen verlinkt</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Relink to ID</id>
+		<string>Verlinke mit ID</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Delete</id>
+		<string>L&ouml;schen
+		</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Symlink to ID</id>
+		<string>Erstelle Symlink</string>
+	</message>
+	<message module="admin_screenshots">
+		<id>Back to screenshots</id>
+		<string>Zur&uuml;ck
+			zu Screenshots
+		</string>
+	</message>
+
+	<message module="header">
+		<id>Logout</id>
+		<string>Abmelden</string>
+	</message>
+	<message module="header">
+		<id>Back to Cover overview</id>
+		<string>Zur&uuml;ck
+			zur Cover&uuml;bersicht
+		</string>
+	</message>
+	<message module="header">
+		<id>Back to headshots</id>
+		<string>Zur&uuml;ck
+			zu den Headshots
+		</string>
+	</message>
+	<message module="header">
+		<id>Back to the News</id>
+		<string>Zur&uuml;ck
+			zu den News
+		</string>
+	</message>
+	<message module="header">
+		<id>Back to admin menu</id>
+		<string>Zur&uuml;ck
+			zum Admin-Men&uuml;
+		</string>
+	</message>
+	<message module="header">
+		<id>Back to parsing menu...</id>
+		<string>Zur&uuml;ck
+			zum Parser-Men&uuml;
+		</string>
+	</message>
+	<message module="header">
+		<id>Back to award menu...</id>
+		<string>Zur&uuml;ck
+			zum Award-Men&uuml;
+		</string>
+	</message>
+	<message module="header">
+		<id>Close</id>
+		<string>Schlie&szlig;en
+		</string>
+	</message>
+
+	<message module="banner">
+		<id>Recently added:</id>
+		<string>Zuletzt
+			hinzugef&uuml;gt:
+		</string>
+	</message>
+	<message module="banner">
+		<id>recently added:</id>
+		<string>hat
+			zuletzt hinzugef&uuml;gt:
+		</string>
+	</message>
+	<message module="banner">
+		<id>Recently watched:</id>
+		<string>Zuletzt gesehen:</string>
+	</message>
+	<message module="banner">
+		<id>recently watched:</id>
+		<string>hat zuletzt gesehen:</string>
+	</message>
+
+	<message module="options">
+		<id>Main settings</id>
+		<string>Grundeinstellungen</string>
+	</message>
+	<message module="options">
+		<id>Database server</id>
+		<string>Datenbank-Server</string>
+	</message>
+	<message module="options">
+		<id>Database user</id>
+		<string>Datenbank-User</string>
+	</message>
+	<message module="options">
+		<id>Database password</id>
+		<string>Datenbank-Passwort</string>
+	</message>
+	<message module="options">
+		<id>Database name</id>
+		<string>Datenbank-Name</string>
+	</message>
+	<message module="options">
+		<id>Table prefix</id>
+		<string>Tabellenpr&auml;fix
+		</string>
+	</message>
+	<message module="options">
+		<id>URL to phpMyprofiler</id>
+		<string>URL zum phpmyProfiler</string>
+	</message>
+	<message module="options">
+		<id>e.g. http://www.example.com/pmp (without / at the end!)</id>
+		<string>z.B. http://www.example.com/pmp (ohne / am Ende!)</string>
+	</message>
+	<message module="options">
+		<id>Basic settings</id>
+		<string>Basiseinstellungen</string>
+	</message>
+	<message module="options">
+		<id>Administrator's name</id>
+		<string>Name des Administrators</string>
+	</message>
+	<message module="options">
+		<id>Administrator's Email</id>
+		<string>Emailadresse des Administrators</string>
+	</message>
+	<message module="options">
+		<id>Page title</id>
+		<string>Seitentitel</string>
+	</message>
+	<message module="options">
+		<id>Cache templates</id>
+		<string>Templates zwischenspeichern</string>
+	</message>
+	<message module="options">
+		<id>Cache templates in cache directory (must be writeable). This will
+			speed up your phpMyProfiler a lot, but you will need som additional
+			webspace for the chached templates.</id>
+		<string>Templates
+			in cache Ordner zwischenspeichern (muss beschreibbar sein). Dies wird
+			die Geschwindigkeit ihres phpMyProfiler stark erh&ouml;hen,
+			ben&ouml;tigt
+			aber etwas mehr Webspace f&uuml;r
+			den Zwischenspeicher.
+		</string>
+	</message>
+	<message module="options">
+		<id>Cache lifetime</id>
+		<string>Lebensdauer des Zwischenspeichers</string>
+	</message>
+	<message module="options">
+		<id>Lifetime of a cached template. After this time the template will
+			rendered new. When parsing a new collection, the cache is flushed
+			automatically, so using unlimited should be no problem.</id>
+		<string>Lebensdauer eines zwischengespeicherten Templates. Nach dieser
+			Zeit wird das Template neu erstellt. Wenn eine neue Sammlung in die
+			Datenbank geschrieben wird, wird der Zwischenspeicher automatisch
+			geleert, deshalb sollte "unlimited" kein Problem darstellen.</string>
+	</message>
+	<message module="options">
+		<id>Check for updates</id>
+		<string>Auf
+			Updates pr&uuml;fen
+		</string>
+	</message>
+	<message module="options">
+		<id>Contact www.phpmyprofiler.de when entering the admin-menu and
+			check if a new version is available.</id>
+		<string>Soll
+			regelm&auml;&szlig;ig
+			www.phpmyprofiler.de kontaktiert werden und nach einer neuen Version
+			gesucht gesucht werden?
+		</string>
+	</message>
+	<message module="options">
+		<id>Imprint</id>
+		<string>Benutzeradresse</string>
+	</message>
+	<message module="options">
+		<id>Show imprint?</id>
+		<string>Benutzeradresse anzeigen?</string>
+	</message>
+	<message module="options">
+		<id>If you you choose no, you can skip this category.</id>
+		<string>Wenn
+			sie "Nein" ausw&auml;hlen,
+			k&ouml;nnen
+			sie diese Kategorie &uuml;berspringen.
+		</string>
+	</message>
+	<message module="options">
+		<id>Full name</id>
+		<string>Vor- und Nachname</string>
+	</message>
+	<message module="options">
+		<id>Place of residence</id>
+		<string>Wohnort</string>
+	</message>
+	<message module="options">
+		<id>Zip code</id>
+		<string>Postleitzahl</string>
+	</message>
+	<message module="options">
+		<id>Adress</id>
+		<string>Strasse
+			bzw. zus&auml;tzliche
+			Angabe
+		</string>
+	</message>
+	<message module="options">
+		<id>Language settings</id>
+		<string>Spracheinstellungen</string>
+	</message>
+	<message module="options">
+		<id>Default language</id>
+		<string>Standardsprache</string>
+	</message>
+	<message module="options">
+		<id>Date format</id>
+		<string>Datumsformat</string>
+	</message>
+	<message module="options">
+		<id>MM/DD/YY</id>
+		<string>MM/TT/JJ</string>
+	</message>
+	<message module="options">
+		<id>DD.MM.YYYY</id>
+		<string>TT.MM.JJJJ</string>
+	</message>
+	<message module="options">
+		<id>YYYY-MM-DD</id>
+		<string>JJJJ-MM-TT</string>
+	</message>
+	<message module="options">
+		<id>Preferred currency</id>
+		<string>Bevorzugte
+			W&auml;hrung
+		</string>
+	</message>
+	<message module="options">
+		<id>Decimal point</id>
+		<string>Dezimalzeichen</string>
+	</message>
+	<message module="options">
+		<id>point</id>
+		<string>Punkt</string>
+	</message>
+	<message module="options">
+		<id>comma</id>
+		<string>Komma</string>
+	</message>
+	<message module="options">
+		<id>Thousands seperator</id>
+		<string>Tausender-Unterteilung</string>
+	</message>
+	<message module="options">
+		<id>Timezone</id>
+		<string>Zeitzone</string>
+	</message>
+	<message module="options">
+		<id>Parser settings</id>
+		<string>Parser-Einstellungen</string>
+	</message>
+	<message module="options">
+		<id>Parser mode</id>
+		<string>Parser Modus</string>
+	</message>
+	<message module="options">
+		<id>'Build from scratch' will delete all profiles, 'Update with
+			delete' will only delete profiles not in xml, 'Update without delete'
+			will delete no profiles but update those in xml.</id>
+		<string>'Kompletter
+			Neuaufbau' l&ouml;scht
+			alle Profile, 'Update mit l&ouml;schen'
+			l&ouml;scht
+			nur die Profile, die nicht in der xml stehen, 'Update ohne l&ouml;schen'
+			aktualisiert nur neue und ge&auml;nderte
+			Profile.
+		</string>
+	</message>
+	<message module="options">
+		<id>Build from scratch</id>
+		<string>Kompletter Neuaufbau</string>
+	</message>
+	<message module="options">
+		<id>Update with delete</id>
+		<string>Update
+			mit l&ouml;schen
+		</string>
+	</message>
+	<message module="options">
+		<id>Update without delete</id>
+		<string>Update
+			ohne l&ouml;schen
+		</string>
+	</message>
+	<message module="options">
+		<id>Split collection after x DVDs</id>
+		<string>Kollektion nach wie vielen DVDs teilen.</string>
+	</message>
+	<message module="options">
+		<id>If your server is too slow to parse all dvds at once (timeout
+			error occurs), you can split the file into smaller pieces. This
+			setting is used only in 'Build from scratch'-Mode.</id>
+		<string>Falls der Server zu langsam ist, sollte man die XML-Datei in
+			kleinere Teile aufteilen. Diese Einstellung wird nur im Modus
+			'Kompletter Neuaufbau' genutzt</string>
+	</message>
+	<message module="options">
+		<id>Build banners for use in a signature</id>
+		<string>Banner
+			f&uuml;r
+			Signaturen erstellen
+		</string>
+	</message>
+	<message module="options">
+		<id>This will create banners for the last ten added and/or watched
+			movies.</id>
+		<string>Diese
+			Funktion erstellt Banner &uuml;ber
+			die letzten zehn hinzugef&uuml;gten
+			und/oder gesehenen Filme.
+		</string>
+	</message>
+	<message module="options">
+		<id>No banner</id>
+		<string>Keine Banner</string>
+	</message>
+	<message module="options">
+		<id>Last added banner only</id>
+		<string>Banner &uuml;ber
+			neu hinzugef&uuml;gte
+		</string>
+	</message>
+	<message module="options">
+		<id>Last watched banner only</id>
+		<string>Banner &uuml;ber
+			zuletzt gesehene
+		</string>
+	</message>
+	<message module="options">
+		<id>Both banners</id>
+		<string>Beide Banner</string>
+	</message>
+	<message module="options">
+		<id>Build banners for</id>
+		<string>Erstelle
+			Banner f&uuml;r
+		</string>
+	</message>
+	<message module="options">
+		<id>This will insert the name to the banner title. Notice that this
+			will also filter for watched movies by this person.</id>
+		<string>Dieser
+			Name wird in den Banner-Titel eingetragen. Beachten sie, dass f&uuml;r
+			gesehene Filme zus&auml;tzlich
+			nach diesem Namen gefiltert wird.
+		</string>
+	</message>
+	<message module="options">
+		<id>Graphic settings</id>
+		<string>Grafikeinstellungen</string>
+	</message>
+	<message module="options">
+		<id>Use graphic funtions</id>
+		<string>Verwende Grafikfunktionen</string>
+	</message>
+	<message module="options">
+		<id>Set to yes, if GD-Libs are installed</id>
+		<string>Ja
+			w&auml;hlen,
+			falls die GD-Bibliotheken installiert sind
+		</string>
+	</message>
+	<message module="options">
+		<id>Yes</id>
+		<string>Ja</string>
+	</message>
+	<message module="options">
+		<id>No</id>
+		<string>Nein</string>
+	</message>
+	<message module="options">
+		<id>Cache thumbnails</id>
+		<string>Thumbnails zwischenspeichern</string>
+	</message>
+	<message module="options">
+		<id>Cached thumbnails in cache directory (must be writeable). This
+			will speed up your phpMyProfiler but you will need some additional
+			webspace for the thumbnails.</id>
+		<string>Thumbnails
+			in cache Ordner zwischenspeichern (muss beschreibbar sein). Dies wird
+			die Geschwindigkeit ihres phpMyProfiler stark erh&ouml;hen,
+			ben&ouml;tigt
+			aber etwas mehr Webspace f&uuml;r
+			den Zwischenspeicher.
+		</string>
+	</message>
+	<message module="options">
+		<id>Use true type fonts in graphs</id>
+		<string>True-Type-Schriften in den Statistiken verwenden.</string>
+	</message>
+	<message module="options">
+		<id>You
+			need to use true type fonts for languages with special characters
+			(eg. Norwegian &Oslash;)
+		</id>
+		<string>F&uuml;r
+			Sonderzeichen werden True-Type-Fonts ben&ouml;tigt
+			(z.B. das norwegische &Oslash;)
+		</string>
+	</message>
+	<message module="options">
+		<id>Display settings</id>
+		<string>Darstellungseinstellungen</string>
+	</message>
+	<message module="options">
+		<id>Theme</id>
+		<string>Theme</string>
+	</message>
+	<message module="options">
+		<id>default</id>
+		<string>Standard</string>
+	</message>
+	<message module="options">
+		<id>Number of DVDs at start page</id>
+		<string>Anzahl DVDs auf der Startseite</string>
+	</message>
+	<message module="options">
+		<id>Number of DVDs in DVD list per page</id>
+		<string>Anzahl DVDs pro Seite in der DVD-Liste</string>
+	</message>
+	<message module="options">
+		<id>Number of entries in guestbook per page</id>
+		<string>Anzahl
+			Eintr&auml;ge
+			pro Seite im G&auml;stebuch
+		</string>
+	</message>
+	<message module="options">
+		<id>Number of photos in photo gallery per page</id>
+		<string>Anzahl Fotos pro Seite in der Fotogalerie</string>
+	</message>
+	<message module="options">
+		<id>Number of news in news archive per page</id>
+		<string>Anzahl pro Seite im Newsarchiv</string>
+	</message>
+	<message module="options">
+		<id>Number of covers in cover gallery per page</id>
+		<string>Anzahl Cover pro Seite in der Covergallerie</string>
+	</message>
+	<message module="options">
+		<id>Number of covers in cover gallery per line</id>
+		<string>Anzahl Cover pro Zeile in der Covergallerie</string>
+	</message>
+	<message module="options">
+		<id>Number of pictures in person gallery per line</id>
+		<string>Anzahl Bilder pro Zeile in der Personen Gallerie</string>
+	</message>
+	<message module="options">
+		<id>Number of pictures in person gallery per page</id>
+		<string>Anzahl Bilder pro Seite in der Personen Gallerie</string>
+	</message>
+	<message module="options">
+		<id>Show time information on event page</id>
+		<string>Zeitinformationen in den Ereignissen anzeigen</string>
+	</message>
+	<message module="options">
+		<id>Use HTML-Code in notices</id>
+		<string>Benutze HTML-Code in Notizen</string>
+	</message>
+	<message module="options">
+		<id>Show HD banner</id>
+		<string>Zeige HD Banner</string>
+	</message>
+	<message module="options">
+		<id>Type of review</id>
+		<string>Art der Bewertung</string>
+	</message>
+	<message module="options">
+		<id>Default (Movie, DVD)</id>
+		<string>Voreingestellt (Film, DVD)</string>
+	</message>
+	<message module="options">
+		<id>Simple (Movie)</id>
+		<string>Einfach (Film)</string>
+	</message>
+	<message module="options">
+		<id>Detailed (Movie, Video, Audio, Extras)</id>
+		<string>Detailliert (Film, Video, Audio, Extras)</string>
+	</message>
+	<message module="options">
+		<id>Deactivated</id>
+		<string>Deaktiviert</string>
+	</message>
+	<message module="options">
+		<id>Will only work if GD-Libs are enabled</id>
+		<string>Funktioniert nur wenn die GD-Bibliotheken aktiviert sind
+		</string>
+	</message>
+	<message module="options">
+		<id>Activate external reviews</id>
+		<string>Aktiviere externe Kritiken</string>
+	</message>
+	<message module="options">
+		<id>Exclude tag</id>
+		<string>Ausnahme Tag</string>
+	</message>
+	<message module="options">
+		<id>Don't show media with this selected tag</id>
+		<string>Zeige
+			keine Medien mit ausgew&auml;hltem
+			Tag
+		</string>
+	</message>
+	<message module="options">
+		<id>Show media type before title</id>
+		<string>Zeige Medien-Typ vor Titel</string>
+	</message>
+	<message module="options">
+		<id>Disable newsarchive</id>
+		<string>Deaktiviere Newsarchiv</string>
+	</message>
+	<message module="options">
+		<id>Disable guestbook</id>
+		<string>Deaktiviere
+			G&auml;stebuch
+		</string>
+	</message>
+	<message module="options">
+		<id>Disable contact</id>
+		<string>Deaktiviere Kontakt</string>
+	</message>
+	<message module="options">
+		<id>Disable phpMyProfiler website and forum links</id>
+		<string>Deaktiviere Links zur phpMyProfiler Webseite und Forum
+		</string>
+	</message>
+	<message module="options">
+		<id>Disable reviews</id>
+		<string>Deaktiviere Kurzkritiken</string>
+	</message>
+	<message module="options">
+		<id>Use Count As value from DVDProfiler for statistics</id>
+		<string>Benutze
+			Count As Wert vom DVDProfiler f&uuml;r
+			Statistiken
+		</string>
+	</message>
+	<message module="options">
+		<id>Show external links on profile page</id>
+		<string>Zeige externe Links auf Profilseite</string>
+	</message>
+	<message module="options">
+		<id>Show review summary graph</id>
+		<string>Zeige Bewertungs Zusammenfassung</string>
+	</message>
+	<message module="options">
+		<id>Other settings</id>
+		<string>Weitere Einstellungen</string>
+	</message>
+	<message module="options">
+		<id>Activate guestbooks entries automatically</id>
+		<string>G&auml;stebucheintr&auml;ge
+			automatisch freischalten
+		</string>
+	</message>
+	<message module="options">
+		<id>Use security code in guestbook</id>
+		<string>Security-Code
+			im G&auml;stebuch
+			nutzen
+		</string>
+	</message>
+	<message module="options">
+		<id>Activate reviews automatically</id>
+		<string>Reviews automatisch freischalten</string>
+	</message>
+	<message module="options">
+		<id>Sort order of latest DVDs</id>
+		<string>Sortierung
+			Neuzug&auml;ge
+		</string>
+	</message>
+	<message module="options">
+		<id>Date of purchase</id>
+		<string>Kaufdatum</string>
+	</message>
+	<message module="options">
+		<id>Number</id>
+		<string>Nummer</string>
+	</message>
+	<message module="options">
+		<id>Show price informations in statistics</id>
+		<string>Preisinformationen in den Statistiken anzeigen</string>
+	</message>
+	<message module="options">
+		<id>Relative path to cast directory</id>
+		<string>Relativer Pfad zum Cast-Verzeichnis</string>
+	</message>
+	<message module="options">
+		<id>Change this value only if you know what your are doing.</id>
+		<string>&Auml;ndern
+			Sie diesen Wert bitte nur, wenn Sie wissen, was Sie tun.
+		</string>
+	</message>
+	<message module="options">
+		<id>Enable Google Analytics</id>
+		<string>Aktiviere Google Analytics</string>
+	</message>
+	<message module="options">
+		<id>Google Analytics Tracking Code</id>
+		<string>Ihr Google Analytics Tracking Code</string>
+	</message>
+	<message module="options">
+		<id>Turn on gzip output buffer</id>
+		<string>Aktiviere gzip Output-Buffer</string>
+	</message>
+	<message module="options">
+		<id>DVD-List</id>
+		<string>DVD-Liste</string>
+	</message>
+	<message module="options">
+		<id>Default sort order</id>
+		<string>Standardsortierung - Spalte</string>
+	</message>
+	<message module="options">
+		<id>Default sort order direction</id>
+		<string>Standardsortierung - Richtung</string>
+	</message>
+	<message module="options">
+		<id>Movie Title</id>
+		<string>Filmtitel</string>
+	</message>
+	<message module="options">
+		<id>Year</id>
+		<string>Jahr</string>
+	</message>
+	<message module="options">
+		<id>Nr.</id>
+		<string>Nr.</string>
+	</message>
+	<message module="options">
+		<id>Length</id>
+		<string>L&auml;nge
+		</string>
+	</message>
+	<message module="options">
+		<id>Price</id>
+		<string>Preis</string>
+	</message>
+	<message module="options">
+		<id>Place of purchase</id>
+		<string>Kaufort</string>
+	</message>
+	<message module="options">
+		<id>Origin</id>
+		<string>Herkunft</string>
+	</message>
+	<message module="options">
+		<id>Media</id>
+		<string>Medium</string>
+	</message>
+	<message module="options">
+		<id>Default sort order of child profiles</id>
+		<string>Standardsortierung
+			f&uuml;r
+			Kind-Profile
+		</string>
+	</message>
+	<message module="options">
+		<id>Show sequential number</id>
+		<string>Zeige laufende Nummer</string>
+	</message>
+	<message module="options">
+		<id>Column 1</id>
+		<string>Spalte 1</string>
+	</message>
+	<message module="options">
+		<id>Hide column 1 also hide the "+" before Boxsets and the films are
+			not clickable.</id>
+		<string>Wenn
+			die 1. Spalte ausgeblendet wird, verschwindet auch das "+" f&uuml;r
+			die Boxsets und der Film kann nicht mehr ausgew&auml;hlt
+			werden.
+		</string>
+	</message>
+	<message module="options">
+		<id>Column 2</id>
+		<string>Spalte 2</string>
+	</message>
+	<message module="options">
+		<id>Column 3</id>
+		<string>Spalte 3</string>
+	</message>
+	<message module="options">
+		<id>Column 4</id>
+		<string>Spalte 4</string>
+	</message>
+	<message module="options">
+		<id>Column 5</id>
+		<string>Spalte 5</string>
+	</message>
+	<message module="options">
+		<id>Column 6</id>
+		<string>Spalte 6</string>
+	</message>
+	<message module="options">
+		<id>1 hour</id>
+		<string>1 Stunde</string>
+	</message>
+	<message module="options">
+		<id>2 hours</id>
+		<string>2 Stunden</string>
+	</message>
+	<message module="options">
+		<id>3 hours</id>
+		<string>3 Stunden</string>
+	</message>
+	<message module="options">
+		<id>12 hours</id>
+		<string>12 Stunden</string>
+	</message>
+	<message module="options">
+		<id>24 hours</id>
+		<string>24 Stunden</string>
+	</message>
+	<message module="options">
+		<id>unlimited</id>
+		<string>unbegrenzt</string>
+	</message>
+	<message module="options">
+		<id>Possible values:</id>
+		<string>M&ouml;gliche
+			Werte:
+		</string>
+	</message>
+	<message module="options">
+		<id>empty</id>
+		<string>leer</string>
+	</message>
+	<message module="options">
+		<id>Display settings for profiles</id>
+		<string>Anzeigeeinstellungen für Profile</string>
+	</message>
+	<message module="options">
+		<id>Auto</id>
+		<string>Auto</string>
+	</message>
+	<message module="options">
+		<id>My Links</id>
+		<string>Meine Links</string>
+	</message>
+	<message module="options">
+		<id>External Links</id>
+		<string>Externe Links</string>
+	</message>
+	<message module="options">
+		<id>All</id>
+		<string>Alle</string>
+	</message>
+	<message module="options">
+		<id>None</id>
+		<string>Keine</string>
+	</message>
+
+	<message module="install">
+		<id>Pre-Installation Check</id>
+		<string>Pre-Installation Check</string>
+	</message>
+	<message module="install">
+		<id>Step 1</id>
+		<string>Schritt 1</string>
+	</message>
+	<message module="install">
+		<id>Step 2</id>
+		<string>Schritt 2</string>
+	</message>
+	<message module="install">
+		<id>Step 3</id>
+		<string>Schritt 3</string>
+	</message>
+	<message module="install">
+		<id>Frontpage</id>
+		<string>Startseite</string>
+	</message>
+	<message module="install">
+		<id>Available</id>
+		<string>Verf&uuml;gbar
+		</string>
+	</message>
+	<message module="install">
+		<id>Unavailable</id>
+		<string>Nicht
+			verf&uuml;gbar
+		</string>
+	</message>
+	<message module="install">
+		<id>Requirements</id>
+		<string>Anforderungen</string>
+	</message>
+	<message module="install">
+		<id>Writeable</id>
+		<string>Schreibbar</string>
+	</message>
+	<message module="install">
+		<id>Unwriteable</id>
+		<string>Lesbar</string>
+	</message>
+	<message module="install">
+		<id>Finish</id>
+		<string>Ende</string>
+	</message>
+	<message module="install">
+		<id>To install phpMyProfiler you must have this requirements.</id>
+		<string>Um
+			phpMyProfiler zu installieren sind folgende Anforderungen n&ouml;tig.
+		</string>
+	</message>
+	<message module="install">
+		<id>Directory and File Permissions</id>
+		<string>Verzeichnis- und Datei-Rechte</string>
+	</message>
+	<message module="install">
+		<id>This folders/files must be writeable to install phpMyProfiler.
+		</id>
+		<string>Folgende
+			Verzeichnisse/Dateien ben&ouml;tigen
+			Schreibberechtigung um phMyProfiler zu installieren.
+		</string>
+	</message>
+	<message module="install">
+		<id>Check Again</id>
+		<string>Pr&uuml;fe
+			nochmal
+		</string>
+	</message>
+	<message module="install">
+		<id>Next</id>
+		<string>N&auml;chste
+		</string>
+	</message>
+	<message module="install">
+		<id>If some requirements are not available and colored red, the
+			installation will not start.</id>
+		<string>Wenn
+			einige Anforderungen nicht verf&uuml;gbar
+			und rot markiert sind, kann die Installation nicht fortgesetzt
+			werden.
+		</string>
+	</message>
+	<message module="install">
+		<id>When its colored orange, the installation will starts but not all
+			functions are available.</id>
+		<string>Sollte
+			die Anforderung orange markiert sein, kann die Installation
+			fortgesetzt werden. Aber es sind nicht alle Funktionen verf&uuml;gbar.
+		</string>
+	</message>
+	<message module="install">
+		<id>The Installation has finished. For your security, you must delete
+			the folder "installation".</id>
+		<string>Die
+			Installation ist abgeschlossen. F&uuml;r
+			Ihre Sicherheit m&uuml;ssen
+			Sie jetzt das Verzeichniss "installation" l&ouml;schen.
+		</string>
+	</message>
+	<message module="install">
+		<id>Wrong access data for MySQL Database.</id>
+		<string>Falsche
+			Zugangsdaten f&uuml;r
+			die MySQL Datenbank.
+		</string>
+	</message>
+	<message module="install">
+		<id>Please enter the access data to the MySQL database.</id>
+		<string>Bitte
+			die Zugangsdaten f&uuml;r
+			die MySQL Datenbank eingeben.
+		</string>
+	</message>
+	<message module="install">
+		<id>The Password do not match.</id>
+		<string>Das
+			Passwort stimmt nicht &uuml;berein.
+		</string>
+	</message>
+	<message module="install">
+		<id>Retype Password</id>
+		<string>Passwort wiederholen</string>
+	</message>
+	<message module="install">
+		<id>Password for Administration</id>
+		<string>Administrations Passwort</string>
+	</message>
+	<message module="install">
+		<id>Create phpMyProfiler Database</id>
+		<string>Erzeuge phpMyProfiler Datenbank</string>
+	</message>
+	<message module="install">
+		<id>Unable to connect to database.</id>
+		<string>Unf&auml;hig
+			zur Datenbank zu verbinden.
+		</string>
+	</message>
+	<message module="install">
+		<id>Connection to database established.</id>
+		<string>Datenbankverbindung hergestellt.</string>
+	</message>
+	<message module="install">
+		<id>Can't select database. Trying to create...</id>
+		<string>Kann
+			Datenbank nicht ausw&auml;hlen.
+			Versuche zu erstellen...
+		</string>
+	</message>
+	<message module="install">
+		<id>Can't create database.</id>
+		<string>Kann Datenbank nicht erstellen.</string>
+	</message>
+	<message module="install">
+		<id>Database created.</id>
+		<string>Datenbank erstellt.</string>
+	</message>
+	<message module="install">
+		<id>Connected to existing database.</id>
+		<string>Verbunden zu existierender Datenbank.</string>
+	</message>
+	<message module="install">
+		<id>Start Creating tables.</id>
+		<string>Beginne mit Erstellen der Tabellen.</string>
+	</message>
+	<message module="install">
+		<id>Tables created successfully.</id>
+		<string>Tabellen erfolgreich erstellt.</string>
+	</message>
+	<message module="install">
+		<id>Starting importing data</id>
+		<string>Starte mit Importieren der Daten</string>
+	</message>
+	<message module="install">
+		<id>Data imported successfully.</id>
+		<string>Daten erfolgreich importiert.</string>
+	</message>
+	<message module="install">
+		<id>Installation finished</id>
+		<string>Installation beendet.</string>
+	</message>
+	<message module="install">
+		<id>Installation halted, check your Configuration.</id>
+		<string>Installation
+			unterbrochen, &uuml;berpr&uuml;fen
+			Sie ihre Konfiguration.
+		</string>
+	</message>
+
+
+	<message module="top">
+		<id>Galleries</id>
+		<string>Gallerien</string>
+	</message>
+	<message module="top">
+		<id>Communication</id>
+		<string>Kommunikation</string>
+	</message>
+	<message module="top">
+		<id>Language</id>
+		<string>Sprache</string>
+	</message>
+
+	<message module="menue">
+		<id>Alphabetic filter</id>
+		<string>Alphabetischer Filter</string>
+	</message>
+	<message module="menue">
+		<id>Countries</id>
+		<string>L&auml;nder
+		</string>
+	</message>
+
+	<message module="contact">
+		<id>Code</id>
+		<string>Code</string>
+	</message>
+	<message module="contact">
+		<id>Enter the above security code here</id>
+		<string>Geben Sie den oben angezeigten Sicherheitscode ein</string>
+	</message>
+
+	<message module="countries">
+		<id>en</id>
+		<string>Englisch</string>
+	</message>
+	<message module="countries">
+		<id>de</id>
+		<string>Deutsch</string>
+	</message>
+	<message module="countries">
+		<id>dk</id>
+		<string>D&auml;nisch
+		</string>
+	</message>
+	<message module="countries">
+		<id>nl</id>
+		<string>Holl&auml;ndisch
+		</string>
+	</message>
+	<message module="countries">
+		<id>no</id>
+		<string>Norwegisch</string>
+	</message>
+
+	<message module="subtype">
+		<id>Role</id>
+		<string>Rolle</string>
+	</message>
+
+	<message module="admin_parse">
+		<id>Files</id>
+		<string>Dateien</string>
+	</message>
+	<message module="admin_updateimdb">
+		<id>Source</id>
+		<string>Quelle</string>
+	</message>
+	<message module="admin_updateimdb">
+		<id>Update</id>
+		<string>Aktualisieren</string>
+	</message>
+	<message module="admin_update">
+		<id>Your database is not up-to-date!</id>
+		<string>Ihre Datenbank ist nicht auf dem neuesten Stand!</string>
+	</message>
+
+   <message module="admin_preferences">
+      <id>Your current signature banners</id>
+      <string>Deine aktuellen Signatur Banner Bilder</string>
+   </message>
+   <message module="admin_preferences">
+      <id>Your signature banner images are created automatically when you parse a collection and saved in the 'cache' folder.</id>
+      <string>Die Signatur Banner Bilder werden beim Parsen einer Kollektion automatisch erstellt und im 'cache' Ordner gespeichert.</string>
+   </message>
+
+</locale>

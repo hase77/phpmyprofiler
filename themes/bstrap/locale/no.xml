@@ -1,0 +1,3790 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE locale [
+    <!ELEMENT locale (message*)>
+    <!ATTLIST locale lang CDATA #REQUIRED>
+    <!ELEMENT message (id, string)>
+    <!ATTLIST message module CDATA #REQUIRED>
+    <!ELEMENT id (#PCDATA)>
+    <!ELEMENT string (#PCDATA)>
+    <!ENTITY aelig "&amp;aelig;">
+    <!ENTITY AElig "&amp;AElig;">
+    <!ENTITY aring "&amp;aring;">
+    <!ENTITY Aring "&amp;Aring;">
+    <!ENTITY oslash "&amp;oslash;">
+    <!ENTITY Oslash "&amp;Oslash;">
+]>
+<locale lang="no">
+
+   <message module="search_person">
+      <id>Person Details</id>
+      <string>Person Detaljer</string>
+   </message>
+   <message module="search_person">
+      <id>Searched for</id>
+      <string>S&oslash;kt
+         etter
+      </string>
+   </message>
+   <message module="search_person">
+      <id>records found in this DVD Collection</id>
+      <string>filmer funnet i denne DVD samlingen</string>
+   </message>
+   <message module="search_person">
+      <id>IMDB Search</id>
+      <string>IMDB-S&oslash;k
+      </string>
+   </message>
+   <message module="search_person">
+      <id>Wikipedia Search</id>
+      <string>Wikipedia
+         S&oslash;k
+      </string>
+   </message>
+   <message module="search_person">
+      <id>OFDB Search</id>
+      <string>OFDB-S&oslash;k
+      </string>
+   </message>
+   <message module="search_person">
+      <id>as</id>
+      <string>som</string>
+   </message>
+
+   <message module="search">
+      <id>Search DVD Collection</id>
+      <string>S&oslash;k
+         i DVD Samlingen
+      </string>
+   </message>
+   <message module="search">
+      <id>Find Movie</id>
+      <string>Finn Film</string>
+   </message>
+   <message module="search">
+      <id>Search for Movie</id>
+      <string>S&oslash;k
+         etter Film
+      </string>
+   </message>
+   <message module="search">
+      <id>Find Person</id>
+      <string>Finn Person</string>
+   </message>
+   <message module="search">
+      <id>Search for Person</id>
+      <string>S&oslash;k
+         etter Person
+      </string>
+   </message>
+   <message module="search">
+      <id>Add Filters</id>
+      <string>Legg til Filter</string>
+   </message>
+   <message module="search">
+      <id>Genre</id>
+      <string>Sjanger</string>
+   </message>
+   <message module="search">
+      <id>Media Type</id>
+      <string>Media Type</string>
+   </message>
+   <message module="search">
+      <id>please select</id>
+      <string>vennligst velg</string>
+   </message>
+   <message module="search">
+      <id>Studio</id>
+      <string>Studio</string>
+   </message>
+   <message module="search">
+      <id>Media Company</id>
+      <string>Media Selskap</string>
+   </message>
+   <message module="search">
+      <id>Tag</id>
+      <string>Tag</string>
+   </message>
+   <message module="search">
+      <id>Audio Language</id>
+      <string>Tale</string>
+   </message>
+   <message module="search">
+      <id>Region Code</id>
+      <string>Sone</string>
+   </message>
+   <message module="search">
+      <id>Remove all filters</id>
+      <string>Fjern alle filter</string>
+   </message>
+
+   <message module="start">
+      <id>Summary</id>
+      <string>Oppsummering</string>
+   </message>
+   <message module="start">
+      <id>News</id>
+      <string>Nyheter</string>
+   </message>
+   <message module="start">
+      <id>The %c latest DVDs</id>
+      <string>De %c Nyeste DVDer</string>
+   </message>
+   <message module="start">
+      <id>Cover</id>
+      <string>Omslag</string>
+   </message>
+   <message module="start">
+      <id>Movie Information</id>
+      <string>Film Informasjon</string>
+   </message>
+   <message module="start">
+      <id>Purchase Information</id>
+      <string>Kj&oslash;ps
+         Informasjon
+      </string>
+   </message>
+   <message module="start">
+      <id>Year of Production</id>
+      <string>Produksjons&aring;r
+      </string>
+   </message>
+   <message module="start">
+      <id>Running Time</id>
+      <string>Spilletid</string>
+   </message>
+   <message module="start">
+      <id>Minutes</id>
+      <string>Minutter</string>
+   </message>
+   <message module="start">
+      <id>Bought</id>
+      <string>Kj&oslash;pt
+      </string>
+   </message>
+   <message module="start">
+      <id>Ordered </id>
+      <string>Bestilt</string>
+   </message>
+   <message module="start">
+      <id>on</id>
+      <string>den</string>
+   </message>
+   <message module="start">
+      <id>Release Date</id>
+      <string>Utgivelsesdato</string>
+   </message>
+   <message module="start">
+      <id>The %c last ordered DVDs</id>
+      <string>De %c siste bestilte DVDer</string>
+   </message>
+   <message module="start">
+      <id>the</id>
+      <string>den</string>
+   </message>
+   <message module="start">
+      <id>today</id>
+      <string>i dag</string>
+   </message>
+   <message module="start">
+      <id>Built by</id>
+      <string>Utviklet av</string>
+   </message>
+   <message module="start">
+      <id>published under General Public License (GPL)</id>
+      <string>Utgitt under General Public License (GPL)</string>
+   </message>
+   <message module="start">
+      <id>Last update</id>
+      <string>Siste oppdatering</string>
+   </message>
+
+   <message module="coverlist">
+      <id>Cover Gallery</id>
+      <string>Omslagsgalleri</string>
+   </message>
+   <message module="coverlist">
+      <id>Number of covers</id>
+      <string>Antall omslag</string>
+   </message>
+
+   <message module="top">
+      <id>Please activate JavaScript for all functions!</id>
+      <string>Vennligst aktiver Javaskript for alle funksjoner</string>
+   </message>
+   <message module="top">
+      <id>Home</id>
+      <string>Startside</string>
+   </message>
+   <message module="top">
+      <id>Search</id>
+      <string>S&oslash;k
+      </string>
+   </message>
+   <message module="top">
+      <id>Administration</id>
+      <string>Administrasjon</string>
+   </message>
+   <message module="top">
+      <id>phpMyProfiler Home</id>
+      <string>phpMyProfiler Home</string>
+   </message>
+   <message module="top">
+      <id>phpMyProfiler Forum</id>
+      <string>phpMyProfiler Forum</string>
+   </message>
+   <message module="top">
+      <id>Credits</id>
+      <string>Rulletekst</string>
+   </message>
+
+   <message module="credits">
+      <id>Credits - phpMyProfiler</id>
+      <string>Rulletekst - phpMyProfiler</string>
+   </message>
+   <message module="credits">
+      <id>Name</id>
+      <string>Navn</string>
+   </message>
+   <message module="credits">
+      <id>Nick</id>
+      <string>Signatur</string>
+   </message>
+   <message module="credits">
+      <id>Developer</id>
+      <string>Programmerer</string>
+   </message>
+   <message module="credits">
+      <id>Developer, graphics (till march 2005)</id>
+      <string>Grafisk Programmerer (inntil Mars 2005)</string>
+   </message>
+   <message module="credits">
+      <id>Developer of myProfiler (till december 2004)</id>
+      <string>Programmerer av myProfiler (inntil Deesember 2004)</string>
+   </message>
+   <message module="credits">
+      <id>Translations</id>
+      <string>Oversettelser</string>
+   </message>
+   <message module="credits">
+      <id>Norwegian translation</id>
+      <string>Norsk oversettelse</string>
+   </message>
+   <message module="credits">
+      <id>Danish translation</id>
+      <string>Dansk oversettelse</string>
+   </message>
+   <message module="credits">
+      <id>Dutch translation</id>
+      <string>Nederlandsk oversettelse</string>
+   </message>
+   <message module="credits">
+      <id>Code contributions</id>
+      <string>Kode bidrag</string>
+   </message>
+   <message module="credits">
+      <id>Original parser for DVDProfiler 3.X</id>
+      <string>Original Parser for DVDProfiler 3.X</string>
+   </message>
+   <message module="credits">
+      <id>Testing, GFX and misc. improvements</id>
+      <string>Tester, Grafikk og div forbedringer</string>
+   </message>
+   <message module="credits">
+      <id>Used scripts and libraries in phpMyProfiler</id>
+      <string>Benyttede script og biblioteker i phpMyProfiler</string>
+   </message>
+   <message module="credits">
+      <id>Script/library</id>
+      <string>Script/Bibliotek</string>
+   </message>
+   <message module="credits">
+      <id>URL</id>
+      <string>URL</string>
+   </message>
+   <message module="credits">
+      <id>License</id>
+      <string>Lisens</string>
+   </message>
+   <message module="credits">
+      <id>Icons</id>
+      <string>Ikoner</string>
+   </message>
+   <message module="credits">
+      <id>All used scripts are liable to the copyright of the corresponding
+         author.
+      </id>
+      <string>Alle benyttede script er underlagt den gjeldende eiers
+         copyright.
+      </string>
+   </message>
+   <message module="credits">
+      <id>phpMyProfiler is adapted from</id>
+      <string>phpMyProfiler
+         er baseret p&aring;
+      </string>
+   </message>
+   <message module="credits">
+      <id>by</id>
+      <string>av</string>
+   </message>
+
+   <message module="picturelist">
+      <id>Picture Gallery</id>
+      <string>Foto Galleri</string>
+   </message>
+   <message module="picturelist">
+      <id>Number of pictures</id>
+      <string>Antall bilder</string>
+   </message>
+
+   <message module="filmprofile">
+      <id>Features</id>
+      <string>Presentasjon</string>
+   </message>
+   <message module="filmprofile">
+      <id>This DVD is currently loaned</id>
+      <string>Denne
+         DVD er i &oslash;yeblikket
+         utl&aring;nt
+      </string>
+   </message>
+   <message module="filmprofile">
+      <id>Details</id>
+      <string>Detaljer</string>
+   </message>
+   <message module="filmprofile">
+      <id>Overview</id>
+      <string>Oversikt</string>
+   </message>
+   <message module="filmprofile">
+      <id>Cast &amp; Crew</id>
+      <string>Skuespillere &amp; Filmbesetning</string>
+   </message>
+   <message module="filmprofile">
+      <id>Events</id>
+      <string>Status</string>
+   </message>
+   <message module="filmprofile">
+      <id>Episode Guide</id>
+      <string>Episode Guide</string>
+   </message>
+   <message module="filmprofile">
+      <id>Cover Images</id>
+      <string>Omslagsbilder</string>
+   </message>
+   <message module="filmprofile">
+      <id>Boxset Contents</id>
+      <string>Boksett Innhold</string>
+   </message>
+   <message module="filmprofile">
+      <id>Part of boxset</id>
+      <string>En del av et boks sett</string>
+   </message>
+   <message module="filmprofile">
+      <id>External Links</id>
+      <string>Eksterne Linker</string>
+   </message>
+   <message module="filmprofile">
+      <id>International</id>
+      <string>Intenasjonal</string>
+   </message>
+
+   <message module="filmprofile_page1">
+      <id>Country of Origin</id>
+      <string>Opphavsland</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>hrs</id>
+      <string>timer</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>minutes</id>
+      <string>minutter</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>Rating</id>
+      <string>Kritikk</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>Rating Details</id>
+      <string>Benytt True Type skrift typer i grafer.</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>Information</id>
+      <string>Informasjon</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>Edition</id>
+      <string>Utgave</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>ID</id>
+      <string>ID</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>UPC</id>
+      <string>EAN</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>Profile Date</id>
+      <string>Profil dato</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>Last Edited</id>
+      <string>Sist redigert</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>Country</id>
+      <string>Land</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>Regions</id>
+      <string>Soner</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>DVD Release</id>
+      <string>DVD Utgivelse</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>Case Type</id>
+      <string>Omslagstype</string>
+   </message>
+   <message module="filmprofile">
+      <id>Media Companies</id>
+      <string>Media Selskaper</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>Slipcover</id>
+      <string>Slipcover</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>State</id>
+      <string>Status</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>Collection Number</id>
+      <string>Samlingsnummer</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>Notes</id>
+      <string>Notater</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>Purchased</id>
+      <string>Kj&oslash;pt
+      </string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>at</id>
+      <string>hos</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>for</id>
+      <string>for</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>SRP</id>
+      <string>UVP</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>Rented by</id>
+      <string>Utl&aring;nt
+         til
+      </string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>Return Date</id>
+      <string>Retur Dato</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>Tags</id>
+      <string>Tags</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>Review</id>
+      <string>Anmeldelse</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>Movie</id>
+      <string>Film</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>DVD</id>
+      <string>DVD</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>Audio</id>
+      <string>Lydformat</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>Extras</id>
+      <string>Ekstra materiale</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>votes</id>
+      <string>stemmer</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>Extern Reviews</id>
+      <string>Eksterne anmeldelser</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>IMDB User Rating</id>
+      <string>IMDB Bruker Karakter</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>IMDB Top 250</id>
+      <string>IMDB Top 250</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>IMDB Bottom 100</id>
+      <string>IMDB Siste 100</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>User Reviews</id>
+      <string>Bruker anmeldelser</string>
+   </message>
+   <message module="filmprofile_page1">
+      <id>Compose a review</id>
+      <string>Skriv en anmeldelse</string>
+   </message>
+
+   <message module="filmprofile_page2">
+      <id>Format</id>
+      <string>Format</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Compression</id>
+      <string>Komprimering</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Content</id>
+      <string>Spr&aring;k
+      </string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Subtitles</id>
+      <string>Tekst</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Video Information</id>
+      <string>Video Informmasjon</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Video Format</id>
+      <string>Video Format</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Aspect Ratio</id>
+      <string>Bilde Format</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>THX Certified</id>
+      <string>THX Sertifisert</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Scene Access</id>
+      <string>Scene Tilgang</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Commentary</id>
+      <string>Kommentar</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Trailers</id>
+      <string>Trailere</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Deleted Scenes</id>
+      <string>Slettede Scener</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Featurettes</id>
+      <string>Featurettes</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Interviews</id>
+      <string>Intervjuer</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Storyboard Comparisons</id>
+      <string>Storyboard Comparisons</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>DVD-ROM Content</id>
+      <string>DVD-ROM Innhold</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Interactive Games</id>
+      <string>Interaktive Spill</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Multi-angle</id>
+      <string>Multi-Vinkel</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Music Videos</id>
+      <string>Musikkvideoer</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Prod. Notes</id>
+      <string>Prod. Notater</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Photo Gallery</id>
+      <string>Bilde Galleri</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Outtakes/Bloopers</id>
+      <string>Slettede Scener/Snutter</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Closed Captioned</id>
+      <string>Closed Captioned</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Bonus Trailers</id>
+      <string>Bonus Trailere</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Picture-in-Picture</id>
+      <string>Bilde i bilde</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>BD-Live</id>
+      <string>BD-Live</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Digital Copy</id>
+      <string>Digital kopi</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Other Features</id>
+      <string>Annet Innhold</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Additional Information</id>
+      <string>Utvidet Informasjon</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Studios</id>
+      <string>Studio</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Genres</id>
+      <string>Genre</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Media Info</id>
+      <string>Disc Info</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Description Side A</id>
+      <string>Beskrivelse Side A</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Label Side A</id>
+      <string>Etikett Side A</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Duallayer Side A</id>
+      <string>Tolags Side A</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>DiscID Side A</id>
+      <string>Disk-ID Side A</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Description Side B</id>
+      <string>Beskrivelse Side B</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Label Side B</id>
+      <string>Etikett Side B</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>DiscID Side B</id>
+      <string>Disk-ID Side B</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Duallayer Side B</id>
+      <string>Tolags Side B</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Dualsided</id>
+      <string>Tosidet</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Dual Layered</id>
+      <string>Tolags</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Single Layered</id>
+      <string>Et lags</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Location</id>
+      <string>Sted</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Slot</id>
+      <string>Slot</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Various Information</id>
+      <string>Diverse Informasjon</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Easter Egg</id>
+      <string>P&aring;ske
+         Egg
+      </string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Awards</id>
+      <string>Film Priser</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Winner</id>
+      <string>Vinnere</string>
+   </message>
+   <message module="filmprofile_page2">
+      <id>Nominee for</id>
+      <string>Nominert for</string>
+   </message>
+
+   <message module="filmprofile_page3">
+      <id>Cast</id>
+      <string>Medvirkere</string>
+   </message>
+   <message module="filmprofile_page3">
+      <id>uncredited</id>
+      <string>Ikke krediterte</string>
+   </message>
+   <message module="filmprofile_page3">
+      <id>voice</id>
+      <string>stemme</string>
+   </message>
+   <message module="filmprofile_page3">
+      <id>credited as</id>
+      <string>kreditert som</string>
+   </message>
+   <message module="filmprofile_page3">
+      <id>Crew</id>
+      <string>Filmbesetning</string>
+   </message>
+
+   <message module="filmprofile_page4">
+      <id>Date</id>
+      <string>Dato</string>
+   </message>
+   <message module="filmprofile_page4">
+      <id>Event</id>
+      <string>Hendelse</string>
+   </message>
+   <message module="filmprofile_page4">
+      <id>Phone</id>
+      <string>Telefon</string>
+   </message>
+   <message module="filmprofile_page4">
+      <id>Borrowed</id>
+      <string>Utl&aring;nt
+      </string>
+   </message>
+   <message module="filmprofile_page4">
+      <id>Returned</id>
+      <string>Returnert</string>
+   </message>
+
+   <message module="filmprofile_status">
+      <id>Owned</id>
+      <string>Egne DVDer</string>
+   </message>
+   <message module="filmprofile_status">
+      <id>Ordered</id>
+      <string>Bestilte DVDer</string>
+   </message>
+   <message module="filmprofile_status">
+      <id>WishList</id>
+      <string>&Oslash;nskeliste
+      </string>
+   </message>
+
+   <message module="filmprofile_wishpriority">
+      <id>Vague Interest</id>
+      <string>Vag Interesse</string>
+   </message>
+   <message module="filmprofile_wishpriority">
+      <id>Like to Have It</id>
+      <string>Vil gjerne eie</string>
+   </message>
+   <message module="filmprofile_wishpriority">
+      <id>Want It</id>
+      <string>Vil eie den</string>
+   </message>
+   <message module="filmprofile_wishpriority">
+      <id>Really Want</id>
+      <string>Vil veldig gjerne eie</string>
+   </message>
+   <message module="filmprofile_wishpriority">
+      <id>Need It</id>
+      <string>Skal ha</string>
+   </message>
+   <message module="filmprofile_wishpriority">
+      <id>Watched</id>
+      <string>Sett</string>
+   </message>
+
+   <message module="statistics">
+      <id>Statistics</id>
+      <string>Statistikk</string>
+   </message>
+   <message module="statistics">
+      <id>Other Statistics</id>
+      <string>Annen Statistikk</string>
+   </message>
+   <message module="statistics">
+      <id>Director Statistic</id>
+      <string>Regiss&oslash;r
+         Statistikk
+      </string>
+   </message>
+   <message module="statistics">
+      <id>Producer Statistic</id>
+      <string>Produsent Statistikk</string>
+   </message>
+   <message module="statistics">
+      <id>Writer &amp; Screenwriter Statistic</id>
+      <string>Forfatter &amp; Manusforfatter Statistikk</string>
+   </message>
+   <message module="statistics">
+      <id>Composer Statistic</id>
+      <string>Komponist Statistikk</string>
+   </message>
+   <message module="statistics">
+      <id>Actor Statistic</id>
+      <string>Skuespiller Statistikk</string>
+   </message>
+   <message module="statistics">
+      <id> s</id>
+      <string>Antall DVDer</string>
+   </message>
+   <message module="statistics">
+      <id>With Pricing Information</id>
+      <string>DVDer med Pris Informasjon</string>
+   </message>
+   <message module="statistics">
+      <id>DVDs without a Child Profile</id>
+      <string>DVDer uten Barne Profil</string>
+   </message>
+   <message module="statistics">
+      <id>Boxset Profiles</id>
+      <string>Samleboks Profiler</string>
+   </message>
+   <message module="statistics">
+      <id>Child Profiles</id>
+      <string>Barne Profiler</string>
+   </message>
+   <message module="statistics">
+      <id>DVDs with Collection Number</id>
+      <string>DVDer med Samlingsnummer</string>
+   </message>
+   <message module="statistics">
+      <id>DVDs with Rating Information</id>
+      <string>DVDer med Kritikk Vurdering</string>
+   </message>
+   <message module="statistics">
+      <id>Price of all DVDs</id>
+      <string>Samlet pris for alle DVDer</string>
+   </message>
+   <message module="statistics">
+      <id>Average price</id>
+      <string>Gjennomsnitts pris</string>
+   </message>
+   <message module="statistics">
+      <id>Most expensive DVDs</id>
+      <string>De dyreste DVDer</string>
+   </message>
+   <message module="statistics">
+      <id>Cheapest DVDs</id>
+      <string>De billigste DVDer</string>
+   </message>
+   <message module="statistics">
+      <id>Length of all DVDs</id>
+      <string>Samlet spilletid for alle DVDer</string>
+   </message>
+   <message module="statistics">
+      <id>DVDs with Length Information</id>
+      <string>DVDer med spilletids informasjon</string>
+   </message>
+   <message module="statistics">
+      <id>Hours: about</id>
+      <string>Timer: ca.</string>
+   </message>
+   <message module="statistics">
+      <id>hours</id>
+      <string>Timer</string>
+   </message>
+   <message module="statistics">
+      <id>Days: about</id>
+      <string>Dager: ca.</string>
+   </message>
+   <message module="statistics">
+      <id>days</id>
+      <string>dager</string>
+   </message>
+   <message module="statistics">
+      <id>Weeks: about</id>
+      <string>Uker: ca.</string>
+   </message>
+   <message module="statistics">
+      <id>weeks</id>
+      <string>uker</string>
+   </message>
+   <message module="statistics">
+      <id>Months: about</id>
+      <string>M&aring;neder:
+         ca.
+      </string>
+   </message>
+   <message module="statistics">
+      <id>months</id>
+      <string>m&aring;neder
+      </string>
+   </message>
+   <message module="statistics">
+      <id>Years: about</id>
+      <string>&Aring;r:
+         ca.
+      </string>
+   </message>
+   <message module="statistics">
+      <id>years</id>
+      <string>&aring;r
+      </string>
+   </message>
+   <message module="statistik">
+      <id>Average Length</id>
+      <string>Gjennomsnittslengde</string>
+   </message>
+   <message module="statistics">
+      <id>Longest DVDs</id>
+      <string>De lengste DVDene</string>
+   </message>
+   <message module="statistics">
+      <id>Shortest DVDs</id>
+      <string>De korteste DVDene</string>
+   </message>
+   <message module="statistics">
+      <id>Regioncode</id>
+      <string>Sone</string>
+   </message>
+   <message module="statistics">
+      <id>Localities of DVDs</id>
+      <string>Utgivelsesland</string>
+   </message>
+   <message module="statistics">
+      <id>Localities</id>
+      <string>Utgivelsesland</string>
+   </message>
+   <message module="statistics">
+      <id>Origins of Movies</id>
+      <string>Produksjonsland</string>
+   </message>
+   <message module="statistics">
+      <id>Origins</id>
+      <string>Produksjonsland</string>
+   </message>
+   <message module="statistics">
+      <id>Ratings</id>
+      <string>Aldersgrense</string>
+   </message>
+   <message module="statistics">
+      <id>DVDs</id>
+      <string>DVDer</string>
+   </message>
+   <message module="statistics">
+      <id>Year of Purchase</id>
+      <string>Kj&oslash;ps&aring;r
+      </string>
+   </message>
+   <message module="statistics">
+      <id>Detailed Statistic</id>
+      <string>Detaljert Statistikk</string>
+   </message>
+   <message module="statistics">
+      <id>total price</id>
+      <string>samlet pris</string>
+   </message>
+   <message module="statistics">
+      <id>Production Decade</id>
+      <string>Produksjons
+         ti&aring;r
+      </string>
+   </message>
+   <message module="statistics">
+      <id>Place of Purchase (Top 10)</id>
+      <string>Kj&oslash;pssted
+         (Topp 10)
+      </string>
+   </message>
+   <message module="statistics">
+      <id>Place of Purchase</id>
+      <string>Kj&oslash;pssted
+      </string>
+   </message>
+   <message module="statistics">
+      <id>Genre (Top 10)</id>
+      <string>Genre (Topp 10)</string>
+   </message>
+   <message module="statistics">
+      <id>Studio (Top 10)</id>
+      <string>Studio (Topp 10)</string>
+   </message>
+   <message module="statistics">
+      <id>Media Companies (Top 10)</id>
+      <string>Media Selskaper (Topp 10)</string>
+   </message>
+   <message module="statistics">
+      <id>Visitors</id>
+      <string>Bes&oslash;kende
+      </string>
+   </message>
+   <message module="statistics">
+      <id>Visited DVDs</id>
+      <string>Bes&oslash;kte
+         DVDer
+      </string>
+   </message>
+
+   <message module="statistics_graph">
+      <id>owned</id>
+      <string>Egne</string>
+   </message>
+   <message module="statistics_graph">
+      <id>ordered</id>
+      <string>bestilt</string>
+   </message>
+   <message module="statistics_graph">
+      <id>wishlist</id>
+      <string>&oslash;nskeliste
+      </string>
+   </message>
+
+   <message module="statisticsdetail">
+      <id>Visitor Statistic</id>
+      <string>Bes&oslash;ks
+         Statistikk
+      </string>
+   </message>
+   <message module="statisticsdetail">
+      <id>Profile Statistic</id>
+      <string>Profil Statistikk</string>
+   </message>
+   <message module="statisticsdetail">
+      <id>Result</id>
+      <string>Resultat</string>
+   </message>
+   <message module="statisticsdetail">
+      <id>Month</id>
+      <string>M&aring;ned
+      </string>
+   </message>
+   <message module="statisticsdetail">
+      <id>January</id>
+      <string>Januar</string>
+   </message>
+   <message module="statisticsdetail">
+      <id>February</id>
+      <string>Februar</string>
+   </message>
+   <message module="statisticsdetail">
+      <id>March</id>
+      <string>Mars</string>
+   </message>
+   <message module="statisticsdetail">
+      <id>May</id>
+      <string>Mai</string>
+   </message>
+   <message module="statisticsdetail">
+      <id>April</id>
+      <string>April</string>
+   </message>
+   <message module="statisticsdetail">
+      <id>June</id>
+      <string>Juni</string>
+   </message>
+   <message module="statisticsdetail">
+      <id>July</id>
+      <string>Juli</string>
+   </message>
+   <message module="statisticsdetail">
+      <id>August</id>
+      <string>August</string>
+   </message>
+   <message module="statisticsdetail">
+      <id>September</id>
+      <string>September</string>
+   </message>
+   <message module="statisticsdetail">
+      <id>October</id>
+      <string>Oktober</string>
+   </message>
+   <message module="statisticsdetail">
+      <id>November</id>
+      <string>November</string>
+   </message>
+   <message module="statisticsdetail">
+      <id>December</id>
+      <string>Desember</string>
+   </message>
+   <message module="statisticsdetail">
+      <id>Picture</id>
+      <string>Bilde</string>
+   </message>
+   <message module="statisticsdetail">
+      <id>Writer/Screenwriter</id>
+      <string>Forfatter/Manusforfatter</string>
+   </message>
+
+   <message module="news">
+      <id>News Archive</id>
+      <string>Nyhetsarkiv</string>
+   </message>
+   <message module="news">
+      <id>Number of news</id>
+      <string>Antall Nyheter</string>
+   </message>
+
+   <message module="review">
+      <id>Write a review for</id>
+      <string>Skriv en anmeldelse til</string>
+   </message>
+   <message module="review">
+      <id>Please enter your name!</id>
+      <string>Vennligst oppgi ditt navn!</string>
+   </message>
+   <message module="review">
+      <id>Please enter a valid email address!</id>
+      <string>Vennligst oppgi en gyldig epost adresse!</string>
+   </message>
+   <message module="review">
+      <id>Please enter a title for your review!</id>
+      <string>Vennligst
+         oppgi en tittel p&aring;
+         din omtale!
+      </string>
+   </message>
+   <message module="review">
+      <id>Please enter a text for your review!</id>
+      <string>Vennligst legg til tekst i omtalen din!</string>
+   </message>
+   <message module="review">
+      <id>Thank you for your review.</id>
+      <string>Takk for din anmeldelse.</string>
+   </message>
+   <message module="review">
+      <id>Sorry, an error has occurred</id>
+      <string>Beklager,
+         det har opst&aring;tt
+         en feil
+      </string>
+   </message>
+   <message module="review">
+      <id>Someone added a new review:</id>
+      <string>Noen har lagt til en ny anmeldelse.</string>
+   </message>
+   <message module="review">
+      <id>Author</id>
+      <string>Forfatter</string>
+   </message>
+   <message module="review">
+      <id>Please activate or delete this pending review:</id>
+      <string>Aktiver eller slette denne anmeldelsen:</string>
+   </message>
+   <message module="review">
+      <id>New pending review:</id>
+      <string>Ny ventende anmeldelse:</string>
+   </message>
+   <message module="review">
+      <id>Add your review</id>
+      <string>Legg til din anmeldelse</string>
+   </message>
+   <message module="review">
+      <id>E-mail</id>
+      <string>E-post</string>
+   </message>
+   <message module="review">
+      <id>Title of review</id>
+      <string>Overskrift</string>
+   </message>
+   <message module="review">
+      <id>Review text (without format strings!)</id>
+      <string>Tekst (uten formatering!)</string>
+   </message>
+   <message module="review">
+      <id>Rating</id>
+      <string>Aldersgrense</string>
+   </message>
+   <message module="review">
+      <id>excellent</id>
+      <string>meget god</string>
+   </message>
+   <message module="review">
+      <id>fair</id>
+      <string>utmerket</string>
+   </message>
+   <message module="review">
+      <id>bad</id>
+      <string>d&aring;rlig
+      </string>
+   </message>
+   <message module="review">
+      <id>Submit</id>
+      <string>Legg til</string>
+   </message>
+   <message module="review">
+      <id>Important</id>
+      <string>Viktig</string>
+   </message>
+   <message module="review">
+      <id>Your submitted review will show up, as soon as the administrator
+         has activated it. You'll receive an e-mail, when your review is
+         activated
+      </id>
+      <string>Din
+         anmeldelse vil bli lagt ut, s&aring;
+         snart administratoren har aktiveret den.. Du f&aring;r
+         en epost n&aring;r
+         det er gjort.
+      </string>
+   </message>
+
+   <message module="guestbook">
+      <id>Guestbook</id>
+      <string>Gjestebok</string>
+   </message>
+   <message module="guestbook">
+      <id>%name added a new guestbook entry</id>
+      <string>%name har skrevet en beskjed i gjesteboken:</string>
+   </message>
+   <message module="guestbook">
+      <id>Thank you. The guest book entry was stored.</id>
+      <string>Mange takk. Din beskjed i gjesteboken er lagret.</string>
+   </message>
+   <message module="guestbook">
+      <id>When storing in the data base unfortunately an error occurs.</id>
+      <string>Det
+         har desv&aelig;rre
+         opst&aring;tt
+         en feil ved lagring til databasen.
+      </string>
+   </message>
+   <message module="guestbook">
+      <id>Number of comments</id>
+      <string>Antall kommentarer</string>
+   </message>
+   <message module="guestbook">
+      <id>Add your comment</id>
+      <string>Legg til din kommentar</string>
+   </message>
+   <message module="guestbook">
+      <id>New comments will be invisible until the administrator activates
+         them.
+      </id>
+      <string>Nye
+         beskeder vil v&aelig;re
+         usynlige inntil administratoren har aktiveret dem.
+      </string>
+   </message>
+   <message module="guestbook">
+      <id>Homepage</id>
+      <string>Hjemmeside</string>
+   </message>
+   <message module="guestbook">
+      <id>Comment</id>
+      <string>Kommentar</string>
+   </message>
+   <message module="guestbook">
+      <id>Enter security code, please</id>
+      <string>Vennligst tast sikkerhetskoden</string>
+   </message>
+   <message module="guestbook">
+      <id>Security code</id>
+      <string>Sikkerhetskode</string>
+   </message>
+   <message module="guestbook">
+      <id>Add comment</id>
+      <string>Legg til kommentar</string>
+   </message>
+   <message module="guestbook">
+      <id>Guest Book Entries</id>
+      <string>Gjestebok Innhold</string>
+   </message>
+   <message module="guestbook">
+      <id>wrote</id>
+      <string>skrev</string>
+   </message>
+   <message module="guestbook">
+      <id>Reply by</id>
+      <string>Svar fra</string>
+   </message>
+   <message module="guestbook">
+      <id>Please enter a message to send!</id>
+      <string>Vennligst legg til en melding!</string>
+   </message>
+
+   <message module="peoplelist">
+      <id>People Gallery</id>
+      <string>Person Galleri</string>
+   </message>
+   <message module="peoplelist">
+      <id>Filter</id>
+      <string>Filter</string>
+   </message>
+   <message module="peoplelist">
+      <id>Cast and Crew Images</id>
+      <string>Skuespiller- og Filmbesetningsbilder</string>
+   </message>
+   <message module="peoplelist">
+      <id>starting with</id>
+      <string>starter med</string>
+   </message>
+
+   <message module="contact">
+      <id>Contact</id>
+      <string>Kontakt</string>
+   </message>
+   <message module="contact">
+      <id>Wrong security code!</id>
+      <string>Feil sikkerhetskode</string>
+   </message>
+   <message module="contact">
+      <id>Thank you for your message.</id>
+      <string>Takk for din beskjed.</string>
+   </message>
+   <message module="contact">
+      <id>Please fill all fields.</id>
+      <string>Vennligst fyll ut alle felter.</string>
+   </message>
+   <message module="contact">
+      <id>Administrator</id>
+      <string>Administrator</string>
+   </message>
+   <message module="contact">
+      <id>At this point you have the opportunity to contact the
+         administrator of this DVD collection.
+      </id>
+      <string>Her kan du kontakte administratoren til denne DVD samlingen.
+      </string>
+   </message>
+   <message module="contact">
+      <id>Write your message</id>
+      <string>Skriv din beskjed</string>
+   </message>
+   <message module="contact">
+      <id>Please fill out the form and submit ...</id>
+      <string>Vennligst fyll ut formularet, og klikk Send besked...</string>
+   </message>
+   <message module="contact">
+      <id>Subject</id>
+      <string>Emne</string>
+   </message>
+   <message module="contact">
+      <id>Message</id>
+      <string>Beskjed</string>
+   </message>
+   <message module="contact">
+      <id>Send Message</id>
+      <string>Send beskjed</string>
+   </message>
+   <message module="contact">
+      <id>Failed to send E-mail.</id>
+      <string>Feilet ved sending av e-post</string>
+   </message>
+   <message module="contact">
+      <id>Please enter a subject!</id>
+      <string>Vennligst oppgi en tittel!</string>
+   </message>
+   <message module="contact">
+      <id>Bot Attack!</id>
+      <string>Bot angrep.</string>
+   </message>
+
+   <message module="menue">
+      <id>An error occured during your query. To continue working all
+         filters will be set to default values.
+      </id>
+      <string>Det
+         har opst&aring;tt
+         en feil. For &aring;
+         kunne forts&aelig;tte
+         vil alle filtre bli nullstillt.
+      </string>
+   </message>
+   <message module="menue">
+      <id>DVD Collection</id>
+      <string>DVD Samling</string>
+   </message>
+   <message module="menue">
+      <id>Active Filters</id>
+      <string>Aktive Filtre</string>
+   </message>
+   <message module="menue">
+      <id>Remove all</id>
+      <string>Fjern alle</string>
+   </message>
+   <message module="menue">
+      <id>(click filter to remove)</id>
+      <string>(Klikk
+         p&aring;
+         filter for å fjerne det)
+      </string>
+   </message>
+   <message module="menue">
+      <id>Add</id>
+      <string>Legg til</string>
+   </message>
+   <message module="menue">
+      <id>Owned DVDs</id>
+      <string>Egne DVDer</string>
+   </message>
+   <message module="menue">
+      <id>Ordered DVDs</id>
+      <string>Bestilte DVDer</string>
+   </message>
+   <message module="menue">
+      <id>Wish List</id>
+      <string>&Oslash;nskeliste
+      </string>
+   </message>
+   <message module="menue">
+      <id>Navigation</id>
+      <string>Navigasjon</string>
+   </message>
+   <message module="menue">
+      <id>Page</id>
+      <string>Side</string>
+   </message>
+   <message module="menue">
+      <id>of</id>
+      <string>av</string>
+   </message>
+
+   <message module="type">
+      <id>Direction</id>
+      <string>Regie</string>
+   </message>
+   <message module="type">
+      <id>Writing</id>
+      <string>Forlag</string>
+   </message>
+   <message module="type">
+      <id>Production</id>
+      <string>Produksjon</string>
+   </message>
+   <message module="type">
+      <id>Cinematography</id>
+      <string>Kamera</string>
+   </message>
+   <message module="type">
+      <id>Film Editing</id>
+      <string>Editering</string>
+   </message>
+   <message module="type">
+      <id>Music</id>
+      <string>Musikk</string>
+   </message>
+   <message module="type">
+      <id>Sound</id>
+      <string>Lyd</string>
+   </message>
+   <message module="type">
+      <id>Art</id>
+      <string>Omslagsdesign</string>
+   </message>
+
+   <message module="subtype">
+      <id>Actor</id>
+      <string>Skuespiller</string>
+   </message>
+   <message module="subtype">
+      <id>Director</id>
+      <string>Regiss&oslash;r
+      </string>
+   </message>
+   <message module="subtype">
+      <id>Writer</id>
+      <string>Forfatter</string>
+   </message>
+   <message module="subtype">
+      <id>Original Material By</id>
+      <string>Orginal Materiale Av</string>
+   </message>
+   <message module="subtype">
+      <id>Original Characters By</id>
+      <string>Orginal Karakterdesign Av</string>
+   </message>
+   <message module="subtype">
+      <id>Screenwriter</id>
+      <string>Screenwriter</string>
+   </message>
+   <message module="subtype">
+      <id>Writer</id>
+      <string>Forfatter</string>
+   </message>
+   <message module="subtype">
+      <id>Producer</id>
+      <string>Produsent</string>
+   </message>
+   <message module="subtype">
+      <id>Executive Producer</id>
+      <string>Produksjonsleder</string>
+   </message>
+   <message module="subtype">
+      <id>Director of Photography</id>
+      <string>Director of Photography</string>
+   </message>
+   <message module="subtype">
+      <id>Cinematographer</id>
+      <string>Cinematographer</string>
+   </message>
+   <message module="subtype">
+      <id>Film Editor</id>
+      <string>Film Editor</string>
+   </message>
+   <message module="subtype">
+      <id>Composer</id>
+      <string>Komponist</string>
+   </message>
+   <message module="subtype">
+      <id>Song Writer</id>
+      <string>Sang Skriver</string>
+   </message>
+   <message module="subtype">
+      <id>Supervising Sound Editor</id>
+      <string>Supervising Lyd Editor</string>
+   </message>
+
+   <message module="languages">
+      <id>Africaans</id>
+      <string>Afrikansk</string>
+   </message>
+   <message module="languages">
+      <id>Arabic</id>
+      <string>Arabisk</string>
+   </message>
+   <message module="languages">
+      <id>Bulgarian</id>
+      <string>Bulgarsk</string>
+   </message>
+   <message module="languages">
+      <id>Chinese</id>
+      <string>Kinesisk</string>
+   </message>
+   <message module="languages">
+      <id>Cantonese</id>
+      <string>Kantonesisk</string>
+   </message>
+   <message module="languages">
+      <id>Commentary</id>
+      <string>Kommentar</string>
+   </message>
+   <message module="languages">
+      <id>Croatian</id>
+      <string>Kroatisk</string>
+   </message>
+   <message module="languages">
+      <id>Czech</id>
+      <string>Tsjekkisk</string>
+   </message>
+   <message module="languages">
+      <id>Danish</id>
+      <string>Dansk</string>
+   </message>
+   <message module="languages">
+      <id>Dutch</id>
+      <string>Nederlandsk</string>
+   </message>
+   <message module="languages">
+      <id>English</id>
+      <string>Engelsk</string>
+   </message>
+   <message module="languages">
+      <id>Farsi</id>
+      <string>Farsi</string>
+   </message>
+   <message module="languages">
+      <id>Finnish</id>
+      <string>Finsk</string>
+   </message>
+   <message module="languages">
+      <id>French</id>
+      <string>Fransk</string>
+   </message>
+   <message module="languages">
+      <id>German</id>
+      <string>Tysk</string>
+   </message>
+   <message module="languages">
+      <id>Greek</id>
+      <string>Gresk</string>
+   </message>
+   <message module="languages">
+      <id>Hebrew</id>
+      <string>Hebraisk</string>
+   </message>
+   <message module="languages">
+      <id>Hindi</id>
+      <string>Hindu</string>
+   </message>
+   <message module="languages">
+      <id>Hungarian</id>
+      <string>Ungarsk</string>
+   </message>
+   <message module="languages">
+      <id>Icelandic</id>
+      <string>Islandsk</string>
+   </message>
+   <message module="languages">
+      <id>Italian</id>
+      <string>Italiensk</string>
+   </message>
+   <message module="languages">
+      <id>Japanese</id>
+      <string>Japansk</string>
+   </message>
+   <message module="languages">
+      <id>Korean</id>
+      <string>Koreansk</string>
+   </message>
+   <message module="languages">
+      <id>Mandarin</id>
+      <string>Mandarin</string>
+   </message>
+   <message module="languages">
+      <id>Music only</id>
+      <string>Kun musikk</string>
+   </message>
+   <message module="languages">
+      <id>Norwegian</id>
+      <string>Norsk</string>
+   </message>
+   <message module="languages">
+      <id>Other</id>
+      <string>Andre</string>
+   </message>
+   <message module="languages">
+      <id>Polish</id>
+      <string>Polsk</string>
+   </message>
+   <message module="languages">
+      <id>Portuguese</id>
+      <string>Portugisisk</string>
+   </message>
+   <message module="languages">
+      <id>Romanian</id>
+      <string>Rumensk</string>
+   </message>
+   <message module="languages">
+      <id>Russian</id>
+      <string>Russisk</string>
+   </message>
+   <message module="languages">
+      <id>Slovakian</id>
+      <string>Slovakisk</string>
+   </message>
+   <message module="languages">
+      <id>Slovenian</id>
+      <string>Slovensk</string>
+   </message>
+   <message module="languages">
+      <id>Spanish</id>
+      <string>Spansk</string>
+   </message>
+   <message module="languages">
+      <id>Swedish</id>
+      <string>Svensk</string>
+   </message>
+   <message module="languages">
+      <id>Tagalog</id>
+      <string>Tagalog</string>
+   </message>
+   <message module="languages">
+      <id>Thai</id>
+      <string>Tai</string>
+   </message>
+   <message module="languages">
+      <id>Trivia</id>
+      <string>Trivia</string>
+   </message>
+   <message module="languages">
+      <id>Turkish</id>
+      <string>Tyrkisk</string>
+   </message>
+   <message module="languages">
+      <id>Xhosa</id>
+      <string>Xhosa</string>
+   </message>
+   <message module="languages">
+      <id>Zulu</id>
+      <string>Zulu</string>
+   </message>
+
+   <message module="countries">
+      <id>United States</id>
+      <string>USA</string>
+   </message>
+   <message module="countries">
+      <id>New Zealand</id>
+      <string>New Zealand</string>
+   </message>
+   <message module="countries">
+      <id>Australia</id>
+      <string>Australia</string>
+   </message>
+   <message module="countries">
+      <id>Canada</id>
+      <string>Canada</string>
+   </message>
+   <message module="countries">
+      <id>United Kingdom</id>
+      <string>Storbritania</string>
+   </message>
+   <message module="countries">
+      <id>Germany</id>
+      <string>Tyskland</string>
+   </message>
+   <message module="countries">
+      <id>China</id>
+      <string>Kina</string>
+   </message>
+   <message module="countries">
+      <id>Former Soviet Union</id>
+      <string>Russland</string>
+   </message>
+   <message module="countries">
+      <id>France</id>
+      <string>Frankrike</string>
+   </message>
+   <message module="countries">
+      <id>Netherlands</id>
+      <string>Holland</string>
+   </message>
+   <message module="countries">
+      <id>Spain</id>
+      <string>Spania</string>
+   </message>
+   <message module="countries">
+      <id>Sweden</id>
+      <string>Sverige</string>
+   </message>
+   <message module="countries">
+      <id>Norway</id>
+      <string>Norge</string>
+   </message>
+   <message module="countries">
+      <id>Italy</id>
+      <string>Italia</string>
+   </message>
+   <message module="countries">
+      <id>Denmark</id>
+      <string>Danmark</string>
+   </message>
+   <message module="countries">
+      <id>Portugal</id>
+      <string>Portugal</string>
+   </message>
+   <message module="countries">
+      <id>Finland</id>
+      <string>Finland</string>
+   </message>
+   <message module="countries">
+      <id>Japan</id>
+      <string>Japan</string>
+   </message>
+   <message module="countries">
+      <id>Korea</id>
+      <string>Korea</string>
+   </message>
+   <message module="countries">
+      <id>Kanada (Quebec)</id>
+      <string>Canada (Quebec)</string>
+   </message>
+   <message module="countries">
+      <id>South Afrika</id>
+      <string>Syd Afrika</string>
+   </message>
+   <message module="countries">
+      <id>Hong Kong</id>
+      <string>Hong Kong</string>
+   </message>
+   <message module="countries">
+      <id>Switzerland</id>
+      <string>Sveits</string>
+   </message>
+   <message module="countries">
+      <id>Brazil</id>
+      <string>Brasil</string>
+   </message>
+   <message module="countries">
+      <id>Israel</id>
+      <string>Israel</string>
+   </message>
+   <message module="countries">
+      <id>Mexico</id>
+      <string>Mexico</string>
+   </message>
+   <message module="countries">
+      <id>Iceland</id>
+      <string>Island</string>
+   </message>
+   <message module="countries">
+      <id>Indonesia</id>
+      <string>Indonesia</string>
+   </message>
+   <message module="countries">
+      <id>Taiwan</id>
+      <string>Taiwan</string>
+   </message>
+   <message module="countries">
+      <id>Poland</id>
+      <string>Polen</string>
+   </message>
+   <message module="countries">
+      <id>Belgium</id>
+      <string>Belgia</string>
+   </message>
+   <message module="countries">
+      <id>Turkey</id>
+      <string>Tyrkia</string>
+   </message>
+   <message module="countries">
+      <id>Argentina</id>
+      <string>Argentina</string>
+   </message>
+   <message module="countries">
+      <id>Slovakia</id>
+      <string>Slovakia</string>
+   </message>
+   <message module="countries">
+      <id>Hungary</id>
+      <string>Ungarn</string>
+   </message>
+   <message module="countries">
+      <id>Singapore</id>
+      <string>Singapor</string>
+   </message>
+   <message module="countries">
+      <id>Czech Republic</id>
+      <string>Tsjekkia</string>
+   </message>
+   <message module="countries">
+      <id>Malaysia</id>
+      <string>Malaysia</string>
+   </message>
+   <message module="countries">
+      <id>Thailand</id>
+      <string>Tailand</string>
+   </message>
+   <message module="countries">
+      <id>India</id>
+      <string>India</string>
+   </message>
+   <message module="countries">
+      <id>Austria</id>
+      <string>&oslash;strike
+      </string>
+   </message>
+   <message module="countries">
+      <id>Greece</id>
+      <string>Hellas</string>
+   </message>
+   <message module="countries">
+      <id>Vietnam</id>
+      <string>Vietnam</string>
+   </message>
+   <message module="countries">
+      <id>Philippines</id>
+      <string>Philipinene</string>
+   </message>
+   <message module="countries">
+      <id>Ireland</id>
+      <string>Irland</string>
+   </message>
+   <message module="countries">
+      <id>Estonia</id>
+      <string>Estland</string>
+   </message>
+
+   <message module="admin_getcover">
+      <id>Get Cover</id>
+      <string>Hente Omslagsbilder</string>
+   </message>
+   <message module="admin_getcover">
+      <id>No write access in folder "cover".</id>
+      <string>Ingen skrivetilgang til mappen "cover".</string>
+   </message>
+   <message module="admin_getcover">
+      <id>Can\'t download the cover. Perhaps there is no cover for this DVD
+         or your webserver doesn\'t allow accessing remote content.
+      </id>
+      <string>Omslag kan ikke lastes ned. Mulig problem er at det ikke
+         eksisterer et omslag for denne eller at web serveren din ikke
+         tillater mottak av innhold
+         fra
+         nettet.
+      </string>
+   </message>
+
+   <message module="admin_updaterates">
+      <id>Exchange Rates</id>
+      <string>Valuta Kurser</string>
+   </message>
+   <message module="admin_updaterates">
+      <id>Rates updated.</id>
+      <string>Vekslings Kurs oppdatert.</string>
+   </message>
+   <message module="admin_updaterates">
+      <id>Rates not updated.</id>
+      <string>Kurser ikke oppdatert.</string>
+   </message>
+   <message module="admin_updaterates">
+      <id>Actual Rates (Base: Euro)</id>
+      <string>Faktiske Rater (Basis: Euro)</string>
+   </message>
+   <message module="admin_updaterates">
+      <id>Currency</id>
+      <string>Valuta</string>
+   </message>
+   <message module="admin_updaterates">
+      <id>Rate</id>
+      <string>Kurs</string>
+   </message>
+   <message module="admin_updaterates">
+      <id>Rates last updated:</id>
+      <string>Valuta Kurser er sist oppdatert:</string>
+   </message>
+   <message module="admin_updaterates">
+      <id>Found no rates in database. Please update with the button below.
+      </id>
+      <string>Ingen Vekslings Kurser funnet i databasen. Vennligst oppdater
+         kurserne under.
+      </string>
+   </message>
+   <message module="admin_updaterates">
+      <id>Click here to update your rates.</id>
+      <string>Klikk her for at oppdatere valuta kursene.</string>
+   </message>
+   <message module="admin_updaterates">
+      <id>We're using rates from the European Central Bank (ECB).</id>
+      <string>Vi benytter valuta kurser fra den Europeiske Sentral Bank
+         (ESB).
+      </string>
+   </message>
+
+   <message module="admin_report">
+      <id>DVD list</id>
+      <string>DVD Liste</string>
+   </message>
+   <message module="admin_report">
+      <id>Generated by</id>
+      <string>Generert av</string>
+   </message>
+   <message module="admin_report">
+      <id>Report</id>
+      <string>Rapport</string>
+   </message>
+   <message module="admin_report">
+      <id>Generated by </id>
+      <string>Generert av </string>
+   </message>
+   <message module="admin_report">
+      <id>Please select the columns that will appear in the report:</id>
+      <string>Vennligst velg hvilke rader som skal med i rapporten:</string>
+   </message>
+   <message module="admin_report">
+      <id>Sort Order</id>
+      <string>Sorterings Etter</string>
+   </message>
+   <message module="admin_report">
+      <id>Sort Order Direction</id>
+      <string>Sorterings Stigende/Synkende</string>
+   </message>
+   <message module="admin_report">
+      <id>Ascending</id>
+      <string>Stigende</string>
+   </message>
+   <message module="admin_report">
+      <id>Descending</id>
+      <string>Synkende</string>
+   </message>
+   <message module="admin_report">
+      <id>Owned, Ordered, WishList or all DVDs</id>
+      <string>Egne,
+         Bestilte, &Oslash;nskeliste
+         eller alle DVDer
+      </string>
+   </message>
+   <message module="admin_report">
+      <id>All</id>
+      <string>Alle</string>
+   </message>
+   <message module="admin_report">
+      <id>Generate PDF-Report</id>
+      <string>Generer PDF Rapport</string>
+   </message>
+   <message module="admin_report">
+      <id>Generate HTML-Report</id>
+      <string>Generer HTML Rapport</string>
+   </message>
+   <message module="admin_report">
+      <id>Use filters from main list</id>
+      <string>Benytt filtre fra hovedlisten</string>
+   </message>
+   <message module="admin_report">
+      <id>Generate Report</id>
+      <string>Rapport</string>
+   </message>
+
+   <message module="admin_review">
+      <id>Review deleted.</id>
+      <string>Anmeldelse slettet.</string>
+   </message>
+   <message module="admin_review">
+      <id>Review activated.</id>
+      <string>Anmeldelse aktiveret.</string>
+   </message>
+   <message module="admin_review">
+      <id>All Review entries activated.</id>
+      <string>Alle anmeldelser aktiveret.</string>
+   </message>
+   <message module="admin_review">
+      <id>Pending reviews</id>
+      <string>Ventende anmeldelser</string>
+   </message>
+   <message module="admin_review">
+      <id>Activate all review entries</id>
+      <string>Aktiver alle anmeldelser</string>
+   </message>
+   <message module="admin_review">
+      <id>From</id>
+      <string>Fra</string>
+   </message>
+   <message module="admin_review">
+      <id>Title</id>
+      <string>Tittel</string>
+   </message>
+   <message module="admin_review">
+      <id>Text</id>
+      <string>Tekst</string>
+   </message>
+   <message module="admin_review">
+      <id>Function</id>
+      <string>Funksjon</string>
+   </message>
+   <message module="admin_review">
+      <id>Activate</id>
+      <string>Aktiver</string>
+   </message>
+   <message module="admin_review">
+      <id>Delete</id>
+      <string>Slett</string>
+   </message>
+   <message module="admin_review">
+      <id>There are no pending reviews.</id>
+      <string>Det er ingen ventende anmeldelser.</string>
+   </message>
+   <message module="admin_review">
+      <id>Active reviews</id>
+      <string>Aktive anmeldelser</string>
+   </message>
+   <message module="admin_review">
+      <id>There are no active reviews.</id>
+      <string>Det er ingen aktive anmeldelser.</string>
+   </message>
+
+   <message module="admin_nocover">
+      <id>Cover overview</id>
+      <string>Omslags Oversikt</string>
+   </message>
+   <message module="admin_nocover">
+      <id>Click on</id>
+      <string>Klikk
+         p&aring;
+      </string>
+   </message>
+   <message module="admin_nocover">
+      <id>-symbol to load missing covers from the Invelos server.</id>
+      <string>-Symbol
+         til &aring;
+         laste ned manglende omslagsbilder fra Invelos Server.
+      </string>
+   </message>
+   <message module="admin_nocover">
+      <id>Front</id>
+      <string>Forside</string>
+   </message>
+   <message module="admin_nocover">
+      <id>Back</id>
+      <string>Bakside</string>
+   </message>
+
+   <message module="admin_index">
+      <id>is available at</id>
+      <string>er
+         tilgjengelig p&aring;
+      </string>
+   </message>
+   <message module="admin_index">
+      <id>New update %update is available. Please refresh your database.
+      </id>
+      <string>Det er en oppdatering tilgjengelig, vennligst oppdater din
+         database.
+      </string>
+   </message>
+   <message module="admin_index">
+      <id>You have %gb new guestbook entries to activate.</id>
+      <string>
+         Det er %gb gjestebok beskjeder som venter p&aring; &aring;
+         bli aktiveret.
+      </string>
+   </message>
+   <message module="admin_index">
+      <id>You have %review new review entries to activate.</id>
+      <string>
+         Det er %review anmeldelser som venter p&aring; &aring;
+         bli aktiveret.
+      </string>
+   </message>
+   <message module="admin_index">
+      <id>Common preferences:</id>
+      <string>Felles innstillinger:</string>
+   </message>
+   <message module="admin_index">
+      <id>Change preferences</id>
+      <string>Innstillinger</string>
+   </message>
+   <message module="admin_index">
+      <id>Change password for admin area</id>
+      <string>Endre admin passordet.</string>
+   </message>
+   <message module="admin_index">
+      <id>Call PHP-info</id>
+      <string>Vis PHP Info</string>
+   </message>
+   <message module="admin_index">
+      <id>Insert/refresh data:</id>
+      <string>Legg til/oppdater data:</string>
+   </message>
+   <message module="admin_index">
+      <id>Parse new collection</id>
+      <string>Legg til ny samling</string>
+   </message>
+   <message module="admin_index">
+      <id>Additional functions</id>
+      <string>Ytterligere Funksjoner</string>
+   </message>
+   <message module="admin_index">
+      <id>Collection Pictures</id>
+      <string>Bilder av samlingen</string>
+   </message>
+   <message module="admin_index">
+      <id>Reviews</id>
+      <string>Anmeldelser</string>
+   </message>
+   <message module="admin_index">
+      <id>Check pictures of covers</id>
+      <string>Sjekk etter omslagsbilder</string>
+   </message>
+   <message module="admin_index">
+      <id>Print listing</id>
+      <string>Skriv ut liste</string>
+   </message>
+   <message module="admin_index">
+      <id>Update award table</id>
+      <string>Oppdater Film Pris tabell</string>
+   </message>
+   <message module="admin_index">
+      <id>Update exchange rates</id>
+      <string>Oppdater Valuta Kurser</string>
+   </message>
+   <message module="admin_index">
+      <id>Update IMDB table</id>
+      <string>Oppdater IMDB Tabell</string>
+   </message>
+   <message module="admin_index">
+      <id>Refresh database</id>
+      <string>Oppdater databasen</string>
+   </message>
+   <message module="admin_index">
+      <id>Check translations</id>
+      <string>Oversettelses Status</string>
+   </message>
+   <message module="admin_passwd">
+      <id>Change the Administrator Password</id>
+      <string>Endre Administrator Passord</string>
+   </message>
+   <message module="admin_passwd">
+      <id>Configuration File</id>
+      <string>Konfigurasjons Fil</string>
+   </message>
+   <message module="admin_passwd">
+      <id>not found.</id>
+      <string>ikke funnet.</string>
+   </message>
+   <message module="admin_passwd">
+      <id>is not writeable.</id>
+      <string>er ikke skrivbar.</string>
+   </message>
+   <message module="admin_passwd">
+      <id>You must enter a username and a password.</id>
+      <string>Du
+         m&aring;
+         taste inn et brukernavn og et passord.
+      </string>
+   </message>
+   <message module="admin_passwd">
+      <id>You must enter a username.</id>
+      <string>Du
+         m&aring;
+         taste inn et brukernavn.
+      </string>
+   </message>
+   <message module="admin_passwd">
+      <id>You must enter a password.</id>
+      <string>Du
+         m&aring;
+         taste inn et passord.
+      </string>
+   </message>
+   <message module="admin_passwd">
+      <id>The username or the password is wrong.</id>
+      <string>Brukernavn eller passord er feil.</string>
+   </message>
+   <message module="admin_passwd">
+      <id>You must enter the new username and the new password.</id>
+      <string>Du
+         m&aring;
+         taste inn et nytt brukernavn og passord.
+      </string>
+   </message>
+   <message module="admin_passwd">
+      <id>You must enter the new username.</id>
+      <string>Du
+         m&aring;
+         taste inn det nye brukernavnet.
+      </string>
+   </message>
+   <message module="admin_passwd">
+      <id>You must enter the new password.</id>
+      <string>Du
+         m&aring;
+         taste inn det nye passordet.
+      </string>
+   </message>
+   <message module="admin_passwd">
+      <id>The new Password do not match.</id>
+      <string>De nye passordene stemmer ikke.</string>
+   </message>
+   <message module="admin_passwd">
+      <id>Configuration File of Administration</id>
+      <string>Konfigurationsfil til Administrasjonen</string>
+   </message>
+   <message module="admin_passwd">
+      <id>Generated:</id>
+      <string>Generert:</string>
+   </message>
+   <message module="admin_passwd">
+      <id>An error occurs while writing to</id>
+      <string>Det
+         har opst&aring;tt
+         en feil ved skrivning til:
+      </string>
+   </message>
+   <message module="admin_passwd">
+      <id>Settings saved.</id>
+      <string>Innstillingene er lagret.</string>
+   </message>
+   <message module="admin_passwd">
+      <id>Success</id>
+      <string>Suksess</string>
+   </message>
+   <message module="admin_passwd">
+      <id>Current Username</id>
+      <string>N&aring;v&aelig;rende
+         brukernavn
+      </string>
+   </message>
+   <message module="admin_passwd">
+      <id>Current Password</id>
+      <string>N&aring;v&aelig;rende
+         passord
+      </string>
+   </message>
+   <message module="admin_passwd">
+      <id>New Username</id>
+      <string>Nytt Brukernavn</string>
+   </message>
+   <message module="admin_passwd">
+      <id>New Password</id>
+      <string>Nytt Passord</string>
+   </message>
+   <message module="admin_passwd">
+      <id>Retype new Password</id>
+      <string>Gjenta passord</string>
+   </message>
+   <message module="admin_passwd">
+      <id>Save changes</id>
+      <string>Lagre endringer</string>
+   </message>
+   <message module="admin_passwd">
+      <id>Clear</id>
+      <string>Nullstill</string>
+   </message>
+
+   <message module="admin_update">
+      <id>Processing update</id>
+      <string>Behandler oppdatering</string>
+   </message>
+   <message module="admin_update">
+      <id>Process update</id>
+      <string>Start oppdatering</string>
+   </message>
+   <message module="admin_update">
+      <id>Version database:</id>
+      <string>Versjon av database:</string>
+   </message>
+   <message module="admin_update">
+      <id>no information available</id>
+      <string>ingen informasjon tilgjenelig</string>
+   </message>
+   <message module="admin_update">
+      <id>latest changes:</id>
+      <string>Siste endret:</string>
+   </message>
+   <message module="admin_update">
+      <id>Version Update</id>
+      <string>Versjon tilgjengelig</string>
+   </message>
+   <message module="admin_update">
+      <id>Warning</id>
+      <string>Advarsel</string>
+   </message>
+   <message module="admin_update">
+      <id>Error</id>
+      <string>Feil</string>
+   </message>
+   <message module="admin_update">
+      <id>Error: The update was not successful!</id>
+      <string>Feil: Oppdateringen feilet!</string>
+   </message>
+   <message module="admin_update">
+      <id>Success. The database is now up-to-date</id>
+      <string>Suksess.
+         Databasen er n&aring;
+         oppdatert.
+      </string>
+   </message>
+   <message module="admin_update">
+      <id>Please backup your installation before you proceed!</id>
+      <string>Vennligst ta en backup av din innstallasjon innen du
+         fortsetter
+      </string>
+   </message>
+   <message module="admin_update">
+      <id>Your database is up-to-date</id>
+      <string>Din database er oppdatert</string>
+   </message>
+
+   <message module="admin_preferences">
+      <id>Preferences</id>
+      <string>Innstillinger</string>
+   </message>
+   <message module="admin_preferences">
+      <id>No write acccess to config.inc.php. Settings not saved.</id>
+      <string>Det er ikke skrivetilgang til filen config.inc.php.
+         Innstillingene kan ikke lagres.
+      </string>
+   </message>
+   <message module="admin_preferences">
+      <id>Generated:</id>
+      <string>Generert:</string>
+   </message>
+   <message module="admin_preferences">
+      <id>An error occurs while writing to "config.inc.php".</id>
+      <string>Det
+         har oppst&aring;tt
+         en feil ved skrivning til filen "config.inc.php".
+      </string>
+   </message>
+   <message module="admin_preferences">
+      <id>Settings saved.</id>
+      <string>Innsillingene er lagret</string>
+   </message>
+   <message module="admin_preferences">
+      <id>Reset</id>
+      <string>Nullstill</string>
+   </message>
+   <message module="admin_preferences">
+      <id>Save configuration</id>
+      <string>Lagre</string>
+   </message>
+
+   <message module="admin_parse">
+      <id>Parse XML file</id>
+      <string>Legg til XML fil</string>
+   </message>
+   <message module="admin_parse">
+      <id>deleted.</id>
+      <string>slettet.</string>
+   </message>
+   <message module="admin_parse">
+      <id>can\'t be deleted.</id>
+      <string>kan ikke slettes.</string>
+   </message>
+   <message module="admin_parse">
+      <id>not found.</id>
+      <string>ikke funnet.</string>
+   </message>
+   <message module="admin_parse">
+      <id>First of all you have to upload the exported XML-file to the xml
+         directory. Also you can compress this file and upload a zip-file with
+         the form of this
+         page.
+      </id>
+      <string>F&oslash;rst
+         m&aring;
+         du laste opp den eksporterte XML filen til XML mappen. Du kan ogs&aring;
+         pakke XML filen med ZIP og benytte dette skjema.
+      </string>
+   </message>
+   <message module="admin_parse">
+      <id>Parsed Finish</id>
+      <string>Prosess ferdig</string>
+   </message>
+   <message module="admin_parse">
+      <id>Choose File</id>
+      <string>Velg fil</string>
+   </message>
+   <message module="admin_parse">
+      <id>no file selected</id>
+      <string>ingen fil valgt</string>
+   </message>
+   <message module="admin_parse">
+      <id>The Collection was splitted in %split pieces.</id>
+      <string>Samlingen ble oppdelt i %split deler under innlastningen.
+      </string>
+   </message>
+   <message module="admin_parse">
+      <id> Parsed %dvd DVDs in %sec seconds.</id>
+      <string>
+         Lagt til %dvd DVDer p&aring;
+         %sec sekunder.
+      </string>
+   </message>
+   <message module="admin_parse">
+      <id>Deleted %del unneeded thumbnails.</id>
+      <string>Slettet %del ubenyttede miniatyr bilder.</string>
+   </message>
+   <message module="admin_parse">
+      <id>Parse</id>
+      <string>Legg til</string>
+   </message>
+   <message module="admin_parse">
+      <id>Term</id>
+      <string>Betingelse</string>
+   </message>
+   <message module="admin_parse">
+      <id>Description</id>
+      <string>Beskrivelse</string>
+   </message>
+   <message module="admin_parse">
+      <id>Empty the database and parse the XML-file into the database. For
+         parsing the XML-file will be split in pieces. If you have a large
+         amount of DVDs or
+         your
+         web server is a little bit slow, the parsing
+         may fail (timeout-error or blank page). When the parsing fails you
+         can decrease the number of DVDs for
+         every split
+         file on the
+         preferences page. With the current setting phpMyprofiler will split
+         after every %split DVDs.</id>
+      <string>T&oslash;m
+         databasen, og legg til XML filen. XML filen blir splittet opp i
+         mindre deler. Hvis du har et stort antall DVDer eller en langsom
+         server, kan prosessen
+         ingen
+         feile (Blank side eller en time-out fejl)
+         Hvis prosessen feiler, kan du endre antallet for oppsplitting, ved &aring;
+         angi antallet DVDer det skal v&aelig;re
+         i hver split. Samlingen splittes etter %split DVDer.
+      </string>
+   </message>
+   <message module="admin_parse">
+      <id>Use this to delete uneeded files.</id>
+      <string>Bruk
+         denne til &aring;
+         slette un&oslash;dvendige
+         filer.
+      </string>
+   </message>
+   <message module="admin_parse">
+      <id>File</id>
+      <string>Velg fil</string>
+   </message>
+   <message module="admin_parse">
+      <id>Size</id>
+      <string>St&oslash;rrelse
+      </string>
+   </message>
+   <message module="admin_parse">
+      <id>Byte</id>
+      <string>Byte</string>
+   </message>
+   <message module="admin_parse">
+      <id>Upload compressed (zip or bz2) or uncompressed Collection XML file
+      </id>
+      <string>Last opp kompirmert (zip eller bz2) eller ukomprimert
+         Collection XML fil
+      </string>
+   </message>
+   <message module="admin_parse">
+      <id>Upload file</id>
+      <string>Last opp fil</string>
+   </message>
+
+   <message module="admin_phpinfo">
+      <id>PHP-Info</id>
+      <string>PHP-Info</string>
+   </message>
+
+   <message module="admin_news">
+      <id>News deleted.</id>
+      <string>Nyheter slettet.</string>
+   </message>
+   <message module="admin_news">
+      <id>Title / Text is missing</id>
+      <string>Tittel / Tekst mangler</string>
+   </message>
+   <message module="admin_news">
+      <id>News successfully added.</id>
+      <string>Nyhet lagt til.</string>
+   </message>
+   <message module="admin_news">
+      <id>News successfully edited.</id>
+      <string>Nyhet redigert.</string>
+   </message>
+   <message module="admin_news">
+      <id>No News available.</id>
+      <string>Ingen nyheter tilgjengelig.</string>
+   </message>
+   <message module="admin_news">
+      <id>Add news</id>
+      <string>Legg til nyhet</string>
+   </message>
+   <message module="admin_news">
+      <id>Edit</id>
+      <string>Rediger</string>
+   </message>
+   <message module="admin_news">
+      <id>Add new news</id>
+      <string>Legg til ny nyhet</string>
+   </message>
+   <message module="admin_news">
+      <id>Edit news</id>
+      <string>Rediger nyhet</string>
+   </message>
+   <message module="admin_news">
+      <id>Apply Changes</id>
+      <string>Lagre endringer</string>
+   </message>
+
+   <message module="admin_uploadxml">
+      <id>Upload</id>
+      <string>Last opp</string>
+   </message>
+   <message module="admin_uploadxml">
+      <id>The directory xml is not writeable.</id>
+      <string>Mappen XML er ikke skrivbar.</string>
+   </message>
+   <message module="admin_uploadxml">
+      <id>Can\'t delete compressed collection file</id>
+      <string>Kan ikke slette pakket XML fil.</string>
+   </message>
+   <message module="admin_uploadxml">
+      <id>Added new Collection.</id>
+      <string>Ny DVD samling lagt til.</string>
+   </message>
+   <message module="admin_uploadxml">
+      <id>Something went wrong.</id>
+      <string>Noe gikk galt.</string>
+   </message>
+   <message module="admin_uploadxml">
+      <id>You need to select a file first!</id>
+      <string>Du
+         m&aring;
+         velge en fil f&oslash;rst!
+      </string>
+   </message>
+   <message module="admin_uploadxml">
+      <id>Error %error encountered: %error_str.</id>
+      <string>Feil %error funnet: %error_str.</string>
+   </message>
+   <message module="admin_uploadxml">
+      <id>Unable to decompress collection file.</id>
+      <string>Kan ikke pakke ut collection filen.</string>
+   </message>
+   <message module="admin_checklang">
+      <id>Translation status</id>
+      <string>Oversettelses Status</string>
+   </message>
+   <message module="admin_checklang">
+      <id>Choose language to check:</id>
+      <string>Velg
+         spr&aring;k
+         du vil kontrollere:
+      </string>
+   </message>
+   <message module="admin_checklang">
+      <id>Detailed overview</id>
+      <string>Detaljert Oversikt</string>
+   </message>
+   <message module="admin_checklang">
+      <id>Unused Translations</id>
+      <string>Ubrukte Oversettelser</string>
+   </message>
+   <message module="admin_checklang">
+      <id>Missing Translations</id>
+      <string>Manglende Oversettelser</string>
+   </message>
+   <message module="admin_checklang">
+      <id>Used Translations</id>
+      <string>Brukte Oversettelser</string>
+   </message>
+
+   <message module="admin_updateawards">
+      <id>Update Awards</id>
+      <string>Oppdater Film Priser</string>
+   </message>
+   <message module="admin_updateawards">
+      <id>Upload compressed (zip or bz2) or uncompressed award file</id>
+      <string>Last opp en komprimert (zip eller bz2) eller ukomprimert
+         filmpris fil
+      </string>
+   </message>
+   <message module="admin_updateawards">
+      <id>parsed.</id>
+      <string>lagt til.</string>
+   </message>
+   <message module="admin_updateawards">
+      <id>First of all you have to upload an award file to the award
+         directory.
+      </id>
+      <string>F&oslash;rst
+         m&aring;
+         du uploade en CVS fil med "Film Priser" (Oscars, Emmys m.m) til XML
+         mappen.
+      </string>
+   </message>
+   <message module="admin_updateawards">
+      <id>Parse file into awards table.</id>
+      <string>Legg til i filmpris tabellen</string>
+   </message>
+   <message module="admin_updateawards">
+      <id>upload award file</id>
+      <string>Last opp Film-Pris fil</string>
+   </message>
+   <message module="admin_updateawards">
+      <id>Upload compressed (zip or bz2) or uncompressed award file</id>
+      <string>Last opp en komprimert (zip eller bz2) eller ukomprimert
+         filmpris fil
+      </string>
+   </message>
+
+   <message module="admin_uploadaward">
+      <id>Upload Awards</id>
+      <string>Last opp Film-Priser</string>
+   </message>
+   <message module="admin_uploadaward">
+      <id>Added new award file.</id>
+      <string>Ny Film-Pris fil lagt til.</string>
+   </message>
+   <message module="admin_uploadaward">
+      <id>Wrong file type!</id>
+      <string>Feil fil type</string>
+   </message>
+   <message module="admin_uploadaward">
+      <id>Upload failed!</id>
+      <string>Feil under opplastning</string>
+   </message>
+   <message module="admin_uploadaward">
+      <id>Error No:</id>
+      <string>Feil nr:</string>
+   </message>
+   <message module="admin_uploadaward">
+      <id>The directory awards is not writeable.</id>
+      <string>Mappen awards er ikke skrivbar.</string>
+   </message>
+   <message module="admin_uploadxml">
+      <id>Unable to decompress award file.</id>
+      <string>Kan ikke pakke ut award filen.</string>
+   </message>
+
+   <message module="admin_pictures">
+      <id>Photos</id>
+      <string>Bilder</string>
+   </message>
+   <message module="admin_pictures">
+      <id>The picture was successfully removed.</id>
+      <string>Bildet er slettet.</string>
+   </message>
+   <message module="admin_pictures">
+      <id>Filename is wrong and can't be used. New Filename generated.</id>
+      <string>Filnavnet er ugyldigt, og kan ikke brukes. Nytt filnavn
+         generert.
+      </string>
+   </message>
+   <message module="admin_pictures">
+      <id>Added a new picture.</id>
+      <string>Nytt bilde lagt til.</string>
+   </message>
+   <message module="admin_pictures">
+      <id>File exists.</id>
+      <string>Filen eksisterer allerede.</string>
+   </message>
+   <message module="admin_pictures">
+      <id>Can't identify file type</id>
+      <string>Kan ikke identifisere filtypen.</string>
+   </message>
+   <message module="admin_pictures">
+      <id>Upload pictures</id>
+      <string>Last opp bilder.</string>
+   </message>
+   <message module="admin_pictures">
+      <id>Filename</id>
+      <string>Filnavn</string>
+   </message>
+   <message module="admin_pictures">
+      <id>Upload picture</id>
+      <string>Last opp</string>
+   </message>
+   <message module="admin_pictures">
+      <id>Dimension</id>
+      <string>Dimmensjoner</string>
+   </message>
+   <message module="admin_pictures">
+      <id>The directory pictures is not writeable.</id>
+      <string>Katalogen pictures mangler skriverettigheter.</string>
+   </message>
+   <message module="admin_pictures">
+      <id>Can not move file from tmp into pictures dir.</id>
+      <string>Kan ikke flytte filen fra tmp til pictures katalogen.</string>
+   </message>
+
+   <message module="admin_guestbook">
+      <id>Guestbook entry deleted.</id>
+      <string>Gjesteboks innlegg slettet.</string>
+   </message>
+   <message module="admin_guestbook">
+      <id>Guestbook entry activated.</id>
+      <string>Gjesteboks innlegg aktivert.</string>
+   </message>
+   <message module="admin_guestbook">
+      <id>Comment changed.</id>
+      <string>Kommentar endret.</string>
+   </message>
+   <message module="admin_guestbook">
+      <id>All Guestbook entries activated.</id>
+      <string>Alle gjesteboks innlegg aktiveret.</string>
+   </message>
+   <message module="admin_guestbook">
+      <id>Pending guestbook entries</id>
+      <string>Ventende gjesteboks innlegg</string>
+   </message>
+   <message module="admin_guestbook">
+      <id>Activate all guestbook entries</id>
+      <string>Aktiver alle gjesteboks innlegg</string>
+   </message>
+   <message module="admin_guestbook">
+      <id>OK</id>
+      <string>Ok</string>
+   </message>
+   <message module="admin_guestbook">
+      <id>There are no pending guestbook entries.</id>
+      <string>Det er ingen ventende gjesteboks innlegg.</string>
+   </message>
+   <message module="admin_guestbook">
+      <id>Active guestbook entries</id>
+      <string>Aktive gjesteboks innlegg</string>
+   </message>
+   <message module="admin_guestbook">
+      <id>There are no active guestbook entries.</id>
+      <string>Det er ingen aktive gjesteboks innlegg.</string>
+   </message>
+
+   <message module="admin_login">
+      <id>Logon</id>
+      <string>Login</string>
+   </message>
+   <message module="admin_login">
+      <id>Username</id>
+      <string>Brukernavn</string>
+   </message>
+   <message module="admin_login">
+      <id>Password</id>
+      <string>Passord</string>
+   </message>
+   <message module="admin_login">
+      <id>Login</id>
+      <string>Login</string>
+   </message>
+   <message module="admin_login">
+      <id>Use a valid username and password to gain access to the
+         administration console.
+      </id>
+      <string>Benytt
+         et gyldigt brukernavn og passord for &aring;
+         f&aring;
+         tilgang til administrajons menyen.
+      </string>
+   </message>
+
+   <message module="admin_updateimdb">
+      <id>IMDB table updated.</id>
+      <string>IMDB Tabell oppdatert.</string>
+   </message>
+   <message module="admin_updateimdb">
+      <id>This feature takes a lot time and need access to remote files. Not
+         every server satisfy this requirements.
+      </id>
+      <string>Denne
+         funksjonen kan ta lang tid, og krever tilgang til andre systemer.
+         Ikke alle servere st&oslash;tter
+         dette.
+      </string>
+   </message>
+   <message module="admin_updateimdb">
+      <id>Click here to update your IMDB table.</id>
+      <string>Klikk her for at oppdatere din IMDB tabell</string>
+   </message>
+   <message module="admin_updateimdb">
+      <id>Click here to create IMDB Top 250 Tags.</id>
+      <string>Klikk
+         for &aring;
+         generere IMDB topp 250.
+      </string>
+   </message>
+   <message module="admin_updateimdb">
+      <id>Tags table updated.</id>
+      <string>Tags tabellen er oppdatert.</string>
+   </message>
+
+   <message module="header">
+      <id>Logout</id>
+      <string>Logg ut</string>
+   </message>
+   <message module="header">
+      <id>Back to Cover overview</id>
+      <string>Tilbake til Omslagsbilde oversikt</string>
+   </message>
+   <message module="header">
+      <id>Back to headshots</id>
+      <string>Tilbake til portrett bilder</string>
+   </message>
+   <message module="header">
+      <id>Back to the News</id>
+      <string>Tilbake til nyhetene</string>
+   </message>
+   <message module="header">
+      <id>Back to admin menu</id>
+      <string>Hovedmeny</string>
+   </message>
+   <message module="header">
+      <id>Back to parsing menu...</id>
+      <string>Tilbake til innlesnings menyen</string>
+   </message>
+   <message module="header">
+      <id>Back to award menu...</id>
+      <string>Tilbake til filmpris meny</string>
+   </message>
+   <message module="header">
+      <id>Close</id>
+      <string>Lukk</string>
+   </message>
+
+   <message module="options">
+      <id>Main settings</id>
+      <string>Hoved Instillinger</string>
+   </message>
+   <message module="options">
+      <id>Database server</id>
+      <string>Database Server</string>
+   </message>
+   <message module="options">
+      <id>Database user</id>
+      <string>Database Bruker</string>
+   </message>
+   <message module="options">
+      <id>Database password</id>
+      <string>Database Passord</string>
+   </message>
+   <message module="options">
+      <id>Database name</id>
+      <string>Database Navn</string>
+   </message>
+   <message module="options">
+      <id>Table prefix</id>
+      <string>Tabellprefiks</string>
+   </message>
+   <message module="options">
+      <id>URL to phpMyprofiler</id>
+      <string>URL til phpmyProfiler</string>
+   </message>
+   <message module="options">
+      <id>e.g. http://www.example.com/pmp (without / at the end!)</id>
+      <string>F.eks. http://www.example.com/pmp (uten / til sist!)</string>
+   </message>
+   <message module="options">
+      <id>Basic settings</id>
+      <string>Basis Instillinger</string>
+   </message>
+   <message module="options">
+      <id>Administrator's name</id>
+      <string>Administratorens navn</string>
+   </message>
+   <message module="options">
+      <id>Administrator's Email</id>
+      <string>Adminitratorens e-post</string>
+   </message>
+   <message module="options">
+      <id>Page title</id>
+      <string>Tittel
+         p&aring;
+         webside
+      </string>
+   </message>
+   <message module="options">
+      <id>Cache templates</id>
+      <string>Hurtigbuffer Sjablonger</string>
+   </message>
+   <message module="options">
+      <id>Cache templates in cache directory (must be writeable). This will
+         speed up your phpMyProfiler a lot, but you will need som additional
+         webspace for the
+         chached templates.
+      </id>
+      <string>"Hurtigbuffres"
+         i mappen "cache" (skal v&aelig;re
+         skrivbar), vil gj&oslash;re
+         din phpMyProfiler side mye raskere, men det vil benyttes litt ekstra
+         plass til hurtigbufferet.
+      </string>
+   </message>
+   <message module="options">
+      <id>Cache lifetime</id>
+      <string>Hurtigbufferets levetid</string>
+   </message>
+   <message module="options">
+      <id>Lifetime of a cached template. After this time the template will
+         rendered new. When parsing a new collection, the cache is flushed
+         automatically, so
+         using
+         unlimited should be no problem.
+      </id>
+      <string>Levetiden
+         p&aring;
+         hurtigbufferet. Etter denne tiden vil hurtigbufferet bli regenrert.
+         Når det registreres en ny samling t&oslash;mmes
+         de midlertidige filene automatisk. S&aring;
+         hvis man benytter ubegrenset her b&oslash;r
+         det ikke v&aelig;re
+         et problem.
+      </string>
+   </message>
+   <message module="options">
+      <id>Check for updates</id>
+      <string>Sjekk etter oppdateringer</string>
+   </message>
+   <message module="options">
+      <id>Contact www.phpmyprofiler.de when entering the admin-menu and
+         check if a new version is available.
+      </id>
+      <string>Kontakt
+         www.phpmyprofiler.de n&aring;r
+         du logger p&aring;
+         admin menyen og sjekk det er en ny versjon tilgjengelig?
+      </string>
+   </message>
+   <message module="options">
+      <id>Imprint</id>
+      <string>Kontaktinformasjon</string>
+   </message>
+   <message module="options">
+      <id>Show imprint?</id>
+      <string>Vis kontaktinfo?</string>
+   </message>
+   <message module="options">
+      <id>If you you choose no, you can skip this category.</id>
+      <string>Hvis du velger nei, kan du hoppe over denne katogorien.
+      </string>
+   </message>
+   <message module="options">
+      <id>Full name</id>
+      <string>Fullt navn</string>
+   </message>
+   <message module="options">
+      <id>Place of residence</id>
+      <string>By</string>
+   </message>
+   <message module="options">
+      <id>Zip code</id>
+      <string>Postnummer</string>
+   </message>
+   <message module="options">
+      <id>Adress</id>
+      <string>Adresse</string>
+   </message>
+   <message module="options">
+      <id>Language settings</id>
+      <string>Spr&aring;k
+         Innstillinger
+      </string>
+   </message>
+   <message module="options">
+      <id>Default language</id>
+      <string>Standard
+         spr&aring;k
+      </string>
+   </message>
+   <message module="options">
+      <id>Date format</id>
+      <string>Dato format</string>
+   </message>
+   <message module="options">
+      <id>MM/DD/YY</id>
+      <string>MM/DD/&Aring;&Aring;
+      </string>
+   </message>
+   <message module="options">
+      <id>DD.MM.YYYY</id>
+      <string>DD.MM.&Aring;&Aring;&Aring;&Aring;
+      </string>
+   </message>
+   <message module="options">
+      <id>YYYY-MM-DD</id>
+      <string>&Aring;&Aring;&Aring;&Aring;-MM-DD
+      </string>
+   </message>
+   <message module="options">
+      <id>Preferred currency</id>
+      <string>Foretrukken valuta</string>
+   </message>
+   <message module="options">
+      <id>Decimal point</id>
+      <string>Desimal skille</string>
+   </message>
+   <message module="options">
+      <id>point</id>
+      <string>Punktum</string>
+   </message>
+   <message module="options">
+      <id>comma</id>
+      <string>Komma</string>
+   </message>
+   <message module="options">
+      <id>Thousands seperator</id>
+      <string>Tusen skille</string>
+   </message>
+   <message module="options">
+      <id>Timezone</id>
+      <string>Tidssone</string>
+   </message>
+   <message module="options">
+      <id>Parser settings</id>
+      <string>Innlesnings Innstillinger</string>
+   </message>
+   <message module="options">
+      <id>Split collection after x DVDs</id>
+      <string>Splitt DVD samling etter x antall DVDer</string>
+   </message>
+   <message module="options">
+      <id>If your server is too slow to parse all dvds at once (timeout
+         error occurs), you can split the file into smaller pieces.
+      </id>
+      <string>Hvis
+         din server er ikke rask nok til &aring;
+         kunne lese inn alle DVDer p&aring;
+         en gang(kan timeout feil forekomme), kan du splitte filen opp i
+         mindre deler.
+      </string>
+   </message>
+   <message module="options">
+      <id>Graphic settings</id>
+      <string>Grafikk Innstillinger</string>
+   </message>
+   <message module="options">
+      <id>Use graphic funtions</id>
+      <string>Bruk grafiske funksjoner</string>
+   </message>
+   <message module="options">
+      <id>Set to yes, if GD-Libs are installed</id>
+      <string>Sett denne til Ja, hvis GD-libs er installert</string>
+   </message>
+   <message module="options">
+      <id>Yes</id>
+      <string>Ja</string>
+   </message>
+   <message module="options">
+      <id>No</id>
+      <string>Nei</string>
+   </message>
+   <message module="options">
+      <id>Cache thumbnails</id>
+      <string>Hurtigbuffer av miniatyrbilder</string>
+   </message>
+   <message module="options">
+      <id>Cached thumbnails in cache directory (must be writeable). This
+         will speed up your phpMyProfiler but you will need some additional
+         webspace for the
+         thumbnails.
+      </id>
+      <string>Hurtigbuffer
+         av Miniatyrbilder i cache mappen (m&aring;
+         v&aelig;re
+         skrivbar). Dette vil gj&oslash;re
+         phpMyprofiler noe raskere, men krever ekstra plass.
+      </string>
+   </message>
+   <message module="options">
+      <id>Use true type fonts in graphs</id>
+      <string>Benytt True Type skrifttyper i grafer</string>
+   </message>
+   <message module="options">
+      <id>You
+         need to use true type fonts for languages with special characters
+         (eg. Norwegian &Oslash;)
+      </id>
+      <string>Du
+         er n&oslash;dt
+         til at bruke True Type skrifttyper til spr&aring;k
+         med special tegn (f.eks Norsk &Oslash;)
+      </string>
+   </message>
+   <message module="options">
+      <id>Display settings</id>
+      <string>Visnings Instillinger</string>
+   </message>
+   <message module="options">
+      <id>Theme</id>
+      <string>Tema</string>
+   </message>
+   <message module="options">
+      <id>default</id>
+      <string>Standard</string>
+   </message>
+   <message module="options">
+      <id>Number of DVDs at start page</id>
+      <string>Antall
+         DVDer p&aring;
+         start siden
+      </string>
+   </message>
+   <message module="options">
+      <id>Number of DVDs in DVD list per page</id>
+      <string>Antall DVDer pr. side i DVD listen</string>
+   </message>
+   <message module="options">
+      <id>Number of entries in guestbook per page</id>
+      <string>Antall innlegg pr. side i gjesteboken</string>
+   </message>
+   <message module="options">
+      <id>Number of photos in photo gallery per page</id>
+      <string>Antall bilder pr. side i bildegalleriet</string>
+   </message>
+   <message module="options">
+      <id>Number of news in news archive per page</id>
+      <string>Antall nyheter pr. side i nyhedsarktivet</string>
+   </message>
+   <message module="options">
+      <id>Number of covers in cover gallery per page</id>
+      <string>Antall omslagsbilder i galleriet pr. side</string>
+   </message>
+   <message module="options">
+      <id>Number of covers in cover gallery per line</id>
+      <string>Antall omslagsbilder pr. linie i galleriet</string>
+   </message>
+   <message module="options">
+      <id>Number of pictures in person gallery per line</id>
+      <string>Antall bilder pr. linie i Person galleriet</string>
+   </message>
+   <message module="options">
+      <id>Number of pictures in person gallery per page</id>
+      <string>Antall bilder pr. side i Person galleriet</string>
+   </message>
+   <message module="options">
+      <id>Show time information on event page</id>
+      <string>Vis
+         tids informasjon p&aring;
+         sidene
+      </string>
+   </message>
+   <message module="options">
+      <id>Use HTML-Code in notices</id>
+      <string>Bruk HTML kode i notater</string>
+   </message>
+   <message module="options">
+      <id>Show HD banner</id>
+      <string>Vis HD Banner</string>
+   </message>
+   <message module="options">
+      <id>Will only work if GD-Libs are enabled</id>
+      <string>Vil kun fungere hvis GD-Libs er aktivert</string>
+   </message>
+   <message module="options">
+      <id>Activate external reviews</id>
+      <string>Aktiver eksterne bruker annmeldelser</string>
+   </message>
+   <message module="options">
+      <id>Exclude tag</id>
+      <string>Utelat taggede filmer</string>
+   </message>
+   <message module="options">
+      <id>Don't show media with this selected tag</id>
+      <string>Ikke vis filmer med denne taggen</string>
+   </message>
+   <message module="options">
+      <id>Show media type before title</id>
+      <string>Vis
+         media type f&oslash;r
+         tittelen
+      </string>
+   </message>
+   <message module="options">
+      <id>Disable newsarchive</id>
+      <string>Deaktiver nyhetsarkiv</string>
+   </message>
+   <message module="options">
+      <id>Disable guestbook</id>
+      <string>Deaktiver gjestebok</string>
+   </message>
+   <message module="options">
+      <id>Disable contact</id>
+      <string>Deaktiver kontaktinformasjon</string>
+   </message>
+   <message module="options">
+      <id>Disable phpMyProfiler website and forum links</id>
+      <string>Deaktiver phpMyProiler webside og forum linker</string>
+   </message>
+   <message module="options">
+      <id>Disable reviews</id>
+      <string>Deaktiver anmeldelser</string>
+   </message>
+   <message module="options">
+      <id>Other settings</id>
+      <string>Diverse Innstillinger</string>
+   </message>
+   <message module="options">
+      <id>Activate guestbooks entries automatically</id>
+      <string>Aktiver gjestebok innlegg automatisk</string>
+   </message>
+   <message module="options">
+      <id>Use security code in guestbook</id>
+      <string>Benytt sikkerhets kode i gjesteboken</string>
+   </message>
+   <message module="options">
+      <id>Activate reviews automatically</id>
+      <string>Aktiver anmeldelser automatisk</string>
+   </message>
+   <message module="options">
+      <id>Sort order of latest DVDs</id>
+      <string>Sortering av siste DVDer</string>
+   </message>
+   <message module="options">
+      <id>Date of purchase</id>
+      <string>Kj&oslash;psdato
+      </string>
+   </message>
+   <message module="options">
+      <id>Number</id>
+      <string>Nummer</string>
+   </message>
+   <message module="options">
+      <id>Show price informations in statistics</id>
+      <string>Vis pris informasjon i statistikken</string>
+   </message>
+   <message module="options">
+      <id>Relative path to cast directory</id>
+      <string>Relativ sti til cast mappen</string>
+   </message>
+   <message module="options">
+      <id>Change this value only if you know what your are doing.</id>
+      <string>Endre
+         kun denne innstilling, hvis du vet hva du gj&oslash;r.
+      </string>
+   </message>
+   <message module="options">
+      <id>Enable Google Analytics</id>
+      <string>Aktiver Google Analytics</string>
+   </message>
+   <message module="options">
+      <id>Google Analytics Tracking Code</id>
+      <string>Google Analytics Tracking Kode</string>
+   </message>
+   <message module="options">
+      <id>Turn on gzip output buffer</id>
+      <string>Aktiver gzip utpakkings buffer</string>
+   </message>
+   <message module="options">
+      <id>DVD-List</id>
+      <string>DVD Liste Instillinger</string>
+   </message>
+   <message module="options">
+      <id>Default sort order</id>
+      <string>Standard sortering etter</string>
+   </message>
+   <message module="options">
+      <id>Default sort order direction</id>
+      <string>Standard sortering stigende/synkende</string>
+   </message>
+   <message module="options">
+      <id>Movie Title</id>
+      <string>Film Tittel</string>
+   </message>
+   <message module="options">
+      <id>Year</id>
+      <string>&Aring;r
+      </string>
+   </message>
+   <message module="options">
+      <id>Nr.</id>
+      <string>Nr.</string>
+   </message>
+   <message module="options">
+      <id>Length</id>
+      <string>Lengde</string>
+   </message>
+   <message module="options">
+      <id>Price</id>
+      <string>Pris</string>
+   </message>
+   <message module="options">
+      <id>Place of purchase</id>
+      <string>Kj&oslash;ps
+         sted
+      </string>
+   </message>
+   <message module="options">
+      <id>Origin</id>
+      <string>Opprinnelse</string>
+   </message>
+   <message module="options">
+      <id>Media</id>
+      <string>Media</string>
+   </message>
+   <message module="options">
+      <id>Default sort order of child profiles</id>
+      <string>Standard sortering for basis profil</string>
+   </message>
+   <message module="options">
+      <id>Show sequential number</id>
+      <string>Vis
+         efterf&oslash;lgende
+         nummer
+      </string>
+   </message>
+   <message module="options">
+      <id>Column 1</id>
+      <string>Kolonne 1</string>
+   </message>
+   <message module="options">
+      <id>Hide column 1 also hide the "+" before Boxsets and the films are
+         not clickable.
+      </id>
+      <string>Skjules
+         kolonne 1, skjules ogs&aring;
+         pluss (+) for boks sett.
+      </string>
+   </message>
+   <message module="options">
+      <id>Column 2</id>
+      <string>Kolonne 2</string>
+   </message>
+   <message module="options">
+      <id>Column 3</id>
+      <string>Kolonne 3</string>
+   </message>
+   <message module="options">
+      <id>Column 4</id>
+      <string>Kolonne 4</string>
+   </message>
+   <message module="options">
+      <id>Column 5</id>
+      <string>Kolonne 5</string>
+   </message>
+   <message module="options">
+      <id>Column 6</id>
+      <string>Kolonne 6</string>
+   </message>
+   <message module="options">
+      <id>1 hour</id>
+      <string>1 time</string>
+   </message>
+   <message module="options">
+      <id>2 hours</id>
+      <string>2 timer</string>
+   </message>
+   <message module="options">
+      <id>3 hours</id>
+      <string>3 timer</string>
+   </message>
+   <message module="options">
+      <id>12 hours</id>
+      <string>12 timer</string>
+   </message>
+   <message module="options">
+      <id>24 hours</id>
+      <string>24 timer</string>
+   </message>
+   <message module="options">
+      <id>unlimited</id>
+      <string>ubegrenset</string>
+   </message>
+   <message module="options">
+      <id>Possible values:</id>
+      <string>Mulige verdier:</string>
+   </message>
+   <message module="options">
+      <id>empty</id>
+      <string>Tom</string>
+   </message>
+
+   <message module="install">
+      <id>Pre-Installation Check</id>
+      <string>Pre-Installasjons Kontroll</string>
+   </message>
+   <message module="install">
+      <id>Step 1</id>
+      <string>Trinn 1</string>
+   </message>
+   <message module="install">
+      <id>Step 2</id>
+      <string>Trinn 2</string>
+   </message>
+   <message module="install">
+      <id>Step 3</id>
+      <string>Trinn 3</string>
+   </message>
+   <message module="install">
+      <id>Frontpage</id>
+      <string>Forsiden</string>
+   </message>
+   <message module="install">
+      <id>Available</id>
+      <string>Tilgengelig</string>
+   </message>
+   <message module="install">
+      <id>Unavailable</id>
+      <string>Ikke Tilgengelig</string>
+   </message>
+   <message module="install">
+      <id>Requirements</id>
+      <string>Kvalifikasjoner</string>
+   </message>
+   <message module="install">
+      <id>Writeable</id>
+      <string>Skrivbar</string>
+   </message>
+   <message module="install">
+      <id>Unwriteable</id>
+      <string>Ikke skrivbar</string>
+   </message>
+   <message module="install">
+      <id>Finish</id>
+      <string>Ferdig</string>
+   </message>
+   <message module="install">
+      <id>To install phpMyProfiler you must have this requirements.</id>
+      <string>For
+         at kunne installere phpMyProfiler m&aring;
+         du oppfylle disse kravene.
+      </string>
+   </message>
+   <message module="install">
+      <id>Directory and File Permissions</id>
+      <string>Mappe og fil -rettigheter</string>
+   </message>
+   <message module="install">
+      <id>This folders/files must be writeable to install phpMyProfiler.
+      </id>
+      <string>Disse
+         mappene/filene m&aring;
+         v&aelig;re
+         skrivbare for &aring;
+         kunne installere phpMyProfiler.
+      </string>
+   </message>
+   <message module="install">
+      <id>Check Again</id>
+      <string>Sjekk igjen</string>
+   </message>
+   <message module="install">
+      <id>Next</id>
+      <string>Neste</string>
+   </message>
+   <message module="install">
+      <id>If some requirements are not available and colored red, the
+         installation will not start.
+      </id>
+      <string>Hvis
+         noen krav ikke er tilfredstilt, og er markeret med r&oslash;dt,
+         vil installasjonen ikke starte.
+      </string>
+   </message>
+   <message module="install">
+      <id>When its colored orange, the installation will starts but not all
+         functions are available.
+      </id>
+      <string>N&aring;r
+         det er farget orange, kan installasjonen starte, men ikke alle
+         funksjoner er tilgjengelige.
+      </string>
+   </message>
+   <message module="install">
+      <id>The Installation has finished. For your security, you must delete
+         the folder "installation".
+      </id>
+      <string>Installasjonen
+         er ferdig. Av sikkerhedsmessige hensyn og for &aring;
+         komme videre, m&aring;
+         du slette mappen "installation".
+      </string>
+   </message>
+   <message module="install">
+      <id>Wrong access data for MySQL Database.</id>
+      <string>Feil konto opplysninger til MySQL databasen.</string>
+   </message>
+   <message module="install">
+      <id>Please enter the access data to the MySQL database.</id>
+      <string>Vennligst tast inn konto informasjonen til MySQL databasen.
+      </string>
+   </message>
+   <message module="install">
+      <id>The Password do not match.</id>
+      <string>Passordet stemmer ikke overens.</string>
+   </message>
+   <message module="install">
+      <id>Retype Password</id>
+      <string>Gjenta Passordet</string>
+   </message>
+   <message module="install">
+      <id>Password for Administration</id>
+      <string>Administrasjons Passord</string>
+   </message>
+   <message module="install">
+      <id>Create phpMyProfiler Database</id>
+      <string>Opprett phpMyProfiler database</string>
+   </message>
+   <message module="install">
+      <id>Unable to connect to database.</id>
+      <string>Kunne ikke koble til databasen.</string>
+   </message>
+   <message module="install">
+      <id>Connection to database established.</id>
+      <string>Tilkoplingen til databasen opprettet.</string>
+   </message>
+   <message module="install">
+      <id>Can't select database. Trying to create...</id>
+      <string>Kan
+         ikke velge databasen. Fors&aelig;ker &aring;
+         opprette...
+      </string>
+   </message>
+   <message module="install">
+      <id>Can't create database.</id>
+      <string>Kan ikke opprette databasen.</string>
+   </message>
+   <message module="install">
+      <id>Database created.</id>
+      <string>Database opprettet.</string>
+   </message>
+   <message module="install">
+      <id>Connected to existing database.</id>
+      <string>Tilkoplet til eksisterende database.</string>
+   </message>
+   <message module="install">
+      <id>Start Creating tables.</id>
+      <string>Starter opprettelse av tabeller.</string>
+   </message>
+   <message module="install">
+      <id>Tables created successfully.</id>
+      <string>Tabeller oprettet suksessfult.</string>
+   </message>
+   <message module="install">
+      <id>Starting importing data</id>
+      <string>Starter import av data</string>
+   </message>
+   <message module="install">
+      <id>Data imported successfully.</id>
+      <string>Data importeret suksessfult.</string>
+   </message>
+   <message module="install">
+      <id>Installation finished</id>
+      <string>Installasjonen er ferdig</string>
+   </message>
+   <message module="install">
+      <id>Installation halted, check your Configuration.</id>
+      <string>Installasjonen stoppet, sjekk din konfigurasjon</string>
+   </message>
+
+   <message module="credits">
+      <id>Logos</id>
+      <string>Logoer</string>
+   </message>
+   <message module="credits">
+      <id>Dolby and the double-D symbol are registered trademarks of Dolby
+         Laboratories
+      </id>
+      <string>Dolby og dobbel D symbolet er registrert varemerke av Dolby
+         Laboratories.
+      </string>
+   </message>
+   <message module="credits">
+      <id>DTS is an registered trademark of DTS, Inc.</id>
+      <string>DTS er et registrert varemerke av DTS, Inc.</string>
+   </message>
+   <message module="credits">
+      <id>The DVD logo is copyrighted by the DVD Forum</id>
+      <string>DVD logoen er copyrighted av DVD forum</string>
+   </message>
+   <message module="filmprofile">
+      <id>Channels</id>
+      <string>Kanaler</string>
+   </message>
+   <message module="menue">
+      <id>Number of DVDs</id>
+      <string>Antall DVDer</string>
+   </message>
+   <message module="credits">
+      <id>The Blu-ray logo is copyrighted by the Blu-ray Disc Association
+      </id>
+      <string>Blu-ray logoen er copyrighted av Blu-ray Disc Association
+      </string>
+   </message>
+   <message module="credits">
+      <id>The HD DVD logo is copyrighted by the HD DVD Promotion Group</id>
+      <string>HD DVD logoen er copyrighted av HD DVD Promotion Group
+      </string>
+   </message>
+
+   <message module="search">
+      <id>Deutsche Synchronkartei</id>
+      <string>Det Tyske Synkroniserings Register</string>
+   </message>
+
+   <message module="Guestbook">
+      <id>When storing in the database unfortunately an error occurs.</id>
+      <string>En feil oppst&aring;r ved lagring til databasen.</string>
+   </message>
+   <message module="Credits">
+      <id>The DVD and HD DVD Logo are registered trademarks of the DVD
+         Format/Logo Licensing Corporation
+      </id>
+      <string>DVD og HD DVD logoen er et registret varemerke av DVD
+         Format/Logo Licensing Corporation
+      </string>
+   </message>
+   <message module="Credits">
+      <id>The Blu-ray Disc Logo is an registered trademark of the Blu-ray
+         Disc Association
+      </id>
+      <string>Blu-Ray Disc Logoen er et registret varemerke fra Blu-ray Disc
+         Association
+      </string>
+   </message>
+
+   <message module="top">
+      <id>Galleries</id>
+      <string>Gallerier</string>
+   </message>
+   <message module="top">
+      <id>Communication</id>
+      <string>Kommunikasjon</string>
+   </message>
+   <message module="top">
+      <id>Language</id>
+      <string>Sprak</string>
+   </message>
+
+   <message module="menue">
+      <id>Alphabetic filter</id>
+      <string>Alfabetisk Filter</string>
+   </message>
+   <message module="menue">
+      <id>Countries</id>
+      <string>Land</string>
+   </message>
+
+   <message module="contact">
+      <id>Code</id>
+      <string>Kode</string>
+   </message>
+   <message module="contact">
+      <id>Enter the above security code here</id>
+      <string>Skriv inn de ovennevnte sikkerhetskoden her</string>
+   </message>
+
+   <message module="countries">
+      <id>en</id>
+      <string>Engelsk</string>
+   </message>
+   <message module="countries">
+      <id>de</id>
+      <string>German</string>
+   </message>
+   <message module="countries">
+      <id>dk</id>
+      <string>Danish</string>
+   </message>
+   <message module="countries">
+      <id>nl</id>
+      <string>Dutch</string>
+   </message>
+   <message module="countries">
+      <id>no</id>
+      <string>Norsk</string>
+   </message>
+
+   <message module="subtype">
+      <id>Role</id>
+      <string>Rolle</string>
+   </message>
+
+   <message module="admin_parse">
+      <id>Files</id>
+      <string>Filer</string>
+   </message>
+   <message module="admin_updateimdb">
+      <id>Source</id>
+      <string>Source</string>
+   </message>
+   <message module="admin_updateimdb">
+      <id>Update</id>
+      <string>Oppdater</string>
+   </message>
+   <message module="admin_update">
+      <id>Your database is not up-to-date!</id>
+      <string>Databasen er ikke up-to-date!</string>
+   </message>
+
+   <message module="admin_preferences">
+      <id>Your current signature banners</id>
+      <string>Dine navarende signatur bannerbilder</string>
+   </message>
+   <message module="admin_preferences">
+      <id>Your signature banner images are created automatically when you parse a collection and saved in the 'cache' folder.</id>
+      <string>Signatur bannerbilder opprettes automatisk nar du analysere en samling og lagret i 'cache'-mappen.</string>
+   </message>
+
+</locale>

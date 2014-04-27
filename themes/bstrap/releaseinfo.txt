@@ -1,0 +1,89 @@
+===============================================================================
+phpMyProfiler Theme "Bstrap"
+-------------------------------------------------------------------------------
+Release:    0.4.003
+Date:       2014-04-27
+Author:     George Lewe (george@lewe.com)
+Copyright:  (c) 2014. All rights reserved.
+-------------------------------------------------------------------------------
+
+RELEASEINFO
+
+===============================================================================
+
+
+------------------------------------------------------------------------------
+Release 0.4.003
+Date: 2014-04-27
+
+- Adjustments to new phpmyprofiler release 1.2
+
+------------------------------------------------------------------------------
+Release 0.4.002
+Date: 2014-02-09
+
+- Signature banners are now shown on Parser settings tab (when enabled)
+
+- Replaced the aspect ration image with HTML tag in the Profile Details tab
+
+- Replaced DTS HD and Dolby Digital logo
+
+- Change a color setting in the Slate skin
+
+------------------------------------------------------------------------------
+Release 0.4.001
+Date: 2014-01-31
+
+- Fixed the missing banner parts for Blu-ray and HD DVD cover images
+
+- Fixed the CSS file path location for bstrap.ccs and custom.css
+
+- Fixed button position on DVD List tab of admin preferences
+
+
+------------------------------------------------------------------------------
+Release 0.4.000
+Date: 2014-01-22
+
+- Added custom dual-line labels for the Features pane
+
+- Fixed the Google Analytics code in header.tpl
+
+
+------------------------------------------------------------------------------
+Release 0.3.000
+Date: 2014-01-21
+
+- Made GPL collapsed/expandable on credits page
+
+- Added Bootswatch to credits page
+
+- Added button icons
+
+- Added dropdown menu icons
+
+- Cleaned up English language file
+
+- Cleaned up image directory
+
+- Added the Admin Backend theme
+
+- Added a missing blank before purchase place on start page
+
+
+------------------------------------------------------------------------------
+Release 0.2.000
+Date: 2014-01-18
+
+- Added support for session skins. Default skin is still set in admin backend.
+  During frontend session user can select different skin from phpMyProfiler
+  menu.
+  
+- Changed layout of the "Watched" page
+
+
+------------------------------------------------------------------------------
+Release 0.1.000
+Date: 2014-01-17
+
+- Initial release

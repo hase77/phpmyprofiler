@@ -1,0 +1,65 @@
+/*
+===============================================================================
+phpMyProfiler Theme "Bstrap"
+-------------------------------------------------------------------------------
+Release:    0.4.002
+Date:       2014-02-09
+Author:     George Lewe (george@lewe.com)
+Copyright:  (c) 2014. All rights reserved.
+-------------------------------------------------------------------------------
+
+bstrap.css
+
+Custom Bstrap styles
+
+===============================================================================
+*/
+
+.panel-footer {
+   padding: 20px 15px 200px 15px;
+}
+.caret {
+   margin-left: 6px;
+}
+
+.dual-label {
+   text-align: center;
+   font-size: 75%;
+   font-weight: bold;
+   float: left;
+   margin-right: 8px;
+   margin-bottom: 8px;
+   white-space: nowrap;
+   border-radius: .25em;
+   width: 80px;
+}
+
+.dual-label-default { border: 1px solid #999999; }
+.dual-label-upper-default { }
+.dual-label-lower-default { background-color: #999999; color: #ffffff; }
+
+.dual-label-bw { border: 1px solid #000000; }
+.dual-label-upper-bw { color: #000000; }
+.dual-label-lower-bw { background-color: #000000; color: #ffffff; }
+
+.dual-label-primary { border: 1px solid #428bca; }
+.dual-label-upper-primary { }
+.dual-label-lower-primary { background-color: #428bca; color: #ffffff; }
+
+.dual-label-success { border: 1px solid #5cb85c; }
+.dual-label-upper-success { }
+.dual-label-lower-success { background-color: #5cb85c; color: #ffffff; }
+
+.dual-label-info { border: 1px solid #5bc0de; }
+.dual-label-upper-info { }
+.dual-label-lower-info { background-color: #5bc0de; color: #ffffff; }
+
+.dual-label-warning { border: 1px solid #f0ad4e; }
+.dual-label-upper-warning { }
+.dual-label-lower-warning { background-color: #f0ad4e; color: #ffffff; }
+
+.dual-label-danger { border: 1px solid #d9534f; }
+.dual-label-upper-danger { }
+.dual-label-lower-danger { background-color: #d9534f; color: #ffffff; }
+
+.dual-label:empty { display: none; }
