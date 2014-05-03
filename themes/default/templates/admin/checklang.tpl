@@ -66,6 +66,7 @@
     {/foreach}
 
     {* Unused Translations *}
+	{*
     <a name="unused"></a><h2>{t}Unused Translations{/t}</h2>
     <div class="box">
 	<table cellpadding="0" cellspacing="0" border="0" class="tabelle">
@@ -79,6 +80,7 @@
 	    {/foreach}
 	</table>
     </div>
+	*}
 </div>
 
 {include file="admin/footer.tpl"}
