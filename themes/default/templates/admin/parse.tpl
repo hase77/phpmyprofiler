@@ -37,10 +37,10 @@
 		{t dvd=$count sec=$time|string_format:"%04.2f"} Parsed %dvd DVDs in %sec seconds.{/t}
 		{if $deleted != '0'}<br /><br />{t del=$deleted}Deleted %del unneeded thumbnails.{/t}{/if}
 		<br />
-		{if isset($profiles.new)}{$profiles.new} {t}new Profiles{/t}<br />{/if}
-		{if isset($profiles.unaltered)}{$profiles.unaltered} {t}unaltered Profiles{/t}<br />{/if}
-		{if isset($profiles.altered)}{$profiles.altered} {t}altered Profiles{/t}<br />{/if}
-		{if isset($profiles.deleted) && $profiles.deleted != 0}{$profiles.deleted} {t}deleted Profiles{/t}<br />{/if}
+		{if isset($profiles.new)}{$profiles.new} {t}new profiles{/t}<br />{/if}
+		{if isset($profiles.unaltered)}{$profiles.unaltered} {t}unaltered profiles{/t}<br />{/if}
+		{if isset($profiles.altered)}{$profiles.altered} {t}altered profiles{/t}<br />{/if}
+		{if isset($profiles.deleted) && $profiles.deleted != 0}{$profiles.deleted} {t}deleted profiles{/t}<br />{/if}
 	    </div>&nbsp;
 	</div>
     {/if}

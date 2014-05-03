@@ -865,6 +865,10 @@
     <id>Returned</id>
     <string>Zur&uuml;ck</string>
   </message>
+  <message module="filmprofile_page4">
+    <id>Note</id>
+    <string>Notiz</string>
+  </message>
 
   <message module="filmprofile_status">
     <id>Owned</id>
@@ -1339,7 +1343,7 @@
     <string>Vielen Dank. Ihr Eintrag wurde gespeichert.</string>
   </message>
   <message module="guestbook">
-    <id>When storing in the data base unfortunately an error occurs.</id>
+    <id>When storing in the database unfortunately an error occurs.</id>
     <string>Beim Speichern ist leider ein Fehler aufgetreten.</string>
   </message>
   <message module="guestbook">
@@ -2539,6 +2543,7 @@
     <id>Save configuration</id>
     <string>Einstellungen sichern</string>
   </message>
+  
   <message module="admin_parse">
     <id>Parse XML file</id>
     <string>Verarbeite XML-Datei</string>
@@ -2620,11 +2625,11 @@
     <string>neue Profile</string>
   </message>
   <message module="admin_parse">
-    <id>unaltered Profiles</id>
+    <id>unaltered profiles</id>
     <string>unver&auml;nderte Profile</string>
   </message>
   <message module="admin_parse">
-    <id>altered Profiles</id>
+    <id>altered profiles</id>
     <string>ver&auml;nderte Profile</string>
   </message>
   <message module="admin_parse">
@@ -2817,6 +2822,22 @@
     <id>Unable to decompress award file.</id>
     <string>Kann Award-Datei nicht entpacken.</string>
   </message>
+  <message module="admin_uploadaward">
+    <id>Award</id>
+    <string>Auszeichnung</string>
+  </message>
+  <message module="admin_uploadaward">
+    <id>Build tags</id>
+    <string>Erstelle Tags</string>
+  </message>
+  <message module="admin_uploadaward">
+    <id>Tags created.</id>
+    <string>Tags erzeugt.</string>
+  </message>
+  <message module="admin_uploadaward">
+    <id>Award</id>
+    <string>Auszeichnung</string>
+  </message>
 
   <message module="admin_pictures">
     <id>Photos</id>
@@ -2957,7 +2978,15 @@
     <id>Tags table updated.</id>
     <string>Tags Tabelle aktualisiert.</string>
   </message>
+  <message module="admin_updateimdb">
+    <id>Nothing to do.</id>
+    <string>Nichts zu tun.</string>
+  </message>
 
+  <message module="admin_screenshots">
+    <id>Screenshots</id>
+    <string>Screenshots</string>
+  </message>
   <message module="admin_screenshots">
     <id>The directory screenshots is not writeable.</id>
     <string>Das Verzeichnis screenshots ist nicht beschreibbar.</string>
@@ -2967,7 +2996,7 @@
     <string>Die komprimierte Datei kann nicht gel&ouml;scht werden.</string>
   </message>
   <message module="admin_screenshots">
-    <id>Added new Screenshots.</id>
+    <id>Added new screenshots.</id>
     <string>Neue Screenshots wurden hinzugef&uuml;gt.</string>
   </message>
   <message module="admin_screenshots">
@@ -3013,10 +3042,6 @@
   <message module="admin_screenshots">
     <id>Symlink could not be build.</id>
     <string>Symlink konnte nicht erstellt werden.</string>
-  </message>
-  <message module="admin_screenshots">
-    <id>Tags table updated.</id>
-    <string>Tag-Tabelle aktualisiert.</string>
   </message>
   <message module="admin_screenshots">
     <id>Symlink successfully deleted.</id>

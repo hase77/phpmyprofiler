@@ -175,7 +175,7 @@ if (isset($_GET['action']) && ($_GET['action'] == 'update') && isset($_GET['star
 			}
 		}
 		dbclose();
-		$smarty->assign('Success', t('Table successfully updated.'));
+		$smarty->assign('Success', t('External reviews updated.'));
 	} else {
 		dbclose();
 		$endid++;
