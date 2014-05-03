@@ -2633,7 +2633,7 @@
     <string>ver&auml;nderte Profile</string>
   </message>
   <message module="admin_parse">
-    <id>deleted Profiles</id>
+    <id>deleted profiles</id>
     <string>gel&ouml;schte Profile</string>
   </message>
   <message module="admin_parse">
