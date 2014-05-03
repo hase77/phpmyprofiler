@@ -3047,12 +3047,16 @@
     <string>Screenshots konnten nicht gel&ouml;scht werden.</string>
   </message>
   <message module="admin_screenshots">
-    <id>Build tags</id>
-    <string>Erstelle Tags</string>
+    <id>Build tag</id>
+    <string>Erstelle Tag</string>
   </message>
   <message module="admin_screenshots">
     <id>Show</id>
     <string>Anzeigen</string>
+  </message>
+  <message module="admin_screenshots">
+    <id>Actions</id>
+    <string>Aktionen</string>
   </message>
   <message module="admin_screenshots">
     <id>Not linked to profiles</id>
@@ -3069,6 +3073,10 @@
   <message module="admin_screenshots">
     <id>Delete</id>
     <string>L&ouml;schen</string>
+  </message>
+  <message module="admin_screenshots">
+    <id>Send</id>
+    <string>Absenden</string>
   </message>
   <message module="admin_screenshots">
     <id>Symlink to ID</id>
