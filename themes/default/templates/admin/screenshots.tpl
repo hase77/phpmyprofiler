@@ -40,7 +40,7 @@
 						<td><input type="submit" value="{t}Upload file{/t}" name="send" /></td>
 						<td align="left" style="text-align: left;" colspan="2">
 							{if isset($indb)}
-								<a class="button" href="screenshots.php?action=buildtags&amp;{$session}"><img src="../themes/{$pmp_theme}/images/tag.png" border="0" alt="{t}Build tag{/t}" />{t}Build tags{/t}</a>
+								<a class="button" href="screenshots.php?action=buildtags&amp;{$session}"><img src="../themes/{$pmp_theme}/images/tag.png" border="0" alt="{t}Build tag{/t}" />{t}Build tag{/t}</a>
 							{else}&nbsp;{/if}
 						</td>
 					</tr>
