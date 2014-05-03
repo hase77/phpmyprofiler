@@ -198,11 +198,6 @@
 												<a href="http://www.amazon.com/s/url=search-alias%3Ddvd&amp;field-keywords={$imdbTitle|rawurlencode}">Amazon.com Search</a><br />
 												{if $smarty.session.lang_id == 'de'}
 													<b>{t}German{/t}:</b><br />
-													{if isset($dvd->imdbID)}
-														<a href="http://www.imdb.de/title/tt{$dvd->imdbID}/">IMDB (Deutsch)</a><br />
-													{else}
-														<a href="http://www.imdb.de/find?s=tt&amp;q={$imdbTitle|rawurlencode}">IMDB (German)</a><br />
-													{/if}
 													<a href="http://de.wikipedia.org/wiki/{$dvd->title|rawurlencode}">Wikipedia (Deutsch)</a><br />
 													{if isset($dvd->ofdbID)}
 														<a href="http://www.ofdb.de/film/{$dvd->ofdbID|rawurlencode}">OFDB</a><br />
@@ -222,11 +217,7 @@
 													<a href="http://www.amazon.de/gp/search?ie=UTF8&amp;keywords={$dvd->title|rawurlencode}&amp;index=dvd">Amazon.de Suche</a><br />
 												{elseif $smarty.session.lang_id == 'nl'}
 													<b>{t}Dutch{/t}:</b><br />
-													{if $dvd->imdbID != ''}
-														<a href="http://www.imdb.com/title/tt{$dvd->imdbID}/">IMDB (Internationaal)</a><br />
-													{else}
-														<a href="http://www.moviemeter.nl/film/search/{$imdbTitle|rawurlencode}">Moviemeter</a><br />
-													{/if}
+													<a href="http://www.moviemeter.nl/film/search/{$imdbTitle|rawurlencode}">Moviemeter</a><br />
 													<a href="http://www.bol.com/nl/s/dvd/zoekresultaten/Ntt/{$dvd->title|rawurlencode}/Ntk/dvd_all/Ntx/mode+matchallpartial/Nty/1/N/3133/Ne/3133/search/true/searchType/qck/index.html?">Bol.com</a><br />
 												{/if}
 											</td>
