@@ -551,6 +551,10 @@
     <string>Extras</string>
   </message>
   <message module="filmprofile_page1">
+    <id>Voting</id>
+    <string>Bewertung</string>
+  </message>
+  <message module="filmprofile_page1">
     <id>votes</id>
     <string>Stimmen</string>
   </message>
