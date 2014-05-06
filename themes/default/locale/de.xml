@@ -2975,8 +2975,8 @@
     <string>Neu</string>
   </message>
   <message module="admin_updateimdb">
-    <id>Click here to create IMDB/OFDB Tags.</id>
-    <string>Zum Erstellen von IMDB/OFDB Tags hier klicken.</string>
+    <id>Click here to create IMDB/OFDB/RottenTomatoes Tags.</id>
+    <string>Zum Erstellen von IMDB/OFDB/RottenTomatoes Tags hier klicken.</string>
   </message>
   <message module="admin_updateimdb">
     <id>Tags table updated.</id>
