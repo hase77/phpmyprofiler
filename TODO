@@ -1,0 +1,9 @@
+Known errors:
+	- Defect title search
+	- Generating pdf report with enabled media type before title does not work
+	- Check translations gives a lot of "unused" translation strings although they are used
+	- Use filters from main list does not work in report
+	
+Missing:
+	- Custom collection types in report
+	

@@ -21,10 +21,9 @@
 				<a href="http://www.wikipedia.org/wiki/{$name|rawurlencode}">{t}Wikipedia Search{/t}</a><br />
 				{if $smarty.session.lang_id == 'de'}
 					<br /><b>{t}German{/t}:</b><br />
-					<a href="http://www.imdb.de/find?q={$name|rawurlencode}">{t}IMDB Search{/t}</a><br />
 					<a href="http://www.ofdb.de/view.php?page=suchergebnis&amp;Kat=Person&amp;SText={$name|rawurlencode}">{t}OFDB Search{/t}</a><br />
 					<a href="http://de.wikipedia.org/wiki/{$name|rawurlencode}">{t}Wikipedia Search{/t}</a><br />
-					<a href="http://www.synchronkartei.de/search.php?cat=1&amp;search={$name|rawurlencode}">{t}Deutsche Synchronkartei{/t}</a><br />
+					<a href="http://www.synchronkartei.de/search.php?cat=1&amp;search={$name|rawurlencode}">Deutsche Synchronkartei</a><br />
 				{elseif $smarty.session.lang_id == 'nl'}
 					<br /><b>{t}Dutch{/t}:</b><br />
 					<a href="http://nl.wikipedia.org/wiki/{$name|rawurlencode}">{t}Wikipedia Search{/t}</a><br />

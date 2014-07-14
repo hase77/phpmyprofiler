@@ -22,30 +22,9 @@ function getIMDBSite($id) {
 	return $site;
 }
 
-function getOFDBId($imdbid) {
-	$site = json_decode(getRemoteContent('http://ofdbgw.org/imdb2ofdb_json/' . $imdbid . ','));
-
-	if ( $site->ofdbgw->status->rcode != 0 ) {
-                return 0;
-        }
-	else {
-		return $site->ofdbgw->resultat->ofdbid;
-	}
-}
-
 function getOFDBSite($id) {
-	$try = 0;
-	$id = substr($id, 0, strpos($id, ','));
-	do {
-		$json = getRemoteContent('http://ofdbgw.org/movie_json/'.$id);
-		$site = json_decode($json);
-		$try+=1;
-		if ( $try >= 10 ) { $site = false; break; };
-		// give gateway some time
-		usleep(500000);
-	} while ($site->ofdbgw->status->rcode != '0');
-
-	return $site;
+	$site = getRemoteContent('http://www.ofdb.de/film/' . $id . ',');
+	return $site; 
 }
 
 function getRottenSite($id) {
@@ -90,20 +69,34 @@ function getIMDBRating($site) {
 }
 
 function getOFDBRating($site) {
-	if ( !$site || $site->ofdbgw->status->rcode != 0 ) {
-		return array ('NULL', 'NULL', 'NULL', 'NULL');
+	if ( preg_match("@Note:\s(\d{1,2}\.\d\d)@i", $site, $match) ) {
+		$rating = $match[1];
+	} else {
+		$rating = 0;
 	}
-	else {
-		$rating = $site->ofdbgw->resultat->bewertung->note;
-		$votes = $site->ofdbgw->resultat->bewertung->stimmen;
-		$top = $site->ofdbgw->resultat->bewertung->platz;
+	if ( preg_match("'Stimmen: (.*?) &nbsp;'", $site, $match) ) {
+		$votes = $match[1];
+	} else {
+	$votes = 0;
+	}
+	if ( preg_match("'Platz: (.*?) &nbsp;'", $site, $match) ) {
+		$top = $match[1];
+	} else {
+		$top = 'NULL';
+	}
+	if ( $top == '--' ) {
+		$top = 'NULL';
+	} else {
 		if ( $top > 250 ) {
 			$top = 'NULL';
 		}
-		$bottom = 'NULL';
+		else {
+			$top = "'".$top."'";
+		}
 	}
+	$bottom = 'NULL';
 
-	return array ($rating, $votes, $top, $bottom);	
+	return array ($rating, $votes, $top, $bottom);
 }
 
 function getRottenRating($site) {

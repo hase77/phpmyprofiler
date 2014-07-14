@@ -50,7 +50,7 @@
 		<table cellpadding="0" cellspacing="0" border="0" style="width: 450px">
 			<tr>
 			<td>
-				<a class="button" href="updateimdb.php?action=imdbtop250&amp;{$session}">{t}Click here to create IMDB/OFDB Tags.{/t}</a>
+				<a class="button" href="updateimdb.php?action=imdbtop250&amp;{$session}">{t}Click here to create IMDB/OFDB/RottenTomatoes Tags.{/t}</a>
 			</td>
 			</tr>
 		</table>

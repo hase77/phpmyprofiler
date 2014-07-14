@@ -38,10 +38,10 @@ $smarty->compile_dir = '../templates_c';
 
 $smarty->assign('nologout', true);
 $smarty->assign('Focus', 'user');
-$smarty->assign('session', session_name() . "=" . session_id() );
+$smarty->assign('session', session_name() . "=" . session_id());
 $smarty->assign('formkey', $formKey->outputKey());
 
-//Logout
+// Logout
 if ( isset($_POST['logout']) ) {
 	$_SESSION['isadmin'] = '';
 	$_SESSION['lastside'] = 'index.php';
@@ -71,6 +71,8 @@ if ( (!empty($pmp_admin)) && (!empty($pmp_passwd)) ) {
 }
 else {
 	saveLastIP();
+	session_regenerate_id(false);
+	$smarty->assign('session', session_name() . "=" . session_id() );
 
 	// Without a Passwort everybody can administrate phpMyProfiler!
 	$_SESSION['isadmin'] = true;

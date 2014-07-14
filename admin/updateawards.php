@@ -232,7 +232,7 @@ if ( (isset($_GET['action'])) && ($_GET['action'] == "buildtags") ) {
 		// Delete cached templates
 		delCachedTempPHP();
 
-		$smarty->assign('Success', t('Tags table updated. ') . $count . t(' Tags created.'));
+		$smarty->assign('Success', t('Tags table updated.') . ' ' . $count . ' ' . t('Tags created.'));
 
 		dbclose();
 	}
