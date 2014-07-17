@@ -447,7 +447,7 @@ function getScreenshots($id, $praefix = '') {
 						// Is there a dir for the thumbnail?
 						if ( !is_dir($thdir) and !$dirfail ) {
 							if ( !mkdir ( $thdir ) ) {
-								$dirfail = $true;
+								$dirfail = true;
 							}
 						}
 						// Is there a thumbnail for this screenshot?
