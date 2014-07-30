@@ -193,7 +193,7 @@
 						<td class="td0"><a href="http://www.bosrup.com/web/overlib/?License">Free to use</a></td>
 					</tr>
 					<tr>
-						<td class="td1">jQuery 1.11.0</td>
+						<td class="td1">jQuery 1.11.1</td>
 						<td class="td1"><a href="http://jquery.com">http://jquery.com</a></td>
 						<td class="td1"><a href="http://www.opensource.org/licenses/mit-license.php">MIT license</a> &amp; <a href="http://www.opensource.org/licenses/gpl-license.html">GNU General Public License (GPL)</a></td>
 					</tr>
