@@ -7,12 +7,15 @@
 		<title>{$pmp_pagetitle}</title>
 		<link rel="stylesheet" href="themes/{$pmp_theme}/css/{$pmp_theme}.css.php"  type="text/css" media="screen" />
 		<link rel="stylesheet" href="js/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+		<link rel="stylesheet" href="js/morris-0.5.1.css" type="text/css" media="screen" />
 		
 		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 		<script type="text/javascript" src="js/jquery.mousewheel-3.0.6.pack.js"></script>
 		<script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
 		<script type="text/javascript" src="js/functions.js"></script>
 		<script type="text/javascript" src="js/overlib.js"></script>
+		<script type="text/javascript" src="js/raphael-2.1.2.min.js"></script>
+		<script type="text/javascript" src="js/morris-0.5.1.min.js"></script>
 
 		{if $pmp_google == '1' && $pmp_tracking_code != ''}
 		{literal}
