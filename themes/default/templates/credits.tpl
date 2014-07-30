@@ -198,7 +198,7 @@
 						<td class="td1"><a href="http://www.opensource.org/licenses/mit-license.php">MIT license</a> &amp; <a href="http://www.opensource.org/licenses/gpl-license.html">GNU General Public License (GPL)</a></td>
 					</tr>
 					<tr>
-						<td class="td0">jQuery UI 1.10.4</td>
+						<td class="td0">jQuery UI 1.11.0</td>
 						<td class="td0"><a href="http://jqueryui.com">http://jqueryui.com</a></td>
 						<td class="td0"><a href="http://www.opensource.org/licenses/mit-license.php">MIT license</a> &amp; <a href="http://www.opensource.org/licenses/gpl-license.html">GNU General Public License (GPL)</a></td>
 					</tr>

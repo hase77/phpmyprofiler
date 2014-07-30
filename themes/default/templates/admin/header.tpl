@@ -7,12 +7,12 @@
 		<link rel="stylesheet" media="screen" href="../themes/{$pmp_theme}/css/admin/admin.css"  type="text/css" />
 		<link rel="stylesheet" media="print" href="../themes/{$pmp_theme}/css/admin/admin-print.css" type="text/css" />
 		<link rel="stylesheet" media="screen" href="../js/fancybox/jquery.fancybox.css?v=2.0.6" type="text/css" />
-		<link rel="stylesheet" media="screen" href="../themes/{$pmp_theme}/css/admin/jquery-ui-1.10.4.min.css"  type="text/css" />
+		<link rel="stylesheet" media="screen" href="../themes/{$pmp_theme}/css/admin/jquery-ui-1.11.0.min.css"  type="text/css" />
 		<link rel="shortcut icon" href="../favicon.ico" />
 
 		<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
-		<script type="text/javascript" src="../js/jquery-ui-1.10.4.min.js"></script>
-		<script type="text/javascript" src="../js/fancybox/jquery.fancybox.pack.js?v=2.0.6"></script>
+		<script type="text/javascript" src="../js/jquery-ui-1.11.0.min.js"></script>
+		<script type="text/javascript" src="../js/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
 		<script type="text/javascript" src="../js/functions.js"></script>
 		<script type="text/javascript" src="../js/overlib.js"></script>
 
