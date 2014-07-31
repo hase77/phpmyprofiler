@@ -86,6 +86,7 @@ dbconnect();
 function generateSql($count = false) {
 	global $_GET, $_SESSION;
 	global $pmp_dvd_menue, $pmp_exclude_tag, $sortcount;
+	global $pmp_mysql_ver;
 	$j = 0;
 
 	$join[] = 'LEFT JOIN pmp_boxset ON pmp_film.id = pmp_boxset.childid LEFT JOIN pmp_collection ON pmp_film.collectiontype = pmp_collection.collection';
@@ -117,7 +118,7 @@ function generateSql($count = false) {
 				}
 			}
 			else if ( $val['field'] == 'title') {
-				$where[] = "MATCH (title, originaltitle, sorttitle) AGAINST ('" . mysql_real_escape_string($val['value']) . "')";
+				$where[] = "title like '" . mysql_real_escape_string($val['value']) . "'";
 			}
 			else if ( strpos($val['field'], '[dot]') ) {
 				$j++;
