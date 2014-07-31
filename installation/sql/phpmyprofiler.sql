@@ -59,7 +59,7 @@ CREATE TABLE `pmp_actors` (
   INDEX `idx_actors_id` (`id`),
   INDEX `idx_actors_actor_id` (`actor_id`),
   INDEX `idx_actors_creditedas` (`creditedas`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -76,7 +76,7 @@ CREATE TABLE `pmp_common_actors` (
   `birthyear` varchar(4),
   PRIMARY KEY  (`actor_id`),
   INDEX `idx_com_actors_fullname_birthyear` (`fullname`,`birthyear`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -93,7 +93,7 @@ CREATE TABLE `pmp_audio` (
   INDEX `idx_audio_content` (`content`),
   INDEX `idx_audio_format` (`format`),
   INDEX `idx_audio_channels` (`channels`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -106,7 +106,7 @@ CREATE TABLE `pmp_boxset` (
   `childid` varchar(20) NOT NULL,
   INDEX `idx_boxset_id` (`id`),
   INDEX `idx_boxset_childid` (`childid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -124,7 +124,7 @@ CREATE TABLE `pmp_credits` (
   INDEX `idx_credits_id` (`id`),
   INDEX `idx_credits_credit_id` (`credit_id`),
   INDEX `idx_credits_creditedas` (`creditedas`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -141,7 +141,7 @@ CREATE TABLE `pmp_common_credits` (
   `birthyear` varchar(4),
   PRIMARY KEY  (`credit_id`),
   INDEX `idx_com_credits_fullname_birthyear` (`fullname`,`birthyear`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -154,7 +154,7 @@ CREATE TABLE IF NOT EXISTS `pmp_countries_of_origin` (
   `country` varchar(35) DEFAULT NULL,
   KEY `idx_country_of_origin_id` (`id`),
   KEY `idx_country_of_origin` (`country`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -176,7 +176,7 @@ CREATE TABLE `pmp_discs` (
   `location` varchar(250),
   `slot` varchar(15),
   INDEX `idx_discs_id` (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -191,7 +191,7 @@ CREATE TABLE `pmp_events` (
   `note` varchar(100),
   `user_id` mediumint,
   INDEX `idx_events_id` (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -223,7 +223,7 @@ CREATE TABLE `pmp_features` (
   `digitalcopy` tinyint(1) NOT NULL default '0',
   `other` varchar(255),
   INDEX `idx_features_id` (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -249,7 +249,7 @@ CREATE TABLE `pmp_format` (
   `anaglyph` tinyint(1) NOT NULL default '0',
   `bluray3d` tinyint(1) NOT NULL default '0',
   INDEX `idx_format_id` (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -262,7 +262,7 @@ CREATE TABLE `pmp_genres` (
   `genre` varchar(45) NOT NULL,
   INDEX `idx_genres_id` (`id`),
   INDEX `idx_genres_genre` (`genre`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -295,7 +295,7 @@ CREATE TABLE `pmp_locks` (
   `lockvideoformat` tinyint(1) NOT NULL default '0',
   `lockrating` tinyint(1) NOT NULL default '0',
   INDEX `idx_locks_id` (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -367,9 +367,8 @@ CREATE TABLE `pmp_film` (
   INDEX `idx_media_dvd` (`media_dvd`),
   INDEX `idx_media_hddvd` (`media_hddvd`),
   INDEX `idx_media_bluray` (`media_bluray`),
-  INDEX `idx_media_custom` (`media_custom`),
-  FULLTEXT KEY `title` (`title`,`originaltitle`,`sorttitle`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  INDEX `idx_media_custom` (`media_custom`)
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -382,7 +381,7 @@ CREATE TABLE `pmp_regions` (
   `region` varchar(1) NOT NULL,
   INDEX `idx_regions_id` (`id`),
   INDEX `idx_regions_region` (`region`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -395,7 +394,7 @@ CREATE TABLE `pmp_studios` (
   `studio` varchar(85) NOT NULL,
   INDEX `idx_studios_id` (`id`),
   INDEX `idx_studios_studio` (`studio`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -408,7 +407,7 @@ CREATE TABLE `pmp_media_companies` (
   `company` varchar(85) NOT NULL,
   INDEX `idx_media_companies_id` (`id`),
   INDEX `idx_media_companies_company` (`company`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -421,7 +420,7 @@ CREATE TABLE `pmp_subtitles` (
   `subtitle` varchar(35) NOT NULL,
   INDEX `idx_subtitles_id` (`id`),
   INDEX `idx_subtitles_subtitle` (`subtitle`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -435,7 +434,7 @@ CREATE TABLE `pmp_tags` (
   `fullname` varchar(100),
   INDEX `idx_tags_id` (`id`),
   INDEX `idx_tags_fullname` (`fullname`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -449,7 +448,7 @@ CREATE TABLE `pmp_statistics` (
   `value` varchar(20),
   `data` varchar(20),
   INDEX `idx_statistics_type` (`type`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 
 -- --------------------------------------------------------
@@ -468,7 +467,7 @@ CREATE TABLE `pmp_guestbook` (
   `comment` longtext,
   `status` smallint(1) NOT NULL default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1;
 
 -- --------------------------------------------------------
 
@@ -482,7 +481,7 @@ CREATE TABLE `pmp_news` (
   `title` varchar(100) NOT NULL,
   `text` longtext NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1;
 
 -- --------------------------------------------------------
 
@@ -499,7 +498,7 @@ CREATE TABLE `pmp_awards` (
   `winner` tinyint(1) NOT NULL default '0',
   `nominee` varchar(300) default NULL,
   INDEX `idx_awards_title_prodyear` (`title`,`prodyear`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -512,7 +511,7 @@ CREATE TABLE `pmp_pictures` (
   `title` varchar(100) NOT NULL,
   `filename` varchar(100) NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1;
 
 -- --------------------------------------------------------
 
@@ -525,7 +524,7 @@ CREATE TABLE `pmp_rates` (
   `rate` decimal(10,5) NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -545,7 +544,7 @@ CREATE TABLE `pmp_reviews` (
   `status` bigint(20) NOT NULL default '0',
   PRIMARY KEY  (`id`),
   INDEX `idx_reviews_film_id` (`film_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1;
 
 -- --------------------------------------------------------
 
@@ -557,7 +556,7 @@ CREATE TABLE `pmp_update` (
   `id` int(11) NOT NULL,
   `date` datetime NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -572,7 +571,7 @@ CREATE TABLE `pmp_counter` (
   PRIMARY KEY  (`id`),
   INDEX`idx_counter_date` (`date`),
   INDEX`idx_counter_sid` (`sid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1;
 
 -- --------------------------------------------------------
 
@@ -587,7 +586,7 @@ CREATE TABLE `pmp_counter_profil` (
   `sid` varchar(255) NOT NULL,
   PRIMARY KEY  (`id`),
   INDEX`idx_counter_profil_film_id` (`film_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1;
 
 -- --------------------------------------------------------
 
@@ -607,7 +606,7 @@ CREATE TABLE `pmp_reviews_external` (
   PRIMARY KEY (`id`),
   INDEX`idx_reviews_external_type` (`type`),
   INDEX`idx_reviews_external_lastupdate` (`lastupdate`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1;
 
 -- --------------------------------------------------------
 
@@ -620,7 +619,7 @@ CREATE TABLE `pmp_reviews_connect` (
   `review_id` int(11) NOT NULL,
   `title` varchar(150) DEFAULT NULL,
   INDEX`idx_reviews_connect_id` (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -633,7 +632,7 @@ CREATE TABLE `pmp_videos` (
   `type` varchar(8) NOT NULL,
   `ext_id` varchar(150) NOT NULL,
   `title` varchar(150) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -645,7 +644,7 @@ CREATE TABLE `pmp_hash` (
   `id` varchar(20) NOT NULL,
   `hash` varchar(65) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -657,7 +656,7 @@ CREATE TABLE IF NOT EXISTS `pmp_collection` (
   `collection` varchar(20) NOT NULL UNIQUE,
   `partofowned` boolean NOT NULL DEFAULT TRUE,
   INDEX `idx_collection` (`collection`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -673,7 +672,7 @@ CREATE TABLE IF NOT EXISTS `pmp_mylinks` (
   `score` decimal(5,2),
   INDEX `idx_description` (`description`),
   INDEX `idx_category` (`category`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -688,4 +687,4 @@ CREATE TABLE IF NOT EXISTS `pmp_users` (
   `email` varchar(65),
   `phone` varchar(20),
   INDEX `idx_users_fullname` (`firstname`, `lastname`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
