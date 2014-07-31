@@ -73,7 +73,7 @@ $ExpStr = "Expires: " . gmdate("D, d M Y H:i:s", time() + $offset) . " GMT";
 // Dies on error (with an error message) if $dieonerror is true
 function dbconnect($dieonerror = true) {
 	global $pmp_sqlhost, $pmp_sqluser, $pmp_sqlpass, $pmp_sqldatabase;
-	global $pmp_timezone;
+	global $pmp_timezone, $pmp_mysql_ver;
 
 	$db = @mysql_connect($pmp_sqlhost, $pmp_sqluser, $pmp_sqlpass);
 
@@ -90,6 +90,9 @@ function dbconnect($dieonerror = true) {
 			<br></blockquote></body></html>" ;
 		exit();
 	}
+	
+	// Get MySQL Server version
+	$pmp_mysql_ver = substr(@mysql_get_server_info($db),0, strpos(@mysql_get_server_info($db), "-"));
 
 	// Set encoding for database
 	@mysql_set_charset('utf8', $db);
