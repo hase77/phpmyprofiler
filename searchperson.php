@@ -55,6 +55,7 @@ if ( isset($_GET['name']) ) {
 		$sql .= 'AND birthyear = \'' . $birthyear. '\' ';
 	}
 	$sql .= 'AND pmp_common_actors.actor_id = pmp_actors.actor_id ';
+	$sql .= 'AND pmp_common_actors.fullname != "[DIVIDER]" ';
 	$sql .= 'AND pmp_actors.id NOT IN (SELECT id FROM pmp_tags where name = \'' . mysql_real_escape_string($pmp_exclude_tag) . '\') ';
 	$sql .= 'GROUP BY pmp_actors.id ';
 	$sql .= 'ORDER BY birthyear, lastname, firstname, sorttitle';
@@ -89,6 +90,7 @@ if ( isset($_GET['name']) ) {
 		$sql .= 'AND birthyear = \'' . $birthyear. '\' ';
 	}
 	$sql .= 'AND pmp_common_credits.credit_id = pmp_credits.credit_id ';
+	$sql .= 'AND pmp_common_credits.fullname != "[DIVIDER]" ';
 	$sql .= 'AND pmp_credits.id NOT IN (SELECT id FROM pmp_tags where name = \'' . mysql_real_escape_string($pmp_exclude_tag) . '\') ';
 	$sql .= 'ORDER BY birthyear, lastname, firstname, sorttitle, type';
 
