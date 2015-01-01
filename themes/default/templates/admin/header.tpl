@@ -10,7 +10,7 @@
 		<link rel="stylesheet" media="screen" href="../themes/{$pmp_theme}/css/admin/jquery-ui-1.11.0.min.css"  type="text/css" />
 		<link rel="shortcut icon" href="../favicon.ico" />
 
-		<script type="text/javascript" src="../js/jquery-2.1.3.min"></script>
+		<script type="text/javascript" src="../js/jquery-2.1.3.min.js"></script>
 		<script type="text/javascript" src="../js/jquery-ui-1.11.0.min.js"></script>
 		<script type="text/javascript" src="../js/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
 		<script type="text/javascript" src="../js/functions.js"></script>
