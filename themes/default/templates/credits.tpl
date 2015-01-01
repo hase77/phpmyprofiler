@@ -183,7 +183,7 @@
 						<th>{t}License{/t}</th>
 					</tr>
 					<tr>
-						<td class="td1">Smarty v.3.1.19 Templateengine</td>
+						<td class="td1">Smarty v.3.1.21 Templateengine</td>
 						<td class="td1"><a href="http://www.smarty.net">http://www.smarty.net</a></td>
 						<td class="td1"><a href="http://www.opensource.org/licenses/lgpl-2.1.php">GNU Lesser General Public License (LGPL)</a></td>
 					</tr>
