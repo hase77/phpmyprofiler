@@ -63,7 +63,7 @@
 			<tr valign="top">
 				{strip}
 				{if isset($pmp_menue_column_0) && $pmp_menue_column_0 == 1}<td class="td{$sch%2}" style="text-align:right">{$page*$pmp_dvd_menue+$sch+1-$pmp_dvd_menue})</td>{/if}
-				{if isset($pmp_menue_column_1.Output) && $pmp_menue_column_1.Output != ''}<td class="td{$sch%2} title_select" id="id{$dvd->id}" style="text-align:left">{if isset($dvd->isBoxset) && $dvd->isBoxset == true && $sort == 1}<img onclick="javascript:expandBoxset('row_{$dvd->id}','img_{$dvd->id}', '{$pmp_theme}');" id="img_{$dvd->id}" style="padding-right:5px; vertical-align: middle" src="themes/{$pmp_theme}/images/plus.gif" alt="" />{/if}<a href="index.php?content=filmprofile&amp;id={$dvd->id}">{$dvd->get($pmp_menue_column_1.Output)}</a></td>{/if}
+				{if isset($pmp_menue_column_1.Output) && $pmp_menue_column_1.Output != ''}<td class="td{$sch%2}" style="text-align:left">{if isset($dvd->isBoxset) && $dvd->isBoxset == true && $sort == 1}<img onclick="javascript:expandBoxset('row_{$dvd->id}','img_{$dvd->id}', '{$pmp_theme}');" id="img_{$dvd->id}" style="padding-right:5px; vertical-align: middle" src="themes/{$pmp_theme}/images/plus.gif" alt="" />{/if}<a class="title_select" id="id{$dvd->id}" href="index.php?content=filmprofile&amp;id={$dvd->id}">{$dvd->get($pmp_menue_column_1.Output)}</a></td>{/if}
 				{if isset($pmp_menue_column_2.Output) && $pmp_menue_column_2.Output != ''}<td class="td{$sch%2}c">{$dvd->get($pmp_menue_column_2.Output)}</td>{/if}
 				{if isset($pmp_menue_column_3.Output) && $pmp_menue_column_3.Output != ''}<td class="td{$sch%2}c">{$dvd->get($pmp_menue_column_3.Output)}</td>{/if}
 				{if isset($pmp_menue_column_4.Output) && $pmp_menue_column_4.Output != ''}<td class="td{$sch%2}c">{$dvd->get($pmp_menue_column_4.Output)}</td>{/if}
@@ -81,7 +81,7 @@
 								<tr>
 									{strip}
 										{if isset($pmp_menue_column_0) && $pmp_menue_column_0 == 1}<td class="td{$sch%2}"></td>{/if}
-										{if isset( $pmp_menue_column_1.Output) && $pmp_menue_column_1.Output != ''}<td class="td{$sch%2} title_select" id="id{$child->id}" style="padding-left:18px;">{if isset($child->isBoxset) && $child->isBoxset == true && $sort == 1}<img onclick="javascript:expandBoxset('row_{$child->id}','img_{$child->id}', '{$pmp_theme}');" id="img_{$child->id}" style="padding-right:5px; vertical-align: middle" src="themes/{$pmp_theme}/images/plus.gif" alt="" />{/if}<a href="index.php?content=filmprofile&amp;id={$child->id}">{$child->get($pmp_menue_column_1.Output)}</a></td>{/if}
+										{if isset( $pmp_menue_column_1.Output) && $pmp_menue_column_1.Output != ''}<td class="td{$sch%2}" style="padding-left:18px;">{if isset($child->isBoxset) && $child->isBoxset == true && $sort == 1}<img onclick="javascript:expandBoxset('row_{$child->id}','img_{$child->id}', '{$pmp_theme}');" id="img_{$child->id}" style="padding-right:5px; vertical-align: middle" src="themes/{$pmp_theme}/images/plus.gif" alt="" />{/if}<a class="title_select" id="id{$child->id}" href="index.php?content=filmprofile&amp;id={$child->id}">{$child->get($pmp_menue_column_1.Output)}</a></td>{/if}
 										{if isset($pmp_menue_column_2.Output) && $pmp_menue_column_2.Output != ''}<td class="td{$sch%2}c">{$child->get($pmp_menue_column_2.Output)}</td>{/if}
 										{if isset($pmp_menue_column_3.Output) && $pmp_menue_column_3.Output != ''}<td class="td{$sch%2}c">{$child->get($pmp_menue_column_3.Output)}</td>{/if}
 										{if isset($pmp_menue_column_4.Output) && $pmp_menue_column_4.Output != ''}<td class="td{$sch%2}c">{$child->get($pmp_menue_column_4.Output)}</td>{/if}
@@ -98,7 +98,7 @@
 													<tr>
 														{strip}
 															{if isset($pmp_menue_column_0) && $pmp_menue_column_0 == 1}<td class="td{$sch%2}"></td>{/if}
-															{if isset( $pmp_menue_column_1.Output) && $pmp_menue_column_1.Output != ''}<td class="td{$sch%2} title_select" id="id{$grandchild->id}" style="padding-left:36px;"><a href="index.php?content=filmprofile&amp;id={$grandchild->id}">{$grandchild->get($pmp_menue_column_1.Output)}</a></td>{/if}
+															{if isset( $pmp_menue_column_1.Output) && $pmp_menue_column_1.Output != ''}<td class="td{$sch%2}" style="padding-left:36px;"><a class="title_select" id="id{$grandchild->id}" href="index.php?content=filmprofile&amp;id={$grandchild->id}">{$grandchild->get($pmp_menue_column_1.Output)}</a></td>{/if}
 															{if isset($pmp_menue_column_2.Output) && $pmp_menue_column_2.Output != ''}<td class="td{$sch%2}c">{$grandchild->get($pmp_menue_column_2.Output)}</td>{/if}
 															{if isset($pmp_menue_column_3.Output) && $pmp_menue_column_3.Output != ''}<td class="td{$sch%2}c">{$grandchild->get($pmp_menue_column_3.Output)}</td>{/if}
 															{if isset($pmp_menue_column_4.Output) && $pmp_menue_column_4.Output != ''}<td class="td{$sch%2}c">{$grandchild->get($pmp_menue_column_4.Output)}</td>{/if}

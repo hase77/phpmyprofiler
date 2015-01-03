@@ -23,6 +23,8 @@
 						jQuery(".title_page").on("click", getTitlePage);
 						$('.fancybox').fancybox({'type':'image'});
 					}, "html");
+					
+					jQuery('html, body').animate({scrollTop: $("#right-frame").offset().top}, 200);
 
 					return false;
 				}
