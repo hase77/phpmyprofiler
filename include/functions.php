@@ -18,7 +18,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
 */
 
-// No direct access
+// Disallow direct access
 defined('_PMP_REL_PATH') or die('Not allowed! Possible hacking attempt detected!');
 
 // Set version
@@ -32,10 +32,10 @@ error_reporting(E_ALL ^ E_NOTICE);
 @ini_set("implicit_flush ", "On");
 error_reporting(E_ALL | E_STRICT);
 
-// Set include-path for PEAR
+// Set include-path for PEAR lib
 add_include_path(dirname(__FILE__) . '/PEAR');
 
-// Set timezone because strict warning
+// Set timezone because strict warning (if not already set in php.ini)
 @date_default_timezone_set($pmp_timezone);
 
 // Start session if there's none
@@ -48,7 +48,7 @@ if ( !empty($_GET['lang_id']) ) {
 	// The user wants to change language, save the information to session
 	$_SESSION['lang_id'] = $_GET['lang_id'];
 }
-// okay, the user doesn't want to change the language. Then use the language
+// Okay, the user doesn't want to change the language. Then use the language
 // from the Session. Oh, there is no language in the session?
 else if ( empty($_SESSION['lang_id']) ) {
 	// We need PEAR:HTTP2 to get the right language from the browser.
@@ -71,7 +71,9 @@ $ExpStr = "Expires: " . gmdate("D, d M Y H:i:s", time() + $offset) . " GMT";
 
 // Connect to the database
 // Dies on error (with an error message) if $dieonerror is true
-function dbconnect($dieonerror = true) {
+function dbconnect( $dieonerror = true ) {
+	// mysql* functions are deprecated!
+
 	global $pmp_sqlhost, $pmp_sqluser, $pmp_sqlpass, $pmp_sqldatabase;
 	global $pmp_timezone, $pmp_mysql_ver;
 
@@ -92,7 +94,7 @@ function dbconnect($dieonerror = true) {
 	}
 	
 	// Get MySQL Server version
-	$pmp_mysql_ver = substr(@mysql_get_server_info($db),0, strpos(@mysql_get_server_info($db), "-"));
+	$pmp_mysql_ver = substr(@mysql_get_server_info($db), 0, strpos(@mysql_get_server_info($db), "-"));
 
 	// Set encoding for database
 	@mysql_set_charset('utf8', $db);
@@ -117,6 +119,7 @@ function dbconnect($dieonerror = true) {
 	return ($db && $db_select);
 }
 
+// Connect to the database via medoo class
 function dbconnect_medoo($dieonerror = true) {
 	global $pmp_sqlhost, $pmp_sqluser, $pmp_sqlpass, $pmp_sqldatabase;
 	
@@ -128,13 +131,22 @@ function dbconnect_medoo($dieonerror = true) {
 			'database_name' => $pmp_sqldatabase,
 			'server' =>  $pmp_sqlhost,
 			'username' => $pmp_sqluser,
-			'password' =>  $pmp_sqlpass, 
+			'password' =>  $pmp_sqlpass,
 			'port' => 3306,
 			'charset' => 'utf8',
 		]);
 	}
 	catch (Exception $e) {
-		print_r($e);	
+		// Connection to the mysql-database failed
+		if ( $dieonerror ) {
+			echo "<html><head><title>Database Error</title><style>P,BODY{ font-family:arial,sans-serif; font-size:11px; }</style>
+				</head><body>&nbsp;<br><br><blockquote><b>There appears to be an error with the database.</b>
+				<br>You can try to refresh the page by clicking <a href=\"javascript:window.location=window.location;\">here</a>
+				, if this does not fix the error, please connect the Webmaster<br><br><b>Error returned:</b><br>
+				<form name='mysql'><textarea rows=\"15\" cols=\"45\">" . htmlspecialchars($e->message) . "</textarea></form>
+				<br></blockquote></body></html>" ;
+			exit();
+		}		
 	}
 	
 }
