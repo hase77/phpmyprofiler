@@ -124,7 +124,7 @@ function dbconnect_medoo( $dieonerror = true ) {
 	global $db;
 	global $pmp_sqlhost, $pmp_sqluser, $pmp_sqlpass, $pmp_sqldatabase;
 
-	require 'medoo.php';
+	require_once('medoo.php');
 
 	try {
 		$db = new medoo([
