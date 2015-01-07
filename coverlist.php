@@ -41,15 +41,11 @@ else {
 	$start = 1;
 }
 
-// ToDo: Remove tagged media ids
-/*
-$query = 'SELECT DISTINCT id FROM pmp_film WHERE collectiontype != \'Ordered\' AND collectiontype != \'Wish List\'
-	  AND id NOT IN (SELECT id FROM pmp_tags where name = \'' . mysql_real_escape_string($pmp_exclude_tag) . '\') ORDER BY sorttitle LIMIT '
-	 . (((int)$start - 1) * $pmp_cover_page) . ", " . $pmp_cover_page;
-*/
+
+// ToDo Distinct id!
 
 // Get cover ids for one page
-$count = $db->select(
+$cols = $db->select(
 	"pmp_film",
 	[
 		"[>]pmp_tags" => ["id" => "id"]
@@ -87,9 +83,7 @@ $count = $db->count(
 				"pmp_tags.name[!]" => $pmp_exclude_tag,
 				"pmp_tags.name" => null
 			],
-		],
-		"ORDER" => "sorttitle",
-		"LIMIT" => [(((int)$start - 1) * $pmp_cover_page), $pmp_cover_page]
+		]
 	]
 );
 
