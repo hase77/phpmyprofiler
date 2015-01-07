@@ -41,29 +41,28 @@ else {
 	$start = 1;
 }
 
+// ToDo: Remove tagged media ids
 /*
-// Get cover ids for one page
 $query = 'SELECT DISTINCT id FROM pmp_film WHERE collectiontype != \'Ordered\' AND collectiontype != \'Wish List\'
 	  AND id NOT IN (SELECT id FROM pmp_tags where name = \'' . mysql_real_escape_string($pmp_exclude_tag) . '\') ORDER BY sorttitle LIMIT '
 	 . (((int)$start - 1) * $pmp_cover_page) . ", " . $pmp_cover_page;
-$result = dbexec($query);
-
-$cover = array();
-
-// Get dvd objects with dvd covers
-if ( mysql_num_rows($result) > 0 ) {
-	while ( $row = mysql_fetch_object($result) ) {
-		$cover[] = new smallDVD($row->id);
-	}
-}
 */
 
 // Get cover ids for one page
-$cols = $db->select(
+$count = $db->select(
 	"pmp_film",
-	["id"],
 	[
-		"collectiontype[!]" => ["Ordered", "Wish List"],
+		"[>]pmp_tags" => ["id" => "id"]
+	],
+	["pmp_film.id", "pmp_tags.name"],
+	[
+		"AND" => [
+			"collectiontype[!]" => ["Ordered", "Wish List"],
+			"OR" => [
+				"pmp_tags.name[!]" => $pmp_exclude_tag,
+				"pmp_tags.name" => null
+			],
+		],
 		"ORDER" => "sorttitle",
 		"LIMIT" => [(((int)$start - 1) * $pmp_cover_page), $pmp_cover_page]
 	]
@@ -75,17 +74,24 @@ foreach ( $cols as $col ) {
 }
 
 // Get total number of covers
-$count = $db->count("pmp_film",
+$count = $db->count(
+	"pmp_film",
 	[
-		"collectiontype[!]" => ["Ordered", "Wish List"]
+		"[>]pmp_tags" => ["id" => "id"]
+	],
+	["pmp_film.id"],
+	[
+		"AND" => [
+			"collectiontype[!]" => ["Ordered", "Wish List"],
+			"OR" => [
+				"pmp_tags.name[!]" => $pmp_exclude_tag,
+				"pmp_tags.name" => null
+			],
+		],
+		"ORDER" => "sorttitle",
+		"LIMIT" => [(((int)$start - 1) * $pmp_cover_page), $pmp_cover_page]
 	]
 );
-
-/*$query = 'SELECT COUNT(id) AS num FROM pmp_film WHERE collectiontype != \'Ordered\' AND collectiontype != \'Wish List\' AND id NOT IN (SELECT id FROM pmp_tags where name = \'' . mysql_real_escape_string($pmp_exclude_tag) . '\')';
-$row = dbexec($query);
-$count = mysql_result($row, 0, 'num');*/
-
-dbclose();
 
 $smarty->assign('cover', $cover);
 $smarty->assign('count', $count);
