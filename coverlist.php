@@ -77,10 +77,9 @@ foreach ( $cols as $col ) {
 // Get total number of covers
 $count = $database->count("pmp_film",
 	[
-		"collectiontype[!]" => ["Ordered", "Wish List"],
+		"collectiontype[!]" => ["Ordered", "Wish List"]
 	]
 ]);
-
 
 /*$query = 'SELECT COUNT(id) AS num FROM pmp_film WHERE collectiontype != \'Ordered\' AND collectiontype != \'Wish List\' AND id NOT IN (SELECT id FROM pmp_tags where name = \'' . mysql_real_escape_string($pmp_exclude_tag) . '\')';
 $row = dbexec($query);
