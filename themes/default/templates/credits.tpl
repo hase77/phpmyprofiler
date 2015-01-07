@@ -189,7 +189,7 @@
 					</tr>
 					<tr>
 						<td class="td0">Medoo v.0.9.7 PHP database framework</td>
-						<td class="td0"><a href="http://medoo.in/">http://medoo.in/</a></td>
+						<td class="td0"><a href="http://medoo.in">http://medoo.in</a></td>
 						<td class="td0"><a href="http://www.opensource.org/licenses/mit-license.php">MIT license</a></td>
 					</tr>
 					<tr>
