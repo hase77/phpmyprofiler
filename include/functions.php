@@ -92,7 +92,7 @@ function dbconnect( $dieonerror = true ) {
 			<br></blockquote></body></html>" ;
 		exit();
 	}
-	
+
 	// Get MySQL Server version
 	$pmp_mysql_ver = substr(@mysql_get_server_info($db), 0, strpos(@mysql_get_server_info($db), "-"));
 
@@ -123,9 +123,9 @@ function dbconnect( $dieonerror = true ) {
 function dbconnect_medoo( $dieonerror = true ) {
 	global $db;
 	global $pmp_sqlhost, $pmp_sqluser, $pmp_sqlpass, $pmp_sqldatabase;
-	
+
 	require 'medoo.php';
- 
+
 	try {
 		$db = new medoo([
 			'database_type' => 'mysql',
@@ -145,8 +145,8 @@ function dbconnect_medoo( $dieonerror = true ) {
 				<br>You can try to refresh the page by clicking <a href=\"javascript:window.location=window.location;\">here</a>
 				, if this does not fix the error, please connect the Webmaster</blockquote></body></html>";
 			exit();
-		}		
-	}	
+		}
+	}
 }
 
 // Replace the table prefix and executes the query
@@ -815,27 +815,26 @@ function html2txt($document) {
 
 // Get all available collections
 function get_collections() {
-	$sql = "SELECT collection FROM `pmp_collection` WHERE collection != 'Owned' AND collection != 'Ordered' AND collection != 'Wish List'";
-	$res = dbexec($sql, true);
-	// This "base" is needed because not every user collection has these standard collections
+	global $db;
+
+	// This "base" is needed because not every user collection has these three standard collections
 	$collections = array('Owned', 'Ordered', 'Wish List');
-	while ( $row = mysql_fetch_object($res) ) {
-		$collections[] = $row->collection;
-	}
-	
-	$col = $db->select(
+
+	$cols = $db->select(
 		"pmp_collection",
 		["collection"],
+		// We only need additional added collections
 		[
 			"collection[!]" => "Owned",
 			"collection[!]" => "Ordered",
 			"collection[!]" => "Wish List"
 		]
 	);
-	
-	var_dump($collections);
-	var_dump($col);
-	
+
+	foreach ( $cols as $col ) {
+		$collections[] = $col["collection"];
+	}
+
 	return $collections;
 }
 

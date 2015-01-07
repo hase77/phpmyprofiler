@@ -36,29 +36,27 @@ else {
 	require_once('include/smallDVD.class.php');
 	require_once('custom_media.inc.php');
 
-	dbconnect();
 	dbconnect_medoo();
 	$pmp_collections = get_collections();
-	dbclose();´	
 
 	// Valid pages
 	$valildpages = array(
-		'contact'		=> 'contact.php',
-		'cover'			=> 'cover.php',
+		'contact'			=> 'contact.php',
+		'cover'				=> 'cover.php',
 		'coverlist' 		=> 'coverlist.php',
-		'credits'		=> 'credits.php',
+		'credits'			=> 'credits.php',
 		'filmprofile'		=> 'filmprofile.php',
 		'guestbook' 		=> 'guestbook.php',
-		'news'			=> 'news.php',
+		'news'				=> 'news.php',
 		'peoplelist'		=> 'peoplelist.php',
 		'picturelist'		=> 'picturelist.php',
-		'review'		=> 'review.php',
-		'search'		=> 'search.php',
-		'searchperson'	 	=> 'searchperson.php',
-		'start'			=> 'start.php',
+		'review'			=> 'review.php',
+		'search'			=> 'search.php',
+		'searchperson'		=> 'searchperson.php',
+		'start'				=> 'start.php',
 		'statistics'	 	=> 'statistics.php',
 		'statisticsdetail'	=> 'statisticsdetail.php',
-		'watched'		=> 'watched.php');
+		'watched'			=> 'watched.php');
 
 	// Try to turn on page compression
 	if ( $pmp_compression && extension_loaded('zlib') ) {
@@ -70,7 +68,7 @@ else {
 		ob_start();
 	}
 
-	// Send header
+	// Sent header
 	header('Content-type: text/html; charset=utf-8');
 	header($ExpStr);
 
