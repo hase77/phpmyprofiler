@@ -1,7 +1,7 @@
 <?php
 /* phpMyProfiler
  * Copyright (C) 2004 by Tim Reckmann [www.reckmann.org] & Powerplant [www.powerplant.de]
- * Copyright (C) 2005-2014 The phpMyProfiler project
+ * Copyright (C) 2005-2015 The phpMyProfiler project
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -38,6 +38,8 @@ else {
 	dbconnect();
 	$pmp_collections = get_collections();
 	dbclose();
+	
+	dbconnect_medoo();
 
 	// Valid pages
 	$valildpages = array(

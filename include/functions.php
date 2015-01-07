@@ -1,7 +1,7 @@
 <?php
 /* phpMyProfiler
  * Copyright (C) 2004 by Tim Reckmann [www.reckmann.org] & Powerplant [www.powerplant.de]
- * Copyright (C) 2005-2014 The phpMyProfiler project
+ * Copyright (C) 2005-2015 The phpMyProfiler project
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -115,6 +115,24 @@ function dbconnect($dieonerror = true) {
 	}
 
 	return ($db && $db_select);
+}
+
+function dbconnect_medoo($dieonerror = true) {
+	global $pmp_sqlhost, $pmp_sqluser, $pmp_sqlpass, $pmp_sqldatabase;
+	
+	require 'medoo.php';
+ 
+	$database = new medoo([
+		'database_type' => 'mysql',
+		'database_name' => $pmp_sqldatabase,
+		'server' =>  $pmp_sqlhost,
+		'username' => $pmp_sqluser,
+		'password' =>  $pmp_sqlpass, 
+		'port' => 3306,
+		'charset' => 'utf8',
+	]);
+	
+	print_r($database->info());
 }
 
 // Replace the table prefix and executes the query
