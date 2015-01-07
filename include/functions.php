@@ -825,9 +825,7 @@ function get_collections() {
 		["collection"],
 		// We only need additional added collections
 		[
-			"collection[!]" => "Owned",
-			"collection[!]" => "Ordered",
-			"collection[!]" => "Wish List"
+			"collection[!]" => ["Owned", "Ordered", "Wish List"]
 		]
 	);
 
