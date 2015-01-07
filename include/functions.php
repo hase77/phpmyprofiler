@@ -122,17 +122,21 @@ function dbconnect_medoo($dieonerror = true) {
 	
 	require 'medoo.php';
  
-	$database = new medoo([
-		'database_type' => 'mysql',
-		'database_name' => $pmp_sqldatabase,
-		'server' =>  $pmp_sqlhost,
-		'username' => $pmp_sqluser,
-		'password' =>  $pmp_sqlpass, 
-		'port' => 3306,
-		'charset' => 'utf8',
-	]);
+	try {
+		$database = new medoo([
+			'database_type' => 'mysql',
+			'database_name' => $pmp_sqldatabase,
+			'server' =>  $pmp_sqlhost,
+			'username' => $pmp_sqluser,
+			'password' =>  $pmp_sqlpass, 
+			'port' => 3306,
+			'charset' => 'utf8',
+		]);
+	}
+	catch (Exception $e) {
+		print_r($e);	
+	}
 	
-	print_r($database->info());
 }
 
 // Replace the table prefix and executes the query
