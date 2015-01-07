@@ -23,6 +23,7 @@
 define('_PMP_REL_PATH', '.');
 
 $pmp_module = 'index';
+$db = null;
 
 if ( file_exists('installation/') ) {
 	header("Location:installation/");
@@ -36,10 +37,9 @@ else {
 	require_once('custom_media.inc.php');
 
 	dbconnect();
-	$pmp_collections = get_collections();
-	dbclose();
-	
 	dbconnect_medoo();
+	$pmp_collections = get_collections();
+	dbclose();´	
 
 	// Valid pages
 	$valildpages = array(

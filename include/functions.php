@@ -120,7 +120,8 @@ function dbconnect( $dieonerror = true ) {
 }
 
 // Connect to the database via medoo class
-function dbconnect_medoo($dieonerror = true) {
+function dbconnect_medoo( $dieonerror = true ) {
+	global $db;
 	global $pmp_sqlhost, $pmp_sqluser, $pmp_sqlpass, $pmp_sqldatabase;
 	
 	require 'medoo.php';
@@ -145,9 +146,7 @@ function dbconnect_medoo($dieonerror = true) {
 				, if this does not fix the error, please connect the Webmaster</blockquote></body></html>";
 			exit();
 		}		
-	}
-	
-	return ($db);
+	}	
 }
 
 // Replace the table prefix and executes the query
@@ -818,10 +817,25 @@ function html2txt($document) {
 function get_collections() {
 	$sql = "SELECT collection FROM `pmp_collection` WHERE collection != 'Owned' AND collection != 'Ordered' AND collection != 'Wish List'";
 	$res = dbexec($sql, true);
+	// This "base" is needed because not every user collection has these standard collections
 	$collections = array('Owned', 'Ordered', 'Wish List');
 	while ( $row = mysql_fetch_object($res) ) {
 		$collections[] = $row->collection;
 	}
+	
+	$col = $db->select(
+		"pmp_collection",
+		["collection"],
+		[
+			"collection[!]" => "Owned",
+			"collection[!]" => "Ordered",
+			"collection[!]" => "Wish List"
+		]
+	);
+	
+	var_dump($collections);
+	var_dump($col);
+	
 	return $collections;
 }
 
