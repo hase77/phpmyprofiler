@@ -188,9 +188,9 @@
 						<td class="td1"><a href="http://www.opensource.org/licenses/lgpl-2.1.php">GNU Lesser General Public License (LGPL)</a></td>
 					</tr>
 					<tr>
-						<td class="td0">overLIB v.4.21</td>
-						<td class="td0"><a href="http://www.bosrup.com/web/overlib">http://www.bosrup.com/web/overlib</a></td>
-						<td class="td0"><a href="http://www.bosrup.com/web/overlib/?License">Free to use</a></td>
+						<td class="td0">Medoo v.0.9.7 PHP database framework</td>
+						<td class="td0"><a href="http://medoo.in/">http://medoo.in/</a></td>
+						<td class="td0"><a href="http://www.opensource.org/licenses/mit-license.php">MIT license</a></td>
 					</tr>
 					<tr>
 						<td class="td1">jQuery 2.1.3</td>
@@ -198,19 +198,9 @@
 						<td class="td1"><a href="http://www.opensource.org/licenses/mit-license.php">MIT license</a> &amp; <a href="http://www.opensource.org/licenses/gpl-license.html">GNU General Public License (GPL)</a></td>
 					</tr>
 					<tr>
-						<td class="td0">jQuery UI 1.11.2</td>
-						<td class="td0"><a href="http://jqueryui.com">http://jqueryui.com</a></td>
-						<td class="td0"><a href="http://www.opensource.org/licenses/mit-license.php">MIT license</a> &amp; <a href="http://www.opensource.org/licenses/gpl-license.html">GNU General Public License (GPL)</a></td>
-					</tr>
-					<tr>
-						<td class="td1">fancyBox 2.1.5</td>
-						<td class="td1"><a href="http://fancyapps.com/fancybox/">http://fancyapps.com/fancybox/</a></td>
-						<td class="td1"><a href="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-NonCommercial 3.0</a></td>
-					</tr>
-					<tr>
-						<td class="td0">PHP 5.5 password hashing API compatibility library</td>
-						<td class="td0"><a href="https://github.com/ircmaxell/password_compat">https://github.com/ircmaxell/password_compat</a></td>
-						<td class="td0"><a href="http://www.opensource.org/licenses/mit-license.html">MIT license</a></td>
+						<td class="td0">fancyBox 2.1.5</td>
+						<td class="td0"><a href="http://fancyapps.com/fancybox/">http://fancyapps.com/fancybox/</a></td>
+						<td class="td0"><a href="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-NonCommercial 3.0</a></td>
 					</tr>
 					<tr>
 						<td class="td1">JpGraph v.3.5.0b1</td>
@@ -218,9 +208,29 @@
 						<td class="td1"><a href="http://www.opensource.org/licenses/qtpl.php">Qt Public License (QPL)</a></td>
 					</tr>
 					<tr>
+						<td class="td0">morris.js v.0.5.1</td>
+						<td class="td0"><a href="http://morrisjs.github.io/morris.js/">http://morrisjs.github.io/morris.js/</a></td>
+						<td class="td0"><a href="http://morrisjs.github.io/morris.js/#license">Simplified BSD License</a></td>
+					</tr>
+					<tr>
+						<td class="td1">overLIB v.4.21</td>
+						<td class="td1"><a href="http://www.bosrup.com/web/overlib">http://www.bosrup.com/web/overlib</a></td>
+						<td class="td1"><a href="http://www.bosrup.com/web/overlib/?License">Free to use</a></td>
+					</tr>
+					<tr>
 						<td class="td0">PHP Class b2evo_captcha CVS Snapshot</td>
 						<td class="td0"><a href="http://b2evo-captcha.sourceforge.net">http://b2evo-captcha.sourceforge.net</a></td>
 						<td class="td0"><a href="http://www.opensource.org/licenses/gpl-license.html">GNU General Public License (GPL)</a></td>
+					</tr>
+					<tr>
+						<td class="td1">jQuery UI 1.11.2</td>
+						<td class="td1"><a href="http://jqueryui.com">http://jqueryui.com</a></td>
+						<td class="td1"><a href="http://www.opensource.org/licenses/mit-license.php">MIT license</a> &amp; <a href="http://www.opensource.org/licenses/gpl-license.html">GNU General Public License (GPL)</a></td>
+					</tr>
+					<tr>
+						<td class="td0">PHP 5.5 password hashing API compatibility library</td>
+						<td class="td0"><a href="https://github.com/ircmaxell/password_compat">https://github.com/ircmaxell/password_compat</a></td>
+						<td class="td0"><a href="http://www.opensource.org/licenses/mit-license.html">MIT license</a></td>
 					</tr>
 					<tr>
 						<td class="td1">FPDF 1.7</td>
@@ -252,7 +262,7 @@
 						<th>{t}Logos{/t}</th>
 					</tr>
 					<tr>
-						<td class="td1">{t}Dolby and the double-D symbol are registered trademarks of Dolby Laboratories{/t}. {t}DTS is an registered trademark of DTS, Inc.{/t}. {t}The DVD and HD DVD Logo are registered trademarks of the DVD Format/Logo Licensing Corporation{/t}. {t}The Blu-ray Disc Logo is an registered trademark of the Blu-ray Disc Association{/t}.</td>
+						<td class="td1">{t}Dolby and the double-D symbol are registered trademarks of Dolby Laboratories{/t}. {t}DTS is a registered trademark and the DTS logo and symbol are trademark of DTS, Inc.{/t}. {t}The DVD and HD DVD Logo are registered trademarks of the DVD Format/Logo Licensing Corporation{/t}. {t}Blu-ray Disc is a registered trademark of Blu-ray Disc Association{/t}.</td>
 					</tr>
 				</table>
 				<br />
