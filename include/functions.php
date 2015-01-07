@@ -126,7 +126,7 @@ function dbconnect_medoo($dieonerror = true) {
 	require 'medoo.php';
  
 	try {
-		$database = new medoo([
+		$db = new medoo([
 			'database_type' => 'mysql',
 			'database_name' => $pmp_sqldatabase,
 			'server' =>  $pmp_sqlhost,
@@ -142,13 +142,12 @@ function dbconnect_medoo($dieonerror = true) {
 			echo "<html><head><title>Database Error</title><style>P,BODY{ font-family:arial,sans-serif; font-size:11px; }</style>
 				</head><body>&nbsp;<br><br><blockquote><b>There appears to be an error with the database.</b>
 				<br>You can try to refresh the page by clicking <a href=\"javascript:window.location=window.location;\">here</a>
-				, if this does not fix the error, please connect the Webmaster<br><br><b>Error returned:</b><br>
-				<form name='mysql'><textarea rows=\"15\" cols=\"45\">" . htmlspecialchars($e->message) . "</textarea></form>
-				<br></blockquote></body></html>" ;
+				, if this does not fix the error, please connect the Webmaster</blockquote></body></html>";
 			exit();
 		}		
 	}
 	
+	return ($db);
 }
 
 // Replace the table prefix and executes the query
