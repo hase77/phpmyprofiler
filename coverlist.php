@@ -75,7 +75,7 @@ foreach ( $cols as $col ) {
 }
 
 // Get total number of covers
-$count = $database->count("pmp_film",
+$count = $db->count("pmp_film",
 	[
 		"collectiontype[!]" => ["Ordered", "Wish List"]
 	]
