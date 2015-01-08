@@ -67,7 +67,7 @@ $smarty->assign('ordered', $order);
 
 // Number of DVDs
 $query = 'SELECT SUM(countas) AS cnt FROM pmp_film WHERE collectiontype != \'Ordered\' AND collectiontype != \'Wish List\'
-		  AND pmp_film.id NOT IN (SELECT id FROM pmp_tags where name = ?';
+		  AND pmp_film.id NOT IN (SELECT id FROM pmp_tags where name = ?)';
 $params = [$pmp_exclude_tag];
 $result = dbquery_pdo($query, $params);
 $count = $cols[0]['cnt'];
