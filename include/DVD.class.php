@@ -30,7 +30,7 @@ class DVD extends smallDVD {
 			$query = 'SELECT * FROM pmp_features WHERE id = ?';
 			$params = [$this->id];
 			$row = dbquery_pdo($query, $params, 'object');
-			if (count($result) > 0) {
+			if (count($row) > 0) {
 				$this->Scenes = $row[0]->sceneaccess;
 				$this->Comment = $row[0]->comment;
 				$this->Trailer = $row[0]->trailer;
@@ -58,7 +58,7 @@ class DVD extends smallDVD {
 			$query = 'SELECT * FROM pmp_format WHERE id = ?';
 			$params = [$this->id];
 			$row = dbquery_pdo($query, $params, 'object');
-			if (count($result) > 0) {
+			if (count($row) > 0) {
 				$this->Ratio = $row[0]->ratio;
 				$this->Video = $row[0]->video;
 				$this->Color = $row[0]->clrcolor;
@@ -92,7 +92,7 @@ class DVD extends smallDVD {
 			$rows = dbquery_pdo($query, $params, 'object');
 			if (count($rows) > 0) {
 				foreach ($rows as $row) {
-					$this->Origins[] = $row->region;
+					$this->Origins[] = $row->country;
 				}
 			}
 
