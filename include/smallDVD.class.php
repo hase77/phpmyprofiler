@@ -162,7 +162,7 @@ class smallDVD {
 				// Is boxset?
 				$query = 'SELECT * FROM pmp_boxset LEFT JOIN pmp_film ON pmp_film.id = pmp_boxset.childid
 						  WHERE pmp_boxset.id = ? ORDER BY ?';
-				$params = [$this->id, $pmp_menue_childs];
+				$params = [$id, $pmp_menue_childs];
 				$result = dbquery_pdo($query, $params);
 
 				if (count($result) > 0) {
@@ -187,7 +187,7 @@ class smallDVD {
 
 				// Or child?
 				$query = 'SELECT id FROM pmp_boxset WHERE childid = ?';
-				$params = [$this->id];
+				$params = [$id];
 				$result = dbquery_pdo($query, $params);
 				if (count($result) > 0) {
 					$this->partofBoxset = $result[0]['id'];
@@ -197,8 +197,8 @@ class smallDVD {
 				}
 
 				// Check for cover
-				$this->frontpic = file_exists(_PMP_REL_PATH.'/cover/'.$this->id.'f.jpg');
-				$this->backpic = file_exists(_PMP_REL_PATH.'/cover/'.$this->id.'b.jpg');
+				$this->frontpic = file_exists(_PMP_REL_PATH.'/cover/'.$id.'f.jpg');
+				$this->backpic = file_exists(_PMP_REL_PATH.'/cover/'.$id.'b.jpg');
 			}
 		}
 	}
