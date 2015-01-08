@@ -125,7 +125,7 @@ function dbconnect_medoo( $dieonerror = true ) {
 	global $pmp_sqlhost, $pmp_sqluser, $pmp_sqlpass, $pmp_sqldatabase;
 
 	try {
-		$db = new PDO("mysql:host={$pmp_sqlhost};dbname={$pmp_sqldatabase};charset=utf8", $pmp_sqluser, $pmp_sqlpass, [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8; SET time_zone={$pmp_timezone}"]));
+		$db = new PDO("mysql:host={$pmp_sqlhost};dbname={$pmp_sqldatabase};charset=utf8", $pmp_sqluser, $pmp_sqlpass, [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8; SET time_zone={$pmp_timezone}"]);
 	}
 	catch (PDOException $e) {
 		echo "<html><head><title>Database Error</title><style>P,BODY{ font-family:arial,sans-serif; font-size:11px; }</style>
