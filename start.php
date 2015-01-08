@@ -37,7 +37,7 @@ $smarty->assign('news', $news);
 
 // Last DVDs
 $query = 'SELECT pmp_film.id FROM pmp_film LEFT JOIN pmp_boxset ON pmp_film.id = pmp_boxset.childid
-		  WHERE collectiontype = != \'Ordered\' AND collectiontype != \'Wish List\' AND pmp_boxset.childid IS NULL
+		  WHERE collectiontype != \'Ordered\' AND collectiontype != \'Wish List\' AND pmp_boxset.childid IS NULL
 		  AND pmp_film.id NOT IN (SELECT id FROM pmp_tags where name = ?)
 		  ORDER BY purchdate DESC LIMIT 0, ?';
 	
