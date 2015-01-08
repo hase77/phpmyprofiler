@@ -121,11 +121,11 @@ function dbconnect( $dieonerror = true ) {
 
 // Connect to the database via PDO
 function dbconnect_medoo( $dieonerror = true ) {
-	global $db;
+	global $pmp_db, $pmp_timezone;
 	global $pmp_sqlhost, $pmp_sqluser, $pmp_sqlpass, $pmp_sqldatabase;
 
 	try {
-		$db = new PDO("mysql:host={$pmp_sqlhost};dbname={$pmp_sqldatabase};charset=utf8", $pmp_sqluser, $pmp_sqlpass, [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8; SET time_zone={$pmp_timezone}"]);
+		$pmp_db = new PDO("mysql:host={$pmp_sqlhost};dbname={$pmp_sqldatabase};charset=utf8", $pmp_sqluser, $pmp_sqlpass, [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8; SET time_zone={$pmp_timezone}"]);
 	}
 	catch (PDOException $e) {
 		echo "<html><head><title>Database Error</title><style>P,BODY{ font-family:arial,sans-serif; font-size:11px; }</style>
@@ -804,7 +804,7 @@ function html2txt($document) {
 
 // Get all available collections
 function get_collections() {
-	global $db;
+	global $pmp_db;
 
 	// This "base" is needed because not every user collection has these three standard collections
 	$collections = array('Owned', 'Ordered', 'Wish List');

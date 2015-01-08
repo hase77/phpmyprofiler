@@ -23,7 +23,7 @@
 define('_PMP_REL_PATH', '.');
 
 $pmp_module = 'index';
-$db = null;
+$pmp_db = null;
 
 if ( file_exists('installation/') ) {
 	header("Location:installation/");
@@ -36,7 +36,7 @@ else {
 	require_once('include/smallDVD.class.php');
 	require_once('custom_media.inc.php');
 
-	dbconnect_medoo();
+	dbconnect_pdo();
 	$pmp_collections = get_collections();
 
 	// Valid pages
