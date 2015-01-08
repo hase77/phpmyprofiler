@@ -1,6 +1,6 @@
 <?php
 /* phpMyProfiler
- * Copyright (C) 2005-2014 The phpMyProfiler project
+ * Copyright (C) 2005-2015 The phpMyProfiler project
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -18,18 +18,23 @@
 */
 
 class smallDVD {
-	function smallDVD($id) {
-		global $pmp_dateformat, $pmp_usecurrency, $pmp_html_notes, $pmp_thousands_sep, $pmp_dec_point, $pmp_exclude_tag, $pmp_menue_childs;
+	function smallDVD( $id ) {
+		global $pmp_db, $pmp_dateformat, $pmp_usecurrency, $pmp_html_notes, $pmp_thousands_sep, $pmp_dec_point, $pmp_exclude_tag, $pmp_menue_childs;
 
 		if ( isset($id) ) {
-			$sql  = "SELECT * FROM pmp_film WHERE id = '" . mysql_real_escape_string($id) . "'";
-			if ( !empty($pmp_exclude_tag) ) {
-				$sql .= " AND id NOT IN (SELECT id FROM pmp_tags where name = '" . mysql_real_escape_string($pmp_exclude_tag) . "')";
-			}
-			$res = dbexec($sql);
-			if ( @mysql_num_rows($res) > 0 ) {
-				$row = mysql_fetch_array($res, MYSQL_ASSOC);
+			$query  = "SELECT * FROM pmp_film WHERE id = ?";
 
+			if ( !empty($pmp_exclude_tag) ) {
+				$query .= " AND id NOT IN (SELECT id FROM pmp_tags where name = ?')";
+				$params = [$id, $pmp_exclude_tag];
+			}
+			else {
+				$params = [$id];
+			}
+
+			$rows = dbquery_pdo($query, $params);
+
+			foreach ( $rows as $row ) {
 				foreach ( $row as $key => $value ) {
 					$this->_db[$key] = $value;
 					$this->$key = $value;
@@ -200,9 +205,6 @@ class smallDVD {
 					unset($this->_db);
 				}
 			}
-			else {
-				return false;
-			}
 		}
 	}
 
@@ -210,7 +212,7 @@ class smallDVD {
 		global $pmp_theme;
 		$flag = getFlagName($this->Locality);
 
-		if ( empty($flag) ) {
+		if ( empty( $flag ) ) {
 			return '<img src="' . _PMP_REL_PATH  . '/themes/' . $pmp_theme . '/images/flags/Noflag.gif" alt="' . $this->Locality. '" style="width: 20px; height: 12px;" title="' . t($this->Locality) . '" />';
 		}
 		else {
@@ -236,27 +238,27 @@ class smallDVD {
 		global $pmp_theme;
 		global $pmp_custom_media;
 
-		if ($this->Media == 'DVD') {
+		if ( $this->Media == 'DVD' ) {
 			return '<img src="' . _PMP_REL_PATH  . '/themes/'.$pmp_theme.'/images/additional/DVD_s.png" alt="' . $this->Media. '" />';
 		}
-		else if ($this->Media == 'Blu-ray') {
+		else if ( $this->Media == 'Blu-ray' ) {
 			return '<img src="' . _PMP_REL_PATH  . '/themes/'.$pmp_theme.'/images/additional/BluRay_s.png" alt="' . $this->Media. '" />';
 		}
-		else if ($this->Media == 'HD DVD') {
+		else if ( $this->Media == 'HD DVD' ) {
 			return '<img src="' . _PMP_REL_PATH  . '/themes/'.$pmp_theme.'/images/additional/HDDVD_s.png" alt="' . $this->Media. '" />';
 		}
 		else {
 			// Custom media
-			if ( isset($pmp_custom_media[$this->Media] )) {
+			if ( isset( $pmp_custom_media[$this->Media] ) ) {
 				return '<img src="' . _PMP_REL_PATH  . '/themes/'.$pmp_theme.'/images/additional/'.$pmp_custom_media[$this->Media]['small'] .'" alt="' . $this->Media. '" />';
 			}
 		}
 	}
 
-	function get($f) {
+	function get( $f ) {
 		global $pmp_show_mediatype;
 
-		if ( method_exists($this, $f ) ) {
+		if ( method_exists( $this, $f ) ) {
 			return $this->$f();
 		}
 		else {

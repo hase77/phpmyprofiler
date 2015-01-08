@@ -199,6 +199,13 @@ function dbclose() {
 	mysql_close();
 }
 
+// Close database
+function dbclose_pdo() {
+	global $pmp_db;
+	
+	$pmp_db = null;
+}
+
 // Replace the tableprefix pmp_ with the user defined prefix
 function replace_table_prefix(& $sql) {
 	global $pmp_table_prefix;
