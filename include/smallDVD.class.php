@@ -35,9 +35,7 @@ class smallDVD {
 			$row = dbquery_pdo($query, $params);
 
 			if (count($row[0]) > 0) {
-				foreach ($row as $key => $value) {
-					$this->$key = $value;
-				}
+				$this->id = $id;
 			
 				$this->ProfileDate = strftime($pmp_dateformat, strtotime($row[0]['profiletimestamp']));
 		

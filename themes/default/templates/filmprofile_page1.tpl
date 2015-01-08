@@ -9,7 +9,7 @@
 	<tr><td class="propheader" colspan="2">{$dvd->Media} {t}Information{/t}:</td></tr>
 	{if $dvd->Edition != ''}<tr><td class="proptitle">{t}Edition{/t}:</td><td class="propvalue">{$dvd->Edition}</td></tr>{/if}
 	<tr><td class="proptitle">{t}ID{/t}:</td><td class="propvalue">{$dvd->id}</td></tr>
-	<tr><td class="proptitle">{t}UPC{/t}:</td><td class="propvalue">{$dvd->upc}</td></tr>
+	<tr><td class="proptitle">{t}UPC{/t}:</td><td class="propvalue">{$dvd->UPC}</td></tr>
 	<tr><td class="proptitle">{t}Profile Date{/t}:</td><td class="propvalue">{$dvd->ProfileDate}</td></tr>
 	<tr><td class="proptitle">{t}Last Edited{/t}:</td><td class="propvalue">{$dvd->LastEdited}</td></tr>
 	<tr><td class="proptitle">{t}Country{/t}:</td><td class="propvalue">{$dvd->Locality|flag}</td></tr>
