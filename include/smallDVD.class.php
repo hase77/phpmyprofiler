@@ -129,7 +129,7 @@ class smallDVD {
 				else {
 					$this->ConvPrice = $this->_db['purchprice'];
 				}
-				if (this->_db['purchdate'] != '0000-00-00') {
+				if ($this->_db['purchdate'] != '0000-00-00') {
 					$this->PurchDate = strftime($pmp_dateformat, strtotime($this->_db['purchdate']));
 				}
 				else {
