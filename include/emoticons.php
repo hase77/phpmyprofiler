@@ -75,7 +75,7 @@ function replace_emoticons($text) {
 	$path = _PMP_REL_PATH.'/themes/default/images/emoticons/';
 	$img = '<img src="'.$path.'%s" alt="%s"/>';
 
-	foreach ( $emoticons as $emoticon => $pic ) {
+	foreach ($emoticons as $emoticon => $pic) {
 		$fullpic = sprintf($img, $pic, $emoticon);
 		$text = str_replace($emoticon, $fullpic, $text);
 	}

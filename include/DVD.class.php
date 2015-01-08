@@ -21,9 +21,9 @@ require_once('include/smallDVD.class.php');
 
 class DVD extends smallDVD {
 	function DVD($id) {
-		global $pmp_dir_cast, $pmp_thousands_sep, $pmp_dec_point, $pmp_extern_reviews, $pmp_dateformat;
+		global $pmp_db, $pmp_dir_cast, $pmp_thousands_sep, $pmp_dec_point, $pmp_extern_reviews, $pmp_dateformat;
 
-		if ( isset($id) ) {
+		if (isset($id)) {
 			$this->smallDVD($id);
 
 			// Features

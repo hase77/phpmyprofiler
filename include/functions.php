@@ -71,7 +71,7 @@ $ExpStr = "Expires: " . gmdate("D, d M Y H:i:s", time() + $offset) . " GMT";
 
 // Connect to the database
 // Dies on error (with an error message) if $dieonerror is true
-function dbconnect( $dieonerror = true ) {
+function dbconnect($dieonerror = true) {
 	// mysql* functions are deprecated!
 
 	global $pmp_sqlhost, $pmp_sqluser, $pmp_sqlpass, $pmp_sqldatabase;
@@ -80,7 +80,7 @@ function dbconnect( $dieonerror = true ) {
 	$db = @mysql_connect($pmp_sqlhost, $pmp_sqluser, $pmp_sqlpass);
 
 	// Can't connect to the mysql-database
-	if ( !$db && $dieonerror ) {
+	if (!$db && $dieonerror) {
 		$the_error = "\nmySQL error: " . mysql_error() . "\n";
 		$the_error .= "mySQL error code: " . mysql_errno() . "\n";
 		$the_error .= "Date: " . date("Y-m-d H:i:s");
@@ -103,7 +103,7 @@ function dbconnect( $dieonerror = true ) {
 	$db_select = @mysql_select_db($pmp_sqldatabase);
 
 	// Can't switch to the database
-	if ( !$db_select && $dieonerror ) {
+	if (!$db_select && $dieonerror) {
 		$the_error .= "\nmySQL error: ".mysql_error()."\n";
 		$the_error .= "mySQL error code: ".mysql_errno()."\n";
 		$the_error .= "Date: ".date("Y-m-d H:i:s");
@@ -121,7 +121,7 @@ function dbconnect( $dieonerror = true ) {
 
 // Connect to the database via PDO
 // Dies on error (with an error message) if $dieonerror is true
-function dbconnect_pdo( $dieonerror = true ) {
+function dbconnect_pdo($dieonerror = true) {
 	global $pmp_db, $pmp_timezone, $pmp_mysql_ver;
 	global $pmp_sqlhost, $pmp_sqluser, $pmp_sqlpass, $pmp_sqldatabase;
 
@@ -133,21 +133,21 @@ function dbconnect_pdo( $dieonerror = true ) {
 		);
 		
 		// Enable prepared statements
-		$pmp_db->setAttribute( PDO::ATTR_EMULATE_PREPARES, false );
+		$pmp_db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
 		// Use exceptions
-		$pmp_db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+		$pmp_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			
 		// ToDo: Set timezone, get mysql version (for what?)			
 
 	}
-	catch ( PDOException $e ) {
-		if ( $dieonerror ) {
+	catch (PDOException $e) {
+		if ($dieonerror) {
 			echo "<html><head><title>Database Error</title><style>P,BODY{ font-family:arial,sans-serif; font-size:11px; }</style>
 				</head><body>&nbsp;<br><br><blockquote><b>There appears to be an error with the database.</b>
 				<br>You can try to refresh the page by clicking <a href=\"javascript:window.location=window.location;\">here</a>
 				, if this does not fix the error, please connect the Webmaster<br><br><b>Error returned:</b><br>
-				<form name='mysql'><textarea rows=\"15\" cols=\"45\">" . htmlspecialchars($e->getMessage()) . "</textarea></form>
+				<form name='mysql'><textarea rows=\"15\" cols=\"45\">".htmlspecialchars($e->getMessage())."</textarea></form>
 				<br></blockquote></body></html>" ;
 			die;
 		}
@@ -160,8 +160,8 @@ function dbexec($sql, $continueonerror = false) {
 	$sql = replace_table_prefix($sql);
 	$result = @mysql_query($sql);
 
-	if ( !$continueonerror ) {
-		if ( !$result ) {
+	if (!$continueonerror) {
+		if (!$result) {
 			echo "<strong>SQL-Statement failed:</strong><br /><pre>" . mysql_errno() . " - " . mysql_error()
 				. "\n\nQuery:\n$sql</pre>";
 			die;
@@ -173,7 +173,7 @@ function dbexec($sql, $continueonerror = false) {
 
 // Prepare and execute the query via PDO
 // If $continueonerror is set to true the script will abort with an error message if the query fails.
-function dbquery_pdo( $query, $params = null, $continueonerror = false ) {
+function dbquery_pdo($query, $params = null, $continueonerror = false) {
 	global $pmp_db;
 	
 	$result = false;
@@ -184,9 +184,9 @@ function dbquery_pdo( $query, $params = null, $continueonerror = false ) {
 		$stmt->execute($params);
 		$result = $stmt->fetchAll();
 	}
-	catch ( PDOException $e ) {
-		if ( !$continueonerror ) {
-			echo "<strong>SQL-Statement failed: ". htmlspecialchars($e->getMessage()) . "</strong><br /><pre>\n\nQuery:\n{$query}</pre>";
+	catch (PDOException $e) {
+		if (!$continueonerror) {
+			echo "<strong>SQL-Statement failed: ".htmlspecialchars($e->getMessage())."</strong><br /><pre>\n\nQuery:\n{$query}</pre>";
 			die;
 		}
 	}  
@@ -216,12 +216,12 @@ function replace_table_prefix(& $sql) {
 // Cut $string after $length character and add the $suffix
 // Will pay attention to things like &uuml;
 function trunc($string, $length, $suffix = '...') {
-	if ( strlen($string) - strlen($suffix) > $length ) {
-		if ( (strpos($string, '&', $length-5)) && (strpos($string, '&', $length-5) < $length) ) {
-			return trunc($string, $length + (strpos($string, ';', $length-5) -strpos($string, '&', $length-5)), $suffix);
+	if (strlen($string) - strlen($suffix) > $length) {
+		if (strpos($string, '&', $length-5) && strpos($string, '&', $length-5) < $length) {
+			return trunc($string, $length + (strpos($string, ';', $length-5) - strpos($string, '&', $length-5)), $suffix);
 		}
 		else {
-			return substr($string, 0, $length) . $suffix;
+			return substr($string, 0, $length).$suffix;
 		}
 	}
 	else {
@@ -230,9 +230,9 @@ function trunc($string, $length, $suffix = '...') {
 }
 
 function getColumns($col = '', $detail = '') {
-	$columns[0]['Header'] = 'empty'; // displayed name of the column
-	$columns[0]['Output'] = ''; // object-property/function to display
-	$columns[0]['Sort'] = 'Hide column';  // The database field to sort
+	$columns[0]['Header'] = 'empty';		// displayed name of the column
+	$columns[0]['Output'] = '';				// object-property/function to display
+	$columns[0]['Sort'] = 'Hide column';	// The database field to sort
 
 	$columns[1]['Header'] = 'Movie Title';
 	$columns[1]['Output'] = 'Title';
@@ -244,7 +244,7 @@ function getColumns($col = '', $detail = '') {
 
 	$columns[3]['Header'] = 'Country';
 	$columns[3]['Output'] = 'getLocationFlag';
-	$columns[3]['AltOutput'] = 'Locality';  // alternative Text output (eg for pdfs)
+	$columns[3]['AltOutput'] = 'Locality';	// alternative Text output (eg for pdfs)
 	$columns[3]['Sort'] = 'locality';
 
 	$columns[4]['Header'] = 'Nr.';
@@ -279,13 +279,13 @@ function getColumns($col = '', $detail = '') {
 	$columns[10]['Sort'] = 'origin';
 	*/
 
-	if ( empty($col) ) {
+	if (empty($col)) {
 		return $columns;
 	}
-	else if ( empty($detail) ) {
+	else if (empty($detail)) {
 		return $columns[$col];
 	}
-	else if ( ($detail == 'AltOutput') && (!isset($columns[$col][$detail])) ) {
+	else if ($detail == 'AltOutput' && !isset($columns[$col][$detail])) {
 		return $columns[$col]['Output'];
 	}
 	else {
@@ -294,7 +294,7 @@ function getColumns($col = '', $detail = '') {
 }
 
 function getColumnsasOption() {
-	foreach ( getColumns() as $key => $column ) {
+	foreach (getColumns() as $key => $column) {
 		$ret[$key] = $column['Header'];
 	}
 
@@ -428,7 +428,7 @@ function getFlagName($state) {
 	$flags['xhosa'] = 'South_Africa.png';
 	$flags['zulu'] = 'South_Africa.png';
 
-	if ( isset($flags[strtolower($state)]) ) {
+	if (isset($flags[strtolower($state)])) {
 		return $flags[strtolower($state)];
 	}
 	else {
@@ -443,13 +443,13 @@ function getHeadshot($name, $year, $firstname, $middlename, $lastname) {
 	$found = false;
 	$full_encoded = rawurlencode($name);
 
-	if ( $year != '' ) {
+	if ($year != '') {
 		$searchyear = '('.$year.')';
 
 		// Try to find image file named like "Morgan Freeman(1937).xxx"
 		foreach ($extensions as $ext) {
-			if ( file_exists($pmp_dir_cast . $name . $searchyear . $ext) ) {
-				$picname = $full_encoded . $searchyear . $ext;
+			if (file_exists($pmp_dir_cast.$name .$searchyear.$ext)) {
+				$picname = $full_encoded.$searchyear.$ext;
 				$found = true;
 				break;
 			}
@@ -458,20 +458,20 @@ function getHeadshot($name, $year, $firstname, $middlename, $lastname) {
 		// If not found, maybe with a blank, like "Morgan Freeman (1937).xxx"
 		if (!$found) {
 			foreach ($extensions as $ext) {
-				if ( file_exists($pmp_dir_cast . $name . ' ' . $searchyear . $ext) ) {
-					$picname = $full_encoded . $searchyear . $ext;
-		    			$found = true;
-		    			break;
+				if (file_exists($pmp_dir_cast.$name.' '.$searchyear.$ext) ) {
+					$picname = $full_encoded.$searchyear.$ext;
+		    		$found = true;
+		    		break;
 				}
 			}
 		}
 	}
 
 	// If still no image found yet. Try without the year, like "Morgan Freeman.xxx"
-	if ( !$found ) {
+	if (!$found) {
 		foreach ($extensions as $ext) {
-			if ( file_exists($pmp_dir_cast . $name . $ext) ) {
-				$picname = $full_encoded . $ext;
+			if (file_exists($pmp_dir_cast.$name.$ext)) {
+				$picname = $full_encoded.$ext;
 				$found = true;
 				break;
 			}
@@ -479,12 +479,12 @@ function getHeadshot($name, $year, $firstname, $middlename, $lastname) {
 	}
 
 	// Search for DVDProfiler style name
-	if ( !$found ) {
+	if (!$found) {
 		$name = $lastname."_".$firstname."_".$middlename;
-		if ( $year != '' ) $name = $name."_".$year;
+		if ($year != '') $name = $name."_".$year;
 		foreach ($extensions as $ext) {
-			if ( file_exists($pmp_dir_cast . $name . $ext) ) {
-				$picname = $name . $ext;
+			if (file_exists($pmp_dir_cast.$name.$ext)) {
+				$picname = $name.$ext;
 				$found = true;
 				break;
 			}
@@ -492,7 +492,7 @@ function getHeadshot($name, $year, $firstname, $middlename, $lastname) {
 	}
 
 	// If still nothing found at this point return blank, otherwise return the image URL
-	if ( !$found ) {
+	if (!$found) {
 		return '';
 	}
 	else {
@@ -502,44 +502,44 @@ function getHeadshot($name, $year, $firstname, $middlename, $lastname) {
 
 function getScreenshots($id, $praefix = '') {
 	$found = false;
-	$dir = $praefix.'screenshots/' . utf8_decode($id) . '/';
-	$thdir = $praefix.'screenshots/thumbs/' . utf8_decode($id) . '/';
+	$dir = $praefix.'screenshots/'.utf8_decode($id).'/';
+	$thdir = $praefix.'screenshots/thumbs/'.utf8_decode($id).'/';
 	$dirfail = false;
 
-	if ( is_dir($dir) ) {
+	if (is_dir($dir)) {
 		$handle = opendir($dir);
-		if ( is_resource($handle) ) {
-			while ( $file = readdir($handle) ) {
-				if ( $file != "." && $file != ".." ) {
+		if (is_resource($handle)) {
+			while ($file = readdir($handle)) {
+				if ($file != "." && $file != "..") {
 					if (strtolower(substr($file, -4)) == ".jpg" || strtolower(substr($file, -5)) == ".jpeg") {
 						$files[] = $file;
 
 						// Is there a dir for the thumbnail?
-						if ( !is_dir($thdir) and !$dirfail ) {
-							if ( !mkdir ( $thdir ) ) {
+						if (!is_dir($thdir) && !$dirfail) {
+							if (!mkdir($thdir)) {
 								$dirfail = true;
 							}
 						}
 						// Is there a thumbnail for this screenshot?
-						if ( !file_exists( $thdir . $file ) and !$dirfail ) {
+						if (!file_exists($thdir.$file) && !$dirfail) {
 							// Get original image and size
-							$src_img = imagecreatefromjpeg($dir . $file);
+							$src_img = imagecreatefromjpeg($dir.$file);
 							$old_x = imageSX($src_img);
 							$old_y = imageSY($src_img);
 							// Calculate new size
-							if ( $old_x >= $old_y ) {
+							if ($old_x >= $old_y) {
 								$thumb_x = 90;
-								$thumb_y = 90 * ( $old_y / $old_x );
+								$thumb_y = 90 * ($old_y / $old_x);
 							}
 							else {
 								$thumb_y = 90;
-								$thumb_x = 90 * ( $old_x / $old_y );
+								$thumb_x = 90 *  $old_x / $old_y);
 							}
 							// Create thumb
 							$dst_img = ImageCreateTrueColor($thumb_x, $thumb_y);
 							imagecopyresampled($dst_img, $src_img, 0, 0, 0, 0, $thumb_x, $thumb_y, $old_x, $old_y);
 							// Save thumb
-							imagejpeg($dst_img, $thdir . $file);
+							imagejpeg($dst_img, $thdir.$file);
 						}
 					}
 				}
@@ -552,7 +552,7 @@ function getScreenshots($id, $praefix = '') {
 
 // Get digits for currency
 function get_currency_digits($currency) {
-	switch ( $currency ) {
+	switch ($currency) {
 		case 'JPY':
 		case 'KRW':
 			return 0;
@@ -620,11 +620,11 @@ function inccounter($filmid = '') {
 function t($string, $args = array()) {
 	global $lang_data, $_SESSION;
 
-	if ( !@count($lang_data) ) {
+	if (!@count($lang_data)) {
 		getLang($_SESSION['lang_id']);
 	}
 
-	if ( empty($lang_data[$string]) ) {
+	if (empty($lang_data[$string])) {
 		return strtr($string, $args);
 
 		// Use this line if you want to search missing translations
@@ -640,18 +640,18 @@ function getLang($lang_id) {
 	global $lang_data, $pmp_theme;
 
 	// First we load the language-file from default
-	$data = file_get_contents(_PMP_REL_PATH . '/themes/default/locale/'. $lang_id . '.xml');
+	$data = file_get_contents(_PMP_REL_PATH.'/themes/default/locale/'.$lang_id.'.xml');
 
-	while ( strpos($data, '<message') ) {
+	while (strpos($data, '<message')) {
 		$tmp = gettween($data, '<message', '</message>');
 		$lang_data[gettween($tmp, '<id>', '</id>')] = gettween($tmp, '<string>', '</string>');
 		$data = substr($data, strpos($data, '</message>') + 10);
 	}
 
 	// Now we add and replace the translations from the theme
-	$data = file_get_contents(_PMP_REL_PATH . '/themes/' . $pmp_theme . '/locale/'. $lang_id . '.xml');
+	$data = file_get_contents(_PMP_REL_PATH.'/themes/'.$pmp_theme.'/locale/'.$lang_id.'.xml');
 
-	while ( strpos($data, '<message') ) {
+	while (strpos($data, '<message')) {
 		$tmp = gettween($data, '<message', '</message>');
 		$lang_data[gettween($tmp, '<id>', '</id>')] = gettween($tmp, '<string>', '</string>');
 		$data = substr($data, strpos($data, '</message>') + 10);
@@ -670,11 +670,11 @@ function gettween($string, $after, $before) {
 function getLangs() {
 	global $pmp_theme;
 
-	$dir = _PMP_REL_PATH . '/themes/' . $pmp_theme . '/locale';
+	$dir = _PMP_REL_PATH.'/themes/'.$pmp_theme.'/locale';
 	$handle = opendir($dir);
 
-	while ( ($file = readdir($handle)) !== false ) {
-		if ( is_file($dir . '/' . $file) ) {
+	while (($file = readdir($handle)) !== false) {
+		if (is_file($dir.'/'. $file)) {
 			$lg[] = str_replace('.xml', '', $file);
 		}
 	}
@@ -716,7 +716,7 @@ function exchange($from, $to, $value) {
 
 // Check for valid email adress
 function checkEmail($email) {
-	if ( preg_match('/^[-+\\.0-9=a-z_]+@([-0-9a-z]+\\.)+([0-9a-z]){2,4}$/i', $email) ) {
+	if (preg_match('/^[-+\\.0-9=a-z_]+@([-0-9a-z]+\\.)+([0-9a-z]){2,4}$/i', $email)) {
 		return true;
 	}
 	else {
@@ -750,11 +750,11 @@ function entity_to_decimal_value($string) {
 }
 
 function getRemoteContent($site) {
-	if ( ini_get('allow_url_fopen') ) {
+	if (ini_get('allow_url_fopen')) {
 		$content = @file_get_contents($site);
 		return $content;
 	}
-	else if ( extension_loaded('curl') ) {
+	else if (extension_loaded('curl')) {
 		$ch = curl_init($site);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
@@ -762,19 +762,19 @@ function getRemoteContent($site) {
 		$content = curl_exec($ch);
 		$error = curl_error($ch);
 		curl_close($ch);
-		if ( $error == '' ) {
+		if ($error == '') {
 			return $content;
 		}
 		else {
 			return '';
 		}
 	}
-	else if ( function_exists('http_get') ) {
+	else if (function_exists('http_get')) {
 		$tmp = http_parse_message(http_get($site));
 		$content = $tmp->body;
 		return $content;
 	}
-	else if ( function_exists('ini_set') ) {
+	else if (function_exists('ini_set')) {
 		require_once('HTTP/Request2.php');
 
 		$request = new HTTP_Request2($site, HTTP_Request2::METHOD_GET);
@@ -796,12 +796,12 @@ function getRemoteContent($site) {
 
 function add_include_path($strIncludePath) {
 	$strIncludePath = realpath($strIncludePath);
-	if ( empty($strIncludePath) ) {
+	if (empty($strIncludePath)) {
 		return;
 	}
 
-	if ( function_exists('ini_set') ) {
-		ini_set('include_path', ini_get('include_path') . PATH_SEPARATOR . $strIncludePath);
+	if (function_exists('ini_set')) {
+		ini_set('include_path', ini_get('include_path').PATH_SEPARATOR.$strIncludePath);
 	}
 	else {
 		$arrIncludePaths = explode(PATH_SEPARATOR, get_include_path());
@@ -818,11 +818,11 @@ function is__writable($path) {
 	// see http://bugs.php.net/bug.php?id=27609
 	// see http://bugs.php.net/bug.php?id=30931
 
-	if ( $path{strlen($path)-1} == '/' ) {
+	if ($path{strlen($path)-1} == '/') {
 		// recursively return a temporary file path
 		return is__writable($path.uniqid(mt_rand()).'.tmp');
 	}
-	else if ( is_dir($path) ) {
+	else if (is_dir($path)) {
 		return is__writable($path.'/'.uniqid(mt_rand()).'.tmp');
 	}
 
@@ -830,13 +830,13 @@ function is__writable($path) {
 	$rm = file_exists($path);
 	$f = @fopen($path, 'a');
 
-	if ( $f===false ) {
+	if ($f === false) {
 		return false;
 	}
 
 	fclose($f);
 
-	if ( !$rm ) {
+	if (!$rm) {
 		unlink($path);
 	}
 
