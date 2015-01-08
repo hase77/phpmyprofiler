@@ -234,16 +234,16 @@ class smallDVD {
 	function getOriginFlag() {
 		global $pmp_theme;
 		
-		$origins;
+		$origins = '';
 		
 		foreach ($this->Origins as $origin) {
-			$flag = getFlagName(origin);
+			$flag = getFlagName($origin->country);
 
 			if (empty($flag)) {
-				$origins .= '<img src="'._PMP_REL_PATH.'/themes/'.$pmp_theme.'/images/flags/Noflag.gif" alt="'.$origin.'" width="20" title="'.$origin.'"/>';
+				$origins .= '<img src="'._PMP_REL_PATH.'/themes/'.$pmp_theme.'/images/flags/Noflag.gif" alt="'.$origin->country.'" width="20" title="'.$origin->country.'"/>';
 			}
 			else {
-				$origins .= '<img src="'._PMP_REL_PATH.'/themes/'.$pmp_theme.'/images/flags/'.$flag.'" alt="'.$origin.'" width="20" title="'.$origin.'"/>';
+				$origins .= '<img src="'._PMP_REL_PATH.'/themes/'.$pmp_theme.'/images/flags/'.$flag.'" alt="'.$origin->country.'" width="20" title="'.$origin->country.'"/>';
 			}
 		}
 		
