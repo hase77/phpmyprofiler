@@ -27,10 +27,13 @@ class DVD extends smallDVD {
 			$this->smallDVD($id);
 
 			// Features
-			$sql = 'SELECT * FROM pmp_features WHERE id = \'' . mysql_real_escape_string($this->id) . '\'';
-			$result = dbexec($sql);
-			if ( @mysql_num_rows($result) > 0 ) {
-				$row = mysql_fetch_object($result);
+			$query = 'SELECT * FROM pmp_features WHERE id = ?';
+			$params = [$this->id];
+			$result = dbquery_pdo($query, $params, 'object');
+			echo "<pre>";
+			print_r($result);
+			if (count($result) > 0) {
+			
 				$this->Scenes = $row->sceneaccess;
 				$this->Comment = $row->comment;
 				$this->Trailer = $row->trailer;

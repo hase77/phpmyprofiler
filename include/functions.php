@@ -173,7 +173,7 @@ function dbexec($sql, $continueonerror = false) {
 
 // Prepare and execute the query via PDO
 // If $continueonerror is set to true the script will abort with an error message if the query fails.
-function dbquery_pdo($query, $params = null, $continueonerror = false) {
+function dbquery_pdo($query, $params = null, $type = "default", $continueonerror = false) {
 	global $pmp_db;
 	
 	$result = false;
@@ -182,7 +182,22 @@ function dbquery_pdo($query, $params = null, $continueonerror = false) {
 	try {
 		$stmt = $pmp_db->prepare($query);	
 		$stmt->execute($params);
-		$result = $stmt->fetchAll();
+		
+		switch ($type) {
+			case "num";
+				$result = $stmt->fetchAll(PDO::FETCH_NUM);
+				break;
+			case "assoc";
+				$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+				break;
+			case "object";
+				$result = $stmt->fetchAll(PDO::FETCH_OBJ);
+				break;
+			case "default";
+				$result = $stmt->fetchAll(PDO::FETCH_BOTH);
+				break;
+		}
+		
 	}
 	catch (PDOException $e) {
 		if (!$continueonerror) {
