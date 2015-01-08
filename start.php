@@ -45,7 +45,7 @@ $params = [$pmp_exclude_tag, $pmp_dvd_start];
 $result = dbquery_pdo($query, $params);
 
 $new = array();
-foreach ($rows as $row) {
+foreach ($result as $row) {
 	$new[] = new smallDVD($row['id']);
 }
 $smarty->assign('new', $new);
@@ -60,7 +60,7 @@ $params = [$pmp_exclude_tag, $pmp_dvd_start];
 $result = dbquery_pdo($query, $params);
 
 $order = array();
-foreach ($rows as $row) {
+foreach ($result as $row) {
 	$order[] = new smallDVD($row['id']);
 }
 $smarty->assign('ordered', $order);
