@@ -175,7 +175,7 @@ function dbquery_pdo( $query, $params = null, $continueonerror = false ) {
 	$stmt = $pmp_db->prepare($query);
 	
 	// ToDo: assign values
-	$stmt = $pmp_db->execute($params);
+	$stmt->execute($params);
 	$result = $stmt->fetchAll();
 
 	if ( $pmp_db->errorInfo() ) {
