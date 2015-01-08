@@ -604,7 +604,7 @@ function get_currency_digits($currency) {
 function inccounter($filmid = null) {
 	$sid = session_id();
 
-	if (!empty($filmid) {
+	if (!empty($filmid)) {
 		$query = 'SELECT COUNT(id) AS cnt FROM pmp_counter_profil WHERE sid = ? AND NOW() < DATE_ADD(date, INTERVAL 2 HOUR)
 				  AND film_id = ?';
 		$params = [$sid, $filmid];
