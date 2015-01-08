@@ -695,7 +695,7 @@ function exchange($from, $to, $value) {
 		$ratefrom = $rate[0]['rate'];
 	}
 
-	if ( to == 'EUR') {
+	if ($to == 'EUR') {
 		$rateto = 1;
 	}
 	else {
