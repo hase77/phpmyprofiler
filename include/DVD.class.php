@@ -1,6 +1,6 @@
 <?php
 /* phpMyProfiler
- * Copyright (C) 2005-2014 The phpMyProfiler project
+ * Copyright (C) 2005-2015 The phpMyProfiler project
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -29,107 +29,110 @@ class DVD extends smallDVD {
 			// Features
 			$query = 'SELECT * FROM pmp_features WHERE id = ?';
 			$params = [$this->id];
-			$result = dbquery_pdo($query, $params, 'object');
-			echo "<pre>";
-			print_r($result);
+			$row = dbquery_pdo($query, $params, 'object');
 			if (count($result) > 0) {
-			
-				$this->Scenes = $row->sceneaccess;
-				$this->Comment = $row->comment;
-				$this->Trailer = $row->trailer;
-				$this->BonusTrailer = $row->bonustrailer;
-				$this->PhotoGallery = $row->gallery;
-				$this->Deleted = $row->deleted;
-				$this->MakingOf = $row->makingof;
-				$this->Notes = $row->prodnotes;
-				$this->Game = $row->game;
-				$this->DVDrom = $row->dvdrom;
-				$this->Multiangle = $row->multiangle;
-				$this->Musicvideos = $row->musicvideos;
-				$this->Interviews = $row->interviews;
-				$this->Storyboard = $row->storyboard;
-				$this->Outtakes = $row->outtakes;
-				$this->ClosedCaptioned = $row->closedcaptioned;
-				$this->THX = $row->thx;
-				$this->PictureInPicture = $row->pip;
-				$this->BDLive = $row->bdlive;
-				$this->DigitalCopy = $row->digitalcopy;
-				$this->Other = htmlspecialchars($row->other, ENT_COMPAT, 'UTF-8');
+				$this->Scenes = $row[0]->sceneaccess;
+				$this->Comment = $row[0]->comment;
+				$this->Trailer = $row[0]->trailer;
+				$this->BonusTrailer = $row[0]->bonustrailer;
+				$this->PhotoGallery = $row[0]->gallery;
+				$this->Deleted = $row[0]->deleted;
+				$this->MakingOf = $row[0]->makingof;
+				$this->Notes = $row[0]->prodnotes;
+				$this->Game = $row[0]->game;
+				$this->DVDrom = $row[0]->dvdrom;
+				$this->Multiangle = $row[0]->multiangle;
+				$this->Musicvideos = $row[0]->musicvideos;
+				$this->Interviews = $row[0]->interviews;
+				$this->Storyboard = $row[0]->storyboard;
+				$this->Outtakes = $row[0]->outtakes;
+				$this->ClosedCaptioned = $row[0]->closedcaptioned;
+				$this->THX = $row[0]->thx;
+				$this->PictureInPicture = $row[0]->pip;
+				$this->BDLive = $row[0]->bdlive;
+				$this->DigitalCopy = $row[0]->digitalcopy;
+				$this->Other = htmlspecialchars($row[0]->other, ENT_COMPAT, 'UTF-8');
 			}
 
 			// Format
-			$sql = 'SELECT * FROM pmp_format WHERE id = \'' . mysql_real_escape_string($this->id) . '\'';
-			$result = dbexec($sql);
-			if ( @mysql_num_rows($result) > 0 ) {
-				$row = mysql_fetch_object($result);
-				$this->Ratio = $row->ratio;
-				$this->Video = $row->video;
-				$this->Color = $row->clrcolor;
-				$this->BlackWhite = $row->clrblackandwhite;
-				$this->Colorized = $row->clrcolorized;
-				$this->Mixed = $row->clrmixed;
-				$this->PanAndScan = $row->panandscan;
-				$this->FullFrame = $row->fullframe;
-				$this->Widescreen = $row->widescreen;
-				$this->Anamorph = $row->anamorph;
-				$this->DualSide = $row->dualside;
-				$this->DualLayer = $row->duallayer;
-				$this->Dim2D = $row->dim2d;
-				$this->Anaglyph = $row->anaglyph;
-				$this->Bluray3D = $row->bluray3d;
+			$query = 'SELECT * FROM pmp_format WHERE id = ?';
+			$params = [$this->id];
+			$row = dbquery_pdo($query, $params, 'object');
+			if (count($result) > 0) {
+				$this->Ratio = $row[0]->ratio;
+				$this->Video = $row[0]->video;
+				$this->Color = $row[0]->clrcolor;
+				$this->BlackWhite = $row[0]->clrblackandwhite;
+				$this->Colorized = $row[0]->clrcolorized;
+				$this->Mixed = $row[0]->clrmixed;
+				$this->PanAndScan = $row[0]->panandscan;
+				$this->FullFrame = $row[0]->fullframe;
+				$this->Widescreen = $row[0]->widescreen;
+				$this->Anamorph = $row[0]->anamorph;
+				$this->DualSide = $row[0]->dualside;
+				$this->DualLayer = $row[0]->duallayer;
+				$this->Dim2D = $row[0]->dim2d;
+				$this->Anaglyph = $row[0]->anaglyph;
+				$this->Bluray3D = $row[0]->bluray3d;
 			}
 
 			// Regioncode
-			$sql = 'SELECT region FROM pmp_regions WHERE id = \'' . mysql_real_escape_string($this->id) . '\'';
-			$result = dbexec($sql);
-			if ( @mysql_num_rows($result) > 0 ) {
-				while ( $row = mysql_fetch_object($result) ) {
+			$query = 'SELECT region FROM pmp_regions WHERE id = ?';
+			$params = [$this->id];
+			$rows = dbquery_pdo($query, $params, 'object');
+			if (count($rows) > 0) {
+				foreach ($rows as $row) {
 					$this->Regions[] = $row->region;
 				}
 			}
 
 			// Countries of origin
-			$sql = 'SELECT country FROM pmp_countries_of_origin WHERE id = \'' . mysql_real_escape_string($this->id) . '\'';
-			$result = dbexec($sql);
-			if ( @mysql_num_rows($result) > 0 ) {
-				while ( $row = mysql_fetch_object($result) ) {
-					$this->Origins[] = $row->country;
+			$query = 'SELECT country FROM pmp_countries_of_origin WHERE id = ?';
+			$params = [$this->id];
+			$rows = dbquery_pdo($query, $params, 'object');
+			if (count($rows) > 0) {
+				foreach ($rows as $row) {
+					$this->Origins[] = $row->region;
 				}
 			}
 
 			// Genres
-			$sql = 'SELECT genre FROM pmp_genres WHERE id = \'' . mysql_real_escape_string($this->id) . '\'';
-			$result = dbexec($sql);
-			if ( @mysql_num_rows($result) > 0 ) {
-				while ( $row = mysql_fetch_object($result) ) {
+			$query = 'SELECT genre FROM pmp_genres WHERE id = ?';
+			$params = [$this->id];
+			$rows = dbquery_pdo($query, $params, 'object');
+			if (count($rows) > 0) {
+				foreach ($rows as $row) {
 					$this->Genres[] = $row->genre;
 				}
 			}
 
 			// Studios
-			$sql = 'SELECT studio FROM pmp_studios WHERE id = \'' . mysql_real_escape_string($this->id) . '\'';
-			$result = dbexec($sql);
-			if ( @mysql_num_rows($result) > 0 ) {
-				while ( $row = mysql_fetch_object($result) ) {
-					$this->Studios[] = htmlspecialchars($row->studio, ENT_COMPAT, 'UTF-8');
+			$query = 'SELECT studio FROM pmp_studios WHERE id = ?';
+			$params = [$this->id];
+			$rows = dbquery_pdo($query, $params, 'object');
+			if (count($rows) > 0) {
+				foreach ($rows as $row) {
+					$this->Studios[] = htmlspecialchars($row->studio, ENT_COMPAT, 'UTF-8');;
 				}
 			}
 
 			// Media Companies
-			$sql = 'SELECT company FROM pmp_media_companies WHERE id = \'' . mysql_real_escape_string($this->id) . '\'';
-			$result = dbexec($sql);
-			if ( @mysql_num_rows($result) > 0 ) {
-				while ( $row = mysql_fetch_object($result) ) {
-					$this->MediaCompanies[] = htmlspecialchars($row->company, ENT_COMPAT, 'UTF-8');
+			$query = 'SELECT company FROM pmp_media_companies WHERE id = ?';
+			$params = [$this->id];
+			$rows = dbquery_pdo($query, $params, 'object');
+			if (count($rows) > 0) {
+				foreach ($rows as $row) {
+					$this->MediaCompanies[] = htmlspecialchars($row->company, ENT_COMPAT, 'UTF-8');;
 				}
 			}
 
 			// Subtitles
-			$sql = 'SELECT subtitle FROM pmp_subtitles WHERE id = \'' . mysql_real_escape_string($this->id) . '\'';
-			$result = dbexec($sql);
-			if ( @mysql_num_rows($result) > 0 ) {
-				while ( $row = mysql_fetch_object($result) ) {
-					$this->Subtitles[] = $row->subtitle;
+			$query = 'SELECT subtitle FROM pmp_subtitles WHERE id = ?';
+			$params = [$this->id];
+			$rows = dbquery_pdo($query, $params, 'object');
+			if (count($rows) > 0) {
+				foreach ($rows as $row) {
+					$this->Subtitles[] = htmlspecialchars($row->subtitle, ENT_COMPAT, 'UTF-8');;
 				}
 			}
 
