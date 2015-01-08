@@ -1,7 +1,7 @@
 <?php
 /* phpMyProfiler
  * Copyright (C) 2004 by Tim Reckmann [www.reckmann.org] & Powerplant [www.powerplant.de]
- * Copyright (C) 2005-2014 The phpMyProfiler project
+ * Copyright (C) 2005-2015 The phpMyProfiler project
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -29,8 +29,8 @@ $smarty->loadFilter('output', 'trimwhitespace');
 dbconnect();
 
 // Page selected?
-if ( isset($_GET['page']) ) {
-	if ( !is_numeric($_GET['page']) ) {
+if (isset($_GET['page'])) {
+	if (!is_numeric($_GET['page'])) {
 		$start = 1;
 	}
 	else {
@@ -48,7 +48,7 @@ $res = dbexec($sql);
 
 $news = array();
 
-if ( mysql_num_rows($res) > 0 ) {
+if (mysql_num_rows($res) > 0) {
 	while ($row = mysql_fetch_object($res)) {
 		$news[] = $row;
 	}
@@ -64,7 +64,7 @@ dbclose();
 $smarty->assign('news', $news);
 $smarty->assign('count', $count);
 $smarty->assign('page', (int)$start);
-$smarty->assign('pages', (int)($count / $pmp_news_page + ((($count % $pmp_news_page)==0)? 0 : 1)));
+$smarty->assign('pages', (int)($count / $pmp_news_page + ((($count % $pmp_news_page) == 0) ? 0 : 1)));
 
 $smarty->display('news.tpl');
 ?>

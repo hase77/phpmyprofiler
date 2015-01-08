@@ -26,7 +26,7 @@ $pmp_module = 'filmprofile';
 require_once('include/DVD.class.php');
 
 // Check values
-if ( isset($_GET['id']) ) {
+if (isset($_GET['id'])) {
 	$smarty = new pmp_Smarty;
 	$smarty->loadFilter('output', 'trimwhitespace');
 	$smarty->assign('pmp_theme', $pmp_theme);
@@ -34,8 +34,8 @@ if ( isset($_GET['id']) ) {
 	dbconnect();
 
 	// Page selected?
-	if ( !empty($_GET['page']) ) {
-		if ( !is_numeric($_GET['page']) ) {
+	if (!empty($_GET['page'])) {
+		if (!is_numeric($_GET['page'])) {
 			$_GET['page'] = 1;
 		}
 	}
@@ -46,7 +46,7 @@ if ( isset($_GET['id']) ) {
 	// Get screenshots on page 1
 	if ($_GET['page'] == 1) {
 		$filenames = getScreenshots ($_GET['id']);
-		if ( isset($filenames) ) {
+		if (isset($filenames)) {
 			sort($filenames);
 			$smarty->assign('screenshots', $filenames);
 		}

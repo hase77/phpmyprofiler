@@ -34,7 +34,7 @@ $smarty = new pmp_Smarty;
 $smarty->loadFilter('output', 'trimwhitespace');
 
 // Initialize the captcha object with our configuration options
-if ( $pmp_guestbook_showcode == true) {
+if ($pmp_guestbook_showcode == true) {
 	require_once('include/b2evo_captcha/b2evo_captcha.config.php');
 	require_once('include/b2evo_captcha/b2evo_captcha.class.php');
 
@@ -45,9 +45,9 @@ if ( $pmp_guestbook_showcode == true) {
 
 dbconnect();
 
-if ( (isset($_GET['action'])) && ($_GET['action'] == 'save') ) {
+if (isset($_GET['action']) && ($_GET['action'] == 'save') {
 	// First check the form key
-	if ( !isset($_POST['form_key']) || !$formKey->validate() ) {
+	if (!isset($_POST['form_key']) || !$formKey->validate()) {
 		//Form key is invalid, show an error
 	$smarty->assign('Failed', 'Form key error!');
 	}
@@ -55,16 +55,16 @@ if ( (isset($_GET['action'])) && ($_GET['action'] == 'save') ) {
 		$msg = array();
 
 		// Check all values we get from contact form
-		if ( $_POST['name'] != "" ) {
+		if ($_POST['name'] != "") {
 			$name = html2txt($_POST['name']);
 		}
 		else {
 			$msg[]= 'Please enter your name!';
 		}
 
-		if ( $_POST['email'] != "" ) {
+		if ($_POST['email'] != "") {
 			$email = $_POST['email'];
-			if ( !$validate->email($email, array('use_rfc822' => true)) ) {
+			if (!$validate->email($email, array('use_rfc822' => true))) {
 				$msg[] = "$email is <strong>NOT</strong> a valid email address!";
 			}
 		}
@@ -72,9 +72,9 @@ if ( (isset($_GET['action'])) && ($_GET['action'] == 'save') ) {
 			$msg[]= 'Please enter a valid email address!';
 		}
 
-		if ( $_POST['url'] != "" ) {
+		if ($_POST['url'] != "") {
 			$url = $_POST['url'];
-			if ( !$validate->uri($url, array('use_rfc4151' => true)) ) {
+			if (!$validate->uri($url, array('use_rfc4151' => true))) {
 				$msg[] = "$url is <strong>NOT</strong> a valid URL!";
 			}
 		}
@@ -82,51 +82,51 @@ if ( (isset($_GET['action'])) && ($_GET['action'] == 'save') ) {
 			$url = '';
 		}
 
-		if ( $_POST['message'] != "" ) {
+		if ($_POST['message'] != "") {
 			$message = html2txt($_POST['message']);
 		}
 		else {
 			$msg[]= 'Please enter a message to send!';
 		}
 
-		if ( count($msg) == 0 ) {
+		if (count($msg) == 0) {
 			// Check captcha
-			if ( ($pmp_guestbook_showcode == true) && ($captcha->validate_submit($_POST['image'], $_POST['code']) == false) ) {
+			if ($pmp_guestbook_showcode == true && $captcha->validate_submit($_POST['image'], $_POST['code']) == false) {
 				$smarty->assign('Failed', t('Wrong security code!'));
 			}
 			// Make Bot-Check
-			else if ( !empty($_POST['username']) ) {
+			else if (!empty($_POST['username'])) {
 				$smarty->assign('Failed', t('Bot Attack!'));
 			}
 			else {
 				// Insert enty into db
 				$query = sprintf('INSERT INTO pmp_guestbook (date, name, email, text, status, url)
 					VALUES ( now(), \'%s\', \'%s\', \'%s\', \'%s\', \'%s\')',
-					mysql_real_escape_string( $name ),
-					mysql_real_escape_string( $email ),
-					mysql_real_escape_string( $message ),
-					mysql_real_escape_string( $pmp_guestbook_activatenew ),
-					mysql_real_escape_string( $url ) );
+					mysql_real_escape_string($name),
+					mysql_real_escape_string($email),
+					mysql_real_escape_string($message),
+					mysql_real_escape_string($pmp_guestbook_activatenew),
+					mysql_real_escape_string($url));
 
 				if ( dbexec($query) ) {
 					// Send info mail to admin
 					str_replace(array("\r", "\n"), '', $email);
 					str_replace(array("\r", "\n"), '', $name);
-					$subject = '[phpMyProfiler] ' .  t('%name added a new guestbook entry', array('%name' => $name));
+					$subject = '[phpMyProfiler] '. t('%name added a new guestbook entry', array('%name' => $name));
 					$subject= mb_encode_mimeheader(html_entity_decode($subject, ENT_COMPAT, 'UTF-8'), "UTF-8", "B", "\n");
 
-					$body = $name . ' <' . $email . '> ';
+					$body = $name.' <'.$email.'> ';
 					if ( !empty($url)) {
-						$body .= '[' . $url . '] ';
+						$body .= '['.$url.'] ';
 					}
-					$body .= t('wrote') . ':' . "\n\n" . $message;
+					$body .= t('wrote').':'."\n\n".$message;
 
-					$header = 'From: "' . $pmp_admin_name . '" <' . $pmp_admin_mail . '>' . "\r\n"
-						. 'MIME-Version: 1.0' . "\r\n"
-						. 'Content-Type: text/plain; charset="UTF-8"' . "\r\n"
-						. 'Content-Transfer-Encoding: quoted-printable' . "\r\n"
-						. 'Message-ID: <' . md5(uniqid(microtime())) . '@' . $_SERVER['SERVER_NAME'] . '>' . "\r\n"
-						. 'X-Mailer: phpMyProfiler ' . $pmp_version . "\r\n";
+					$header = 'From: "'.$pmp_admin_name.'" <'.$pmp_admin_mail.'>'."\r\n"
+						.'MIME-Version: 1.0'."\r\n"
+						.'Content-Type: text/plain; charset="UTF-8"'."\r\n"
+						.'Content-Transfer-Encoding: quoted-printable'."\r\n"
+						.'Message-ID: <'.md5(uniqid(microtime())).'@'.$_SERVER['SERVER_NAME'].'>'."\r\n"
+						.'X-Mailer: phpMyProfiler '.$pmp_version."\r\n";
 
 					mail($pmp_admin_mail, $subject, $body, $header);
 
@@ -150,8 +150,8 @@ if ( (isset($_GET['action'])) && ($_GET['action'] == 'save') ) {
 }
 
 // Page selected?
-if ( isset($_GET['page']) ) {
-	if ( !is_numeric($_GET['page']) ) {
+if (isset($_GET['page'])) {
+	if (!is_numeric($_GET['page'])) {
 		$start = 1;
 	}
 	else {
@@ -175,8 +175,8 @@ $result = dbexec($query);
 
 $i = 0;
 $entries = array();
-if ( mysql_num_rows($result) > 0 ) {
-	while ( $row = mysql_fetch_object($result) ) {
+if (mysql_num_rows($result) > 0) {
+	while ($row = mysql_fetch_object($result)) {
 		$row->nr = $count - $i++ - (((int)$start - 1) * $pmp_entries_side);
 		$row->text = replace_emoticons($row->text);
 		$row->comment = replace_emoticons($row->comment);
@@ -190,7 +190,7 @@ $smarty->assign('entries', $entries);
 $smarty->assign('emoticons', array_unique($emoticons));
 $smarty->assign('count', $count);
 $smarty->assign('page', (int)$start);
-$smarty->assign('pages', (int)($count / $pmp_entries_side + ((($count % $pmp_entries_side)==0)? 0 : 1)));
+$smarty->assign('pages', (int)($count / $pmp_entries_side + ((($count % $pmp_entries_side) == 0) ? 0 : 1)));
 $smarty->assign('formkey', $formKey->outputKey());
 
 $smarty->display('guestbook.tpl');

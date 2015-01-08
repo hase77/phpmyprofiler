@@ -33,7 +33,7 @@ $smarty = new pmp_Smarty;
 $smarty->loadFilter('output', 'trimwhitespace');
 
 // Initialize the captcha object with our configuration options
-if ( $pmp_guestbook_showcode == true ) {
+if ($pmp_guestbook_showcode == true) {
 	require_once('include/b2evo_captcha/b2evo_captcha.config.php');
 	require_once('include/b2evo_captcha/b2evo_captcha.class.php');
 
@@ -43,9 +43,9 @@ if ( $pmp_guestbook_showcode == true ) {
 }
 
 // Add new entry
-if ( (isset($_GET['action'])) && ($_GET['action'] == 'send') ) {
+if (isset($_GET['action']) && $_GET['action'] == 'send') {
 	// First check the form key
-	if ( !isset($_POST['form_key']) || !$formKey->validate() ) {
+	if (!isset($_POST['form_key']) || !$formKey->validate()) {
 		//Form key is invalid, show an error
 		$smarty->assign('Failed', 'Form key error!');
 	}
@@ -53,16 +53,16 @@ if ( (isset($_GET['action'])) && ($_GET['action'] == 'send') ) {
 		$msg = array();
 
 		// Check all values we get from contact form
-		if ( $_POST['name'] != "" ) {
+		if ($_POST['name'] != "") {
 			$name = html2txt($_POST['name']);
 		}
 		else {
 			$msg[]= 'Please enter your name!';
 		}
 
-		if ( $_POST['email'] != "" ) {
+		if ($_POST['email'] != "") {
 			$email = $_POST['email'];
-			if ( !$validate->email($email, array('use_rfc822' => true)) ) {
+			if (!$validate->email($email, array('use_rfc822' => true))) {
 				$msg[] = "$email is <strong>NOT</strong> a valid email address!";
 			}
 		}
@@ -70,27 +70,27 @@ if ( (isset($_GET['action'])) && ($_GET['action'] == 'send') ) {
 			$msg[]= 'Please enter a valid email address!';
 		}
 
-		if ( $_POST['subject'] != "" ) {
+		if ($_POST['subject'] != "") {
 			$subject = html2txt($_POST['subject']);
 		}
 		else {
 			$msg[]= 'Please enter a subject!';
 		}
 
-		if ( $_POST['message'] != "" ) {
+		if ($_POST['message'] != "") {
 			$message = html2txt($_POST['message']);
 		}
 		else {
 			$msg[]= 'Please enter a message to send!';
 		}
 
-		if ( count($msg) == 0 ) {
+		if (count($msg) == 0) {
 			// Check captcha
-			if ( ($pmp_guestbook_showcode == true) && ($captcha->validate_submit($_POST['image'], $_POST['code']) == false) ) {
+			if ($pmp_guestbook_showcode == true && $captcha->validate_submit($_POST['image'], $_POST['code']) == false) {
 				$smarty->assign('Failed', t('Wrong security code!'));
 			}
 			// Make Bot-Check
-			else if ( !empty($_POST['username']) ) {
+			else if (!empty($_POST['username'])) {
 				$smarty->assign('Failed', t('Bot Attack!'));
 			}
 			else {
@@ -100,15 +100,15 @@ if ( (isset($_GET['action'])) && ($_GET['action'] == 'send') ) {
 				// Wordwrap after 72 chars in message
 				$message = wordwrap($message, 72);
 
-				$header = 'From: "' . $name . '" <' . $email . '>' . "\r\n"
-					. 'MIME-Version: 1.0' . "\r\n"
-					. 'Content-Type: text/plain; charset="UTF-8"' . "\r\n"
-					. 'Content-Transfer-Encoding: quoted-printable' . "\r\n"
-					. 'Message-ID: <' . md5(uniqid(microtime())) . '@' . $_SERVER['SERVER_NAME'] . '>' . "\r\n"
-					. 'X-Mailer: phpMyProfiler ' . $pmp_version . "\r\n";
+				$header = 'From: "'.$name.'" <'.$email.'>'."\r\n"
+					.'MIME-Version: 1.0'."\r\n"
+					.'Content-Type: text/plain; charset="UTF-8"'."\r\n"
+					.'Content-Transfer-Encoding: quoted-printable'."\r\n"
+					.'Message-ID: <'.md5(uniqid(microtime())).'@'.$_SERVER['SERVER_NAME'].'>'."\r\n"
+					.'X-Mailer: phpMyProfiler '.$pmp_version."\r\n";
 
 				// Send e-mail
-				if ( mail($pmp_admin_mail, $subject, $message, $header) ) {
+				if (mail($pmp_admin_mail, $subject, $message, $header)) {
 					$smarty->assign('Success', t('Thank you for your message.'));
 				}
 				else {
