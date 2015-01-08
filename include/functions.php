@@ -642,13 +642,13 @@ function inccounter($filmid = null) {
 			dbexecute_pdo($sql, $params);
 		}
 
-		$query = 'SELECT COUNT(id) AS count_all FROM pmp_counter';
+		$query = 'SELECT COUNT(id) AS cnt FROM pmp_counter';
 		$result = dbquery_pdo($query, null, 'assoc');
 		if (count($result) > 0) {
 			$all = $result[0]['cnt'];
 		}
 
-		$query = 'SELECT COUNT(*) AS count_today FROM pmp_counter WHERE date LIKE CONCAT(CURRENT_DATE, \'%\')';
+		$query = 'SELECT COUNT(*) AS cnt FROM pmp_counter WHERE date LIKE CONCAT(CURRENT_DATE, \'%\')';
 		$result = dbquery_pdo($query, null, 'assoc');
 		if (count($result) > 0) {
 			$today = $result[0]['cnt'];
