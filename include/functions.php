@@ -120,7 +120,7 @@ function dbconnect( $dieonerror = true ) {
 }
 
 // Connect to the database via PDO
-function dbconnect_medoo( $dieonerror = true ) {
+function dbconnect_pdo( $dieonerror = true ) {
 	global $pmp_db, $pmp_timezone;
 	global $pmp_sqlhost, $pmp_sqluser, $pmp_sqlpass, $pmp_sqldatabase;
 
