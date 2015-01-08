@@ -26,8 +26,6 @@ $pmp_module = 'coverlist';
 $smarty = new pmp_Smarty;
 $smarty->loadFilter('output', 'trimwhitespace');
 
-dbconnect();
-
 // Page selected?
 if ( isset($_GET['page']) ) {
 	if ( !is_numeric($_GET['page']) ) {
@@ -42,33 +40,20 @@ else {
 }
 
 // Get cover ids for one page
-$cols = $db->select(
-	"pmp_film",
-	[
-		"[>]pmp_tags" => ["id" => "id"]
-	],
-	["pmp_film.id"],
-	[
-		"GROUP" => "pmp_film.id",
-		"AND" => [
-			"collectiontype[!]" => ["Ordered", "Wish List"],
-			"OR" => [
-				"pmp_tags.name[!]" => $pmp_exclude_tag,
-				"pmp_tags.name" => null
-			],
-		],
-		"ORDER" => "sorttitle",
-		"LIMIT" => [(((int)$start - 1) * $pmp_cover_page), $pmp_cover_page]
-	]
-);
+$query = 'SELECT DISTINCT id FROM pmp_film WHERE collectiontype != \'Ordered\' AND collectiontype != \'Wish List\'
+		  AND id NOT IN (SELECT id FROM pmp_tags where name = ?) ORDER BY sorttitle LIMIT ?, ?';
+		  
+$params = [$pmp_exclude_tag, (((int)$start - 1) * $pmp_cover_page), $pmp_cover_page];
 
-// Get dvd objects with dvd covers
+$cols = dbquery_pdo($query, $params);
+
+// Get dvd objects with dvd covers$pmp_cover_page
 foreach ( $cols as $col ) {
 	$cover[] = new smallDVD($col["id"]);
 }
 
 // Get total number of covers
-$count = $db->count(
+/*$count = $db->count(
 	"pmp_film",
 	[
 		"[>]pmp_tags" => ["id" => "id"]
@@ -83,7 +68,7 @@ $count = $db->count(
 			],
 		]
 	]
-);
+);*/
 
 $smarty->assign('cover', $cover);
 $smarty->assign('count', $count);

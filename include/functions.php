@@ -180,8 +180,7 @@ function dbquery_pdo( $query, $params = null, $continueonerror = false ) {
 
 	if ( $pmp_db->errorInfo() ) {
 		if ( !$continueonerror ) {
-			echo "<strong>SQL-Statement failed:</strong><br /><pre>" . 
-				. "\n\nQuery:\n{$query}</pre>";
+			echo "<strong>SQL-Statement failed:</strong><br /><pre>\n\nQuery:\n{$query}</pre>";
 			die;
 		}
 	}  
