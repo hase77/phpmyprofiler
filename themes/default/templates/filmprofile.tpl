@@ -198,27 +198,27 @@
 												<a href="http://www.amazon.com/s/url=search-alias%3Ddvd&amp;field-keywords={$imdbTitle|rawurlencode}">Amazon.com Search</a><br />
 												{if $smarty.session.lang_id == 'de'}
 													<b>{t}German{/t}:</b><br />
-													<a href="http://de.wikipedia.org/wiki/{$dvd->title|rawurlencode}">Wikipedia (Deutsch)</a><br />
+													<a href="http://de.wikipedia.org/wiki/{$dvd->Title|rawurlencode}">Wikipedia (Deutsch)</a><br />
 													{if isset($dvd->ofdbID)}
 														<a href="http://www.ofdb.de/film/{$dvd->ofdbID|rawurlencode}">OFDB</a><br />
 													{elseif $dvd->OriginalTitle == ''}
-														<a href="http://www.ofdb.de/view.php?page=suchergebnis&amp;Kat=DTitel&amp;SText={$dvd->title|rawurlencode}">OFDB</a><br />
+														<a href="http://www.ofdb.de/view.php?page=suchergebnis&amp;Kat=DTitel&amp;SText={$dvd->Title|rawurlencode}">OFDB</a><br />
 													{else}
 														<a href="http://www.ofdb.de/view.php?page=suchergebnis&amp;Kat=OTitel&amp;SText={$dvd->OriginalTitle|rawurlencode}">OFDB</a><br />
 													{/if}
-													<a href="http://www.schnittberichte.com/svds.php?Page=Liste&amp;Kat=3&amp;SearchKat=Titel&amp;String={$dvd->title|rawurlencode}">Schnittberichte.com</a><br />
-													<a href="http://www.cinefacts.de/suche/suche.php?name={$dvd->title|rawurlencode}">Cinefacts</a><br />
-													<a href="http://www.dvd-palace.de/dvddatabase/dbsearch.php?action=1&amp;suchbegriff={$dvd->title|rawurlencode}">DVD-Palace</a><br />
-													<a href="http://www.moviemaze.de/suche/result.phtml?searchword={$dvd->title|rawurlencode}">MovieMaze</a><br />
-													<a href="http://www.caps-a-holic.com/index.php?search={$dvd->title|rawurlencode}">caps-a-holic DVD Vergleiche</a><br />
-													<a href="http://www.caps-a-holic.com//hd_vergleiche/test.php?search={$dvd->title|rawurlencode}">caps-a-holic HD/SD Vergleiche</a><br />
-													<a href="http://www.filmstarts.de/finde.html?anfrage={$dvd->title|rawurlencode}">FILMSTARTS.de</a><br />
+													<a href="http://www.schnittberichte.com/svds.php?Page=Liste&amp;Kat=3&amp;SearchKat=Titel&amp;String={$dvd->Title|rawurlencode}">Schnittberichte.com</a><br />
+													<a href="http://www.cinefacts.de/suche/suche.php?name={$dvd->Title|rawurlencode}">Cinefacts</a><br />
+													<a href="http://www.dvd-palace.de/dvddatabase/dbsearch.php?action=1&amp;suchbegriff={$dvd->Title|rawurlencode}">DVD-Palace</a><br />
+													<a href="http://www.moviemaze.de/suche/result.phtml?searchword={$dvd->Title|rawurlencode}">MovieMaze</a><br />
+													<a href="http://www.caps-a-holic.com/index.php?search={$dvd->Title|rawurlencode}">caps-a-holic DVD Vergleiche</a><br />
+													<a href="http://www.caps-a-holic.com//hd_vergleiche/test.php?search={$dvd->Title|rawurlencode}">caps-a-holic HD/SD Vergleiche</a><br />
+													<a href="http://www.filmstarts.de/finde.html?anfrage={$dvd->Title|rawurlencode}">FILMSTARTS.de</a><br />
 													<a href="http://www.dvdiggle.de/digglebot.php?dvdtitle={$dvd->Title|rawurlencode}&amp;abroad=1">Preissuche DVDiggle</a><br />
-													<a href="http://www.amazon.de/gp/search?ie=UTF8&amp;keywords={$dvd->title|rawurlencode}&amp;index=dvd">Amazon.de Suche</a><br />
+													<a href="http://www.amazon.de/gp/search?ie=UTF8&amp;keywords={$dvd->Title|rawurlencode}&amp;index=dvd">Amazon.de Suche</a><br />
 												{elseif $smarty.session.lang_id == 'nl'}
 													<b>{t}Dutch{/t}:</b><br />
 													<a href="http://www.moviemeter.nl/film/search/{$imdbTitle|rawurlencode}">Moviemeter</a><br />
-													<a href="http://www.bol.com/nl/s/dvd/zoekresultaten/Ntt/{$dvd->title|rawurlencode}/Ntk/dvd_all/Ntx/mode+matchallpartial/Nty/1/N/3133/Ne/3133/search/true/searchType/qck/index.html?">Bol.com</a><br />
+													<a href="http://www.bol.com/nl/s/dvd/zoekresultaten/Ntt/{$dvd->Title|rawurlencode}/Ntk/dvd_all/Ntx/mode+matchallpartial/Nty/1/N/3133/Ne/3133/search/true/searchType/qck/index.html?">Bol.com</a><br />
 												{/if}
 											</td>
 										</tr>
