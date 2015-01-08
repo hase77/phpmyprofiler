@@ -121,14 +121,14 @@ function dbconnect( $dieonerror = true ) {
 
 // Connect to the database via PDO
 function dbconnect_pdo( $dieonerror = true ) {
-	global $pmp_db, $pmp_timezone;
+	global $pmp_db, $pmp_timezone, $pmp_mysql_ver;
 	global $pmp_sqlhost, $pmp_sqluser, $pmp_sqlpass, $pmp_sqldatabase;
 
 	try {
 		$pmp_db = new PDO(
 			"mysql:host={$pmp_sqlhost};dbname={$pmp_sqldatabase};charset=utf8",
 			$pmp_sqluser, $pmp_sqlpass,
-			[PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8; SET time_zone={$pmp_timezone}"]
+			[PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8;"]
 		);
 	}
 	catch ( PDOException $e ) {
@@ -159,6 +159,21 @@ function dbexec($sql, $continueonerror = false) {
 	}
 
 	return $result;
+}
+
+function dbquery_pdo( $query, $values = null, $continueonerror = false ) {
+	global $pmp_db;
+	
+	replace_table_prefix($query);
+	$stmt = $pmp_db->query($query);
+	
+	// ToDo: assign values
+	
+	$result = $stmt->fetchAll();
+	
+	// ToDo: Catch error
+	
+	return result;
 }
 
 // Close database
@@ -810,18 +825,11 @@ function html2txt($document) {
 
 // Get all available collections
 function get_collections() {
-	global $pmp_db;
-
 	// This "base" is needed because not every user collection has these three standard collections
 	$collections = ['Owned', 'Ordered', 'Wish List'];
 	
 	$query = 'SELECT collection FROM pmp_collection WHERE collection NOT IN("Owned", "Ordered", "Wish List")';
-	replace_table_prefix($query);
-	$stmt = $pmp_db->query($query);
-	var_dump($stmt);
-	$cols = $stmt->fetchAll(PDO::FETCH_NUM);
-	echo "<pre>";
-	print_r($cols);
+	$cols = dbquery_pdo($query);
 
 	foreach ( $cols as $col ) {
 		$collections[] = $col["collection"];
