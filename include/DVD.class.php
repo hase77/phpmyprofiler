@@ -243,7 +243,7 @@ class DVD extends smallDVD {
 			else {
 				$sql = 'SELECT award, awardyear, category, winner, nominee FROM pmp_awards WHERE LOWER(title) = LOWER(?)
 						AND awardyear BETWEEN ? AND ?+1 ORDER BY award, winner DESC';
-				$params = html_entity_decode($this->OriginalTitle, ENT_QUOTES, 'UTF-8'), $this->Year, $this->Year];
+				$params = [html_entity_decode($this->OriginalTitle, ENT_QUOTES, 'UTF-8'), $this->Year, $this->Year];
 			}
 			$rows = dbquery_pdo($query, $params, 'object');
 			if (count($rows) > 0) {
