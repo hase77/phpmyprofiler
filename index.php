@@ -25,7 +25,7 @@ define('_PMP_REL_PATH', '.');
 $pmp_module = 'index';
 $pmp_db = null;
 
-if ( file_exists('installation/') ) {
+if (file_exists('installation/')) {
 	header("Location:installation/");
 	exit();
 }
@@ -60,8 +60,8 @@ else {
 		'watched'			=> 'watched.php');
 
 	// Try to turn on page compression
-	if ( $pmp_compression && extension_loaded('zlib') ) {
-		if ( !ob_start("ob_gzhandler") ) {
+	if ($pmp_compression && extension_loaded('zlib')) {
+		if (!ob_start("ob_gzhandler")) {
 			 ob_start();
 		}
 	}
@@ -73,7 +73,7 @@ else {
 	header('Content-type: text/html; charset=utf-8');
 	header($ExpStr);
 
-	if ( !isset($_GET['ajax_call']) )  {
+	if (!isset($_GET['ajax_call']))  {
 		$smarty = new pmp_Smarty;
 		$smarty->loadFilter('output', 'trimwhitespace');
 		$smarty->assign('getLangs', getLangs());
@@ -86,9 +86,9 @@ else {
 	// ToDo: Sanitize/check all values we get
 
 	// Get and save needed variables for detail-pages
-	if ( isset($_GET['content']) ) {
+	if (isset($_GET['content'])) {
 		// Validate content page
-		if ( isset($valildpages[$_GET['content']]) ) {
+		if (isset($valildpages[$_GET['content']])) {
 			$_GET['content'] = $valildpages[$_GET['content']];
 		}
 		else {
@@ -96,31 +96,31 @@ else {
 		}
 
 		// Save all possible vars of content into session
-		if ( isset($_GET['id']) ) {
+		if (isset($_GET['id'] ) {
 			$_SESSION['id'] = html2txt($_GET['id']);
 		}
 		else {
 			unset($_SESSION['id']);
 		}
-		if ( isset($_GET['page']) ) {
+		if (isset($_GET['page'])) {
 			$_SESSION['page'] = (int)$_GET['page'];
 		}
 		else {
 			unset($_SESSION['page']);
 		}
-		if ( isset($_GET['letter']) ) {
+		if (isset($_GET['letter'])) {
 			$_SESSION['letter'] = $_GET['letter'];
 		}
 		else {
 			unset($_SESSION['letter']);
 		}
-		if ( isset($_GET['cover']) ) {
+		if (isset($_GET['cover'])) {
 			$_SESSION['cover'] = $_GET['cover'];
 		}
 		else {
 			unset($_SESSION['cover']);
 		}
-		if ( isset($_GET['name']) ) {
+		if (isset($_GET['name'])) {
 			$_SESSION['name'] = $_GET['name'];
 		}
 		else {
@@ -129,21 +129,21 @@ else {
 	}
 	else {
 		// We already have content set, e.g. we added filter to dvd-list
-		if ( !empty($_SESSION['content']) ) {
+		if (!empty($_SESSION['content'])) {
 			// Writeback values
-			if ( isset($_SESSION['id']) ) {
+			if (isset($_SESSION['id'])) {
 			$_GET['id'] = html2txt($_SESSION['id']);
 			}
-			if ( isset($_SESSION['page']) ) {
+			if (isset($_SESSION['page'])) {
 			$_GET['page'] = (int)$_SESSION['page'];
 			}
-			if ( isset($_SESSION['letter']) ) {
+			if (isset($_SESSION['letter'])) {
 			$_GET['letter'] = $_SESSION['letter'];
 			}
-			if ( isset($_SESSION['cover']) ) {
+			if (isset($_SESSION['cover'])) {
 			$_GET['cover'] = $_SESSION['cover'];
 			}
-			if ( isset($_SESSION['name']) ) {
+			if (isset($_SESSION['name'])) {
 			$_GET['name'] = $_SESSION['name'];
 			}
 
@@ -180,7 +180,7 @@ else {
 	#echo "</pre>";
 
 	// Show footer
-	if ( !isset($_GET['ajax_call']) )  {
+	if (!isset($_GET['ajax_call']))  {
 		$smarty = new pmp_Smarty;
 		$smarty->loadFilter('output', 'trimwhitespace');
 		$smarty->display('footer.tpl');

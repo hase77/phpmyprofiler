@@ -685,21 +685,27 @@ function getLangs() {
 
 // Converts currenty $from to $to
 function exchange($from, $to, $value) {
-	if ( $from == 'EUR' ) {
+	if ($from == 'EUR') {
 		$ratefrom = 1;
 	}
 	else {
-		$ratefrom = @mysql_result(dbexec('SELECT rate FROM pmp_rates WHERE id = \'' . $from . '\''), 0);
+		$query = 'SELECT rate FROM pmp_rates WHERE id = ?';
+		$params = [$from];
+		$rate = dbquery_pdo($query, $params);
+		$ratefrom = $rate[0]['rate'];
 	}
 
-	if ( $to == 'EUR' ) {
+	if ( to == 'EUR') {
 		$rateto = 1;
 	}
 	else {
-		$rateto = mysql_result(dbexec('SELECT rate FROM pmp_rates WHERE id = \'' . $to . '\''), 0);
+		$query = 'SELECT rate FROM pmp_rates WHERE id = ?';
+		$params = [$to];
+		$rate = dbquery_pdo($query, $params);
+		$rateto = $rate[0]['rate'];
 	}
 
-	if ( (is_numeric($ratefrom)) && (is_numeric($rateto)) ) {
+	if (is_numeric($ratefrom) && is_numeric($rateto)) {
 		return sprintf('%01.2f', $rateto * $value / $ratefrom);
 	}
 	else {
@@ -856,7 +862,7 @@ function get_collections() {
 	$query = 'SELECT collection FROM pmp_collection WHERE collection NOT IN("Owned", "Ordered", "Wish List")';
 	$cols = dbquery_pdo($query);
 
-	foreach ( $cols as $col ) {
+	foreach ($cols as $col) {
 		$collections[] = $col["collection"];
 	}
 
