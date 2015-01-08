@@ -43,7 +43,7 @@ else {
 $query = 'SELECT DISTINCT id FROM pmp_film WHERE collectiontype != \'Ordered\' AND collectiontype != \'Wish List\'
 		  AND id NOT IN (SELECT id FROM pmp_tags where name = ?) ORDER BY sorttitle LIMIT ?, ?';
 $params = [$pmp_exclude_tag, (((int)$start - 1) * $pmp_cover_page), $pmp_cover_page];
-$cols = dbquery_pdo($query, $params);
+$cols = dbquery_pdo($query, $params, 'assoc');
 
 // Get dvd objects with dvd covers
 foreach ($cols as $col) {
@@ -53,7 +53,7 @@ foreach ($cols as $col) {
 $query = 'SELECT COUNT(DISTINCT id) AS cnt FROM pmp_film WHERE collectiontype != \'Ordered\' AND collectiontype != \'Wish List\'
 		  AND id NOT IN (SELECT id FROM pmp_tags where name = ?)';
 $params = [$pmp_exclude_tag];
-$cols = dbquery_pdo($query, $params);
+$cols = dbquery_pdo($query, $params, 'assoc');
 $count = $cols[0]['cnt'];
 
 $smarty->assign('cover', $cover);

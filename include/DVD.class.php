@@ -9,7 +9,7 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
@@ -102,7 +102,7 @@ class DVD extends smallDVD {
 			$rows = dbquery_pdo($query, $params, 'object');
 			if (count($rows) > 0) {
 				foreach ($rows as $row) {
-					$this->Studios[] = htmlspecialchars($row->studio, ENT_COMPAT, 'UTF-8');;
+					$this->Studios[] = htmlspecialchars($row->studio, ENT_COMPAT, 'UTF-8');
 				}
 			}
 
@@ -112,7 +112,7 @@ class DVD extends smallDVD {
 			$rows = dbquery_pdo($query, $params, 'object');
 			if (count($rows) > 0) {
 				foreach ($rows as $row) {
-					$this->MediaCompanies[] = htmlspecialchars($row->company, ENT_COMPAT, 'UTF-8');;
+					$this->MediaCompanies[] = htmlspecialchars($row->company, ENT_COMPAT, 'UTF-8');
 				}
 			}
 
@@ -122,7 +122,7 @@ class DVD extends smallDVD {
 			$rows = dbquery_pdo($query, $params, 'object');
 			if (count($rows) > 0) {
 				foreach ($rows as $row) {
-					$this->Subtitles[] = htmlspecialchars($row->subtitle, ENT_COMPAT, 'UTF-8');;
+					$this->Subtitles[] = htmlspecialchars($row->subtitle, ENT_COMPAT, 'UTF-8');
 				}
 			}
 
@@ -135,7 +135,11 @@ class DVD extends smallDVD {
 				$this->dts = false;
 				
 				foreach ($rows as $row) {
-					$this->Audio[] = array('Content' => $row->content, 'Format' => $row->format, 'Channels' => $row->channels);
+					$this->Audio[] = [
+						'Content' => $row->content,
+						'Format' => $row->format,
+						'Channels' => $row->channels
+					];
 
 					if (preg_match('/\bDolby Digital\b/i', $row->format)) {
 						$this->dd = true;
@@ -170,13 +174,13 @@ class DVD extends smallDVD {
 			}
 
 			// Credits
-			$sql  = 'SELECT firstname, middlename, lastname, fullname as full, birthyear, type, subtype, creditedas
-				FROM pmp_common_credits, pmp_credits WHERE pmp_credits.id = \'' . mysql_real_escape_string($id)
-				. '\' AND pmp_credits.credit_id = pmp_common_credits.credit_id ORDER BY sortorder';
-
-			$result = dbexec($sql);
-			if( @mysql_num_rows($result) > 0 ) {
-				while ( $row = mysql_fetch_object($result) ) {
+			$query  = 'SELECT firstname, middlename, lastname, fullname as full, birthyear, type, subtype, creditedas
+					   FROM pmp_common_credits, pmp_credits WHERE pmp_credits.id = ? 
+					   AND pmp_credits.credit_id = pmp_common_credits.credit_id ORDER BY sortorder';
+			$params = [$id];
+			$rows = dbquery_pdo($query, $params, 'object');
+			if (count($rows) > 0) {
+				foreach ($rows as $row) {
 					$row->full_encoded = rawurlencode($row->full);
 					$row->picname = getHeadshot($row->full, $row->birthyear, $row->firstname, $row->middlename, $row->lastname);
 					$row->pic = !empty($row->picname);
@@ -185,13 +189,13 @@ class DVD extends smallDVD {
 			}
 
 			// Cast
-			$sql  = 'SELECT firstname, middlename, lastname, fullname as full, birthyear, role, uncredited, voice, creditedas
-				FROM pmp_common_actors, pmp_actors WHERE pmp_actors.id = \'' . mysql_real_escape_string($id) . '\'
-				AND pmp_actors.actor_id = pmp_common_actors.actor_id ORDER BY sortorder';
-
-			$result = dbexec($sql);
-			if ( @mysql_num_rows($result) > 0 ) {
-				while ( $row = mysql_fetch_object($result) ) {
+			$query  = 'SELECT firstname, middlename, lastname, fullname as full, birthyear, role, uncredited, voice, creditedas
+					   FROM pmp_common_actors, pmp_actors WHERE pmp_actors.id = ?
+					   AND pmp_actors.actor_id = pmp_common_actors.actor_id ORDER BY sortorder';
+			$params = [$id];
+			$rows = dbquery_pdo($query, $params, 'object');
+			if (count($rows) > 0) {
+				foreach ($rows as $row) {
 					$row->full_encoded = rawurlencode($row->full);
 					$row->picname = getHeadshot($row->full, $row->birthyear, $row->firstname, $row->middlename, $row->lastname);
 					$row->pic = !empty($row->picname);
@@ -200,67 +204,73 @@ class DVD extends smallDVD {
 			}
 
 			// Tags
-			$sql = 'SELECT name, fullname FROM pmp_tags WHERE id = \'' . mysql_real_escape_string($id) . '\'';
-			$result = dbexec($sql);
-			if ( @mysql_num_rows($result) > 0 ) {
-				while ( $row = mysql_fetch_object($result) ) {
-					$this->Tags[] = array("fullname" => $row->fullname, "name" => $row->name);
+			$query = 'SELECT name, fullname FROM pmp_tags WHERE id = ?';
+			$params = [$id];
+			$rows = dbquery_pdo($query, $params, 'object');
+			if (count($rows) > 0) {
+				foreach ($rows as $row) {
+					$this->Tags[] = [
+						'fullname' => $row->fullname,
+						'name' => $row->name
+					];
 				}
 			}
 
 			// Reviews
-			$sql = 'SELECT name, title, email, date_format(date, \'' . $pmp_dateformat . '\') AS date, text, vote
-				FROM pmp_reviews WHERE film_id = \'' . mysql_real_escape_string($id) . '\' and status = 1
-				ORDER BY date DESC';
-			$result = dbexec($sql);
-			if ( @mysql_num_rows($result) > 0 ) {
-				while ( $row = mysql_fetch_object($result) ) {
-					$this->Reviews[] = array("Name" => $row->name, "Title" => $row->title, "eMail" => $row->email,
-						"Text" => $row->text, "Vote" => $row->vote, "Date" => $row->date);
+			$query = "SELECT name, title, email, date_format(date, '{$pmp_dateformat}') AS date, text, vote
+					  FROM pmp_reviews WHERE film_id = ? and status = 1 ORDER BY date DESC";
+			$params = [$id];
+			$rows = dbquery_pdo($query, $params, 'object');
+			if (count($rows) > 0) {
+				foreach ($rows as $row) {
+					$this->Reviews[] = [
+						"Name" => $row->name,
+						"Title" => $row->title,
+						"eMail" => $row->email,
+						"Text" => $row->text,
+						"Vote" => $row->vote,
+						"Date" => $row->date
+					];
 				}
 			}
 
 			// Awards
-			if ( !$this->OriginalTitle ) {
-				$sql = 'SELECT award, awardyear, category, winner, nominee FROM pmp_awards WHERE LOWER(title) = LOWER(\''
-					. mysql_real_escape_string(html_entity_decode($this->Title, ENT_QUOTES, 'UTF-8')) . '\') AND awardyear BETWEEN \''
-					. mysql_real_escape_string($this->Year) . '\' AND \''  . mysql_real_escape_string($this->Year) . '\'+1 ORDER BY award, winner DESC';
+			if (!$this->OriginalTitle) {
+				$query = 'SELECT award, awardyear, category, winner, nominee FROM pmp_awards WHERE LOWER(title) = LOWER(?)
+						  AND awardyear BETWEEN ? AND ?+1 ORDER BY award, winner DESC';
+				$params = [html_entity_decode($this->Title, ENT_QUOTES, 'UTF-8'), $this->Year, $this->Year];
 			}
 			else {
-				$sql = 'SELECT award, awardyear, category, winner, nominee FROM pmp_awards WHERE LOWER(title) = LOWER(\''
-					. mysql_real_escape_string(html_entity_decode($this->OriginalTitle, ENT_QUOTES, 'UTF-8')) . '\') AND awardyear BETWEEN \''
-					. mysql_real_escape_string($this->Year) . '\' AND \''  . mysql_real_escape_string($this->Year) . '\'+1 ORDER BY award, winner DESC';
+				$sql = 'SELECT award, awardyear, category, winner, nominee FROM pmp_awards WHERE LOWER(title) = LOWER(?)
+						AND awardyear BETWEEN ? AND ?+1 ORDER BY award, winner DESC';
+				$params = html_entity_decode($this->OriginalTitle, ENT_QUOTES, 'UTF-8'), $this->Year, $this->Year];
 			}
-			$result = dbexec($sql);
-			if ( @mysql_num_rows($result) > 0 ) {
-				while ( $row = mysql_fetch_object($result) ) {
+			$rows = dbquery_pdo($query, $params, 'object');
+			if (count($rows) > 0) {
+				foreach ($rows as $row) {
 					$this->Awards[] = $row;
 				}
 			}
 
 			// Videos
-			$sql = "SELECT type, ext_id, title FROM pmp_videos WHERE id = '" . mysql_real_escape_string($id) . "'";
-			$result = dbexec($sql);
-			if ( @mysql_num_rows($result) > 0 ) {
-				while ( $row = mysql_fetch_object($result) ) {
+			$query = 'SELECT type, ext_id, title FROM pmp_videos WHERE id = ?';
+			$params = [$id];
+			$rows = dbquery_pdo($query, $params, 'object');
+			if (count($rows) > 0) {
+				foreach ($rows as $row) {
 					$this->Videos[] = $row;
 				}
 			}
 
 			// Get external reviews
-			#$sql = "SELECT DISTINCT (title) FROM pmp_reviews_connect WHERE id = '" . mysql_real_escape_string($id) . "'";
-			#$result = dbexec($sql);
 			$i = 0;
-			#while ( $tmp = mysql_fetch_object($result) ) {
-				$this->extReviews[$i] = new stdClass();
-				#$this->extReviews[$i]->reviewTitle = $tmp->title;
-				$sql = "SELECT * FROM pmp_reviews_connect LEFT JOIN pmp_reviews_external ON review_id = pmp_reviews_external.id WHERE pmp_reviews_connect.id = '" . mysql_real_escape_string($id) . "'";
-				#if (isset($tmp->title)) {
-				#	$sql .= " AND title = '" . mysql_real_escape_string($tmp->title) . "'";
-				#}
-				$result2 = dbexec($sql);
-				while ( $row = mysql_fetch_object($result2) ) {
-					if ( $row->type == 'imdb' ) {
+			$query ='"SELECT * FROM pmp_reviews_connect LEFT JOIN pmp_reviews_external ON review_id = pmp_reviews_external.id WHERE pmp_reviews_connect.id = ?';
+			$params = [$id];
+			$rows = dbquery_pdo($query, $params, 'object');
+			if (count($rows) > 0) {
+				foreach ($rows as $row) {
+					$this->extReviews[$i] = new stdClass();
+					if ($row->type == 'imdb') {
 						$this->extReviews[$i]->imdbRating = $row->review;
 						$this->extReviews[$i]->imdbVotes = $row->votes;
 						$this->extReviews[$i]->imdbTop250 = $row->top250;
@@ -269,7 +279,7 @@ class DVD extends smallDVD {
 							$this->imdbID = $row->ext_id;
 						}
 					}
-					if ( $row->type == 'ofdb' ) {
+					if ($row->type == 'ofdb') {
 						$this->extReviews[$i]->ofdbRating = $row->review;
 						$this->extReviews[$i]->ofdbVotes = $row->votes;
 						$this->extReviews[$i]->ofdbTop250 = $row->top250;
@@ -278,31 +288,30 @@ class DVD extends smallDVD {
 							$this->ofdbID = $row->ext_id;
 						}
 					}
-					if ( $row->type == 'rotten_c' ) {
+					if ($row->type == 'rotten_c') {
 						$this->extReviews[$i]->rotcRating = $row->review;
 						$this->extReviews[$i]->rotcVotes = $row->votes;
 						if (!isset($this->rottenID)) {
 							$this->rottenID = $row->ext_id;
 						}
 					}
-					if ( $row->type == 'rotten_u' ) {
+					if ($row->type == 'rotten_u') {
 						$this->extReviews[$i]->rotuRating = $row->review;
 						$this->extReviews[$i]->rotuVotes = $row->votes;
 					}
+					$i++;
 				}
-				$i++;
-			#}
+			}
 			if ($i > 0) {
 				$this->reviewTitleNum = $i;
 			}
 
-			unset($this->_db);
-
 			// My Links
-			$sql = "SELECT * FROM pmp_mylinks WHERE id = '" . mysql_real_escape_string($id) . "' ORDER BY category LIMIT 0, 300";
-			$result = dbexec($sql);
-			if (@mysql_num_rows($result) > 0 ) {
-				while ( $row = mysql_fetch_object($result) ) {
+			$query = 'SELECT * FROM pmp_mylinks WHERE id = ? ORDER BY category';
+			$params = [$id];
+			$rows = dbquery_pdo($query, $params, 'object');
+			if (count($rows) > 0) {
+				foreach ($rows as $row) {
 					$this->MyLinks[] = $row;
 				}
 			}

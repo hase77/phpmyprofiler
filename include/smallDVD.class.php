@@ -9,7 +9,7 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
@@ -32,7 +32,7 @@ class smallDVD {
 				$params = [$id];
 			}
 
-			$row = dbquery_pdo($query, $params);
+			$row = dbquery_pdo($query, $params, 'assoc');
 
 			if (count($row) > 0) {
 				$this->id = $id;
@@ -98,7 +98,7 @@ class smallDVD {
 					$this->Gift = true;
 					$query = "SELECT * FROM pmp_users WHERE user_id = ?";
 					$params = [$row[0]['giftfrom']];
-					$result = dbquery_pdo($query, $params);
+					$result = dbquery_pdo($query, $params, 'assoc');
 					if (count($result) > 0) {
 						$this->GiftFrom = new stdClass();
 						$this->GiftFrom->FirstName = $result[0]['firstname'];
@@ -143,7 +143,7 @@ class smallDVD {
 					$this->Loaned = true;
 					$query = 'SELECT * FROM pmp_users WHERE user_id = ?';
 					$params = [$row[0]['loanedto']];
-					$result = dbquery_pdo($query, $params);
+					$result = dbquery_pdo($query, $params, 'assoc');
 					if (count($result) > 0) {
 						$this->LoanTo = new stdClass();
 						$this->LoanTo->FirstName = $result[0]['firstname'];
@@ -169,12 +169,12 @@ class smallDVD {
 				$query = 'SELECT * FROM pmp_boxset LEFT JOIN pmp_film ON pmp_film.id = pmp_boxset.childid
 						  WHERE pmp_boxset.id = ? ORDER BY ?';
 				$params = [$id, $pmp_menue_childs];
-				$result = dbquery_pdo($query, $params);
+				$result = dbquery_pdo($query, $params, 'object');
 
 				if (count($result) > 0) {
 					$this->Boxset_childs = array();
 					foreach ($result as $box_child) {
-						if ( !empty($row[0]->childid) ) {
+						if (!empty($box_child->childid) ) {
 							$child = new smallDVD($box_child->childid);
 
 							if (!empty($child->id)) {
@@ -194,14 +194,14 @@ class smallDVD {
 				// Or child?
 				$query = 'SELECT id FROM pmp_boxset WHERE childid = ?';
 				$params = [$id];
-				$result = dbquery_pdo($query, $params);
+				$result = dbquery_pdo($query, $params, 'assoc');
 				if (count($result) > 0) {
 					$this->partofBoxset = $result[0]['id'];
 				}
 				else {
 					$this->partofBoxset = false;
 				}
-				
+
 				// Countries of origin
 				$query = 'SELECT country FROM pmp_countries_of_origin WHERE id = ?';
 				$params = [$id];
@@ -233,9 +233,8 @@ class smallDVD {
 
 	function getOriginFlag() {
 		global $pmp_theme;
-		
 		$origins = '';
-		
+
 		foreach ($this->Origins as $origin) {
 			$flag = getFlagName($origin);
 
@@ -246,7 +245,7 @@ class smallDVD {
 				$origins .= '<img src="'._PMP_REL_PATH.'/themes/'.$pmp_theme.'/images/flags/'.$flag.'" alt="'.$origin.'" width="20" title="'.$origin.'"/>';
 			}
 		}
-		
+
 		return $origins;
 	}
 
