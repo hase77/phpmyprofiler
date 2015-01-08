@@ -264,7 +264,7 @@ class DVD extends smallDVD {
 
 			// Get external reviews
 			$i = 0;
-			$query ='"SELECT * FROM pmp_reviews_connect LEFT JOIN pmp_reviews_external ON review_id = pmp_reviews_external.id WHERE pmp_reviews_connect.id = ?';
+			$query = 'SELECT * FROM pmp_reviews_connect LEFT JOIN pmp_reviews_external ON review_id = pmp_reviews_external.id WHERE pmp_reviews_connect.id = ?';
 			$params = [$id];
 			$rows = dbquery_pdo($query, $params, 'object');
 			if (count($rows) > 0) {
