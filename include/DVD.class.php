@@ -86,16 +86,6 @@ class DVD extends smallDVD {
 				}
 			}
 
-			// Countries of origin
-			$query = 'SELECT country FROM pmp_countries_of_origin WHERE id = ?';
-			$params = [$id];
-			$rows = dbquery_pdo($query, $params, 'object');
-			if (count($rows) > 0) {
-				foreach ($rows as $row) {
-					$this->Origins[] = $row->country;
-				}
-			}
-
 			// Genres
 			$query = 'SELECT genre FROM pmp_genres WHERE id = ?';
 			$params = [$id];
@@ -169,7 +159,7 @@ class DVD extends smallDVD {
 			}
 
 			// Events
-			$query = "SELECT *, DATE_FORMAT(timestamp, \'%H:%i:%s\') AS time, DATE_FORMAT(timestamp, \'{$pmp_dateformat}\') AS date
+			$query = "SELECT *, DATE_FORMAT(timestamp, '%H:%i:%s') AS time, DATE_FORMAT(timestamp, '{$pmp_dateformat}') AS date
 					  FROM pmp_events LEFT JOIN pmp_users ON pmp_events.user_id = pmp_users.user_id WHERE id = ?";
 			$params = [$id];
 			$rows = dbquery_pdo($query, $params, 'object');
