@@ -10,7 +10,7 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
@@ -28,7 +28,7 @@ $smarty->loadFilter('output', 'trimwhitespace');
 
 // News
 $query = 'SELECT id, date, title, text FROM pmp_news ORDER BY date DESC LIMIT 0, 1';
-$result = dbquery_pdo($query);
+$result = dbquery_pdo($query, null, 'assoc');
 $news = array();
 if (count($result) > 0) {
 	$news[] = $result[0];
@@ -42,7 +42,7 @@ $query = 'SELECT pmp_film.id FROM pmp_film LEFT JOIN pmp_boxset ON pmp_film.id =
 		  ORDER BY purchdate DESC LIMIT 0, ?';
 	
 $params = [$pmp_exclude_tag, $pmp_dvd_start];
-$result = dbquery_pdo($query, $params);
+$result = dbquery_pdo($query, $params, 'assoc');
 
 $new = array();
 foreach ($result as $row) {
@@ -57,7 +57,7 @@ $query = 'SELECT pmp_film.id FROM pmp_film LEFT JOIN pmp_boxset ON pmp_film.id =
 		  ORDER BY purchdate DESC LIMIT 0, ?';
 	
 $params = [$pmp_exclude_tag, $pmp_dvd_start];
-$result = dbquery_pdo($query, $params);
+$result = dbquery_pdo($query, $params, 'assoc');
 
 $order = array();
 foreach ($result as $row) {
@@ -69,7 +69,7 @@ $smarty->assign('ordered', $order);
 $query = 'SELECT SUM(countas) AS cnt FROM pmp_film WHERE collectiontype != \'Ordered\' AND collectiontype != \'Wish List\'
 		  AND pmp_film.id NOT IN (SELECT id FROM pmp_tags where name = ?)';
 $params = [$pmp_exclude_tag];
-$result = dbquery_pdo($query, $params);
+$result = dbquery_pdo($query, $params, 'assoc');
 $count = $result[0]['cnt'];
 $smarty->assign('count', $count);
 
@@ -78,7 +78,7 @@ $smarty->assign('counter', inccounter());
 
 // Last update
 $query = 'SELECT data FROM pmp_statistics WHERE type = \'last_update\'';
-$result = dbquery_pdo($query);
+$result = dbquery_pdo($query, null, 'assoc');
 if (count($result) > 0) {
 	$last_update = $result[0]['data'];
 	$smarty->assign('last_update', strftime($pmp_dateformat, strtotime($last_update)));

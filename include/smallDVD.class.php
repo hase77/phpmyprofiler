@@ -172,7 +172,7 @@ class smallDVD {
 				$result = dbquery_pdo($query, $params, 'object');
 
 				if (count($result) > 0) {
-					$this->Boxset_childs = array();
+					$this->Boxset_childs = [];
 					foreach ($result as $box_child) {
 						if (!empty($box_child->childid) ) {
 							$child = new smallDVD($box_child->childid);
