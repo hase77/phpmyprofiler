@@ -186,7 +186,7 @@ else {
 		$smarty->display('footer.tpl');
 	}
 	
-	dbclose_pdo()
+	dbclose_pdo();
 
 	ob_flush();
 }
