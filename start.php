@@ -80,7 +80,7 @@ $query = 'SELECT data FROM pmp_statistics WHERE type = \'last_update\'';
 $result = dbquery_pdo($query);
 if (count($result) > 0) {
 	$last_update = $cols[0]['data'];
-	$smarty->assign('last_update', strftime($pmp_dateformat, strtotime($last_update));
+	$smarty->assign('last_update', strftime($pmp_dateformat, strtotime($last_update)));
 }
 
 $smarty->display('start.tpl');
