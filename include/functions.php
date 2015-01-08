@@ -129,10 +129,17 @@ function dbconnect_pdo( $dieonerror = true ) {
 		$pmp_db = new PDO(
 			"mysql:host={$pmp_sqlhost};dbname={$pmp_sqldatabase};charset=utf8",
 			$pmp_sqluser, $pmp_sqlpass,
-			[PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8;"]
-			
-			// ToDo: Set timezone, get mysql version (for what?)			
+			[PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8;"]			
 		);
+		
+		// Enable prepared statements
+		$pmp_db->setAttribute( PDO::ATTR_EMULATE_PREPARES, false );
+
+		// Use exceptions
+		$pmp_db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+			
+		// ToDo: Set timezone, get mysql version (for what?)			
+
 	}
 	catch ( PDOException $e ) {
 		if ( $dieonerror ) {
@@ -172,15 +179,14 @@ function dbquery_pdo( $query, $params = null, $continueonerror = false ) {
 	$result = false;
 	replace_table_prefix($query);
 	
-	$stmt = $pmp_db->prepare($query);
-	
-	// ToDo: assign values
-	$stmt->execute($params);
-	$result = $stmt->fetchAll();
-
-	if ( $pmp_db->errorInfo() ) {
+	try {
+		$stmt = $pmp_db->prepare($query);	
+		$stmt->execute($params);
+		$result = $stmt->fetchAll();
+	}
+	catch ( PDOException $e ) {
 		if ( !$continueonerror ) {
-			echo "<strong>SQL-Statement failed:</strong><br /><pre>\n\nQuery:\n{$query}</pre>";
+			echo "<strong>SQL-Statement failed: ". htmlspecialchars($e->getMessage()) . "</strong><br /><pre>\n\nQuery:\n{$query}</pre>";
 			die;
 		}
 	}  
