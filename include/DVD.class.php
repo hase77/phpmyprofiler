@@ -28,7 +28,7 @@ class DVD extends smallDVD {
 
 			// Features
 			$query = 'SELECT * FROM pmp_features WHERE id = ?';
-			$params = [$this->id];
+			$params = [$id];
 			$row = dbquery_pdo($query, $params, 'object');
 			if (count($row) > 0) {
 				$this->Scenes = $row[0]->sceneaccess;
@@ -56,7 +56,7 @@ class DVD extends smallDVD {
 
 			// Format
 			$query = 'SELECT * FROM pmp_format WHERE id = ?';
-			$params = [$this->id];
+			$params = [$id];
 			$row = dbquery_pdo($query, $params, 'object');
 			if (count($row) > 0) {
 				$this->Ratio = $row[0]->ratio;
@@ -78,7 +78,7 @@ class DVD extends smallDVD {
 
 			// Regioncode
 			$query = 'SELECT region FROM pmp_regions WHERE id = ?';
-			$params = [$this->id];
+			$params = [$id];
 			$rows = dbquery_pdo($query, $params, 'object');
 			if (count($rows) > 0) {
 				foreach ($rows as $row) {
@@ -88,7 +88,7 @@ class DVD extends smallDVD {
 
 			// Countries of origin
 			$query = 'SELECT country FROM pmp_countries_of_origin WHERE id = ?';
-			$params = [$this->id];
+			$params = [$id];
 			$rows = dbquery_pdo($query, $params, 'object');
 			if (count($rows) > 0) {
 				foreach ($rows as $row) {
@@ -98,7 +98,7 @@ class DVD extends smallDVD {
 
 			// Genres
 			$query = 'SELECT genre FROM pmp_genres WHERE id = ?';
-			$params = [$this->id];
+			$params = [$id];
 			$rows = dbquery_pdo($query, $params, 'object');
 			if (count($rows) > 0) {
 				foreach ($rows as $row) {
@@ -108,7 +108,7 @@ class DVD extends smallDVD {
 
 			// Studios
 			$query = 'SELECT studio FROM pmp_studios WHERE id = ?';
-			$params = [$this->id];
+			$params = [$id];
 			$rows = dbquery_pdo($query, $params, 'object');
 			if (count($rows) > 0) {
 				foreach ($rows as $row) {
@@ -118,7 +118,7 @@ class DVD extends smallDVD {
 
 			// Media Companies
 			$query = 'SELECT company FROM pmp_media_companies WHERE id = ?';
-			$params = [$this->id];
+			$params = [$id];
 			$rows = dbquery_pdo($query, $params, 'object');
 			if (count($rows) > 0) {
 				foreach ($rows as $row) {
@@ -128,7 +128,7 @@ class DVD extends smallDVD {
 
 			// Subtitles
 			$query = 'SELECT subtitle FROM pmp_subtitles WHERE id = ?';
-			$params = [$this->id];
+			$params = [$id];
 			$rows = dbquery_pdo($query, $params, 'object');
 			if (count($rows) > 0) {
 				foreach ($rows as $row) {
@@ -138,7 +138,7 @@ class DVD extends smallDVD {
 
 			// Audio
 			$query = 'SELECT content, format, channels FROM pmp_audio WHERE id = ?';
-			$params = [$this->id];
+			$params = [$id];
 			$rows = dbquery_pdo($query, $params, 'object');
 			if (count($rows) > 0) {
 				$this->dd = false;
@@ -158,7 +158,7 @@ class DVD extends smallDVD {
 
 			// Discs
 			$query = 'SELECT * FROM pmp_discs WHERE id = ?';
-			$params = [$this->id];
+			$params = [$id];
 			$rows = dbquery_pdo($query, $params, 'object');
 			if (count($rows) > 0) {
 				foreach ($rows as $row) {
@@ -171,7 +171,7 @@ class DVD extends smallDVD {
 			// Events
 			$sql  = 'SELECT *, DATE_FORMAT(timestamp, \'%H:%i:%s\') AS time, DATE_FORMAT(timestamp, \'' . $pmp_dateformat . '\') AS date ';
 			$sql .= 'FROM pmp_events LEFT JOIN pmp_users ON pmp_events.user_id = pmp_users.user_id ';
-			$sql .= 'WHERE id = \'' . mysql_real_escape_string($this->id) . '\'';
+			$sql .= 'WHERE id = \'' . mysql_real_escape_string($id) . '\'';
 			$result = dbexec($sql);
 			if ( @mysql_num_rows($result) > 0 ) {
 				while ( $row = mysql_fetch_object($result) ) {
@@ -181,7 +181,7 @@ class DVD extends smallDVD {
 
 			// Credits
 			$sql  = 'SELECT firstname, middlename, lastname, fullname as full, birthyear, type, subtype, creditedas
-				FROM pmp_common_credits, pmp_credits WHERE pmp_credits.id = \'' . mysql_real_escape_string($this->id)
+				FROM pmp_common_credits, pmp_credits WHERE pmp_credits.id = \'' . mysql_real_escape_string($id)
 				. '\' AND pmp_credits.credit_id = pmp_common_credits.credit_id ORDER BY sortorder';
 
 			$result = dbexec($sql);
@@ -196,7 +196,7 @@ class DVD extends smallDVD {
 
 			// Cast
 			$sql  = 'SELECT firstname, middlename, lastname, fullname as full, birthyear, role, uncredited, voice, creditedas
-				FROM pmp_common_actors, pmp_actors WHERE pmp_actors.id = \'' . mysql_real_escape_string($this->id) . '\'
+				FROM pmp_common_actors, pmp_actors WHERE pmp_actors.id = \'' . mysql_real_escape_string($id) . '\'
 				AND pmp_actors.actor_id = pmp_common_actors.actor_id ORDER BY sortorder';
 
 			$result = dbexec($sql);
@@ -210,7 +210,7 @@ class DVD extends smallDVD {
 			}
 
 			// Tags
-			$sql = 'SELECT name, fullname FROM pmp_tags WHERE id = \'' . mysql_real_escape_string($this->id) . '\'';
+			$sql = 'SELECT name, fullname FROM pmp_tags WHERE id = \'' . mysql_real_escape_string($id) . '\'';
 			$result = dbexec($sql);
 			if ( @mysql_num_rows($result) > 0 ) {
 				while ( $row = mysql_fetch_object($result) ) {
@@ -220,7 +220,7 @@ class DVD extends smallDVD {
 
 			// Reviews
 			$sql = 'SELECT name, title, email, date_format(date, \'' . $pmp_dateformat . '\') AS date, text, vote
-				FROM pmp_reviews WHERE film_id = \'' . mysql_real_escape_string($this->id) . '\' and status = 1
+				FROM pmp_reviews WHERE film_id = \'' . mysql_real_escape_string($id) . '\' and status = 1
 				ORDER BY date DESC';
 			$result = dbexec($sql);
 			if ( @mysql_num_rows($result) > 0 ) {
@@ -249,7 +249,7 @@ class DVD extends smallDVD {
 			}
 
 			// Videos
-			$sql = "SELECT type, ext_id, title FROM pmp_videos WHERE id = '" . mysql_real_escape_string($this->id) . "'";
+			$sql = "SELECT type, ext_id, title FROM pmp_videos WHERE id = '" . mysql_real_escape_string($id) . "'";
 			$result = dbexec($sql);
 			if ( @mysql_num_rows($result) > 0 ) {
 				while ( $row = mysql_fetch_object($result) ) {
@@ -258,13 +258,13 @@ class DVD extends smallDVD {
 			}
 
 			// Get external reviews
-			#$sql = "SELECT DISTINCT (title) FROM pmp_reviews_connect WHERE id = '" . mysql_real_escape_string($this->id) . "'";
+			#$sql = "SELECT DISTINCT (title) FROM pmp_reviews_connect WHERE id = '" . mysql_real_escape_string($id) . "'";
 			#$result = dbexec($sql);
 			$i = 0;
 			#while ( $tmp = mysql_fetch_object($result) ) {
 				$this->extReviews[$i] = new stdClass();
 				#$this->extReviews[$i]->reviewTitle = $tmp->title;
-				$sql = "SELECT * FROM pmp_reviews_connect LEFT JOIN pmp_reviews_external ON review_id = pmp_reviews_external.id WHERE pmp_reviews_connect.id = '" . mysql_real_escape_string($this->id) . "'";
+				$sql = "SELECT * FROM pmp_reviews_connect LEFT JOIN pmp_reviews_external ON review_id = pmp_reviews_external.id WHERE pmp_reviews_connect.id = '" . mysql_real_escape_string($id) . "'";
 				#if (isset($tmp->title)) {
 				#	$sql .= " AND title = '" . mysql_real_escape_string($tmp->title) . "'";
 				#}
@@ -309,7 +309,7 @@ class DVD extends smallDVD {
 			unset($this->_db);
 
 			// My Links
-			$sql = "SELECT * FROM pmp_mylinks WHERE id = '" . mysql_real_escape_string($this->id) . "' ORDER BY category LIMIT 0, 300";
+			$sql = "SELECT * FROM pmp_mylinks WHERE id = '" . mysql_real_escape_string($id) . "' ORDER BY category LIMIT 0, 300";
 			$result = dbexec($sql);
 			if (@mysql_num_rows($result) > 0 ) {
 				while ( $row = mysql_fetch_object($result) ) {
