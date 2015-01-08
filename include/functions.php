@@ -120,6 +120,7 @@ function dbconnect( $dieonerror = true ) {
 }
 
 // Connect to the database via PDO
+// Dies on error (with an error message) if $dieonerror is true
 function dbconnect_pdo( $dieonerror = true ) {
 	global $pmp_db, $pmp_timezone, $pmp_mysql_ver;
 	global $pmp_sqlhost, $pmp_sqluser, $pmp_sqlpass, $pmp_sqldatabase;
@@ -129,6 +130,8 @@ function dbconnect_pdo( $dieonerror = true ) {
 			"mysql:host={$pmp_sqlhost};dbname={$pmp_sqldatabase};charset=utf8",
 			$pmp_sqluser, $pmp_sqlpass,
 			[PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8;"]
+			
+			// ToDo: Set timezone, get mysql version (for what?)			
 		);
 	}
 	catch ( PDOException $e ) {
@@ -139,7 +142,7 @@ function dbconnect_pdo( $dieonerror = true ) {
 				, if this does not fix the error, please connect the Webmaster<br><br><b>Error returned:</b><br>
 				<form name='mysql'><textarea rows=\"15\" cols=\"45\">" . htmlspecialchars($e->getMessage()) . "</textarea></form>
 				<br></blockquote></body></html>" ;
-			exit();
+			die;
 		}
 	}	
 }
@@ -161,19 +164,29 @@ function dbexec($sql, $continueonerror = false) {
 	return $result;
 }
 
-function dbquery_pdo( $query, $values = null, $continueonerror = false ) {
+// Prepare and execute the query via PDO
+// If $continueonerror is set to true the script will abort with an error message if the query fails.
+function dbquery_pdo( $query, $params = null, $continueonerror = false ) {
 	global $pmp_db;
 	
+	$result = false;
 	replace_table_prefix($query);
-	$stmt = $pmp_db->query($query);
+	
+	$stmt = $pmp_db->prepare($query);
 	
 	// ToDo: assign values
-	
+	$stmt = $pmp_db->execute($params);
 	$result = $stmt->fetchAll();
+
+	if ( $pmp_db->errorInfo() ) {
+		if ( !$continueonerror ) {
+			echo "<strong>SQL-Statement failed:</strong><br /><pre>" . 
+				. "\n\nQuery:\n{$query}</pre>";
+			die;
+		}
+	}  
 	
-	// ToDo: Catch error
-	
-	return result;
+	return $result;
 }
 
 // Close database
