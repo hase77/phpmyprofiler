@@ -137,29 +137,31 @@ class DVD extends smallDVD {
 			}
 
 			// Audio
-			$sql = 'SELECT content, format, channels FROM pmp_audio WHERE id = \'' . mysql_real_escape_string($this->id) . '\'';
-			$result = dbexec($sql);
-			if ( @mysql_num_rows($result) > 0 ) {
+			$query = 'SELECT content, format, channels FROM pmp_audio WHERE id = ?';
+			$params = [$this->id];
+			$rows = dbquery_pdo($query, $params, 'object');
+			if (count($rows) > 0) {
 				$this->dd = false;
 				$this->dts = false;
-
-				while ( $row = mysql_fetch_object($result) ) {
+				
+				foreach ($rows as $row) {
 					$this->Audio[] = array('Content' => $row->content, 'Format' => $row->format, 'Channels' => $row->channels);
 
-					if ( preg_match('/\bDolby Digital\b/i', $row->format) ) {
+					if (preg_match('/\bDolby Digital\b/i', $row->format)) {
 						$this->dd = true;
 					}
-					if ( preg_match('/\bDTS\b/i', $row->format) ) {
+					if (preg_match('/\bDTS\b/i', $row->format)) {
 						$this->dts = true;
 					}
 				}
 			}
 
 			// Discs
-			$sql = 'SELECT * FROM pmp_discs WHERE id = \'' . mysql_real_escape_string($this->id) . '\'';
-			$result = dbexec($sql);
-			if ( @mysql_num_rows($result) > 0 ) {
-				while ( $row = mysql_fetch_object($result) ) {
+			$query = 'SELECT * FROM pmp_discs WHERE id = ?';
+			$params = [$this->id];
+			$rows = dbquery_pdo($query, $params, 'object');
+			if (count($rows) > 0) {
+				foreach ($rows as $row) {
 					$row->descsidea = htmlspecialchars($row->descsidea, ENT_COMPAT, 'UTF-8'); 
 					$row->descsideb = htmlspecialchars($row->descsideb, ENT_COMPAT, 'UTF-8'); 
 					$this->Discs[] = $row;
