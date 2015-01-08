@@ -96,7 +96,7 @@ else {
 		}
 
 		// Save all possible vars of content into session
-		if (isset($_GET['id'] ) {
+		if (isset($_GET['id'])) {
 			$_SESSION['id'] = html2txt($_GET['id']);
 		}
 		else {
