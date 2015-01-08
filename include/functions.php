@@ -613,7 +613,7 @@ function inccounter($filmid = null) {
 		if (count($result) == 0) {
 			$sql = 'INSERT INTO pmp_counter_profil (date, film_id, sid) VALUES (NOW(), ?, ?)';
 			$params = [$sid, $filmid];
-			dbexecute_pdo($query, $params);
+			dbexecute_pdo($sql, $params);
 		}
 
 		$query = 'SELECT COUNT(id) AS cnt FROM pmp_counter_profil WHERE film_id = ?';
@@ -632,14 +632,14 @@ function inccounter($filmid = null) {
 		}
 	}
 	else {
-		$sql = 'SELECT COUNT(id) AS cnt FROM pmp_counter WHERE sid = ? AND NOW() < DATE_ADD(date, INTERVAL 2 HOUR)';
+		$query = 'SELECT COUNT(id) AS cnt FROM pmp_counter WHERE sid = ? AND NOW() < DATE_ADD(date, INTERVAL 2 HOUR)';
 		$params = [$sid];
 		$result = dbquery_pdo($query, $params, 'assoc');
 
 		if (count($result) == 0) {
 			$sql = 'INSERT INTO pmp_counter_profil (date, sid) VALUES (NOW(), ?)';
 			$params = [$sid];
-			dbexecute_pdo($query, $params);
+			dbexecute_pdo($sql, $params);
 		}
 
 		$query = 'SELECT COUNT(id) AS count_all FROM pmp_counter';
