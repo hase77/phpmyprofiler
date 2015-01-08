@@ -565,6 +565,7 @@ function get_currency_digits($currency) {
 // If a film id is given the access to a film is counted
 function inccounter($filmid = '') {
 	$sid = session_id();
+	dbconnect();
 
 	if ( $filmid != '' ) {
 		$sql = 'SELECT COUNT(id) AS cnt FROM pmp_counter_profil WHERE sid = \'' . mysql_real_escape_string($sid)
