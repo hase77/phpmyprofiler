@@ -533,7 +533,7 @@ function getScreenshots($id, $praefix = '') {
 							}
 							else {
 								$thumb_y = 90;
-								$thumb_x = 90 *  $old_x / $old_y);
+								$thumb_x = 90 * ($old_x / $old_y);
 							}
 							// Create thumb
 							$dst_img = ImageCreateTrueColor($thumb_x, $thumb_y);
