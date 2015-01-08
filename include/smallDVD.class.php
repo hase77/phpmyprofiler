@@ -34,11 +34,11 @@ class smallDVD {
 
 			$row = dbquery_pdo($query, $params);
 
-			if (count($row[0]) > 0) {
+			if (count($row) > 0) {
 				$this->id = $id;
-			
+
 				$this->ProfileDate = strftime($pmp_dateformat, strtotime($row[0]['profiletimestamp']));
-		
+
 				if ($row[0]['media_bluray'] == 1) {
 					$this->Media = 'Blu-ray';
 				}
@@ -51,7 +51,7 @@ class smallDVD {
 				else if ($row[0]['media_custom'] != '') {
 					$this->Media = $row[0]['media_custom'];
 				}
-		
+
 				$this->UPC = $row[0]['upc'];
 				if ($row[0]['collectionnumber'] != 0) {
 					$this->Number = $row[0]['collectionnumber'];
@@ -99,11 +99,13 @@ class smallDVD {
 					$query = "SELECT * FROM pmp_users WHERE user_id = ?";
 					$params = [$row[0]['giftfrom']];
 					$result = dbquery_pdo($query, $params);
-					$this->GiftFrom = new stdClass();
-					$this->GiftFrom->FirstName = $result[0]['firstname'];
-					$this->GiftFrom->LastName = $result[0]['lastname'];
-					$this->GiftFrom->Email = $result[0]['email'];
-					$this->GiftFrom->Phone = $result[0]['phone'];					
+					if (count($result) > 0) {
+						$this->GiftFrom = new stdClass();
+						$this->GiftFrom->FirstName = $result[0]['firstname'];
+						$this->GiftFrom->LastName = $result[0]['lastname'];
+						$this->GiftFrom->Email = $result[0]['email'];
+						$this->GiftFrom->Phone = $result[0]['phone'];
+					}
 				} else {
 					$this->Gift = false;
 				}
@@ -142,12 +144,14 @@ class smallDVD {
 					$query = 'SELECT * FROM pmp_users WHERE user_id = ?';
 					$params = [$row[0]['loanedto']];
 					$result = dbquery_pdo($query, $params);
-					$this->LoanTo = new stdClass();
-					$this->LoanTo->FirstName = $result[0]['firstname'];
-					$this->LoanTo->LastName = $result[0]['lastname'];
-					$this->LoanTo->Email = $result[0]['email'];
-					$this->LoanTo->Phone = $result[0]['phone'];
-					$this->LoanReturn = @strftime($pmp_dateformat, strtotime($row[0]['loaneddue']));
+					if (count($result) > 0) {
+						$this->LoanTo = new stdClass();
+						$this->LoanTo->FirstName = $result[0]['firstname'];
+						$this->LoanTo->LastName = $result[0]['lastname'];
+						$this->LoanTo->Email = $result[0]['email'];
+						$this->LoanTo->Phone = $result[0]['phone'];
+						$this->LoanReturn = @strftime($pmp_dateformat, strtotime($row[0]['loaneddue']));
+					}
 				} else {
 					$this->Loaned = false;
 				}
@@ -197,6 +201,16 @@ class smallDVD {
 				else {
 					$this->partofBoxset = false;
 				}
+				
+				// Countries of origin
+				$query = 'SELECT country FROM pmp_countries_of_origin WHERE id = ?';
+				$params = [$id];
+				$result = dbquery_pdo($query, $params, 'object');
+				if (count($result) > 0) {
+					foreach ($result as $origin) {
+						$this->Origins[] = $origin;
+					}
+				}
 
 				// Check for cover
 				$this->frontpic = file_exists(_PMP_REL_PATH.'/cover/'.$id.'f.jpg');
@@ -217,19 +231,24 @@ class smallDVD {
 		}
 	}
 
-	/*
 	function getOriginFlag() {
 		global $pmp_theme;
-		$flag = getFlagName($this->Origin);
+		
+		$origins;
+		
+		foreach ($this->Origins as $origin) {
+			$flag = getFlagName(origin);
 
-		if ( empty($flag) ) {
-			return '<img src="' . _PMP_REL_PATH  . '/themes/' . $pmp_theme . '/images/flags/Noflag.gif" alt="' . $this->Origin. '" width="20" title="' . $this->Origin . '" />';
+			if (empty($flag)) {
+				$origins .= '<img src="'._PMP_REL_PATH.'/themes/'.$pmp_theme.'/images/flags/Noflag.gif" alt="'.$origin.'" width="20" title="'.$origin.'"/>';
+			}
+			else {
+				$origins .= '<img src="'._PMP_REL_PATH.'/themes/'.$pmp_theme.'/images/flags/'.$flag.'" alt="'.$origin.'" width="20" title="'.$origin.'"/>';
+			}
 		}
-		else {
-			return '<img src="' . _PMP_REL_PATH  . '/themes/' . $pmp_theme . '/images/flags/' . $flag . '" alt="' . $this->Origin. '" width="20" title="' . $this->Origin . '" />';
-		}
+		
+		return $origins;
 	}
-	*/
 
 	function getMediaIcon() {
 		global $pmp_theme;

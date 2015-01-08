@@ -286,13 +286,10 @@ function getColumns($col = '', $detail = '') {
 	$columns[9]['Output'] = 'Edition';
 	$columns[9]['Sort'] = 'disttrait';
 
-	/*
-	// Does not work with multiple countries of origin!
 	$columns[10]['Header'] = 'Origin';
 	$columns[10]['Output'] = 'getOriginFlag';
 	$columns[10]['AltOutput'] = 'Origin';  // alternative Text output (eg for pdfs)
 	$columns[10]['Sort'] = 'origin';
-	*/
 
 	if (empty($col)) {
 		return $columns;
