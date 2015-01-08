@@ -41,17 +41,15 @@ else {
 	$start = 1;
 }
 
-
-// ToDo Distinct id!
-
 // Get cover ids for one page
 $cols = $db->select(
 	"pmp_film",
 	[
 		"[>]pmp_tags" => ["id" => "id"]
 	],
-	["pmp_film.id", "pmp_tags.name"],
+	["pmp_film.id"],
 	[
+		"GROUP" => "pmp_film.id",
 		"AND" => [
 			"collectiontype[!]" => ["Ordered", "Wish List"],
 			"OR" => [

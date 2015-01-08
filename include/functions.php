@@ -119,34 +119,23 @@ function dbconnect( $dieonerror = true ) {
 	return ($db && $db_select);
 }
 
-// Connect to the database via medoo class
+// Connect to the database via PDO
 function dbconnect_medoo( $dieonerror = true ) {
 	global $db;
 	global $pmp_sqlhost, $pmp_sqluser, $pmp_sqlpass, $pmp_sqldatabase;
 
-	require_once('medoo.php');
-
 	try {
-		$db = new medoo([
-			'database_type' => 'mysql',
-			'database_name' => $pmp_sqldatabase,
-			'server' =>  $pmp_sqlhost,
-			'username' => $pmp_sqluser,
-			'password' =>  $pmp_sqlpass,
-			'port' => 3306,
-			'charset' => 'utf8',
-		]);
+		$db = new PDO("mysql:host={$pmp_sqlhost};dbname={$pmp_sqldatabase};charset=utf8", $pmp_sqluser, $pmp_sqlpass, [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8; SET time_zone={$pmp_timezone}"]));
 	}
-	catch (Exception $e) {
-		// Connection to the mysql-database failed
-		if ( $dieonerror ) {
-			echo "<html><head><title>Database Error</title><style>P,BODY{ font-family:arial,sans-serif; font-size:11px; }</style>
-				</head><body>&nbsp;<br><br><blockquote><b>There appears to be an error with the database.</b>
-				<br>You can try to refresh the page by clicking <a href=\"javascript:window.location=window.location;\">here</a>
-				, if this does not fix the error, please connect the Webmaster</blockquote></body></html>";
-			exit();
-		}
-	}
+	catch (PDOException $e) {
+		echo "<html><head><title>Database Error</title><style>P,BODY{ font-family:arial,sans-serif; font-size:11px; }</style>
+			</head><body>&nbsp;<br><br><blockquote><b>There appears to be an error with the database.</b>
+			<br>You can try to refresh the page by clicking <a href=\"javascript:window.location=window.location;\">here</a>
+			, if this does not fix the error, please connect the Webmaster<br><br><b>Error returned:</b><br>
+			<form name='mysql'><textarea rows=\"15\" cols=\"45\">" . htmlspecialchars($e->getMessage()) . "</textarea></form>
+			<br></blockquote></body></html>" ;
+		exit();
+	}	
 }
 
 // Replace the table prefix and executes the query
