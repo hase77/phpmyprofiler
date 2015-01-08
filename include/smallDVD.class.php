@@ -18,13 +18,13 @@
 */
 
 class smallDVD {
-	function smallDVD( $id ) {
+	function smallDVD($id) {
 		global $pmp_db, $pmp_dateformat, $pmp_usecurrency, $pmp_html_notes, $pmp_thousands_sep, $pmp_dec_point, $pmp_exclude_tag, $pmp_menue_childs;
 
-		if ( isset($id) ) {
-			$query  = "SELECT * FROM pmp_film WHERE id = ?";
+		if (isset($id)) {
+			$query = "SELECT * FROM pmp_film WHERE id = ?";
 
-			if ( !empty($pmp_exclude_tag) ) {
+			if (!empty($pmp_exclude_tag)) {
 				$query .= " AND id NOT IN (SELECT id FROM pmp_tags where name = ?')";
 				$params = [$id, $pmp_exclude_tag];
 			}
@@ -34,8 +34,8 @@ class smallDVD {
 
 			$rows = dbquery_pdo($query, $params);
 
-			foreach ( $rows as $row ) {
-				foreach ( $row as $key => $value ) {
+			foreach ($rows as $row) {
+				foreach ($row as $key => $value) {
 					$this->_db[$key] = $value;
 					$this->$key = $value;
 				}
@@ -67,7 +67,7 @@ class smallDVD {
 				$this->Edition = htmlspecialchars($this->_db['disttrait'], ENT_COMPAT, 'UTF-8');
 				$this->OriginalTitle = htmlspecialchars($this->_db['originaltitle'], ENT_COMPAT, 'UTF-8');
 				$this->Year = $this->_db['prodyear'];
-				if ( $this->_db['released'] != '0000-00-00' ) {
+				if ($this->_db['released'] != '0000-00-00') {
 					$this->Released = strftime($pmp_dateformat, strtotime($this->_db['released']));
 				}
 				else {
@@ -83,7 +83,7 @@ class smallDVD {
 				$this->RatingDetails = $this->_db['ratingdetails'];
 				$this->Casetype = $this->_db['casetype'];
 				$this->Slipcover = $this->_db['slipcover'];
-				if ( $this->_db['srp'] != '0.00' ) {
+				if ($this->_db['srp'] != '0.00') {
 					$this->Price = number_format($this->_db['srp'], get_currency_digits($this->_db['srpid']), $pmp_dec_point, $pmp_thousands_sep);
 				}
 				else {
@@ -97,23 +97,25 @@ class smallDVD {
 				else {
 					$this->convAvgPrice = $this->_db['srp'];
 				}
-				if ( $this->_db['gift'] == 1 ) {
+				if ($this->_db['gift'] == 1) {
 					$this->Gift = true;
-					$sql = "SELECT * FROM pmp_users WHERE user_id = ".$this->_db['giftfrom'];
-					$result = mysql_fetch_object(dbexec($sql));
+
+					$query = "SELECT * FROM pmp_users WHERE user_id = ?";
+					$params = [$this->_db['giftfrom']];
+					$result = dbquery_pdo($query, $params);
 					$this->GiftFrom = new stdClass();
-					$this->GiftFrom->FirstName = $result->firstname;
-					$this->GiftFrom->LastName = $result->lastname;
-					$this->GiftFrom->Email = $result->email;
-					$this->GiftFrom->Phone = $result->phone;
+					$this->GiftFrom->FirstName = $result[0]['firstname'];
+					$this->GiftFrom->LastName = $result[0]['lastname'];
+					$this->GiftFrom->Email = $result[0]['email'];
+					$this->GiftFrom->Phone = $resul[0]['phone'];					
 				} else {
 					$this->Gift = false;
 				}
 				$this->Overview = str_replace("&", "&amp;", html_entity_decode($this->_db['overview'], ENT_COMPAT, 'UTF-8'));
 				$this->Easteregg  = htmlspecialchars($this->_db['easteregg'], ENT_COMPAT, 'UTF-8');
-				$this->LastEdited = @strftime($pmp_dateformat, strtotime($this->_db['lastedit']));
+				$this->LastEdited = strftime($pmp_dateformat, strtotime($this->_db['lastedit']));
 				$this->WishPriority = $this->_db['wishpriority'];
-				if ( $this->_db['purchprice'] != '0.00' ) {
+				if ($this->_db['purchprice'] != '0.00') {
 					$this->PurchPrice = number_format($this->_db['purchprice'], get_currency_digits($this->_db['purchcurrencyid']), $pmp_dec_point, $pmp_thousands_sep);
 				}
 				else {
@@ -121,13 +123,13 @@ class smallDVD {
 				}
 				$this->PurchCurrencyID = $this->_db['purchcurrencyid'];
 				$this->ConvCurrency = $pmp_usecurrency;
-				if ( $this->_db['purchprice'] != '0.00' ) {
+				if ($this->_db['purchprice'] != '0.00') {
 					$this->ConvPrice = number_format(exchange($this->_db['purchcurrencyid'], $pmp_usecurrency, $this->_db['purchprice']), get_currency_digits($pmp_usecurrency), $pmp_dec_point, $pmp_thousands_sep);
 				}
 				else {
 					$this->ConvPrice = $this->_db['purchprice'];
 				}
-				if ( ($this->_db['purchdate'] != '0000-00-00') ) {
+				if (this->_db['purchdate'] != '0000-00-00') {
 					$this->PurchDate = strftime($pmp_dateformat, strtotime($this->_db['purchdate']));
 				}
 				else {
@@ -139,20 +141,21 @@ class smallDVD {
 				$this->ReviewAudio = $this->_db['reviewaudio'];
 				$this->ReviewVideo = $this->_db['reviewvideo'];
 				$this->ReviewExtras = $this->_db['reviewextras'];
-				if ( $this->_db['loaned'] == 1 ) {
+				if ($this->_db['loaned'] == 1) {
 					$this->Loaned = true;
-					$sql = "SELECT * FROM pmp_users WHERE user_id = ".$this->_db['loanedto'];
-					$result = mysql_fetch_object(dbexec($sql));
+					$query = "SELECT * FROM pmp_users WHERE user_id = ?";
+					$params = [$this->_db['loanedto']];
+					$result = dbquery_pdo($query, $params);
 					$this->LoanTo = new stdClass();
-					$this->LoanTo->FirstName = $result->firstname;
-					$this->LoanTo->LastName = $result->lastname;
-					$this->LoanTo->Email = $result->email;
-					$this->LoanTo->Phone = $result->phone;
+					$this->LoanTo->FirstName = $result[0]['firstname'];
+					$this->LoanTo->LastName = $result[0]['lastname'];
+					$this->LoanTo->Email = $result[0]['email'];
+					$this->LoanTo->Phone = $resul[0]['phone'];
 					$this->LoanReturn = @strftime($pmp_dateformat, strtotime($this->_db['loaneddue']));
 				} else {
 					$this->Loaned = false;
 				}
-				if ( $pmp_html_notes == true ) {
+				if ($pmp_html_notes == true) {
 					$this->Notices = html_entity_decode($this->_db['notes'], ENT_COMPAT, 'UTF-8');
 				}
 				else {
@@ -163,12 +166,14 @@ class smallDVD {
 				$this->Review = $this->_db['review'];
 
 				// Is boxset?
-				$sql = "SELECT * FROM pmp_boxset LEFT JOIN pmp_film ON pmp_film.id = pmp_boxset.childid
-					WHERE pmp_boxset.id = '" . mysql_real_escape_string($this->id) . "' ORDER BY " . mysql_real_escape_string($pmp_menue_childs);
-				$result = dbexec($sql);
-				if ( @mysql_num_rows($result) > 0 ) {
+				$query = "SELECT * FROM pmp_boxset LEFT JOIN pmp_film ON pmp_film.id = pmp_boxset.childid
+						  WHERE pmp_boxset.id = ? ORDER BY ?";
+				$params = [$this->id, $pmp_menue_childs];
+				$result = dbquery_pdo($query, $params);
+
+				if (count($result) > 0) {
 					$this->Boxset_childs = array();
-					while ( $row = mysql_fetch_object($result) ) {
+					foreach ($rows as $row) {
 						if ( !empty($row->childid) ) {
 							$child = new smallDVD($row->childid);
 
@@ -177,29 +182,30 @@ class smallDVD {
 							}
 						}
 					}
-					if ( count($this->Boxset_childs) > 0 ) {
+					if (count($this->Boxset_childs) > 0) {
 						$this->isBoxset = true;
 					}
 				}
 				else {
-					unset($this->Boxset_childs);
+					unset( $this->Boxset_childs );
 					$this->isBoxset = false;
 				}
 
 				// Or child?
-				$sql = 'SELECT id FROM pmp_boxset WHERE childid = \'' . mysql_real_escape_string($this->id) . '\'';
-				$result = dbexec($sql);
-				if ( @mysql_num_rows($result) > 0 ) {
-					$row = mysql_fetch_object($result);
-					$this->partofBoxset = $row->id;
+				$query = 'SELECT id FROM pmp_boxset WHERE childid = ?';
+				$params = [$this->id];
+				$result = dbquery_pdo($query, $params);
+
+				if (count($result) > 0) {
+					$this->partofBoxset = $result[0]['id'];
 				}
 				else {
 					$this->partofBoxset = false;
 				}
 
 				// Check for cover
-				$this->frontpic = file_exists(_PMP_REL_PATH . '/cover/' . $this->id . 'f.jpg');
-				$this->backpic = file_exists(_PMP_REL_PATH . '/cover/' . $this->id . 'b.jpg');
+				$this->frontpic = file_exists(_PMP_REL_PATH.'/cover/'.$this->id.'f.jpg');
+				$this->backpic = file_exists(_PMP_REL_PATH.'/cover/'.$this->id.'b.jpg');
 
 				if ( strtolower(get_class($this)) == 'smalldvd' ) {
 					unset($this->_db);
@@ -212,11 +218,11 @@ class smallDVD {
 		global $pmp_theme;
 		$flag = getFlagName($this->Locality);
 
-		if ( empty( $flag ) ) {
-			return '<img src="' . _PMP_REL_PATH  . '/themes/' . $pmp_theme . '/images/flags/Noflag.gif" alt="' . $this->Locality. '" style="width: 20px; height: 12px;" title="' . t($this->Locality) . '" />';
+		if (empty($flag)) {
+			return '<img src="'._PMP_REL_PATH.'/themes/'.$pmp_theme.'/images/flags/Noflag.gif" alt="'. $this->Locality.'" style="width: 20px; height: 12px;" title="'.t($this->Locality).'"/>';
 		}
 		else {
-			return '<img src="' . _PMP_REL_PATH  . '/themes/' . $pmp_theme . '/images/flags/' . $flag . '" alt="' . $this->Locality. '" style="width: 20px; height: 12px;" title="' . t($this->Locality) . '" />';
+			return '<img src="'._PMP_REL_PATH.'/themes/'.$pmp_theme.'/images/flags/'.$flag.'" alt="'.$this->Locality.'" style="width: 20px; height: 12px;" title="'.t($this->Locality).'"/>';
 		}
 	}
 
@@ -238,32 +244,32 @@ class smallDVD {
 		global $pmp_theme;
 		global $pmp_custom_media;
 
-		if ( $this->Media == 'DVD' ) {
-			return '<img src="' . _PMP_REL_PATH  . '/themes/'.$pmp_theme.'/images/additional/DVD_s.png" alt="' . $this->Media. '" />';
+		if ($this->Media == 'DVD') {
+			return '<img src="'._PMP_REL_PATH.'/themes/'.$pmp_theme.'/images/additional/DVD_s.png" alt="'. $this->Media.'"/>';
 		}
-		else if ( $this->Media == 'Blu-ray' ) {
-			return '<img src="' . _PMP_REL_PATH  . '/themes/'.$pmp_theme.'/images/additional/BluRay_s.png" alt="' . $this->Media. '" />';
+		else if ($this->Media == 'Blu-ray') {
+			return '<img src="'._PMP_REL_PATH.'/themes/'.$pmp_theme.'/images/additional/BluRay_s.png" alt="'.$this->Media.'"/>';
 		}
-		else if ( $this->Media == 'HD DVD' ) {
-			return '<img src="' . _PMP_REL_PATH  . '/themes/'.$pmp_theme.'/images/additional/HDDVD_s.png" alt="' . $this->Media. '" />';
+		else if ($this->Media == 'HD DVD') {
+			return '<img src="'._PMP_REL_PATH.'/themes/'.$pmp_theme.'/images/additional/HDDVD_s.png" alt="'.$this->Media.'" />';
 		}
 		else {
 			// Custom media
-			if ( isset( $pmp_custom_media[$this->Media] ) ) {
-				return '<img src="' . _PMP_REL_PATH  . '/themes/'.$pmp_theme.'/images/additional/'.$pmp_custom_media[$this->Media]['small'] .'" alt="' . $this->Media. '" />';
+			if (isset($pmp_custom_media[$this->Media])) {
+				return '<img src="'._PMP_REL_PATH.'/themes/'.$pmp_theme.'/images/additional/'.$pmp_custom_media[$this->Media]['small'].'" alt="'.$this->Media.'"/>';
 			}
 		}
 	}
 
-	function get( $f ) {
+	function get($f) {
 		global $pmp_show_mediatype;
 
-		if ( method_exists( $this, $f ) ) {
+		if (method_exists($this, $f)) {
 			return $this->$f();
 		}
 		else {
-			if ( $f == 'Title' && $pmp_show_mediatype == 1 ) {
-				return $this->getMediaIcon() . " " . $this->$f;
+			if ($f == 'Title' && $pmp_show_mediatype == 1) {
+				return $this->getMediaIcon()." ".$this->$f;
 			}
 			else {
 				return $this->$f;
