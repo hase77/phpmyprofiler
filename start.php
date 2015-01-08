@@ -70,7 +70,7 @@ $query = 'SELECT SUM(countas) AS cnt FROM pmp_film WHERE collectiontype != \'Ord
 		  AND pmp_film.id NOT IN (SELECT id FROM pmp_tags where name = ?)';
 $params = [$pmp_exclude_tag];
 $result = dbquery_pdo($query, $params);
-$count = $cols[0]['cnt'];
+$count = $result[0]['cnt'];
 $smarty->assign('count', $count);
 
 // Counter
@@ -80,7 +80,7 @@ $smarty->assign('counter', inccounter());
 $query = 'SELECT data FROM pmp_statistics WHERE type = \'last_update\'';
 $result = dbquery_pdo($query);
 if (count($result) > 0) {
-	$last_update = $cols[0]['data'];
+	$last_update = $result[0]['data'];
 	$smarty->assign('last_update', strftime($pmp_dateformat, strtotime($last_update)));
 }
 
