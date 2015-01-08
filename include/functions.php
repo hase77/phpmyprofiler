@@ -131,14 +131,16 @@ function dbconnect_pdo( $dieonerror = true ) {
 			[PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8; SET time_zone={$pmp_timezone}"]
 		);
 	}
-	catch (PDOException $e) {
-		echo "<html><head><title>Database Error</title><style>P,BODY{ font-family:arial,sans-serif; font-size:11px; }</style>
-			</head><body>&nbsp;<br><br><blockquote><b>There appears to be an error with the database.</b>
-			<br>You can try to refresh the page by clicking <a href=\"javascript:window.location=window.location;\">here</a>
-			, if this does not fix the error, please connect the Webmaster<br><br><b>Error returned:</b><br>
-			<form name='mysql'><textarea rows=\"15\" cols=\"45\">" . htmlspecialchars($e->getMessage()) . "</textarea></form>
-			<br></blockquote></body></html>" ;
-		exit();
+	catch ( PDOException $e ) {
+		if ( $dieonerror ) {
+			echo "<html><head><title>Database Error</title><style>P,BODY{ font-family:arial,sans-serif; font-size:11px; }</style>
+				</head><body>&nbsp;<br><br><blockquote><b>There appears to be an error with the database.</b>
+				<br>You can try to refresh the page by clicking <a href=\"javascript:window.location=window.location;\">here</a>
+				, if this does not fix the error, please connect the Webmaster<br><br><b>Error returned:</b><br>
+				<form name='mysql'><textarea rows=\"15\" cols=\"45\">" . htmlspecialchars($e->getMessage()) . "</textarea></form>
+				<br></blockquote></body></html>" ;
+			exit();
+		}
 	}	
 }
 
@@ -165,7 +167,7 @@ function dbclose() {
 }
 
 // Replace the tableprefix pmp_ with the user defined prefix
-function replace_table_prefix($sql) {
+function replace_table_prefix(& $sql) {
 	global $pmp_table_prefix;
 
 	return str_replace('pmp_', $pmp_table_prefix, $sql);
@@ -814,7 +816,9 @@ function get_collections() {
 	$collections = ['Owned', 'Ordered', 'Wish List'];
 	
 	$query = 'SELECT collection FROM pmp_collection WHERE collection NOT IN("Owned", "Ordered", "Wish List")';
-	$stmt = $pmp_db -> query($query);
+	replace_table_prefix($query);
+	$stmt = $pmp_db->query($query);
+	var_dump($stmt);
 	$cols = $stmt->fetchAll(PDO::FETCH_NUM);
 	echo "<pre>";
 	print_r($cols);
