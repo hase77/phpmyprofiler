@@ -28,7 +28,7 @@ $smarty->loadFilter('output', 'trimwhitespace');
 
 // News
 $query = 'SELECT id, date, title, text FROM pmp_news ORDER BY date DESC LIMIT 0, 1';
-$result = dbquery_pdo($query, null, 'assoc');
+$result = dbquery_pdo($query, null, 'object');
 $news = array();
 if (count($result) > 0) {
 	$news[] = $result[0];

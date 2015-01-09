@@ -110,7 +110,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'save') {
 					str_replace(['\r', '\n'], '', $email);
 					str_replace(['\r', '\n'], '', $name);
 					$subject = '[phpMyProfiler] '.t('%name added a new guestbook entry', ['%name' => $name]);
-					//$subject = mb_encode_mimeheader(html_entity_decode($subject, ENT_COMPAT, 'UTF-8'), 'UTF-8', 'B', '\n');
 					$subject = html_entity_decode($subject, ENT_COMPAT, 'UTF-8');
 
 					$body = "{$name} <{$email}> ";
