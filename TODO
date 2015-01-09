@@ -1,6 +1,7 @@
 ToDo:
 	- Further PDO integration
-	- Add translations stings for error messages at contact, guestbook
+	- Add translations stings for error messages at contact, guestbook, review
+	- Add nocover for thumbnails if no gd lib used
 
 Known errors:
 	- Defect title search

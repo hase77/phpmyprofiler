@@ -9,7 +9,7 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
@@ -17,7 +17,12 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
 */
 
-$rating = $_GET['rating'];
+// No direct or remote access
+if (!isset($_SERVER['HTTP_REFERER']) || stristr($_SERVER['HTTP_REFERER'], $_SERVER['SERVER_NAME']) === false) {
+	die('Not allowed! Possible hacking attempt detected!');
+}
+
+if (isset($_GET['rating'])) $rating = $_GET['rating'];
 if (isset($_GET['size'])) $size = $_GET['size'];
 if (isset($_GET['maxrate'])) $max = $_GET['maxrate'];
 else $max = 10;

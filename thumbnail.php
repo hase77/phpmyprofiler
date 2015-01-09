@@ -78,7 +78,7 @@ if ($pmp_gdlib == true) {
 			
 			$query = 'SELECT media_dvd, media_hddvd, media_bluray, media_custom, casetype, slipcover, banner_front, banner_back FROM pmp_film WHERE id = ?';
 			$params = [$fid];
-			$row = dbquery_pdo($query, $params, 'assoc');
+			$row = dbquery_pdo($query, $params, 'object');
 
 			if (count($row) > 0) {			
 				$dvd = $row[0];
@@ -107,7 +107,7 @@ if ($pmp_gdlib == true) {
 			// Add hd-banner to image
 			if ($pmp_hdbanner == true && ($_GET['type'] == 'front' &&  $dvd->banner_front != 'Off')
 			    && ($dvd->media_hddvd == '1' || $dvd->media_bluray == '1')
-			    && ( ( $dvd->banner_front == 'Automatic' && ($dvd->casetype == 'HD Keep Case' || $dvd->casetype == 'HD Slim') && $dvd->slipcover == '0') || $dvd->banner_front == 'On' ) ) {
+			    && (( $dvd->banner_front == 'Automatic' && ($dvd->casetype == 'HD Keep Case' || $dvd->casetype == 'HD Slim') && $dvd->slipcover == '0') || $dvd->banner_front == 'On' )) {
 				
 				if ($dvd->media_hddvd == '1') {
 					if ($dvd->media_dvd == '1') {
