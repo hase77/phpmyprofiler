@@ -43,7 +43,7 @@ if ($pmp_guestbook_showcode == true) {
 	$smarty->assign('imgLoc', $imgLoc);
 }
 
-if (isset($_GET['action']) && ($_GET['action'] == 'save') {
+if (isset($_GET['action']) && $_GET['action'] == 'save') {
 	// First check the form key
 	if (!isset($_POST['form_key']) || !$formKey->validate()) {
 		//Form key is invalid, show an error
