@@ -32,11 +32,10 @@ function round_this($val) {
 }
 
 if ($pmp_gdlib == true) {
-
 	if (isset($size) && $size == 'big') {
 		// Get back- & foreground pics
-		$img_dest = imagecreatefrompng('../themes/'.$pmp_theme.'/images/vote/b_empty.png');
-		$img_full = imagecreatefrompng('../themes/'.$pmp_theme.'/images/vote/b_full.png');
+		$img_dest = imagecreatefrompng("./themes/{$pmp_theme}/images/vote/b_empty.png");
+		$img_full = imagecreatefrompng("./themes/{$pmp_theme}/images/vote/b_full.png");
 
 		// Build rated pic
 		$w = (int)(200 * ($rating / $max));
@@ -47,12 +46,12 @@ if ($pmp_gdlib == true) {
 		$rating_big = (int)$rating;
 		$rating_small = round_this(($rating - $rating_big) * 100);
 		if ($rating_small < 10) {
-			$rating_small = '0'.$rating_small;
+			$rating_small = "0{$rating_small}";
 		}
 
 		// Write ratings
-		imagettftext($img_dest, 64, 0, 16, 80, 0, '../themes/'.$pmp_theme.'/images/vote/font.ttf', $rating_big);
-		imagettftext($img_dest, 32, 0, 60, 40, 0, '../themes/'.$pmp_theme.'/images/vote/font.ttf', $rating_small);
+		imagettftext($img_dest, 64, 0, 16, 80, 0, "./themes/{$pmp_theme}/images/vote/font.ttf", $rating_big);
+		imagettftext($img_dest, 32, 0, 60, 40, 0, "./themes/{$pmp_theme}/images/vote/font.ttf", $rating_small);
 
 		// Show pic
 		header('Content-type: image/png');
@@ -61,8 +60,8 @@ if ($pmp_gdlib == true) {
 	}
 	else {
 		// Get back- & foreground pics
-		$img_dest = imagecreatefrompng('../themes/'.$pmp_theme.'/images/vote/s_empty.png');
-		$img_full = imagecreatefrompng('../themes/'.$pmp_theme.'/images/vote/s_full.png');
+		$img_dest = imagecreatefrompng("./themes/{$pmp_theme}/images/vote/s_empty.png");
+		$img_full = imagecreatefrompng("./themes/{$pmp_theme}/images/vote/s_full.png");
 
 		// Build rated pic
 		$w = (int)(200 * ($rating/$max ));

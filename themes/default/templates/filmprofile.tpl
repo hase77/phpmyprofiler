@@ -104,7 +104,7 @@
 									<table class="properties">
 										<tr><td class="propheader">{t}Voting{/t}:</td></tr>
 										<tr><td class="propvalue">
-											<img src="include/voting.php?rating={$dvd->Review}&amp;size=big" alt="{$dvd->Review}" />
+											<img src="voting.php?rating={$dvd->Review}&amp;size=big" alt="{$dvd->Review}" />
 										</td></tr>
 									</table>
 								{/if}
