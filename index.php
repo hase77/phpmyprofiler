@@ -88,7 +88,7 @@ else {
 	$content_page = (string)filter_input(INPUT_GET, 'content');
 
 	// Get and save needed variables for detail-pages
-	if (!empty($content_page) {
+	if (!empty($content_page)) {
 		// Validate content page
 		if (isset($valildpages[$content_page])) {
 			$content_page = $valildpages[$content_page];
