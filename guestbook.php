@@ -110,7 +110,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'save') {
 					str_replace(['\r', '\n'], '', $email);
 					str_replace(['\r', '\n'], '', $name);
 					$subject = '[phpMyProfiler] '.t('%name added a new guestbook entry', ['%name' => $name]);
-					$subject= mb_encode_mimeheader(html_entity_decode($subject, ENT_COMPAT, 'UTF-8'), 'UTF-8', 'B', '\n');
+					//$subject = mb_encode_mimeheader(html_entity_decode($subject, ENT_COMPAT, 'UTF-8'), 'UTF-8', 'B', '\n');
 
 					$body = "{$name} <{$email}> ";
 					if (!empty($url)) {
@@ -168,7 +168,7 @@ $count = $row[0]['cnt'];
 $query = 'SELECT name, email, date_format(date, ?) AS date, text, url, comment
 		  FROM pmp_guestbook WHERE status != 0 ORDER BY id DESC LIMIT ?, ?';
 $params = [$pmp_dateformat, (((int)$start - 1) * $pmp_entries_side), $pmp_entries_side];
-$rows = dbquery_pdo($query, $params, 'assoc');
+$rows = dbquery_pdo($query, $params, 'oject');
 
 $i = 0;
 $entries = [];
