@@ -33,9 +33,6 @@ if (!empty($page)) {
 else {
 	$start = $page;
 }
-else {
-	$start = 1;
-}
 
 // Get cover ids for one page
 $query = 'SELECT id FROM pmp_film WHERE collectiontype != \'Ordered\' AND collectiontype != \'Wish List\'
