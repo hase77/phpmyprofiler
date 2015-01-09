@@ -26,7 +26,7 @@ $pmp_module = 'filmprofile';
 require_once('include/DVD.class.php');
 
 // Check values
-if (isset($_GET['id'])) {
+if (!empty($id)) {
 	$smarty = new pmp_Smarty;
 	$smarty->loadFilter('output', 'trimwhitespace');
 	$smarty->assign('pmp_theme', $pmp_theme);
@@ -44,7 +44,7 @@ if (isset($_GET['id'])) {
 
 	// Get screenshots on page 1
 	if ($_GET['page'] == 1) {
-		$filenames = getScreenshots($_GET['id']);
+		$filenames = getScreenshots($id);
 		if (isset($filenames)) {
 			sort($filenames);
 			$smarty->assign('screenshots', $filenames);
@@ -52,10 +52,10 @@ if (isset($_GET['id'])) {
 	}
 
 	// Increase counter for profile
-	$smarty->assign('counter', inccounter($_GET['id']));
+	$smarty->assign('counter', inccounter($id));
 
 	// Get dvd data
-	$smarty->assign('dvd', new DVD($_GET['id']));
+	$smarty->assign('dvd', new DVD($id));
 
 	$smarty->display('filmprofile.tpl');
 }

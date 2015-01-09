@@ -86,6 +86,7 @@ else {
 
 	// Sanitize/filter all values we can get
 	$content_page = (string)filter_input(INPUT_GET, 'content');
+	$id = (string)filter_input(INPUT_GET, 'id');
 
 	// Get and save needed variables for detail-pages
 	if (!empty($content_page)) {
@@ -98,8 +99,8 @@ else {
 		}
 
 		// Save all possible vars of content into session
-		if (isset($_GET['id'])) {
-			$_SESSION['id'] = html2txt($_GET['id']);
+		if (!empty($id)) {
+			$_SESSION['id'] = $id;
 		}
 		else {
 			unset($_SESSION['id']);
@@ -134,7 +135,7 @@ else {
 		if (!empty($_SESSION['content'])) {
 			// Writeback values
 			if (isset($_SESSION['id'])) {
-				$_GET['id'] = html2txt($_SESSION['id']);
+				$id = $_SESSION['id'];
 			}
 			if (isset($_SESSION['page'])) {
 				$_GET['page'] = (int)$_SESSION['page'];
