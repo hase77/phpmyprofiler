@@ -101,10 +101,10 @@ if (isset($_GET['action']) && $_GET['action'] == 'send') {
 				$message = wordwrap($message, 72);
 
 				$header = "From: \"{$name}\" <{$email}>\r\n
-						   MIME-Version: 1.0'\r\n
+						   MIME-Version: 1.0\r\n
 						   Content-Type: text/plain; charset=\"UTF-8\"\r\n
 						   Content-Transfer-Encoding: quoted-printable\r\n
-						   Message-ID: <".md5(uniqid(microtime()))."@{$_SERVER['SERVER_NAME']}>\r\n
+						   Message-ID: <".md5(uniqid(microtime()))."@".$_SERVER['SERVER_NAME'].">\r\n
 						   X-Mailer: phpMyProfiler {$pmp_version}\r\n";
 
 				// Send e-mail
