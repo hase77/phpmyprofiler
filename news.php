@@ -48,7 +48,7 @@ $count = $row[0]['cnt'];
 // Get News for one page
 $query = 'SELECT title, date, text FROM pmp_news ORDER BY date DESC LIMIT ?, ?';
 $params = [(((int)$start - 1) * $pmp_news_page), $pmp_news_page];
-$rows = dbquery_pdo($query, $params, 'assoc');
+$rows = dbquery_pdo($query, $params, 'oject');
 
 $news = [];
 
