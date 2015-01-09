@@ -87,6 +87,7 @@ else {
 	// Sanitize/filter all values we can get
 	$content_page = (string)filter_input(INPUT_GET, 'content');
 	$id = (string)filter_input(INPUT_GET, 'id');
+	$page = (int)filter_input(INPUT_GET, 'page');
 
 	// Get and save needed variables for detail-pages
 	if (!empty($content_page)) {
@@ -105,8 +106,8 @@ else {
 		else {
 			unset($_SESSION['id']);
 		}
-		if (isset($_GET['page'])) {
-			$_SESSION['page'] = (int)$_GET['page'];
+		if (!empty($page)) {
+			$_SESSION['page'] = $page;
 		}
 		else {
 			unset($_SESSION['page']);
@@ -138,7 +139,7 @@ else {
 				$id = $_SESSION['id'];
 			}
 			if (isset($_SESSION['page'])) {
-				$_GET['page'] = (int)$_SESSION['page'];
+				$page = (int)$_SESSION['page'];
 			}
 			if (isset($_SESSION['letter'])) {
 				$_GET['letter'] = $_SESSION['letter'];
