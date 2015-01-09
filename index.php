@@ -41,7 +41,7 @@ else {
 	$pmp_collections = get_collections();
 
 	// Valid pages
-	$valildpages = array(
+	$valildpages = [
 		'contact'			=> 'contact.php',
 		'cover'				=> 'cover.php',
 		'coverlist' 		=> 'coverlist.php',
@@ -57,7 +57,8 @@ else {
 		'start'				=> 'start.php',
 		'statistics'	 	=> 'statistics.php',
 		'statisticsdetail'	=> 'statisticsdetail.php',
-		'watched'			=> 'watched.php');
+		'watched'			=> 'watched.php'
+	];
 
 	// Try to turn on page compression
 	if ($pmp_compression && extension_loaded('zlib')) {
@@ -83,16 +84,17 @@ else {
 		include('menue.php');
 	}
 
-	// ToDo: Sanitize/check all values we get
+	// Sanitize/filter all values we can get
+	$content_page = (string)filter_input(INPUT_GET, 'content');
 
 	// Get and save needed variables for detail-pages
-	if (isset($_GET['content'])) {
+	if (!empty($content_page) {
 		// Validate content page
-		if (isset($valildpages[$_GET['content']])) {
-			$_GET['content'] = $valildpages[$_GET['content']];
+		if (isset($valildpages[$content_page])) {
+			$content_page = $valildpages[$content_page];
 		}
 		else {
-			$_GET['content'] = 'start.php';
+			$content_page = 'start.php';
 		}
 
 		// Save all possible vars of content into session
@@ -132,34 +134,34 @@ else {
 		if (!empty($_SESSION['content'])) {
 			// Writeback values
 			if (isset($_SESSION['id'])) {
-			$_GET['id'] = html2txt($_SESSION['id']);
+				$_GET['id'] = html2txt($_SESSION['id']);
 			}
 			if (isset($_SESSION['page'])) {
-			$_GET['page'] = (int)$_SESSION['page'];
+				$_GET['page'] = (int)$_SESSION['page'];
 			}
 			if (isset($_SESSION['letter'])) {
-			$_GET['letter'] = $_SESSION['letter'];
+				$_GET['letter'] = $_SESSION['letter'];
 			}
 			if (isset($_SESSION['cover'])) {
-			$_GET['cover'] = $_SESSION['cover'];
+				$_GET['cover'] = $_SESSION['cover'];
 			}
 			if (isset($_SESSION['name'])) {
-			$_GET['name'] = $_SESSION['name'];
+				$_GET['name'] = $_SESSION['name'];
 			}
 
-			$_GET['content'] = $_SESSION['content'];
+			$content_page = $_SESSION['content'];
 		}
 		// We start from the beginning
 		else {
-			$_GET['content'] = 'start.php';
+			$content_page = 'start.php';
 		}
 	}
 
 	// Show selected page
-	include($_GET['content']);
+	include($content_page);
 
 	// Save content for next time
-	$_SESSION['content'] = $_GET['content'];
+	$_SESSION['content'] = $content_page;
 
 	// Uncomment for developing/debugging
 	#echo "<b>GET data:</b><br />";

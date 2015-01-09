@@ -44,7 +44,7 @@ if (isset($_GET['id'])) {
 
 	// Get screenshots on page 1
 	if ($_GET['page'] == 1) {
-		$filenames = getScreenshots ($_GET['id']);
+		$filenames = getScreenshots($_GET['id']);
 		if (isset($filenames)) {
 			sort($filenames);
 			$smarty->assign('screenshots', $filenames);
