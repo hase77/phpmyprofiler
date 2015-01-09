@@ -185,7 +185,7 @@ else {
 		$smarty->loadFilter('output', 'trimwhitespace');
 		$smarty->display('footer.tpl');
 	}
-	
+
 	dbclose_pdo();
 
 	ob_flush();

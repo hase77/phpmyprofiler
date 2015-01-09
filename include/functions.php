@@ -216,11 +216,12 @@ function dbquery_pdo($query, $params = null, $type = 'default', $continueonerror
 function dbexecute_pdo($query, $params, $continueonerror = false) {
 	global $pmp_db;
 
+	$result = false;
 	replace_table_prefix($query);
 
 	try {
 		$stmt = $pmp_db->prepare($query);
-		$stmt->execute($params);
+		$result = $stmt->execute($params);
 	}
 	catch (PDOException $e) {
 		if (!$continueonerror) {
@@ -233,6 +234,8 @@ function dbexecute_pdo($query, $params, $continueonerror = false) {
 			die;
 		}
 	}
+	
+	return $result;
 }
 
 // Close database

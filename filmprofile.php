@@ -10,7 +10,7 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
@@ -31,7 +31,6 @@ if (isset($_GET['id'])) {
 	$smarty->loadFilter('output', 'trimwhitespace');
 	$smarty->assign('pmp_theme', $pmp_theme);
 	$smarty->assign('pmp_review_type', $pmp_review_type);
-	dbconnect();
 
 	// Page selected?
 	if (!empty($_GET['page'])) {
@@ -57,8 +56,6 @@ if (isset($_GET['id'])) {
 
 	// Get dvd data
 	$smarty->assign('dvd', new DVD($_GET['id']));
-
-	dbclose();
 
 	$smarty->display('filmprofile.tpl');
 }

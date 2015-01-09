@@ -10,7 +10,7 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
@@ -43,46 +43,44 @@ if ($pmp_guestbook_showcode == true) {
 	$smarty->assign('imgLoc', $imgLoc);
 }
 
-dbconnect();
-
 if (isset($_GET['action']) && ($_GET['action'] == 'save') {
 	// First check the form key
 	if (!isset($_POST['form_key']) || !$formKey->validate()) {
 		//Form key is invalid, show an error
-	$smarty->assign('Failed', 'Form key error!');
+		$smarty->assign('Failed', 'Form key error!');
 	}
 	else {
-		$msg = array();
+		$msg = [];
 
 		// Check all values we get from contact form
-		if ($_POST['name'] != "") {
+		if ($_POST['name'] != '') {
 			$name = html2txt($_POST['name']);
 		}
 		else {
 			$msg[]= 'Please enter your name!';
 		}
 
-		if ($_POST['email'] != "") {
+		if ($_POST['email'] != '') {
 			$email = $_POST['email'];
 			if (!$validate->email($email, array('use_rfc822' => true))) {
-				$msg[] = "$email is <strong>NOT</strong> a valid email address!";
+				$msg[] = "{$email} is <strong>NOT</strong> a valid email address!";
 			}
 		}
 		else {
 			$msg[]= 'Please enter a valid email address!';
 		}
 
-		if ($_POST['url'] != "") {
+		if ($_POST['url'] != '') {
 			$url = $_POST['url'];
 			if (!$validate->uri($url, array('use_rfc4151' => true))) {
-				$msg[] = "$url is <strong>NOT</strong> a valid URL!";
+				$msg[] = "{$url} is <strong>NOT</strong> a valid URL!";
 			}
 		}
 		else {
 			$url = '';
 		}
 
-		if ($_POST['message'] != "") {
+		if ($_POST['message'] != '') {
 			$message = html2txt($_POST['message']);
 		}
 		else {
@@ -99,34 +97,31 @@ if (isset($_GET['action']) && ($_GET['action'] == 'save') {
 				$smarty->assign('Failed', t('Bot Attack!'));
 			}
 			else {
-				// Insert enty into db
-				$query = sprintf('INSERT INTO pmp_guestbook (date, name, email, text, status, url)
-					VALUES ( now(), \'%s\', \'%s\', \'%s\', \'%s\', \'%s\')',
-					mysql_real_escape_string($name),
-					mysql_real_escape_string($email),
-					mysql_real_escape_string($message),
-					mysql_real_escape_string($pmp_guestbook_activatenew),
-					mysql_real_escape_string($url));
+				// Insert entry into db
+				$sql = 'INSERT INTO pmp_guestbook (date, name, email, text, status, url)
+						VALUES (now(), ?, ?, ?, ?, ?)';
+				$params = [$name, $email, $message, $pmp_guestbook_activatenew, $url];
+				$result = dbexecute_pdo($sql, $params);
 
-				if ( dbexec($query) ) {
+				if ($result) {
 					// Send info mail to admin
-					str_replace(array("\r", "\n"), '', $email);
-					str_replace(array("\r", "\n"), '', $name);
-					$subject = '[phpMyProfiler] '. t('%name added a new guestbook entry', array('%name' => $name));
-					$subject= mb_encode_mimeheader(html_entity_decode($subject, ENT_COMPAT, 'UTF-8'), "UTF-8", "B", "\n");
+					str_replace(['\r', '\n'], '', $email);
+					str_replace(['\r', '\n'], '', $name);
+					$subject = '[phpMyProfiler] '.t('%name added a new guestbook entry', ['%name' => $name]);
+					$subject= mb_encode_mimeheader(html_entity_decode($subject, ENT_COMPAT, 'UTF-8'), 'UTF-8', 'B', '\n');
 
-					$body = $name.' <'.$email.'> ';
-					if ( !empty($url)) {
-						$body .= '['.$url.'] ';
+					$body = "{$name} <{$email}> ";
+					if (!empty($url)) {
+						$body .= "[{$url}] ";
 					}
-					$body .= t('wrote').':'."\n\n".$message;
+					$body .= t('wrote')."\n\n{$message}";
 
-					$header = 'From: "'.$pmp_admin_name.'" <'.$pmp_admin_mail.'>'."\r\n"
-						.'MIME-Version: 1.0'."\r\n"
-						.'Content-Type: text/plain; charset="UTF-8"'."\r\n"
-						.'Content-Transfer-Encoding: quoted-printable'."\r\n"
-						.'Message-ID: <'.md5(uniqid(microtime())).'@'.$_SERVER['SERVER_NAME'].'>'."\r\n"
-						.'X-Mailer: phpMyProfiler '.$pmp_version."\r\n";
+					$header = "From: \"{$pmp_admin_name}\" <{$pmp_admin_mail}>\r\n
+							   MIME-Version: 1.0\r\n
+							   Content-Type: text/plain; charset=\"UTF-8\"\r\n
+							   Content-Transfer-Encoding: quoted-printable\r\n
+							   Message-ID: <".md5(uniqid(microtime()))."@{$_SERVER['SERVER_NAME']}>\r\n
+							   X-Mailer: phpMyProfiler {$pmp_version}\r\n";
 
 					mail($pmp_admin_mail, $subject, $body, $header);
 
@@ -144,7 +139,7 @@ if (isset($_GET['action']) && ($_GET['action'] == 'save') {
 			}
 		}
 		else {
-			$smarty->assign('Failed', implode($msg, ' <br />'));
+			$smarty->assign('Failed', implode($msg, '<br/>'));
 		}
 	}
 }
@@ -163,28 +158,27 @@ else {
 }
 
 // Get total numbers of guestbook entries
-$query = 'SELECT COUNT(id) AS num from pmp_guestbook WHERE status = 1';
-$row = dbexec($query);
-$count = mysql_result($row, 0, 'num');
+$query = 'SELECT COUNT(id) AS cnt from pmp_guestbook WHERE status = 1';
+$row = dbquery_pdo($query, null, 'assoc');
+$count = $row[0]['cnt'];
 
 // Get guestbook entries for one page
-$query = 'SELECT name, email, date_format(date, \'' . $pmp_dateformat . '\') AS date, text, url, comment
-	  FROM pmp_guestbook WHERE status != 0 ORDER BY id DESC LIMIT ' .
-	  (((int)$start - 1) * $pmp_entries_side) . ", " . $pmp_entries_side;
-$result = dbexec($query);
+$query = 'SELECT name, email, date_format(date, ?) AS date, text, url, comment
+		  FROM pmp_guestbook WHERE status != 0 ORDER BY id DESC LIMIT ?, ?';
+$params = [$pmp_dateformat, (((int)$start - 1) * $pmp_entries_side), $pmp_entries_side];
+$rows = dbquery_pdo($query, $params, 'assoc');
 
 $i = 0;
-$entries = array();
-if (mysql_num_rows($result) > 0) {
-	while ($row = mysql_fetch_object($result)) {
+$entries = [];
+
+if (count($rows) > 0) {
+	foreach ($rows as $row) {
 		$row->nr = $count - $i++ - (((int)$start - 1) * $pmp_entries_side);
 		$row->text = replace_emoticons($row->text);
 		$row->comment = replace_emoticons($row->comment);
 		$entries[] = $row;
 	}
 }
-
-dbclose();
 
 $smarty->assign('entries', $entries);
 $smarty->assign('emoticons', array_unique($emoticons));

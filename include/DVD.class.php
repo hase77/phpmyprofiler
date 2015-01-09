@@ -163,9 +163,9 @@ class DVD extends smallDVD {
 			}
 
 			// Events
-			$query = "SELECT *, DATE_FORMAT(timestamp, '%H:%i:%s') AS time, DATE_FORMAT(timestamp, '{$pmp_dateformat}') AS date
+			$query = "SELECT *, DATE_FORMAT(timestamp, '%H:%i:%s') AS time, DATE_FORMAT(timestamp, ?) AS date
 					  FROM pmp_events LEFT JOIN pmp_users ON pmp_events.user_id = pmp_users.user_id WHERE id = ?";
-			$params = [$id];
+			$params = [$pmp_dateformat, $id];
 			$rows = dbquery_pdo($query, $params, 'object');
 			if (count($rows) > 0) {
 				foreach ($rows as $row) {
@@ -217,9 +217,9 @@ class DVD extends smallDVD {
 			}
 
 			// Reviews
-			$query = "SELECT name, title, email, date_format(date, '{$pmp_dateformat}') AS date, text, vote
+			$query = "SELECT name, title, email, date_format(date, ?) AS date, text, vote
 					  FROM pmp_reviews WHERE film_id = ? and status = 1 ORDER BY date DESC";
-			$params = [$id];
+			$params = [$pmp_dateformat, $id];
 			$rows = dbquery_pdo($query, $params, 'object');
 			if (count($rows) > 0) {
 				foreach ($rows as $row) {

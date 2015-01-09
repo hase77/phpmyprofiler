@@ -150,7 +150,7 @@ class smallDVD {
 						$this->LoanTo->LastName = $result[0]['lastname'];
 						$this->LoanTo->Email = $result[0]['email'];
 						$this->LoanTo->Phone = $result[0]['phone'];
-						$this->LoanReturn = @strftime($pmp_dateformat, strtotime($row[0]['loaneddue']));
+						$this->LoanReturn = strftime($pmp_dateformat, strtotime($row[0]['loaneddue']));
 					}
 				} else {
 					$this->Loaned = false;

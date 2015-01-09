@@ -10,7 +10,7 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
@@ -26,8 +26,6 @@ $pmp_module = 'news';
 $smarty = new pmp_Smarty;
 $smarty->loadFilter('output', 'trimwhitespace');
 
-dbconnect();
-
 // Page selected?
 if (isset($_GET['page'])) {
 	if (!is_numeric($_GET['page'])) {
@@ -41,25 +39,24 @@ else {
 	$start = 1;
 }
 
+// Get total number of news
+$query = 'SELECT COUNT(id) AS cnt from pmp_news';
+$row = dbquery_pdo($query, null, 'assoc');
+$count = $row[0]['cnt'];
+
+
 // Get News for one page
-$sql = 'SELECT title, date, text FROM pmp_news ORDER BY date DESC LIMIT '
-	. (((int)$start - 1) * $pmp_news_page). ", " . $pmp_news_page;
-$res = dbexec($sql);
+$query = 'SELECT title, date, text FROM pmp_news ORDER BY date DESC LIMIT ?, ?';
+$params = [(((int)$start - 1) * $pmp_news_page), $pmp_news_page];
+$rows = dbquery_pdo($query, $params, 'assoc');
 
-$news = array();
+$news = [];
 
-if (mysql_num_rows($res) > 0) {
-	while ($row = mysql_fetch_object($res)) {
+if (count($rows) > 0) {
+	foreach ($rows as $row) {
 		$news[] = $row;
 	}
 }
-
-// Get otal number of news
-$query = 'SELECT COUNT(id) AS num FROM pmp_news';
-$result = dbexec($query);
-$count = mysql_result($result, 0, 'num');
-
-dbclose();
 
 $smarty->assign('news', $news);
 $smarty->assign('count', $count);

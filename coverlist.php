@@ -10,7 +10,7 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
@@ -40,21 +40,23 @@ else {
 }
 
 // Get cover ids for one page
-$query = 'SELECT DISTINCT id FROM pmp_film WHERE collectiontype != \'Ordered\' AND collectiontype != \'Wish List\'
+$query = 'SELECT id FROM pmp_film WHERE collectiontype != \'Ordered\' AND collectiontype != \'Wish List\'
 		  AND id NOT IN (SELECT id FROM pmp_tags where name = ?) ORDER BY sorttitle LIMIT ?, ?';
 $params = [$pmp_exclude_tag, (((int)$start - 1) * $pmp_cover_page), $pmp_cover_page];
-$cols = dbquery_pdo($query, $params, 'assoc');
+$rows = dbquery_pdo($query, $params, 'assoc');
 
 // Get dvd objects with dvd covers
-foreach ($cols as $col) {
-	$cover[] = new smallDVD($col["id"]);
+if (count($rows) > 0) {
+	foreach ($rows as $row) {
+		$cover[] = new smallDVD($row['id']);
+	}
 }
 
-$query = 'SELECT COUNT(DISTINCT id) AS cnt FROM pmp_film WHERE collectiontype != \'Ordered\' AND collectiontype != \'Wish List\'
+$query = 'SELECT COUNT(id) AS cnt FROM pmp_film WHERE collectiontype != \'Ordered\' AND collectiontype != \'Wish List\'
 		  AND id NOT IN (SELECT id FROM pmp_tags where name = ?)';
 $params = [$pmp_exclude_tag];
-$cols = dbquery_pdo($query, $params, 'assoc');
-$count = $cols[0]['cnt'];
+$row = dbquery_pdo($query, $params, 'assoc');
+$count = $row[0]['cnt'];
 
 $smarty->assign('cover', $cover);
 $smarty->assign('count', $count);

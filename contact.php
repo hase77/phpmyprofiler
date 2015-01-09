@@ -10,7 +10,7 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
@@ -50,34 +50,34 @@ if (isset($_GET['action']) && $_GET['action'] == 'send') {
 		$smarty->assign('Failed', 'Form key error!');
 	}
 	else {
-		$msg = array();
+		$msg = [];
 
 		// Check all values we get from contact form
-		if ($_POST['name'] != "") {
+		if ($_POST['name'] != '') {
 			$name = html2txt($_POST['name']);
 		}
 		else {
 			$msg[]= 'Please enter your name!';
 		}
 
-		if ($_POST['email'] != "") {
+		if ($_POST['email'] != '') {
 			$email = $_POST['email'];
-			if (!$validate->email($email, array('use_rfc822' => true))) {
-				$msg[] = "$email is <strong>NOT</strong> a valid email address!";
+			if (!$validate->email($email, ['use_rfc822' => true])) {
+				$msg[] = "{$email} is <strong>NOT</strong> a valid email address!";
 			}
 		}
 		else {
 			$msg[]= 'Please enter a valid email address!';
 		}
 
-		if ($_POST['subject'] != "") {
+		if ($_POST['subject'] != '') {
 			$subject = html2txt($_POST['subject']);
 		}
 		else {
 			$msg[]= 'Please enter a subject!';
 		}
 
-		if ($_POST['message'] != "") {
+		if ($_POST['message'] != '') {
 			$message = html2txt($_POST['message']);
 		}
 		else {
@@ -94,18 +94,18 @@ if (isset($_GET['action']) && $_GET['action'] == 'send') {
 				$smarty->assign('Failed', t('Bot Attack!'));
 			}
 			else {
-				$subject = "[phpMyProfiler] " . $subject;
-				$subject= mb_encode_mimeheader($subject, "UTF-8", "B", "\n");
+				$subject = "[phpMyProfiler] {$subject}";
+				$subject= mb_encode_mimeheader($subject, 'UTF-8', 'B', '\n');
 
 				// Wordwrap after 72 chars in message
 				$message = wordwrap($message, 72);
 
-				$header = 'From: "'.$name.'" <'.$email.'>'."\r\n"
-					.'MIME-Version: 1.0'."\r\n"
-					.'Content-Type: text/plain; charset="UTF-8"'."\r\n"
-					.'Content-Transfer-Encoding: quoted-printable'."\r\n"
-					.'Message-ID: <'.md5(uniqid(microtime())).'@'.$_SERVER['SERVER_NAME'].'>'."\r\n"
-					.'X-Mailer: phpMyProfiler '.$pmp_version."\r\n";
+				$header = "From: \"{$name}\" <{$email}>\r\n
+						   MIME-Version: 1.0'\r\n
+						   Content-Type: text/plain; charset=\"UTF-8\"\r\n
+						   Content-Transfer-Encoding: quoted-printable\r\n
+						   Message-ID: <".md5(uniqid(microtime()))."@{$_SERVER['SERVER_NAME']}>\r\n
+						   X-Mailer: phpMyProfiler {$pmp_version}\r\n";
 
 				// Send e-mail
 				if (mail($pmp_admin_mail, $subject, $message, $header)) {
@@ -123,7 +123,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'send') {
 			}
 		}
 		else {
-			$smarty->assign('Failed', implode($msg, ' <br />'));
+			$smarty->assign('Failed', implode($msg, '<br/>'));
 		}
 	}
 }
