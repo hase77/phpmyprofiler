@@ -22,6 +22,8 @@ if (!isset($_SERVER['HTTP_REFERER']) || stristr($_SERVER['HTTP_REFERER'], $_SERV
 	die('Not allowed! Possible hacking attempt detected!');
 }
 
+require_once('config.inc.php');
+
 if (isset($_GET['rating'])) $rating = $_GET['rating'];
 if (isset($_GET['size'])) $size = $_GET['size'];
 if (isset($_GET['maxrate'])) $max = $_GET['maxrate'];
