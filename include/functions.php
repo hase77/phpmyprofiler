@@ -44,9 +44,9 @@ if (!isset($_SESSION)) {
 }
 
 // Check language
-if (!empty($_GET['lang_id'])) {
+if (!empty($lang_id)) {
 	// The user wants to change language, save the information to session
-	$_SESSION['lang_id'] = $_GET['lang_id'];
+	$_SESSION['lang_id'] = $lang_id);
 }
 // Okay, the user doesn't want to change the language. Then use the language
 // from the Session. Oh, there is no language in the session?

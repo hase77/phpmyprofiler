@@ -147,13 +147,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'save') {
 }
 
 // Page selected?
-if (isset($_GET['page'])) {
-	if (!is_numeric($_GET['page'])) {
-		$start = 1;
-	}
-	else {
-		$start = $_GET['page'];
-	}
+if (!empty($page)) {
+	$start = $page;
 }
 else {
 	$start = 1;

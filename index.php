@@ -43,7 +43,6 @@ else {
 	// Valid pages
 	$valildpages = [
 		'contact'			=> 'contact.php',
-		'cover'				=> 'cover.php',
 		'coverlist' 		=> 'coverlist.php',
 		'credits'			=> 'credits.php',
 		'filmprofile'		=> 'filmprofile.php',
@@ -85,6 +84,9 @@ else {
 	}
 
 	// Sanitize/filter all values we can get
+	$lang_id = (string)filter_input(INPUT_GET, 'lang_id');
+	$p_letter = (string)filter_input(INPUT_GET, 'pletter');
+
 	$content_page = (string)filter_input(INPUT_GET, 'content');
 	$id = (string)filter_input(INPUT_GET, 'id');
 	$page = (int)filter_input(INPUT_GET, 'page');
@@ -118,12 +120,6 @@ else {
 		else {
 			unset($_SESSION['letter']);
 		}
-		if (isset($_GET['cover'])) {
-			$_SESSION['cover'] = $_GET['cover'];
-		}
-		else {
-			unset($_SESSION['cover']);
-		}
 		if (isset($_GET['name'])) {
 			$_SESSION['name'] = $_GET['name'];
 		}
@@ -143,9 +139,6 @@ else {
 			}
 			if (isset($_SESSION['letter'])) {
 				$_GET['letter'] = $_SESSION['letter'];
-			}
-			if (isset($_SESSION['cover'])) {
-				$_GET['cover'] = $_SESSION['cover'];
 			}
 			if (isset($_SESSION['name'])) {
 				$_GET['name'] = $_SESSION['name'];

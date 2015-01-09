@@ -27,7 +27,7 @@ $smarty = new pmp_Smarty;
 $smarty->loadFilter('output', 'trimwhitespace');
 
 // Page selected?
-if (!empty($page)) {
+if (empty($page)) {
 	$start = 1;
 }
 else {

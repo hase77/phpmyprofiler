@@ -26,24 +26,19 @@ $smarty = new pmp_Smarty;
 $smarty->loadFilter('output', 'trimwhitespace');
 
 // Page selected?
-if (isset($_GET['page'])) {
-	if (!is_numeric($_GET['page'])) {
-		$start = 1;
-	}
-	else {
-		$start = $_GET['page'];
-	}
+if (!empty($page)) {
+	$start = $page;
 }
 else {
 	$start = 1;
 }
 
 // Letter selected?
-if (empty($_GET['pletter'])) {
+if (empty($p_letter)) {
 	$letter = '';
 }
 else {
-	$letter = $_GET['pletter'];
+	$letter = $p_letter;
 }
 
 $dir = @opendir($pmp_dir_cast);

@@ -22,7 +22,7 @@
 defined('_PMP_REL_PATH') or die('Not allowed! Possible hacking attempt detected!');
 
 // Check for id
-if (!isset($_GET['id'])) {
+if (empty($id)) {
     die('No id given!');
 }
 
@@ -38,7 +38,7 @@ $smarty = new pmp_Smarty;
 $smarty->loadFilter('output', 'trimwhitespace');
 
 // Initialize the captcha object with our configuration options
-if ( $pmp_guestbook_showcode == true ) {
+if ($pmp_guestbook_showcode == true) {
 	require_once('include/b2evo_captcha/b2evo_captcha.config.php');
 	require_once('include/b2evo_captcha/b2evo_captcha.class.php');
 
@@ -47,82 +47,78 @@ if ( $pmp_guestbook_showcode == true ) {
 	$smarty->assign('imgLoc', $imgLoc);
 }
 
-dbconnect();
-
-if ( (isset($_GET['action'])) && ($_GET['action'] == 'send') ) {
+if (isset($_GET['action']) && $_GET['action'] == 'send') {
 	// First check the form key
-	if ( !isset($_POST['form_key']) || !$formKey->validate() ) {
+	if (!isset($_POST['form_key']) || !$formKey->validate()) {
 		//Form key is invalid, show an error
 		$smarty->assign('Failed', 'Form key error!');
 	}
 	else {
-		$msg = array();
+		$msg = [];
+
+		// ToDo: Translation for error messages
 
 		// Check all values we get from contact form
-		if ( $_POST['name'] != "" ) {
+		if ($_POST['name'] != '') {
 			$name = html2txt($_POST['name']);
 		}
 		else {
 			$msg[]= 'Please enter your name!';
 		}
 
-		if ( $_POST['email'] != "" ) {
+		if ($_POST['email'] != '') {
 			$email = $_POST['email'];
-			if ( !$validate->email($email, array('use_rfc822' => true)) ) {
-				$msg[] = "$email is <strong>NOT</strong> a valid email address!";
+			if (!$validate->email($email, ['use_rfc822' => true])) {
+				$msg[] = "{$email} is <strong>NOT</strong> a valid email address!";
 			}
 		}
 		else {
 			$msg[]= 'Please enter a valid email address!';
 		}
 
-		if ( $_POST['title'] != "" ) {
+		if ($_POST['title'] != '') {
 			$title = html2txt($_POST['title']);
 		}
 		else {
 			$msg[]= 'Please enter a title for your review!';
 		}
 
-		if ( $_POST['text'] != "" ) {
+		if ($_POST['text'] != '') {
 			$text = html2txt($_POST['text']);
 		}
 		else {
 			$msg[]= 'Please enter a text for your review!';
 		}
 
-		if ( $_POST['vote'] != "" ) {
+		if ($_POST['vote'] != '') {
 			$vote = (int)$_POST['vote'];
 		}
 		else {
 			$msg[]= 'Please select an rating!';
 		}
 
-		if ( count($msg) == 0 ) {
+		if (count($msg) == 0) {
 			// Check captcha
-			if ( ($pmp_guestbook_showcode == true) && ($captcha->validate_submit($_POST['image'], $_POST['code']) == false) ) {
+			if ($pmp_guestbook_showcode == true && $captcha->validate_submit($_POST['image'], $_POST['code']) == false) {
 				$smarty->assign('Failed', t('Wrong security code!'));
 			}
 			// Make Bot-Check
-			else if ( !empty($_POST['username']) ) {
+			else if (!empty($_POST['username'])) {
 				$smarty->assign('Failed', t('Bot Attack!'));
 			}
 			else {
 				// Add Review to DB
-				$query = sprintf('INSERT INTO pmp_reviews (film_id, date, title, name, email, text, vote, status)
-						VALUES ( \'%s\', now(), \'%s\', \'%s\', \'%s\', \'%s\', \'%s\', \'%s\')',
-						mysql_real_escape_string( html2txt($_GET['id']) ),
-						mysql_real_escape_string( $title ),
-						mysql_real_escape_string( $name ),
-						mysql_real_escape_string( $email ),
-						mysql_real_escape_string( $text ),
-						mysql_real_escape_string( $vote ),
-						mysql_real_escape_string( $pmp_review_activatenew ) );
+				// Insert entry into db
+				$sql = 'INSERT INTO pmp_reviews (film_id, date, title, name, email, text, vote, status)
+						VALUES (?, now(), ?, ?, ?, ?, ?, ?)';
+				$params = [$id, $title, $name, $email, $text, $vote, $pmp_review_activatenew];
+				$result = dbexecute_pdo($sql, $params);
 
-				if ( dbexec($query) ) {
-					$dvd = new smallDVD(html2txt($_GET['id']));
+				if ($result) {
+					$dvd = new smallDVD($id);
 
-					str_replace(array('\r', '\n'), '', $email);
-					str_replace(array('\r', '\n'), '', $name);
+					str_replace(['\r', '\n'], '', $email);
+					str_replace(['\r', '\n'], '', $name);
 
 					// Send e-mail to administrator
 					$body  = html_entity_decode(t('Someone added a new review:'), ENT_COMPAT, 'UTF-8') . "\n\n";
@@ -165,17 +161,15 @@ if ( (isset($_GET['action'])) && ($_GET['action'] == 'send') ) {
 			}
 		}
 		else {
-			$smarty->assign('Failed', implode($msg, ' <br />'));
+			$smarty->assign('Failed', implode($msg,  <br/>'));
 		}
 	}
 }
 
-$smarty->assign('id', html2txt($_GET['id']));
-$smarty->assign('film', new smallDVD(html2txt($_GET['id'])));
+$smarty->assign('id', $id);
+$smarty->assign('film', new smallDVD($id));
 
-dbclose();
-
-$smarty->assign('title', t("Write a review for"));
+$smarty->assign('title', t('Write a review for'));
 $smarty->assign('formkey', $formKey->outputKey());
 
 $smarty->display('review.tpl');
