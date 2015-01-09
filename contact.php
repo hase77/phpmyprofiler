@@ -52,6 +52,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'send') {
 	else {
 		$msg = [];
 
+		// ToDo: Translation for error messages
+
 		// Check all values we get from contact form
 		if ($_POST['name'] != '') {
 			$name = html2txt($_POST['name']);

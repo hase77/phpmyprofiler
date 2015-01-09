@@ -1,3 +1,7 @@
+ToDo:
+	- Further PDO integration
+	- Add translations stings for error messages at contact, guestbook
+
 Known errors:
 	- Defect title search
 	- Generating pdf report with enabled media type before title does not work

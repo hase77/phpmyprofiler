@@ -52,6 +52,8 @@ if (isset($_GET['action']) && ($_GET['action'] == 'save') {
 	else {
 		$msg = [];
 
+		// ToDo: Translation for error messages
+
 		// Check all values we get from contact form
 		if ($_POST['name'] != '') {
 			$name = html2txt($_POST['name']);
@@ -62,7 +64,7 @@ if (isset($_GET['action']) && ($_GET['action'] == 'save') {
 
 		if ($_POST['email'] != '') {
 			$email = $_POST['email'];
-			if (!$validate->email($email, array('use_rfc822' => true))) {
+			if (!$validate->email($email, ['use_rfc822' => true])) {
 				$msg[] = "{$email} is <strong>NOT</strong> a valid email address!";
 			}
 		}
@@ -72,7 +74,7 @@ if (isset($_GET['action']) && ($_GET['action'] == 'save') {
 
 		if ($_POST['url'] != '') {
 			$url = $_POST['url'];
-			if (!$validate->uri($url, array('use_rfc4151' => true))) {
+			if (!$validate->uri($url, ['use_rfc4151' => true])) {
 				$msg[] = "{$url} is <strong>NOT</strong> a valid URL!";
 			}
 		}
@@ -116,12 +118,12 @@ if (isset($_GET['action']) && ($_GET['action'] == 'save') {
 					}
 					$body .= t('wrote')."\n\n{$message}";
 
-					$header = "From: \"{$pmp_admin_name}\" <{$pmp_admin_mail}>\r\n
-							   MIME-Version: 1.0\r\n
-							   Content-Type: text/plain; charset=\"UTF-8\"\r\n
-							   Content-Transfer-Encoding: quoted-printable\r\n
-							   Message-ID: <".md5(uniqid(microtime()))."@{$_SERVER['SERVER_NAME']}>\r\n
-							   X-Mailer: phpMyProfiler {$pmp_version}\r\n";
+					$header = "From: \"{$pmp_admin_name}\" <{$pmp_admin_mail}>\r\n"
+							 ."MIME-Version: 1.0\r\n"
+							 ."Content-Type: text/plain; charset=\"UTF-8\"\r\n"
+							 ."Content-Transfer-Encoding: quoted-printable\r\n"
+							 ."Message-ID: <".md5(uniqid(microtime()))."@".$_SERVER['SERVER_NAME'].">\r\n"
+							 ."X-Mailer: phpMyProfiler {$pmp_version}\r\n";
 
 					mail($pmp_admin_mail, $subject, $body, $header);
 
