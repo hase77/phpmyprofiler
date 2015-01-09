@@ -18,7 +18,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
 */
 
-// No direct access
+// Disallow direct access
 defined('_PMP_REL_PATH') or die('Not allowed! Possible hacking attempt detected!');
 
 $pmp_module = 'news';
@@ -43,7 +43,6 @@ else {
 $query = 'SELECT COUNT(id) AS cnt from pmp_news';
 $row = dbquery_pdo($query, null, 'assoc');
 $count = $row[0]['cnt'];
-
 
 // Get News for one page
 $query = 'SELECT title, date, text FROM pmp_news ORDER BY date DESC LIMIT ?, ?';
