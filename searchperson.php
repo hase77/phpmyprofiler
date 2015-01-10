@@ -49,7 +49,7 @@ if (!empty($p_name)) {
 		$query .= '(LOWER(fullname) = ? OR LOWER(role) = ? OR LOWER(creditedas) = ? ';
 	}
 	else {
-		$query .= '(LOWER(fullname) LIKE \'%?%\' OR LOWER(role) LIKE \'%?%\' OR LOWER(creditedas) LIKE \'%?%\') ';
+		$query .= '(LOWER(fullname) LIKE ? OR LOWER(role) LIKE ? OR LOWER(creditedas) LIKE ?%) ';
 	}
 	if (!empty($birthyear)) {
 		$query .= 'AND birthyear = ? ';
@@ -64,7 +64,7 @@ if (!empty($p_name)) {
 		$params = [$searchstr, $searchstr, $searchstr, $birthyear, $pmp_exclude_tag];
 	}
 	else {
-		$params = [$searchstr, $searchstr, $searchstr, $pmp_exclude_tag];
+		$params = ['%'.$searchstr.'%', '%'.$searchstr.'%', '%'.$searchstr.'%', $pmp_exclude_tag];
 	}
 
 	$rows = dbquery_pdo($query, $params, 'object');
