@@ -87,7 +87,7 @@ else {
 	$lang_id = (string)filter_input(INPUT_GET, 'lang_id');
 	$p_letter = (string)filter_input(INPUT_GET, 'pletter');
 	$p_name = (string)filter_input(INPUT_GET, 'pname');
-	$birthyear = (int)filter_input(INPUT_GET, 'pbirthyear');
+	$p_birthyear = (int)filter_input(INPUT_GET, 'pbirthyear');
 
 	$content_page = (string)filter_input(INPUT_GET, 'content');
 	$id = (string)filter_input(INPUT_GET, 'id');

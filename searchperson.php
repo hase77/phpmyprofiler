@@ -43,30 +43,38 @@ if (!empty($p_name)) {
 	$searchstr = trim(mysql_real_escape_string($searchstr));
 
 	// Actor search (+Rolename)
-	$sql  = 'SELECT COUNT(pmp_actors.id) as episodes, pmp_actors.id, firstname, middlename, lastname, fullname, role, birthyear, creditedas ';
-	$sql .= 'FROM pmp_common_actors, pmp_actors INNER JOIN pmp_film ON pmp_film.id = pmp_actors.id WHERE ';
-	if ( isset($_GET['nowildcards']) ) {
-		$sql .= '(LOWER(fullname) = \'' . $searchstr . '\' OR LOWER(role) = \'' . $searchstr . '\' OR LOWER(creditedas) = \'' . $searchstr . '\') ';
+	$query  = 'SELECT COUNT(pmp_actors.id) as episodes, pmp_actors.id, firstname, middlename, lastname, fullname, role, birthyear, creditedas ';
+	$query .= 'FROM pmp_common_actors, pmp_actors INNER JOIN pmp_film ON pmp_film.id = pmp_actors.id WHERE ';
+	if (isset($_GET['nowildcards'])) {
+		$query .= '(LOWER(fullname) = ? OR LOWER(role) = ? OR LOWER(creditedas) = ? ';
 	}
 	else {
-		$sql .= '(LOWER(fullname) LIKE \'%' . $searchstr . '%\' OR LOWER(role) LIKE \'%' . $searchstr . '%\' OR LOWER(creditedas) LIKE \'%' . $searchstr . '%\') ';
+		$query .= '(LOWER(fullname) LIKE \'%?%\' OR LOWER(role) LIKE \'%?%\' OR LOWER(creditedas) LIKE \'%?%\') ';
 	}
-	if ( !empty($birthyear) ) {
-		$sql .= 'AND birthyear = \'' . $birthyear. '\' ';
+	if (!empty($birthyear)) {
+		$query .= 'AND birthyear = ? ';
 	}
-	$sql .= 'AND pmp_common_actors.actor_id = pmp_actors.actor_id ';
-	$sql .= 'AND pmp_common_actors.fullname != "[DIVIDER]" ';
-	$sql .= 'AND pmp_actors.id NOT IN (SELECT id FROM pmp_tags where name = \'' . mysql_real_escape_string($pmp_exclude_tag) . '\') ';
-	$sql .= 'GROUP BY pmp_actors.id ';
-	$sql .= 'ORDER BY birthyear, lastname, firstname, sorttitle';
+	$query .= 'AND pmp_common_actors.actor_id = pmp_actors.actor_id ';
+	$query .= 'AND pmp_common_actors.fullname != "[DIVIDER]" ';
+	$query .= 'AND pmp_actors.id NOT IN (SELECT id FROM pmp_tags where name = ?) ';
+	$query .= 'GROUP BY pmp_actors.id ';
+	$query .= 'ORDER BY birthyear, lastname, firstname, sorttitle';
+		
+	if (!empty($birthyear)) {
+		$params = [$searchstr, $searchstr, $searchstr, $birthyear, $pmp_exclude_tag];
+	}
+	else {
+		$params = [$searchstr, $searchstr, $searchstr, $pmp_exclude_tag];
+	}
 
-	$result = dbexec($sql);
-	if ( mysql_num_rows($result) > 0 ) {
-		while ( $row = mysql_fetch_object($result) ) {
+	$rows = dbquery_pdo($query, $params, 'object');
+
+	if (count($rows) > 0) {
+		foreach ($rows as $row) {
 			// Get headshot
 			$row->picname = getHeadshot($row->fullname, $row->birthyear, $row->firstname, $row->middlename, $row->lastname);
 			// If not found set blank
-			if ( empty($row->picname) ) {
+			if (empty($row->picname)) {
 				$row->picname = 'blank.jpg';
 			}
 			$row->fullname = $row->fullname;

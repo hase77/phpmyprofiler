@@ -54,9 +54,9 @@ while (($filename = @readdir($dir)) !== false) {
 			$name = trim(substr($filename, 0, strlen($filename)-4));
 			$realname = explode('_', $name);
 			$name = '';
-			if ( isset($realname[1]) && strlen($realname[1]) > 0 ) $name .= $realname[1].' ';
-			if ( isset($realname[2]) && strlen($realname[2]) > 0 ) $name .= $realname[2].' ';
-			if ( isset($realname[0]) && strlen($realname[0]) > 0 ) $name .= $realname[0];
+			if (isset($realname[1]) && strlen($realname[1]) > 0) $name .= $realname[1].' ';
+			if (isset($realname[2]) && strlen($realname[2]) > 0) $name .= $realname[2].' ';
+			if (isset($realname[0]) && strlen($realname[0]) > 0) $name .= $realname[0];
 
 			if ($letter && (strtoupper(substr($name, 0, 1)) != strtoupper($letter))) {
 				// Do nothing
