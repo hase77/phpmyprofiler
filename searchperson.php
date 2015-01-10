@@ -27,6 +27,7 @@ $smarty->loadFilter('output', 'trimwhitespace');
 
 dbconnect();
 
+$name = '';
 $cast = [];
 $crew = [];
 
@@ -49,7 +50,7 @@ if (!empty($p_name)) {
 		$query .= '(LOWER(fullname) = ? OR LOWER(role) = ? OR LOWER(creditedas) = ?) ';
 	}
 	else {
-		$query .= '(LOWER(fullname) LIKE ? OR LOWER(role) LIKE ? OR LOWER(creditedas) LIKE ?%) ';
+		$query .= '(LOWER(fullname) LIKE ? OR LOWER(role) LIKE ? OR LOWER(creditedas) LIKE ?) ';
 		$searchstr = '%'.$searchstr.'%';
 	}
 	if (!empty($birthyear)) {
@@ -87,29 +88,37 @@ if (!empty($p_name)) {
 	}
 
 	// Crew search
-	$sql  = 'SELECT DISTINCT pmp_credits.id, firstname, middlename, lastname, fullname, type, subtype, birthyear, creditedas ';
-	$sql .= 'FROM pmp_common_credits, pmp_credits INNER JOIN pmp_film ON pmp_film.id = pmp_credits.id WHERE LOWER(fullname) ';
-	if ( isset($_GET['nowildcards']) ) {
-		$sql .= '= \'' . $searchstr . '\' ';
+	$query  = 'SELECT DISTINCT pmp_credits.id, firstname, middlename, lastname, fullname, type, subtype, birthyear, creditedas ';
+	$query .= 'FROM pmp_common_credits, pmp_credits INNER JOIN pmp_film ON pmp_film.id = pmp_credits.id WHERE LOWER(fullname) ';
+	if (isset($_GET['nowildcards'])) {
+		$query .= '= ? ';
 	}
 	else {
-		$sql .= 'LIKE \'%' . $searchstr . '%\' ';
+		$query .= 'LIKE ? ';
 	}
-	if ( !empty($birthyear) ) {
-		$sql .= 'AND birthyear = \'' . $birthyear. '\' ';
+	if (!empty($birthyear) ) {
+		$query .= 'AND birthyear = ? ';
 	}
-	$sql .= 'AND pmp_common_credits.credit_id = pmp_credits.credit_id ';
-	$sql .= 'AND pmp_common_credits.fullname != "[DIVIDER]" ';
-	$sql .= 'AND pmp_credits.id NOT IN (SELECT id FROM pmp_tags where name = \'' . mysql_real_escape_string($pmp_exclude_tag) . '\') ';
-	$sql .= 'ORDER BY birthyear, lastname, firstname, sorttitle, type';
+	$query .= 'AND pmp_common_credits.credit_id = pmp_credits.credit_id ';
+	$query .= 'AND pmp_common_credits.fullname != "[DIVIDER]" ';
+	$query .= 'AND pmp_credits.id NOT IN (SELECT id FROM pmp_tags where name = ?) ';
+	$query .= 'ORDER BY birthyear, lastname, firstname, sorttitle, type';
 
-	$result = dbexec($sql);
-	if ( mysql_num_rows($result) > 0 ) {
-		while ( $row = mysql_fetch_object($result) ) {
+	if (!empty($birthyear)) {
+		$params = [$searchstr, $birthyear, $pmp_exclude_tag];
+	}
+	else {
+		$params = [$searchstr, $pmp_exclude_tag];
+	}
+
+	$rows = dbquery_pdo($query, $params, 'object');
+
+	if (count($rows) > 0) {
+		foreach ($rows as $row) {
 			// Get headshot
 			$row->picname = getHeadshot($row->fullname, $row->birthyear, $row->firstname, $row->middlename, $row->lastname);
 			// If no found set blank
-			if ( empty($row->picname) ) {
+			if (empty($row->picname)) {
 				$row->picname = 'blank.jpg';
 			}
 			$row->fullname = $row->fullname;
