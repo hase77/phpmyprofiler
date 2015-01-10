@@ -84,6 +84,7 @@ if (!empty($p_name)) {
 			$cast[] = $row;
 		}
 	}
+	$rows = null;
 
 	// Crew search
 	$query  = 'SELECT DISTINCT pmp_credits.id, firstname, middlename, lastname, fullname, type, subtype, birthyear, creditedas ';

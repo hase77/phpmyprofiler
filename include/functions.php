@@ -235,6 +235,7 @@ function dbexecute_pdo($query, $params, $continueonerror = false) {
 		}
 	}
 	
+	$stmt = null;
 	return $result;
 }
 
