@@ -1,6 +1,6 @@
 <?php
 /* phpMyProfiler
- * Copyright (C) 2006-2014 The phpMyProfiler project
+ * Copyright (C) 2006-2015 The phpMyProfiler project
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -9,7 +9,7 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
@@ -17,7 +17,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
 */
 
-// No direct access
+// Disallow direct access
 defined('_PMP_REL_PATH') or die('Not allowed! Possible hacking attempt detected!');
 
 $pmp_module = 'searchperson';
@@ -31,14 +31,14 @@ $cast = array();
 $crew = array();
 
 // Only if a search-name is given
-if ( isset($_GET['name']) ) {
+if (!empty($pname)) {
 	// Get birthyear if exists
-	if ( isset($_GET['birthyear']) ) {
-		$birthyear = mysql_real_escape_string(html2txt($_GET['birthyear']));
+	if (!empty($pbirthyear)) {
+		$birthyear = $pbirthyear;
 	}
 
-	$name = html2txt($_GET['name']);
-	$searchstr = str_replace("\\'", "'", html2txt($_GET['name']));
+	$name = $pname;
+	$searchstr = str_replace("\\'", "'", $name);
 	$searchstr = strtolower($searchstr);
 	$searchstr = trim(mysql_real_escape_string($searchstr));
 

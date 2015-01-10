@@ -50,7 +50,7 @@
 							<form action="index.php" method="get" accept-charset="utf-8">
 								<div>
 								<input type="hidden" name="content" value="searchperson" />
-								<input type="text" name="name" size="40" class="text" /> 
+								<input type="text" name="pname" size="40" class="text" /> 
 								<input type="submit" value="{t}Search for Person{/t}" class="button" onmouseover="this.className='button-over';" onmouseout="this.className='button';" />
 								</div>
 							</form>

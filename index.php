@@ -86,6 +86,8 @@ else {
 	// Sanitize/filter all values we can get
 	$lang_id = (string)filter_input(INPUT_GET, 'lang_id');
 	$p_letter = (string)filter_input(INPUT_GET, 'pletter');
+	$p_name = (string)filter_input(INPUT_GET, 'pname');
+	$birthyear = (int)filter_input(INPUT_GET, 'pbirthyear');
 
 	$content_page = (string)filter_input(INPUT_GET, 'content');
 	$id = (string)filter_input(INPUT_GET, 'id');
@@ -120,12 +122,6 @@ else {
 		else {
 			unset($_SESSION['letter']);
 		}
-		if (isset($_GET['name'])) {
-			$_SESSION['name'] = $_GET['name'];
-		}
-		else {
-			unset($_SESSION['name']);
-		}
 	}
 	else {
 		// We already have content set, e.g. we added filter to dvd-list
@@ -139,9 +135,6 @@ else {
 			}
 			if (isset($_SESSION['letter'])) {
 				$_GET['letter'] = $_SESSION['letter'];
-			}
-			if (isset($_SESSION['name'])) {
-				$_GET['name'] = $_SESSION['name'];
 			}
 
 			$content_page = $_SESSION['content'];
