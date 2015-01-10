@@ -27,8 +27,8 @@ $smarty->loadFilter('output', 'trimwhitespace');
 
 dbconnect();
 
-$cast = array();
-$crew = array();
+$cast = [];
+$crew = [];
 
 // Only if a search-name is given
 if (!empty($pname)) {
