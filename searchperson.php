@@ -43,13 +43,14 @@ if (!empty($p_name)) {
 	$searchstr = trim(mysql_real_escape_string($searchstr));
 
 	// Actor search (+Rolename)
-	$query  = 'SELECT COUNT(pmp_actors.id) as episodes, pmp_actors.id, firstname, middlename, lastname, fullname, role, birthyear, creditedas ';
+	$query  = 'SELECT COUNT(pmp_actors.id) AS episodes, pmp_actors.id, firstname, middlename, lastname, fullname, role, birthyear, creditedas ';
 	$query .= 'FROM pmp_common_actors, pmp_actors INNER JOIN pmp_film ON pmp_film.id = pmp_actors.id WHERE ';
 	if (isset($_GET['nowildcards'])) {
 		$query .= '(LOWER(fullname) = ? OR LOWER(role) = ? OR LOWER(creditedas) = ? ';
 	}
 	else {
 		$query .= '(LOWER(fullname) LIKE ? OR LOWER(role) LIKE ? OR LOWER(creditedas) LIKE ?%) ';
+		$searchstr = '%'.$searchstr.'%';
 	}
 	if (!empty($birthyear)) {
 		$query .= 'AND birthyear = ? ';
@@ -64,7 +65,7 @@ if (!empty($p_name)) {
 		$params = [$searchstr, $searchstr, $searchstr, $birthyear, $pmp_exclude_tag];
 	}
 	else {
-		$params = ['%'.$searchstr.'%', '%'.$searchstr.'%', '%'.$searchstr.'%', $pmp_exclude_tag];
+		$params = [$searchstr, $searchstr, $searchstr, $pmp_exclude_tag];
 	}
 
 	$rows = dbquery_pdo($query, $params, 'object');
