@@ -25,8 +25,6 @@ $pmp_module = 'searchperson';
 $smarty = new pmp_Smarty;
 $smarty->loadFilter('output', 'trimwhitespace');
 
-dbconnect();
-
 $name = '';
 $cast = [];
 $crew = [];
@@ -61,7 +59,7 @@ if (!empty($p_name)) {
 	$query .= 'AND pmp_actors.id NOT IN (SELECT id FROM pmp_tags where name = ?) ';
 	$query .= 'GROUP BY pmp_actors.id ';
 	$query .= 'ORDER BY birthyear, lastname, firstname, sorttitle';
-		
+
 	if (!empty($birthyear)) {
 		$params = [$searchstr, $searchstr, $searchstr, $birthyear, $pmp_exclude_tag];
 	}

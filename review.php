@@ -129,13 +129,13 @@ if (isset($_GET['action']) && $_GET['action'] == 'send') {
 					$body .= t('E-mail') . ': ' . $email . "\n\n";
 					$body .= $text . "\n";
 					$body .= "-----------------------------------------------------------\n\n";
-					if ( $pmp_review_activatenew == false ) {
+					if ($pmp_review_activatenew == false) {
 						$body .= html_entity_decode(t('Please activate or delete this pending review:'), ENT_COMPAT, 'UTF-8') . "\n\n";
 						$body .= $pmp_basepath. '/admin/reviews.php';
 					}
 
 					$subject = '[phpMyProfiler] ' .  t('New pending review:') . ' ' . $title;
-					$subject= mb_encode_mimeheader(html_entity_decode($subject, ENT_COMPAT, 'UTF-8'), "UTF-8", "B", "\n");
+					$subject = mb_encode_mimeheader(html_entity_decode($subject, ENT_COMPAT, 'UTF-8'), "UTF-8", "B", "\n");
 
 					$header = 'From: "' . $pmp_admin_name . '" <' . $pmp_admin_mail . '>' . "\r\n"
 						. 'MIME-Version: 1.0' . "\r\n"
