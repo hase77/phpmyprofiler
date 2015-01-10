@@ -161,7 +161,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'send') {
 			}
 		}
 		else {
-			$smarty->assign('Failed', implode($msg,  <br/>'));
+			$smarty->assign('Failed', implode($msg,  '<br/>'));
 		}
 	}
 }

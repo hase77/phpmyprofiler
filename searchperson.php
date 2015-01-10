@@ -40,6 +40,9 @@ if (!empty($p_name)) {
 	$searchstr = str_replace("\\'", "'", $name);
 	$searchstr = strtolower($searchstr);
 	$searchstr = trim($searchstr);
+	if (isset($_GET['nowildcards'])) {
+		$searchstr = '%'.$searchstr.'%';
+	}
 
 	// Actor search (+Rolename)
 	$query  = 'SELECT COUNT(pmp_actors.id) AS episodes, pmp_actors.id, firstname, middlename, lastname, fullname, role, birthyear, creditedas ';
@@ -49,7 +52,6 @@ if (!empty($p_name)) {
 	}
 	else {
 		$query .= '(LOWER(fullname) LIKE ? OR LOWER(role) LIKE ? OR LOWER(creditedas) LIKE ?) ';
-		$searchstr = '%'.$searchstr.'%';
 	}
 	if (!empty($birthyear)) {
 		$query .= 'AND birthyear = ? ';
