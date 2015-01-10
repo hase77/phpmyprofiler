@@ -39,7 +39,7 @@ if (!empty($p_name)) {
 	$name = $p_name;
 	$searchstr = str_replace("\\'", "'", $name);
 	$searchstr = strtolower($searchstr);
-	$searchstr = trim(mysql_real_escape_string($searchstr));
+	$searchstr = trim($searchstr);
 
 	// Actor search (+Rolename)
 	$query  = 'SELECT COUNT(pmp_actors.id) AS episodes, pmp_actors.id, firstname, middlename, lastname, fullname, role, birthyear, creditedas ';
