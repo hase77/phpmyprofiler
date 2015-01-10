@@ -31,13 +31,13 @@ $cast = [];
 $crew = [];
 
 // Only if a search-name is given
-if (!empty($pname)) {
+if (!empty($p_name)) {
 	// Get birthyear if exists
-	if (!empty($pbirthyear)) {
-		$birthyear = $pbirthyear;
+	if (!empty($p_birthyear)) {
+		$birthyear = $p_birthyear;
 	}
 
-	$name = $pname;
+	$name = $p_name;
 	$searchstr = str_replace("\\'", "'", $name);
 	$searchstr = strtolower($searchstr);
 	$searchstr = trim(mysql_real_escape_string($searchstr));
