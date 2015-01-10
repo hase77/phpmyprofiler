@@ -209,6 +209,8 @@ function dbquery_pdo($query, $params = null, $type = 'default', $continueonerror
 			die;
 		}
 	}
+	
+	var_dump($stmt->queryString);
 
 	return $result;
 }
