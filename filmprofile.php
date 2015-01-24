@@ -33,7 +33,7 @@ if (!empty($id)) {
 	$smarty->assign('pmp_review_type', $pmp_review_type);
 
 	// Page selected?
-	if (!empty($page)) {
+	if (!empty($page) && $page > 0 && $page < 5) {
 		$start = $page;
 	}
 	else {
