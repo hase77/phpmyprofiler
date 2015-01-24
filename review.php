@@ -110,7 +110,7 @@ if ($action == 'send') {
 					$body .= $text . "\n";
 					$body .= "-----------------------------------------------------------\n\n";
 					if ($pmp_review_activatenew == false) {
-						$body .= html_entity_decode(t('Please activate or delete this pending review:'), ENT_COMPAT, 'UTF-8') . '\n\n';
+						$body .= html_entity_decode(t('Please activate or delete this pending review:'), ENT_COMPAT, 'UTF-8')."\n\n";
 						$body .= $pmp_basepath. '/admin/reviews.php';
 					}
 
