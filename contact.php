@@ -101,10 +101,10 @@ if ($action == 'send') {
 				}
 
 				// Clean the input values
-				$_POST['name'] = '';
-				$_POST['email'] = '';
-				$_POST['subject'] = '';
-				$_POST['message'] = '';
+				$name = '';
+				$email = '';
+				$subject = '';
+				$message = '';
 			}
 		}
 		else {
@@ -118,6 +118,10 @@ $pmp_admin_mail_s = str_replace('@', ' [at] ', $pmp_admin_mail);
 $pmp_admin_mail_s = str_replace('.', ' dot ', $pmp_admin_mail_s);
 
 $smarty->assign('formkey', $formKey->outputKey());
+$smarty->assign('name', $name);
+$smarty->assign('email', $email);
+$smarty->assign('subject', subject);
+$smarty->assign('message', $message);
 
 $smarty->display('contact.tpl');
 ?>

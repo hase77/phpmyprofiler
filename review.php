@@ -129,11 +129,11 @@ if ($action == 'send') {
 					$smarty->assign('Success', t('Thank you for your review.'));
 
 					// Clean values
-					$_POST['title'] = '';
-					$_POST['name'] = '';
-					$_POST['email'] = '';
-					$_POST['text'] = '';
-					$_POST['vote'] = '9';
+					$title = '';
+					$name = '';
+					$email = '';
+					$text = '';
+					$vote = '9';
 				}
 				else {
 					$smarty->assign('Error', t('Sorry, an error has occurred') . '!');
@@ -151,6 +151,11 @@ $smarty->assign('film', new smallDVD($id));
 
 $smarty->assign('title', t('Write a review for'));
 $smarty->assign('formkey', $formKey->outputKey());
+$smarty->assign('title', $title);
+$smarty->assign('name', $name);
+$smarty->assign('email', $email);
+$smarty->assign('text', $text);
+$smarty->assign('vote', $vote);
 
 $smarty->display('review.tpl');
 ?>

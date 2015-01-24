@@ -25,10 +25,8 @@ $pmp_module = 'guestbook';
 
 require_once('include/emoticons.php');
 require_once('include/formkey.class.php');
-require_once('Validate.php');
 
 $formKey = new formKey();
-$validate = new Validate();
 
 $smarty = new pmp_Smarty;
 $smarty->loadFilter('output', 'trimwhitespace');
@@ -55,47 +53,32 @@ if (isset($_GET['action']) && $_GET['action'] == 'save') {
 		// ToDo: Translation for error messages
 
 		// Check all values we get from contact form
-		if ($_POST['name'] != '') {
-			$name = html2txt($_POST['name']);
-		}
-		else {
+		if (empty($name)) {
 			$msg[]= 'Please enter your name!';
 		}
 
-		if ($_POST['email'] != '') {
-			$email = $_POST['email'];
-			if (!$validate->email($email, ['use_rfc822' => true])) {
-				$msg[] = "{$email} is <strong>NOT</strong> a valid email address!";
-			}
-		}
-		else {
+		if (!$email) {
 			$msg[]= 'Please enter a valid email address!';
 		}
 
-		if ($_POST['url'] != '') {
-			$url = $_POST['url'];
-			if (!$validate->uri($url, ['use_rfc4151' => true])) {
-				$msg[] = "{$url} is <strong>NOT</strong> a valid URL!";
-			}
+		if (!$url) {
+			$msg[] = "{$url} is <strong>NOT</strong> a valid URL!";
 		}
 		else {
 			$url = '';
 		}
 
-		if ($_POST['message'] != '') {
-			$message = html2txt($_POST['message']);
-		}
-		else {
+		if (empty($message)) {
 			$msg[]= 'Please enter a message to send!';
 		}
 
 		if (count($msg) == 0) {
 			// Check captcha
-			if ($pmp_guestbook_showcode == true && $captcha->validate_submit($_POST['image'], $_POST['code']) == false) {
+			if ($pmp_guestbook_showcode == true && $captcha->validate_submit($captcha_image, $captcha_code) == false) {
 				$smarty->assign('Failed', t('Wrong security code!'));
 			}
 			// Make Bot-Check
-			else if (!empty($_POST['username'])) {
+			else if (!empty($username)) {
 				$smarty->assign('Failed', t('Bot Attack!'));
 			}
 			else {
@@ -187,6 +170,10 @@ $smarty->assign('count', $count);
 $smarty->assign('page', (int)$start);
 $smarty->assign('pages', (int)($count / $pmp_entries_side + ((($count % $pmp_entries_side) == 0) ? 0 : 1)));
 $smarty->assign('formkey', $formKey->outputKey());
+$smarty->assign('name', $name);
+$smarty->assign('email', $email);
+$smarty->assign('url', $url);
+$smarty->assign('message', $message);
 
 $smarty->display('guestbook.tpl');
 ?>

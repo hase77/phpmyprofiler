@@ -54,7 +54,7 @@
 						<tr>
 							<td class="gb_form">{t}Name{/t}:</td>
 							<td class="gb_form">
-								<input type="text" tabindex="1" name="name" size="32" value="{if isset($smarty.post.name)}{$smarty.post.name}{/if}" />
+								<input type="text" tabindex="1" name="name" size="32" value="{if !empty($name)}{$name}{/if}" />
 								<input type="hidden" name="username" />
 								{* Hidden input for form key *}
 								<input type="hidden" name="form_key" value="{$formkey}" />
@@ -63,13 +63,13 @@
 						<tr>
 							<td class="gb_form">{t}E-mail{/t}:</td>
 							<td class="gb_form">
-								<input type="text" tabindex="2" name="email" size="32" value="{if isset($smarty.post.email)}{$smarty.post.email}{/if}" />
+								<input type="text" tabindex="2" name="email" size="32" value="{if !empty($email)}{$email}{/if}" />
 							</td>
 						</tr>
 						<tr>
 							<td class="gb_form">{t}Homepage{/t}:</td>
 							<td class="gb_form">
-								<input type="text" tabindex="3" name="url" size="32" value="{if isset($smarty.post.url)}{$smarty.post.url}{/if}" />
+								<input type="text" tabindex="3" name="url" size="32" value="{if !empty($url)}{$url}{/if}" />
 							</td>
 						</tr>
 						<tr>
@@ -80,7 +80,7 @@
 								{if $smarty.foreach.emo.iteration % 4 == 0} <br />{/if}
 							{/foreach}
 							</td>
-							<td class="gb_form"><textarea tabindex="4" rows="10" name="message" cols="31">{if isset($smarty.post.message)}{$smarty.post.message|stripslashes}{/if}</textarea></td>
+							<td class="gb_form"><textarea tabindex="4" rows="10" name="message" cols="31">{if !empty($message)}{$message}{/if}</textarea></td>
 						</tr>
 						{if $pmp_guestbook_showcode == 1}
 							<tr>

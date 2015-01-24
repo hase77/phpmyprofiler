@@ -96,6 +96,7 @@ else {
 	$title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
 	$text = filter_input(INPUT_POST, 'text', FILTER_SANITIZE_STRING);
 	$vote = filter_input(INPUT_POST, 'vote', FILTER_SANITIZE_NUMBER_INT);
+	$url = filter_input(INPUT_POST, 'url', FILTER_SANITIZE_URL);
 	
 	$action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
 	$lang_id = filter_input(INPUT_GET, 'lang_id', FILTER_SANITIZE_STRING);
