@@ -8,6 +8,6 @@ $pmp_custom_media = [
 		"small" => "VHS_s.png",
 		"big" => "VHS.png"
     ]
-);
+];
 
 ?>
