@@ -83,15 +83,17 @@ else {
 		include('menue.php');
 	}
 
-	// Sanitize/filter all values we can get
-	$action = (string)filter_input(INPUT_GET, 'action');
-	
+	// Sanitize/filter all values we can get	
 	$form_key = (string)filter_input(INPUT_POST, 'form_key');
 	$captcha_image = (string)filter_input(INPUT_POST, 'image');
 	$captcha_code = (string)filter_input(INPUT_POST, 'code');
 	
-	$email = (string)filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+	$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+	$name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+	$subject = filter_input(INPUT_POST, 'subject', FILTER_SANITIZE_STRING);
+	$message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
 	
+	$action = (string)filter_input(INPUT_GET, 'action');
 	$lang_id = (string)filter_input(INPUT_GET, 'lang_id');
 	$p_letter = (string)filter_input(INPUT_GET, 'pletter');
 	$p_name = (string)filter_input(INPUT_GET, 'pname');

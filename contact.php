@@ -55,33 +55,20 @@ if ($action == 'send') {
 		// ToDo: Translation for error messages
 
 		// Check all values we get from contact form
-		if ($_POST['name'] != '') {
-			$name = html2txt($_POST['name']);
-		}
+		if (empty($name) {
 		else {
 			$msg[]= 'Please enter your name!';
 		}
 
-		if ($email != '') {
-			if (!$email) {
-				$msg[] = "{$email} is <strong>NOT</strong> a valid email address!";
-			}
-		}
-		else {
+		if (!$email) {
 			$msg[]= 'Please enter a valid email address!';
 		}
 
-		if ($_POST['subject'] != '') {
-			$subject = html2txt($_POST['subject']);
-		}
-		else {
+		if (empty($subject))
 			$msg[]= 'Please enter a subject!';
 		}
 
-		if ($_POST['message'] != '') {
-			$message = html2txt($_POST['message']);
-		}
-		else {
+		if (empty($message))
 			$msg[]= 'Please enter a message to send!';
 		}
 
