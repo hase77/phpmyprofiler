@@ -84,7 +84,8 @@ else {
 	}
 
 	// Sanitize/filter all values we can get
-	$action = (string)filter_input(INPUT_POST, 'action');
+	$action = (string)filter_input(INPUT_GET, 'action');
+	
 	$form_key = (string)filter_input(INPUT_POST, 'form_key');
 	$captcha_image = (string)filter_input(INPUT_POST, 'image');
 	$captcha_code = (string)filter_input(INPUT_POST, 'code');
