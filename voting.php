@@ -49,7 +49,7 @@ if ($pmp_gdlib == true) {
 		imagedestroy($img_full);
 
 		// Build ratings
-		$rating_big = ($rating;
+		$rating_big = $rating;
 		$rating_small = round_this(($rating - $rating_big) * 100);
 		if ($rating_small < 10) {
 			$rating_small = "0{$rating_small}";
