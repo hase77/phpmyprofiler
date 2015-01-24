@@ -120,7 +120,7 @@ $pmp_admin_mail_s = str_replace('.', ' dot ', $pmp_admin_mail_s);
 $smarty->assign('formkey', $formKey->outputKey());
 $smarty->assign('name', $name);
 $smarty->assign('email', $email);
-$smarty->assign('subject', subject);
+$smarty->assign('subject', $subject);
 $smarty->assign('message', $message);
 
 $smarty->display('contact.tpl');
