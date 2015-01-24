@@ -64,9 +64,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'save') {
 		if (!$url) {
 			$msg[] = "{$url} is <strong>NOT</strong> a valid URL!";
 		}
-		else {
-			$url = '';
-		}
 
 		if (empty($message)) {
 			$msg[]= 'Please enter a message to send!';
@@ -109,7 +106,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'save') {
 							 ."MIME-Version: 1.0\r\n"
 							 ."Content-Type: text/plain; charset=\"UTF-8\"\r\n"
 							 ."Content-Transfer-Encoding: quoted-printable\r\n"
-							 ."Message-ID: <".md5(uniqid(microtime()))."@".$_SERVER['SERVER_NAME'].">\r\n"
+							 ."Message-ID: <".md5(uniqid(mt_rand(), true))."@".$_SERVER['SERVER_NAME'].">\r\n"
 							 ."X-Mailer: phpMyProfiler {$pmp_version}\r\n";
 
 					mail($pmp_admin_mail, $subject, $body, $header);

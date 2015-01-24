@@ -26,12 +26,6 @@ $pmp_sqldatabase = '';
 // 
 $pmp_table_prefix = 'pmp_';
 
-// URL to phpMyprofiler
-// 
-// e.g. http://www.example.com/pmp (without / at the end!)
-// 
-$pmp_basepath = '';
-
 
 
 // Basic settings
