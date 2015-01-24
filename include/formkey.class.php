@@ -43,7 +43,7 @@ class formKey {
 		return $this->formKey;
 	}
 
-	// Function that validated the form key POST data
+	// Function that validated the form key data
 	public function validate($check_formKey) {
 		//We use the old formKey and not the new generated version
 		if ($check_formKey == $this->old_formKey) {

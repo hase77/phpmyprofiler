@@ -48,10 +48,10 @@ if (!empty($p_name)) {
 	$query  = 'SELECT COUNT(pmp_actors.id) AS episodes, pmp_actors.id, firstname, middlename, lastname, fullname, role, birthyear, creditedas ';
 	$query .= 'FROM pmp_common_actors, pmp_actors INNER JOIN pmp_film ON pmp_film.id = pmp_actors.id WHERE ';
 	if (!$nowildcards) {
-		$query .= '(LOWER(fullname) = ? OR LOWER(role) = ? OR LOWER(creditedas) = ?) ';
+		$query .= '(LOWER(fullname) LIKE ? OR LOWER(role) LIKE ? OR LOWER(creditedas) LIKE ?) ';
 	}
 	else {
-		$query .= '(LOWER(fullname) LIKE ? OR LOWER(role) LIKE ? OR LOWER(creditedas) LIKE ?) ';
+		$query .= '(LOWER(fullname) = ? OR LOWER(role) = ? OR LOWER(creditedas) = ?) ';
 	}
 	if (!empty($birthyear)) {
 		$query .= 'AND birthyear = ? ';
@@ -92,10 +92,10 @@ if (!empty($p_name)) {
 	$query  = 'SELECT DISTINCT pmp_credits.id, firstname, middlename, lastname, fullname, type, subtype, birthyear, creditedas ';
 	$query .= 'FROM pmp_common_credits, pmp_credits INNER JOIN pmp_film ON pmp_film.id = pmp_credits.id WHERE LOWER(fullname) ';
 	if (!$nowildcards) {
-		$query .= '= ? ';
+		$query .= 'LIKE ? ';
 	}
 	else {
-		$query .= 'LIKE ? ';
+		$query .= '= ? ';
 	}
 	if (!empty($birthyear) ) {
 		$query .= 'AND birthyear = ? ';
