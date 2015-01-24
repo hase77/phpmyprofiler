@@ -73,7 +73,7 @@ else {
 	header('Content-type: text/html; charset=utf-8');
 	header($ExpStr);
 
-	if (!isset($_GET['ajax_call']))  {
+	if (!filter_has_var(INPUT_GET, 'ajax_call')) {
 		$smarty = new pmp_Smarty;
 		$smarty->loadFilter('output', 'trimwhitespace');
 		$smarty->assign('getLangs', getLangs());
@@ -187,7 +187,7 @@ else {
 	#echo "</pre>";
 
 	// Show footer
-	if (!isset($_GET['ajax_call']))  {
+	if (!filter_has_var(INPUT_GET, 'ajax_call')) {
 		$smarty = new pmp_Smarty;
 		$smarty->loadFilter('output', 'trimwhitespace');
 		$smarty->display('footer.tpl');
