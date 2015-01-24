@@ -55,8 +55,7 @@ if ($action == 'send') {
 		// ToDo: Translation for error messages
 
 		// Check all values we get from contact form
-		if (empty($name) {
-		else {
+		if (empty($name)) {
 			$msg[]= 'Please enter your name!';
 		}
 
@@ -78,7 +77,7 @@ if ($action == 'send') {
 				$smarty->assign('Failed', t('Wrong security code!'));
 			}
 			// Make Bot-Check
-			else if (!empty($_POST['username'])) {
+			else if (!empty($username)) {
 				$smarty->assign('Failed', t('Bot Attack!'));
 			}
 			else {

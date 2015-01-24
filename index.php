@@ -92,6 +92,7 @@ else {
 	$name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
 	$subject = filter_input(INPUT_POST, 'subject', FILTER_SANITIZE_STRING);
 	$message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
+	$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
 	
 	$action = (string)filter_input(INPUT_GET, 'action');
 	$lang_id = (string)filter_input(INPUT_GET, 'lang_id');
