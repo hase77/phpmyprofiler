@@ -37,11 +37,12 @@ if (!empty($id)) {
 		$start = $page;
 	}
 	else {
+		$page = 1;
 		$start = 1;
 	}
 
 	// Get screenshots on page 1
-	if ($start == 1) {
+	if ($page == 1) {
 		$filenames = getScreenshots($id);
 		if (isset($filenames)) {
 			sort($filenames);
