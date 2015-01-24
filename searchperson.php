@@ -40,14 +40,14 @@ if (!empty($p_name)) {
 	$searchstr = str_replace("\\'", "'", $name);
 	$searchstr = strtolower($searchstr);
 	$searchstr = trim($searchstr);
-	if (isset($_GET['nowildcards'])) {
+	if ($nowildcards) {
 		$searchstr = '%'.$searchstr.'%';
 	}
 
 	// Actor search (+Rolename)
 	$query  = 'SELECT COUNT(pmp_actors.id) AS episodes, pmp_actors.id, firstname, middlename, lastname, fullname, role, birthyear, creditedas ';
 	$query .= 'FROM pmp_common_actors, pmp_actors INNER JOIN pmp_film ON pmp_film.id = pmp_actors.id WHERE ';
-	if (isset($_GET['nowildcards'])) {
+	if ($nowildcards) {
 		$query .= '(LOWER(fullname) = ? OR LOWER(role) = ? OR LOWER(creditedas) = ?) ';
 	}
 	else {
@@ -91,7 +91,7 @@ if (!empty($p_name)) {
 	// Crew search
 	$query  = 'SELECT DISTINCT pmp_credits.id, firstname, middlename, lastname, fullname, type, subtype, birthyear, creditedas ';
 	$query .= 'FROM pmp_common_credits, pmp_credits INNER JOIN pmp_film ON pmp_film.id = pmp_credits.id WHERE LOWER(fullname) ';
-	if (isset($_GET['nowildcards'])) {
+	if ($nowildcards) {
 		$query .= '= ? ';
 	}
 	else {

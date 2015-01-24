@@ -24,10 +24,8 @@ defined('_PMP_REL_PATH') or die('Not allowed! Possible hacking attempt detected!
 $pmp_module = 'contact';
 
 require_once('include/formkey.class.php');
-require_once('Validate.php');
 
 $formKey = new formKey();
-$validate = new Validate();
 
 $smarty = new pmp_Smarty;
 $smarty->loadFilter('output', 'trimwhitespace');

@@ -103,6 +103,8 @@ else {
 	$content_page = (string)filter_input(INPUT_GET, 'content');
 	$id = (string)filter_input(INPUT_GET, 'id');
 	$page = (int)filter_input(INPUT_GET, 'page');
+	
+	$nowildcards = (boolean)filter_input(INPUT_GET, 'nowildcards');
 
 	// Get and save needed variables for detail-pages
 	if (!empty($content_page)) {

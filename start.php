@@ -29,7 +29,7 @@ $smarty->loadFilter('output', 'trimwhitespace');
 // News
 $query = 'SELECT id, date, title, text FROM pmp_news ORDER BY date DESC LIMIT 0, 1';
 $result = dbquery_pdo($query, null, 'object');
-$news = array();
+$news = [];
 if (count($result) > 0) {
 	$news[] = $result[0];
 }
@@ -44,7 +44,7 @@ $query = 'SELECT pmp_film.id FROM pmp_film LEFT JOIN pmp_boxset ON pmp_film.id =
 $params = [$pmp_exclude_tag, $pmp_dvd_start];
 $result = dbquery_pdo($query, $params, 'assoc');
 
-$new = array();
+$new = [];
 foreach ($result as $row) {
 	$new[] = new smallDVD($row['id']);
 }
@@ -59,7 +59,7 @@ $query = 'SELECT pmp_film.id FROM pmp_film LEFT JOIN pmp_boxset ON pmp_film.id =
 $params = [$pmp_exclude_tag, $pmp_dvd_start];
 $result = dbquery_pdo($query, $params, 'assoc');
 
-$order = array();
+$order = [];
 foreach ($result as $row) {
 	$order[] = new smallDVD($row['id']);
 }

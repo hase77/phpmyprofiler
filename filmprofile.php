@@ -33,17 +33,15 @@ if (!empty($id)) {
 	$smarty->assign('pmp_review_type', $pmp_review_type);
 
 	// Page selected?
-	if (!empty($_GET['page'])) {
-		if (!is_numeric($_GET['page'])) {
-			$_GET['page'] = 1;
-		}
+	if (!empty($page)) {
+		$start = $page;
 	}
 	else {
-		$_GET['page'] = 1;
+		$start = 1;
 	}
 
 	// Get screenshots on page 1
-	if ($_GET['page'] == 1) {
+	if ($start == 1) {
 		$filenames = getScreenshots($id);
 		if (isset($filenames)) {
 			sort($filenames);
