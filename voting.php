@@ -24,7 +24,7 @@ if (!isset($_SERVER['HTTP_REFERER']) || stristr($_SERVER['HTTP_REFERER'], $_SERV
 
 require_once('config.inc.php');
 
-$rating = filter_input(INPUT_GET, 'rating', FILTER_SANITIZE_NUMBER_INT);
+$rating = filter_input(INPUT_GET, 'rating', FILTER_VALIDATE_FLOAT);
 $size = filter_input(INPUT_GET, 'size', FILTER_SANITIZE_STRING);
 if (filter_has_var(INPUT_GET, 'maxrate')) {
 	$max = filter_input(INPUT_GET, 'maxrate', FILTER_SANITIZE_NUMBER_INT);
@@ -44,12 +44,12 @@ if ($pmp_gdlib == true) {
 		$img_full = imagecreatefrompng("./themes/{$pmp_theme}/images/vote/b_full.png");
 
 		// Build rated pic
-		$w = 200 * ($rating / $max);
+		$w = (int)(200 * ($rating / $max));
 		imagecopy($img_dest, $img_full, 0, 0, 0, 0, $w, 100);
 		imagedestroy($img_full);
 
 		// Build ratings
-		$rating_big = $rating;
+		$rating_big = (int)$rating;
 		$rating_small = round_this(($rating - $rating_big) * 100);
 		if ($rating_small < 10) {
 			$rating_small = "0{$rating_small}";
@@ -70,7 +70,7 @@ if ($pmp_gdlib == true) {
 		$img_full = imagecreatefrompng("./themes/{$pmp_theme}/images/vote/s_full.png");
 
 		// Build rated pic
-		$w = 200 * ($rating / $max);
+		$w = (int)(200 * ($rating / $max));
 		imagecopy($img_dest, $img_full, 0, 0, 0, 0, $w, 14);
 		imagedestroy($img_full);
 
