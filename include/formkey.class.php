@@ -44,7 +44,7 @@ class formKey {
 	}
 
 	// Function that validated the form key data
-	public function validate($check_formKey == null) {
+	public function validate($check_formKey = null) {
 		if ($check_formKey == null) {
 			$check_formKey = $_GET['form_key'];
 		}
