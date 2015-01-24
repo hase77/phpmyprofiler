@@ -44,7 +44,7 @@ if ($pmp_gdlib == true) {
 		$img_full = imagecreatefrompng("./themes/{$pmp_theme}/images/vote/b_full.png");
 
 		// Build rated pic
-		$w = (200 * ($rating / $max));
+		$w = 200 * ($rating / $max);
 		imagecopy($img_dest, $img_full, 0, 0, 0, 0, $w, 100);
 		imagedestroy($img_full);
 
@@ -70,7 +70,7 @@ if ($pmp_gdlib == true) {
 		$img_full = imagecreatefrompng("./themes/{$pmp_theme}/images/vote/s_full.png");
 
 		// Build rated pic
-		$w = (int)(200 * ($rating / $max );
+		$w = 200 * ($rating / $max);
 		imagecopy($img_dest, $img_full, 0, 0, 0, 0, $w, 14);
 		imagedestroy($img_full);
 
