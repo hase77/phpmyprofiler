@@ -116,7 +116,11 @@ if (isset($_GET['action']) && $_GET['action'] == 'save') {
 					if (!empty($url)) {
 						$body .= "[{$url}] ";
 					}
-					$body .= t('wrote')."\n\n{$message}";
+					$body .= t('wrote')."\n\n{$message}\n\n";
+					if ($pmp_review_activatenew == false) {
+						$body .= html_entity_decode(t('Please activate or delete this pending guestbook entry:'), ENT_COMPAT, 'UTF-8')."\n\n";
+						$body .= get_base_url().'admin/guestbook.php';
+					}
 
 					$header = "From: \"{$pmp_admin_name}\" <{$pmp_admin_mail}>\r\n"
 							 ."MIME-Version: 1.0\r\n"

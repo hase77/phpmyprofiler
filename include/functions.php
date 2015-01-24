@@ -929,4 +929,9 @@ function get_collections() {
 	return $collections;
 }
 
+// Get base url
+function get_base_url() {
+	$http = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on'? 'https://' : 'http://';
+	return $http.$_SERVER['SERVER_NAME'].dirname($_SERVER['REQUEST_URI'].'?').'/';
+}
 ?>

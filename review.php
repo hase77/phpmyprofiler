@@ -103,15 +103,15 @@ if ($action == 'send') {
 					// Send e-mail to administrator
 					$body  = html_entity_decode(t('Someone added a new review:'), ENT_COMPAT, 'UTF-8') . "\n\n";
 					$body .= "-----------------------------------------------------------\n";
-					$body .= 'DVD: ' . html_entity_decode($dvd->Title, ENT_COMPAT, 'UTF-8') . "\n";
-					$body .= t('Title of review') . ': ' . $title . "\n";
-					$body .= t('Author') . ': ' . $name . "\n";
-					$body .= t('E-mail') . ': ' . $email . "\n\n";
+					$body .= "DVD: ".html_entity_decode($dvd->Title, ENT_COMPAT, 'UTF-8')."\n";
+					$body .= t('Title of review').": {$title}\n";
+					$body .= t('Author'). ": {$name}\n";
+					$body .= t('E-mail') . ": {$email}\n\n";
 					$body .= $text . "\n";
 					$body .= "-----------------------------------------------------------\n\n";
 					if ($pmp_review_activatenew == false) {
 						$body .= html_entity_decode(t('Please activate or delete this pending review:'), ENT_COMPAT, 'UTF-8')."\n\n";
-						$body .= $pmp_basepath. '/admin/reviews.php';
+						$body .= get_base_url().'admin/reviews.php';
 					}
 
 					$subject = '[phpMyProfiler] ' .  t('New pending review:') . ' ' . $title;
