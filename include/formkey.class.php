@@ -44,9 +44,9 @@ class formKey {
 	}
 
 	// Function that validated the form key POST data
-	public function validate() {
+	public function validate($check_formKey) {
 		//We use the old formKey and not the new generated version
-		if ($_POST['form_key'] == $this->old_formKey) {
+		if ($check_formKey == $this->old_formKey) {
 			// The key is valid, return true.
 			return true;
 		}

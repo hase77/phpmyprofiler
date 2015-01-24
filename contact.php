@@ -43,9 +43,9 @@ if ($pmp_guestbook_showcode == true) {
 }
 
 // Add new entry
-if (isset($_GET['action']) && $_GET['action'] == 'send') {
+if ($action == 'send') {
 	// First check the form key
-	if (!isset($_POST['form_key']) || !$formKey->validate()) {
+	if (!$formKey->validate($form_key)) {
 		//Form key is invalid, show an error
 		$smarty->assign('Failed', 'Form key error!');
 	}
@@ -62,9 +62,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'send') {
 			$msg[]= 'Please enter your name!';
 		}
 
-		if ($_POST['email'] != '') {
-			$email = $_POST['email'];
-			if (!$validate->email($email, ['use_rfc822' => true])) {
+		if ($email != '') {
+			if (!$email) {
 				$msg[] = "{$email} is <strong>NOT</strong> a valid email address!";
 			}
 		}
@@ -88,7 +87,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'send') {
 
 		if (count($msg) == 0) {
 			// Check captcha
-			if ($pmp_guestbook_showcode == true && $captcha->validate_submit($_POST['image'], $_POST['code']) == false) {
+			if ($pmp_guestbook_showcode == true && $captcha->validate_submit($captcha_image, $captcha_code) == false) {
 				$smarty->assign('Failed', t('Wrong security code!'));
 			}
 			// Make Bot-Check
@@ -106,7 +105,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'send') {
 						 ."MIME-Version: 1.0\r\n"
 						 ."Content-Type: text/plain; charset=\"UTF-8\"\r\n"
 						 ."Content-Transfer-Encoding: quoted-printable\r\n"
-						 ."Message-ID: <".md5(uniqid(microtime()))."@".$_SERVER['SERVER_NAME'].">\r\n"
+						 ."Message-ID: <".md5(uniqid(mt_rand(), true))."@".$_SERVER['SERVER_NAME'].">\r\n"
 						 ."X-Mailer: phpMyProfiler {$pmp_version}\r\n";
 
 				// Send e-mail

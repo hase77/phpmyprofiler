@@ -84,6 +84,13 @@ else {
 	}
 
 	// Sanitize/filter all values we can get
+	$action = (string)filter_input(INPUT_POST, 'action');
+	$form_key = (string)filter_input(INPUT_POST, 'form_key');
+	$captcha_image = (string)filter_input(INPUT_POST, 'image');
+	$captcha_code = (string)filter_input(INPUT_POST, 'code');
+	
+	$email = (string)filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+	
 	$lang_id = (string)filter_input(INPUT_GET, 'lang_id');
 	$p_letter = (string)filter_input(INPUT_GET, 'pletter');
 	$p_name = (string)filter_input(INPUT_GET, 'pname');
