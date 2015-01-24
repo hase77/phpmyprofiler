@@ -63,11 +63,11 @@ if ($action == 'send') {
 			$msg[]= 'Please enter a valid email address!';
 		}
 
-		if (empty($subject))
+		if (empty($subject)) {
 			$msg[]= 'Please enter a subject!';
 		}
 
-		if (empty($message))
+		if (empty($message)) {
 			$msg[]= 'Please enter a message to send!';
 		}
 
