@@ -43,7 +43,7 @@ if ($pmp_guestbook_showcode == true) {
 
 if ($action == 'save') {
 	// First check the form key
-	if (!isset($_POST['form_key']) || !$formKey->validate()) {
+	if (!$formKey->validate($form_key)) {
 		//Form key is invalid, show an error
 		$smarty->assign('Failed', 'Form key error!');
 	}
