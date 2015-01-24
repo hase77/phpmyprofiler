@@ -117,10 +117,10 @@ if (isset($_GET['action']) && $_GET['action'] == 'save') {
 					$smarty->assign('Success', t('Thank you. The guest book entry was stored.'));
 
 					// Clean values
-					$_POST['name'] = '';
-					$_POST['email'] = '';
-					$_POST['url'] = '';
-					$_POST['message'] = '';
+					$name = '';
+					$email = '';
+					$url = '';
+					$message = '';
 				}
 				else {
 					$smarty->assign('Error', t('When storing in the database unfortunately an error occurs.'));
