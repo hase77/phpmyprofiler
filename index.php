@@ -84,27 +84,30 @@ else {
 	}
 
 	// Sanitize/filter all values we can get	
-	$form_key = (string)filter_input(INPUT_POST, 'form_key');
-	$captcha_image = (string)filter_input(INPUT_POST, 'image');
-	$captcha_code = (string)filter_input(INPUT_POST, 'code');
+	$form_key = filter_input(INPUT_POST, 'form_key', FILTER_SANITIZE_STRING);
+	$captcha_image = filter_input(INPUT_POST, 'image', FILTER_SANITIZE_STRING);
+	$captcha_code = filter_input(INPUT_POST, 'code', FILTER_SANITIZE_STRING);
 	
 	$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 	$name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
 	$subject = filter_input(INPUT_POST, 'subject', FILTER_SANITIZE_STRING);
 	$message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
 	$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+	$title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
+	$text = filter_input(INPUT_POST, 'text', FILTER_SANITIZE_STRING);
+	$vote = filter_input(INPUT_POST, 'vote', FILTER_SANITIZE_NUMBER_INT);
 	
-	$action = (string)filter_input(INPUT_GET, 'action');
-	$lang_id = (string)filter_input(INPUT_GET, 'lang_id');
-	$p_letter = (string)filter_input(INPUT_GET, 'pletter');
-	$p_name = (string)filter_input(INPUT_GET, 'pname');
-	$p_birthyear = (int)filter_input(INPUT_GET, 'pbirthyear');
+	$action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
+	$lang_id = filter_input(INPUT_GET, 'lang_id', FILTER_SANITIZE_STRING);
+	$p_letter = filter_input(INPUT_GET, 'pletter', FILTER_SANITIZE_STRING);
+	$p_name = filter_input(INPUT_GET, 'pname', FILTER_SANITIZE_STRING);
+	$p_birthyear = filter_input(INPUT_GET, 'pbirthyear', FILTER_SANITIZE_NUMBER_INT);
 
-	$content_page = (string)filter_input(INPUT_GET, 'content');
-	$id = (string)filter_input(INPUT_GET, 'id');
-	$page = (int)filter_input(INPUT_GET, 'page');
+	$content_page = filter_input(INPUT_GET, 'content', FILTER_SANITIZE_STRING);
+	$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
+	$page = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_NUMBER_INT);
 	
-	$nowildcards = isset($_GET['nowildcards']) ? true : false; 
+	$nowildcards = filter_has_var(INPUT_GET, 'nowildcards') ? true : false; 
 
 	// Get and save needed variables for detail-pages
 	if (!empty($content_page)) {

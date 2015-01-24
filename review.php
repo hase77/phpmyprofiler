@@ -29,10 +29,8 @@ if (empty($id)) {
 $pmp_module = 'review';
 
 require_once('include/formkey.class.php');
-require_once('Validate.php');
 
 $formKey = new formKey();
-$validate = new Validate();
 
 $smarty = new pmp_Smarty;
 $smarty->loadFilter('output', 'trimwhitespace');
@@ -47,9 +45,9 @@ if ($pmp_guestbook_showcode == true) {
 	$smarty->assign('imgLoc', $imgLoc);
 }
 
-if (isset($_GET['action']) && $_GET['action'] == 'send') {
+if ($action == 'send') {
 	// First check the form key
-	if (!isset($_POST['form_key']) || !$formKey->validate()) {
+	if (!$formKey->validate($form_key)) {
 		//Form key is invalid, show an error
 		$smarty->assign('Failed', 'Form key error!');
 	}
@@ -59,51 +57,33 @@ if (isset($_GET['action']) && $_GET['action'] == 'send') {
 		// ToDo: Translation for error messages
 
 		// Check all values we get from contact form
-		if ($_POST['name'] != '') {
-			$name = html2txt($_POST['name']);
-		}
-		else {
+		if (empty($name)) {
 			$msg[]= 'Please enter your name!';
 		}
 
-		if ($_POST['email'] != '') {
-			$email = $_POST['email'];
-			if (!$validate->email($email, ['use_rfc822' => true])) {
-				$msg[] = "{$email} is <strong>NOT</strong> a valid email address!";
-			}
-		}
-		else {
+		if (!$email) {
 			$msg[]= 'Please enter a valid email address!';
 		}
 
-		if ($_POST['title'] != '') {
-			$title = html2txt($_POST['title']);
-		}
-		else {
+		if (empty($title)) {
 			$msg[]= 'Please enter a title for your review!';
 		}
 
-		if ($_POST['text'] != '') {
-			$text = html2txt($_POST['text']);
-		}
-		else {
+		if (empty($text)) {
 			$msg[]= 'Please enter a text for your review!';
 		}
 
-		if ($_POST['vote'] != '') {
-			$vote = (int)$_POST['vote'];
-		}
-		else {
+		if (empty($vote)) {
 			$msg[]= 'Please select an rating!';
 		}
 
 		if (count($msg) == 0) {
 			// Check captcha
-			if ($pmp_guestbook_showcode == true && $captcha->validate_submit($_POST['image'], $_POST['code']) == false) {
+			if ($pmp_guestbook_showcode == true && $captcha->validate_submit($captcha_image, $captcha_code) == false) {
 				$smarty->assign('Failed', t('Wrong security code!'));
 			}
 			// Make Bot-Check
-			else if (!empty($_POST['username'])) {
+			else if (!empty($username)) {
 				$smarty->assign('Failed', t('Bot Attack!'));
 			}
 			else {
@@ -130,19 +110,19 @@ if (isset($_GET['action']) && $_GET['action'] == 'send') {
 					$body .= $text . "\n";
 					$body .= "-----------------------------------------------------------\n\n";
 					if ($pmp_review_activatenew == false) {
-						$body .= html_entity_decode(t('Please activate or delete this pending review:'), ENT_COMPAT, 'UTF-8') . "\n\n";
+						$body .= html_entity_decode(t('Please activate or delete this pending review:'), ENT_COMPAT, 'UTF-8') . '\n\n';
 						$body .= $pmp_basepath. '/admin/reviews.php';
 					}
 
 					$subject = '[phpMyProfiler] ' .  t('New pending review:') . ' ' . $title;
-					$subject = mb_encode_mimeheader(html_entity_decode($subject, ENT_COMPAT, 'UTF-8'), "UTF-8", "B", "\n");
+					$subject = mb_encode_mimeheader(html_entity_decode($subject, ENT_COMPAT, 'UTF-8'), 'UTF-8', 'B', '\n');
 
-					$header = 'From: "' . $pmp_admin_name . '" <' . $pmp_admin_mail . '>' . "\r\n"
-						. 'MIME-Version: 1.0' . "\r\n"
-						. 'Content-Type: text/plain; charset="UTF-8"' . "\r\n"
-						. 'Content-Transfer-Encoding: quoted-printable' . "\r\n"
-						. 'Message-ID: <' . md5(uniqid(microtime())) . '@' . $_SERVER['SERVER_NAME'] . '>' . "\r\n"
-						. 'X-Mailer: phpMyProfiler ' . $pmp_version . "\r\n";
+					$header = "From: \"{$pmp_admin_name}\" <{$pmp_admin_mail}>\r\n"
+							 ."MIME-Version: 1.0\r\n"
+							 ."Content-Type: text/plain; charset=\"UTF-8\"\r\n"
+							 ."Content-Transfer-Encoding: quoted-printable\r\n"
+							 ."Message-ID: <".md5(uniqid(mt_rand(), true))."@".$_SERVER['SERVER_NAME'].">\r\n"
+							 ."X-Mailer: phpMyProfiler {$pmp_version}\r\n";
 
 					mail($pmp_admin_mail, $subject, $body, $header);
 
