@@ -79,11 +79,11 @@
 		<tr>
 			<td colspan="2" class="frame-content-center">
 				<div style="text-align: center" id="ib{$dvd->id}">
-					<input name="opt_view" id="page1" type="radio" value="overview" class="title_page" {if $smarty.get.page == 1}checked="checked"{/if}/>{t}Overview{/t}&nbsp;&nbsp;
-					<input name="opt_view" id="page2" type="radio" value="details" class="title_page" {if $smarty.get.page == 2}checked="checked"{/if} />{t}Details{/t}&nbsp;&nbsp;
-					<input name="opt_view" id="page3" type="radio" value="cast" class="title_page" {if $smarty.get.page == 3}checked="checked"{/if} />{t}Cast &amp; Crew{/t}&nbsp;&nbsp;
+					<input name="opt_view" id="page1" type="radio" value="overview" class="title_page" {if $page == 1}checked="checked"{/if}/>{t}Overview{/t}&nbsp;&nbsp;
+					<input name="opt_view" id="page2" type="radio" value="details" class="title_page" {if $page == 2}checked="checked"{/if} />{t}Details{/t}&nbsp;&nbsp;
+					<input name="opt_view" id="page3" type="radio" value="cast" class="title_page" {if $page == 3}checked="checked"{/if} />{t}Cast &amp; Crew{/t}&nbsp;&nbsp;
 					{if isset($dvd->Events)}
-						<input name="opt_view" id="page4" type="radio" value="events" class="title_page" {if $smarty.get.page == 4}checked="checked"{/if} />{t}Events{/t}&nbsp;&nbsp;
+						<input name="opt_view" id="page4" type="radio" value="events" class="title_page" {if $page == 4}checked="checked"{/if} />{t}Events{/t}&nbsp;&nbsp;
 					{/if}
 					{if $dvd->EPG == '1'}
 						<a href="epg/{$dvd->id}.html" onclick="popUpWindow(this.href,'','600','600','yes'); return false" >{t}Episode Guide{/t}</a>
@@ -93,10 +93,10 @@
 					<table class="details">
 						<tr>
 							<td class="details-left">
-								{if $smarty.get.page == '1' || $smarty.get.page == ''}{include file='filmprofile_page1.tpl'}{/if}
-								{if $smarty.get.page == '2'}{include file='filmprofile_page2.tpl'}{/if}
-								{if $smarty.get.page == '3'}{include file='filmprofile_page3.tpl'}{/if}
-								{if $smarty.get.page == '4'}{include file='filmprofile_page4.tpl'}{/if}
+								{if $page == '1'}{include file='filmprofile_page1.tpl'}{/if}
+								{if $page == '2'}{include file='filmprofile_page2.tpl'}{/if}
+								{if $page == '3'}{include file='filmprofile_page3.tpl'}{/if}
+								{if $page == '4'}{include file='filmprofile_page4.tpl'}{/if}
 							</td>
 
 							<td class="details-right">

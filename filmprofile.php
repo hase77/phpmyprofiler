@@ -38,7 +38,6 @@ if (!empty($id)) {
 	}
 	else {
 		$page = 1;
-		$start = 1;
 	}
 
 	// Get screenshots on page 1
@@ -56,6 +55,8 @@ if (!empty($id)) {
 	// Get dvd data
 	$smarty->assign('dvd', new DVD($id));
 
+	$smarty->assign('page', $page);
+	
 	$smarty->display('filmprofile.tpl');
 }
 ?>
