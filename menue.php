@@ -73,7 +73,7 @@
 //		foreignfield:		Field after which the foreigntable should be filtered, e.g. Genre.
 //		valueforeignfield:	Value after which the foreignfield should be filtered, e.g. Comedy.
 
-// No direct access
+// Disallow direct access
 defined('_PMP_REL_PATH') or die('Not allowed! Possible hacking attempt detected!');
 
 $pmp_module = 'menue';
@@ -84,7 +84,7 @@ dbconnect();
 
 // Generate sql select for dvd list
 function generateSql($count = false) {
-	global $_GET, $_SESSION;
+	global $_SESSION;
 	global $pmp_dvd_menue, $pmp_exclude_tag, $sortcount;
 	global $pmp_mysql_ver;
 	$j = 0;

@@ -22,8 +22,12 @@ if (!isset($_SERVER['HTTP_REFERER']) || stristr($_SERVER['HTTP_REFERER'], $_SERV
 	die('Not allowed! Possible hacking attempt detected!');
 }
 
+$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
+$width = filter_input(INPUT_GET, 'width', FILTER_SANITIZE_STRING);
+$type = filter_input(INPUT_GET, 'type', FILTER_SANITIZE_STRING);
+
 // Check for id
-if (!isset($_GET['id'])) {
+if (empty($id)) {
 	die('No id given!');
 }
 
@@ -32,15 +36,12 @@ define('_PMP_REL_PATH', '.');
 require_once('config.inc.php');
 require_once('include/functions.php');
 
-if (isset($_GET['id'])) $fid = $_GET['id'];
-if (isset($_GET['width'])) $width = $_GET['width'];
-
-switch ($_GET['type']) {
+switch ($type) {
 	case 'front':
-		$sourceFilename = $fid.'f.jpg';
+		$sourceFilename = $id.'f.jpg';
 		break;
 	case 'back':
-		$sourceFilename = $fid.'b.jpg';
+		$sourceFilename = $id.'b.jpg';
 		break;
 }
 
@@ -77,7 +78,7 @@ if ($pmp_gdlib == true) {
 			dbconnect_pdo();
 			
 			$query = 'SELECT media_dvd, media_hddvd, media_bluray, media_custom, casetype, slipcover, banner_front, banner_back FROM pmp_film WHERE id = ?';
-			$params = [$fid];
+			$params = [$id];
 			$row = dbquery_pdo($query, $params, 'object');
 
 			if (count($row) > 0) {			
@@ -105,7 +106,7 @@ if ($pmp_gdlib == true) {
 			$thumb_h = $old_y * ($width / $old_x);
 
 			// Add hd-banner to image
-			if ($pmp_hdbanner == true && ($_GET['type'] == 'front' &&  $dvd->banner_front != 'Off')
+			if ($pmp_hdbanner == true && ($type == 'front' &&  $dvd->banner_front != 'Off')
 			    && ($dvd->media_hddvd == '1' || $dvd->media_bluray == '1')
 			    && (( $dvd->banner_front == 'Automatic' && ($dvd->casetype == 'HD Keep Case' || $dvd->casetype == 'HD Slim') && $dvd->slipcover == '0') || $dvd->banner_front == 'On' )) {
 				
