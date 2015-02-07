@@ -182,7 +182,7 @@ function dbquery_pdo($query, $params = null, $type = 'default', $continueonerror
 	global $pmp_db;
 
 	$result = false;
-	replace_table_prefix($query);
+	$query = replace_table_prefix($query);
 
 	try {
 		$stmt = $pmp_db->prepare($query);
@@ -222,7 +222,7 @@ function dbexecute_pdo($query, $params = null, $continueonerror = false) {
 	global $pmp_db;
 
 	$result = false;
-	replace_table_prefix($query);
+	$query = replace_table_prefix($query);
 	
 	try {
 		$stmt = $pmp_db->prepare($query);
@@ -257,7 +257,7 @@ function dbclose_pdo() {
 }
 
 // Replace the tableprefix pmp_ with the user defined prefix
-function replace_table_prefix(& $sql) {
+function replace_table_prefix($sql) {
 	global $pmp_table_prefix;
 
 	return str_replace('pmp_', $pmp_table_prefix, $sql);
