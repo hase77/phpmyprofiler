@@ -65,7 +65,7 @@
 							<tr>
 								<td class="gb_form">{t}Name{/t}</td>
 								<td class="gb_form">
-									<input type="text" name="name" tabindex="1" size="32" value="{if isset($smarty.post.name)}{$smarty.post.name}{/if}" />
+									<input type="text" name="name" tabindex="1" size="32" value="{if !empty($name)}{$name}{/if}" />
 									<input type="hidden" name="username" />
 									{* Hidden input for form key *}
 									<input type="hidden" name="form_key" value="{$formkey}" />
@@ -74,19 +74,19 @@
 							<tr>
 								<td class="gb_form">{t}E-mail{/t}</td>
 								<td class="gb_form">
-									<input type="text" name="email" tabindex="2" size="32" value="{if isset($smarty.post.email)}{$smarty.post.email}{/if}" />
+									<input type="text" name="email" tabindex="2" size="32" value="{if !empty($email)}{$email}{/if}" />
 								</td>
 							</tr>
 							<tr>
 								<td class="gb_form">{t}Subject{/t}</td>
 								<td class="gb_form">
-									<input type="text" name="subject" tabindex="3" size="32" value="{if isset($smarty.post.subject)}{$smarty.post.subject}{/if}" />
+									<input type="text" name="subject" tabindex="3" size="32" value="{if !empty($subject)}{$subject}{/if}" />
 								</td>
 							</tr>
 							<tr>
 								<td class="gb_form">{t}Message{/t}</td>
 								<td class="gb_form">
-									<textarea rows="5" name="message" tabindex="4" cols="31" >{if isset($smarty.post.message)}{$smarty.post.message}{/if}</textarea>
+									<textarea rows="5" name="message" tabindex="4" cols="31" >{if !empty($message)}{$message}{/if}</textarea>
 								</td>
 							</tr>
 							{if $pmp_guestbook_showcode == '1'}

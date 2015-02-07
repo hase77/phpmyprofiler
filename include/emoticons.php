@@ -1,6 +1,6 @@
 <?php
 /* phpMyProfiler
- * Copyright (C) 2006-2014 The phpMyProfiler project
+ * Copyright (C) 2006-2015 The phpMyProfiler project
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -9,7 +9,7 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
@@ -21,7 +21,7 @@
  * Replace Emoticons like ;) or :) with Smilies
 */
 
-// No direct access
+// Disallow direct access
 defined('_PMP_REL_PATH') or die('Not allowed! Possible hacking attempt detected!');
 
 $emoticons[':)'] = 'regular.png';
@@ -72,10 +72,10 @@ $emoticons['^o)'] = 'sarcastic.png';
 function replace_emoticons($text) {
 	global $emoticons;
 
-	$path = _PMP_REL_PATH . '/themes/default/images/emoticons/';
-	$img = '<img src="' . $path . '%s" alt="%s" />';
+	$path = _PMP_REL_PATH.'/themes/default/images/emoticons/';
+	$img = '<img src="'.$path.'%s" alt="%s"/>';
 
-	foreach ( $emoticons as $emoticon=>$pic ) {
+	foreach ($emoticons as $emoticon => $pic) {
 		$fullpic = sprintf($img, $pic, $emoticon);
 		$text = str_replace($emoticon, $fullpic, $text);
 	}

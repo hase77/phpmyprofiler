@@ -79,11 +79,11 @@
 		<tr>
 			<td colspan="2" class="frame-content-center">
 				<div style="text-align: center" id="ib{$dvd->id}">
-					<input name="opt_view" id="page1" type="radio" value="overview" class="title_page" {if $smarty.get.page == 1}checked="checked"{/if}/>{t}Overview{/t}&nbsp;&nbsp;
-					<input name="opt_view" id="page2" type="radio" value="details" class="title_page" {if $smarty.get.page == 2}checked="checked"{/if} />{t}Details{/t}&nbsp;&nbsp;
-					<input name="opt_view" id="page3" type="radio" value="cast" class="title_page" {if $smarty.get.page == 3}checked="checked"{/if} />{t}Cast &amp; Crew{/t}&nbsp;&nbsp;
+					<input name="opt_view" id="page1" type="radio" value="overview" class="title_page" {if $page == 1}checked="checked"{/if}/>{t}Overview{/t}&nbsp;&nbsp;
+					<input name="opt_view" id="page2" type="radio" value="details" class="title_page" {if $page == 2}checked="checked"{/if} />{t}Details{/t}&nbsp;&nbsp;
+					<input name="opt_view" id="page3" type="radio" value="cast" class="title_page" {if $page == 3}checked="checked"{/if} />{t}Cast &amp; Crew{/t}&nbsp;&nbsp;
 					{if isset($dvd->Events)}
-						<input name="opt_view" id="page4" type="radio" value="events" class="title_page" {if $smarty.get.page == 4}checked="checked"{/if} />{t}Events{/t}&nbsp;&nbsp;
+						<input name="opt_view" id="page4" type="radio" value="events" class="title_page" {if $page == 4}checked="checked"{/if} />{t}Events{/t}&nbsp;&nbsp;
 					{/if}
 					{if $dvd->EPG == '1'}
 						<a href="epg/{$dvd->id}.html" onclick="popUpWindow(this.href,'','600','600','yes'); return false" >{t}Episode Guide{/t}</a>
@@ -93,10 +93,10 @@
 					<table class="details">
 						<tr>
 							<td class="details-left">
-								{if $smarty.get.page == '1' || $smarty.get.page == ''}{include file='filmprofile_page1.tpl'}{/if}
-								{if $smarty.get.page == '2'}{include file='filmprofile_page2.tpl'}{/if}
-								{if $smarty.get.page == '3'}{include file='filmprofile_page3.tpl'}{/if}
-								{if $smarty.get.page == '4'}{include file='filmprofile_page4.tpl'}{/if}
+								{if $page == '1'}{include file='filmprofile_page1.tpl'}{/if}
+								{if $page == '2'}{include file='filmprofile_page2.tpl'}{/if}
+								{if $page == '3'}{include file='filmprofile_page3.tpl'}{/if}
+								{if $page == '4'}{include file='filmprofile_page4.tpl'}{/if}
 							</td>
 
 							<td class="details-right">
@@ -104,7 +104,7 @@
 									<table class="properties">
 										<tr><td class="propheader">{t}Voting{/t}:</td></tr>
 										<tr><td class="propvalue">
-											<img src="include/voting.php?rating={$dvd->Review}&amp;size=big" alt="{$dvd->Review}" />
+											<img src="voting.php?rating={$dvd->Review}&amp;size=big" alt="{$dvd->Review}" />
 										</td></tr>
 									</table>
 								{/if}
@@ -198,27 +198,27 @@
 												<a href="http://www.amazon.com/s/url=search-alias%3Ddvd&amp;field-keywords={$imdbTitle|rawurlencode}">Amazon.com Search</a><br />
 												{if $smarty.session.lang_id == 'de'}
 													<b>{t}German{/t}:</b><br />
-													<a href="http://de.wikipedia.org/wiki/{$dvd->title|rawurlencode}">Wikipedia (Deutsch)</a><br />
+													<a href="http://de.wikipedia.org/wiki/{$dvd->Title|rawurlencode}">Wikipedia (Deutsch)</a><br />
 													{if isset($dvd->ofdbID)}
 														<a href="http://www.ofdb.de/film/{$dvd->ofdbID|rawurlencode}">OFDB</a><br />
 													{elseif $dvd->OriginalTitle == ''}
-														<a href="http://www.ofdb.de/view.php?page=suchergebnis&amp;Kat=DTitel&amp;SText={$dvd->title|rawurlencode}">OFDB</a><br />
+														<a href="http://www.ofdb.de/view.php?page=suchergebnis&amp;Kat=DTitel&amp;SText={$dvd->Title|rawurlencode}">OFDB</a><br />
 													{else}
 														<a href="http://www.ofdb.de/view.php?page=suchergebnis&amp;Kat=OTitel&amp;SText={$dvd->OriginalTitle|rawurlencode}">OFDB</a><br />
 													{/if}
-													<a href="http://www.schnittberichte.com/svds.php?Page=Liste&amp;Kat=3&amp;SearchKat=Titel&amp;String={$dvd->title|rawurlencode}">Schnittberichte.com</a><br />
-													<a href="http://www.cinefacts.de/suche/suche.php?name={$dvd->title|rawurlencode}">Cinefacts</a><br />
-													<a href="http://www.dvd-palace.de/dvddatabase/dbsearch.php?action=1&amp;suchbegriff={$dvd->title|rawurlencode}">DVD-Palace</a><br />
-													<a href="http://www.moviemaze.de/suche/result.phtml?searchword={$dvd->title|rawurlencode}">MovieMaze</a><br />
-													<a href="http://www.caps-a-holic.com/index.php?search={$dvd->title|rawurlencode}">caps-a-holic DVD Vergleiche</a><br />
-													<a href="http://www.caps-a-holic.com//hd_vergleiche/test.php?search={$dvd->title|rawurlencode}">caps-a-holic HD/SD Vergleiche</a><br />
-													<a href="http://www.filmstarts.de/finde.html?anfrage={$dvd->title|rawurlencode}">FILMSTARTS.de</a><br />
+													<a href="http://www.schnittberichte.com/svds.php?Page=Liste&amp;Kat=3&amp;SearchKat=Titel&amp;String={$dvd->Title|rawurlencode}">Schnittberichte.com</a><br />
+													<a href="http://www.cinefacts.de/suche/suche.php?name={$dvd->Title|rawurlencode}">Cinefacts</a><br />
+													<a href="http://www.dvd-palace.de/dvddatabase/dbsearch.php?action=1&amp;suchbegriff={$dvd->Title|rawurlencode}">DVD-Palace</a><br />
+													<a href="http://www.moviemaze.de/suche/result.phtml?searchword={$dvd->Title|rawurlencode}">MovieMaze</a><br />
+													<a href="http://www.caps-a-holic.com/index.php?search={$dvd->Title|rawurlencode}">caps-a-holic DVD Vergleiche</a><br />
+													<a href="http://www.caps-a-holic.com//hd_vergleiche/test.php?search={$dvd->Title|rawurlencode}">caps-a-holic HD/SD Vergleiche</a><br />
+													<a href="http://www.filmstarts.de/finde.html?anfrage={$dvd->Title|rawurlencode}">FILMSTARTS.de</a><br />
 													<a href="http://www.dvdiggle.de/digglebot.php?dvdtitle={$dvd->Title|rawurlencode}&amp;abroad=1">Preissuche DVDiggle</a><br />
-													<a href="http://www.amazon.de/gp/search?ie=UTF8&amp;keywords={$dvd->title|rawurlencode}&amp;index=dvd">Amazon.de Suche</a><br />
+													<a href="http://www.amazon.de/gp/search?ie=UTF8&amp;keywords={$dvd->Title|rawurlencode}&amp;index=dvd">Amazon.de Suche</a><br />
 												{elseif $smarty.session.lang_id == 'nl'}
 													<b>{t}Dutch{/t}:</b><br />
 													<a href="http://www.moviemeter.nl/film/search/{$imdbTitle|rawurlencode}">Moviemeter</a><br />
-													<a href="http://www.bol.com/nl/s/dvd/zoekresultaten/Ntt/{$dvd->title|rawurlencode}/Ntk/dvd_all/Ntx/mode+matchallpartial/Nty/1/N/3133/Ne/3133/search/true/searchType/qck/index.html?">Bol.com</a><br />
+													<a href="http://www.bol.com/nl/s/dvd/zoekresultaten/Ntt/{$dvd->Title|rawurlencode}/Ntk/dvd_all/Ntx/mode+matchallpartial/Nty/1/N/3133/Ne/3133/search/true/searchType/qck/index.html?">Bol.com</a><br />
 												{/if}
 											</td>
 										</tr>

@@ -42,7 +42,7 @@
 			{foreach from=$person item=p name=person}   
 				{assign var="counter" value=$counter+1}   
 				<td class="cover" style="width: {$hundred/$pmp_people_per_row}%; vertical-align: top;">
-					<a href="index.php?content=searchperson&amp;name={$p.Name|rawurlencode}&amp;nowildcards{if isset($p.Birthyear)}&amp;birthyear={$p.Birthyear}{/if}">{$p.Name} {if isset($p.Birthyear)} ({$p.Birthyear}){/if}<br /><br />
+					<a href="index.php?content=searchperson&amp;pname={$p.Name|rawurlencode}&amp;nowildcards{if isset($p.Birthyear)}&amp;pbirthyear={$p.Birthyear}{/if}">{$p.Name} {if isset($p.Birthyear)} ({$p.Birthyear}){/if}<br /><br />
 					<img src="{$pmp_dir_cast}{$p.File|rawurlencode}" width="100" alt="{$p.File}" title="{$p.File}" /></a>
 					<br />&nbsp;
 				</td>

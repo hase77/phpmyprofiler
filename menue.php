@@ -10,7 +10,7 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
@@ -73,7 +73,7 @@
 //		foreignfield:		Field after which the foreigntable should be filtered, e.g. Genre.
 //		valueforeignfield:	Value after which the foreignfield should be filtered, e.g. Comedy.
 
-// No direct access
+// Disallow direct access
 defined('_PMP_REL_PATH') or die('Not allowed! Possible hacking attempt detected!');
 
 $pmp_module = 'menue';
@@ -84,8 +84,9 @@ dbconnect();
 
 // Generate sql select for dvd list
 function generateSql($count = false) {
-	global $_GET, $_SESSION;
+	global $_SESSION;
 	global $pmp_dvd_menue, $pmp_exclude_tag, $sortcount;
+	global $pmp_mysql_ver;
 	$j = 0;
 
 	$join[] = 'LEFT JOIN pmp_boxset ON pmp_film.id = pmp_boxset.childid LEFT JOIN pmp_collection ON pmp_film.collectiontype = pmp_collection.collection';
@@ -117,7 +118,7 @@ function generateSql($count = false) {
 				}
 			}
 			else if ( $val['field'] == 'title') {
-				$where[] = "MATCH (title, originaltitle, sorttitle) AGAINST ('" . mysql_real_escape_string($val['value']) . "')";
+				$where[] = "title like '" . mysql_real_escape_string($val['value']) . "'";
 			}
 			else if ( strpos($val['field'], '[dot]') ) {
 				$j++;

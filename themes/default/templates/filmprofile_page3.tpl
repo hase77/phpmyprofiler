@@ -15,7 +15,7 @@
 					{strip}
 					<td class="td{$sch%2}">
 						{if $last_value != $value->full}
-							<a href="index.php?content=searchperson&amp;name={$value->full_encoded}&amp;nowildcards{if $value->birthyear != ''}&amp;birthyear={$value->birthyear}{/if}">{if $value->creditedas != ''}{$value->creditedas}{else}{$value->full|colorname:$value->firstname:$value->middlename:$value->lastname}{/if}</a>
+							<a href="index.php?content=searchperson&amp;pname={$value->full_encoded}&amp;nowildcards{if $value->birthyear != ''}&amp;pbirthyear={$value->birthyear}{/if}">{if $value->creditedas != ''}{$value->creditedas}{else}{$value->full|colorname:$value->firstname:$value->middlename:$value->lastname}{/if}</a>
 						{/if}
 					</td>
 					<td class="td{$sch%2}">
@@ -74,7 +74,7 @@
 				{/if}
 				<tr>
 					<td class="td{$sch%2}" style="width: 40%;">
-						<a href="index.php?content=searchperson&amp;name={$value->full_encoded}&amp;nowildcards{if $value->birthyear != ''}&amp;birthyear={$value->birthyear}{/if}">{if $value->creditedas != ''}{$value->creditedas}{else}{$value->full|colorname:$value->firstname:$value->middlename:$value->lastname}{/if}</a>
+						<a href="index.php?content=searchperson&amp;pname={$value->full_encoded}&amp;nowildcards{if $value->birthyear != ''}&amp;pbirthyear={$value->birthyear}{/if}">{if $value->creditedas != ''}{$value->creditedas}{else}{$value->full|colorname:$value->firstname:$value->middlename:$value->lastname}{/if}</a>
 					</td>
 					<td class="td{$sch%2}">
 						{if $value->pic}

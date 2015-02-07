@@ -49,7 +49,7 @@ if ( isset($_POST['login']) ) {
 	}
 	else {
 		saveLastIP();
-		session_regenerate_id(false);
+		session_regenerate_id(true);
 		$session = session_name() . "=" . session_id();
 
 		$_SESSION['isadmin'] = true;

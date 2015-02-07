@@ -9,7 +9,7 @@
 	<tr><td class="propheader" colspan="2">{$dvd->Media} {t}Information{/t}:</td></tr>
 	{if $dvd->Edition != ''}<tr><td class="proptitle">{t}Edition{/t}:</td><td class="propvalue">{$dvd->Edition}</td></tr>{/if}
 	<tr><td class="proptitle">{t}ID{/t}:</td><td class="propvalue">{$dvd->id}</td></tr>
-	<tr><td class="proptitle">{t}UPC{/t}:</td><td class="propvalue">{$dvd->upc}</td></tr>
+	<tr><td class="proptitle">{t}UPC{/t}:</td><td class="propvalue">{$dvd->UPC}</td></tr>
 	<tr><td class="proptitle">{t}Profile Date{/t}:</td><td class="propvalue">{$dvd->ProfileDate}</td></tr>
 	<tr><td class="proptitle">{t}Last Edited{/t}:</td><td class="propvalue">{$dvd->LastEdited}</td></tr>
 	<tr><td class="proptitle">{t}Country{/t}:</td><td class="propvalue">{$dvd->Locality|flag}</td></tr>
@@ -86,7 +86,7 @@
 				{/if}
 
 				{if isset($dvd->extReviews[review]->imdbRating) && $dvd->extReviews[review]->imdbRating > 0}
-					<tr><td class="proptitle">{t}IMDB User Rating{/t}:</td><td class="propvalue"><img src="include/voting.php?rating={$dvd->extReviews[review]->imdbRating}" alt="{$dvd->extReviews[review]->imdbRating}" /> {$dvd->extReviews[review]->imdbRating|number_format:2:$pmp_dec_point:$pmp_thousands_sep}/10 ({t}votes{/t}: {$dvd->extReviews[review]->imdbVotes|number_format:0:$pmp_dec_point:$pmp_thousands_sep})</td></tr>
+					<tr><td class="proptitle">{t}IMDB User Rating{/t}:</td><td class="propvalue"><img src="voting.php?rating={$dvd->extReviews[review]->imdbRating}" alt="{$dvd->extReviews[review]->imdbRating}" /> {$dvd->extReviews[review]->imdbRating|number_format:2:$pmp_dec_point:$pmp_thousands_sep}/10 ({t}votes{/t}: {$dvd->extReviews[review]->imdbVotes|number_format:0:$pmp_dec_point:$pmp_thousands_sep})</td></tr>
 					{if isset($dvd->extReviews[review]->imdbTop250)}
 						<tr><td class="proptitle">{t}IMDB Top 250{/t}:</td><td class="propvalue">{$dvd->extReviews[review]->imdbTop250}</td></tr>
 					{/if}
@@ -96,7 +96,7 @@
 				{/if}
 
 				{if isset($dvd->extReviews[review]->ofdbRating) && $dvd->extReviews[review]->ofdbRating > 0}
-					<tr><td class="proptitle">{t}OFDB User Rating{/t}:</td><td class="propvalue"><img src="include/voting.php?rating={$dvd->extReviews[review]->ofdbRating}" alt="{$dvd->extReviews[review]->ofdbRating}" /> {$dvd->extReviews[review]->ofdbRating|number_format:2:$pmp_dec_point:$pmp_thousands_sep}/10 ({t}votes{/t}: {$dvd->extReviews[review]->ofdbVotes|number_format:0:$pmp_dec_point:$pmp_thousands_sep})</td></tr>
+					<tr><td class="proptitle">{t}OFDB User Rating{/t}:</td><td class="propvalue"><img src="voting.php?rating={$dvd->extReviews[review]->ofdbRating}" alt="{$dvd->extReviews[review]->ofdbRating}" /> {$dvd->extReviews[review]->ofdbRating|number_format:2:$pmp_dec_point:$pmp_thousands_sep}/10 ({t}votes{/t}: {$dvd->extReviews[review]->ofdbVotes|number_format:0:$pmp_dec_point:$pmp_thousands_sep})</td></tr>
 					{if isset($dvd->extReviews[review]->ofdbTop250)}
 						<tr><td class="proptitle">{t}OFDB Top 250{/t}:</td><td class="propvalue">{$dvd->extReviews[review]->ofdbTop250}</td></tr>
 					{/if}
@@ -106,11 +106,11 @@
 				{/if}
 
 				{if isset($dvd->extReviews[review]->rotcRating) && $dvd->extReviews[review]->rotcRating > 0}
-					<tr><td class="proptitle">{t}RottenTomatoes Critics Rating{/t}:</td><td class="propvalue"><img src="include/voting.php?rating={$dvd->extReviews[review]->rotcRating}" alt="{$dvd->extReviews[review]->rotcRating}" /> {$dvd->extReviews[review]->rotcRating|number_format:2:$pmp_dec_point:$pmp_thousands_sep}/10 ({t}votes{/t}: {$dvd->extReviews[review]->rotcVotes|number_format:0:$pmp_dec_point:$pmp_thousands_sep})</td></tr>
+					<tr><td class="proptitle">{t}RottenTomatoes Critics Rating{/t}:</td><td class="propvalue"><img src="voting.php?rating={$dvd->extReviews[review]->rotcRating}" alt="{$dvd->extReviews[review]->rotcRating}" /> {$dvd->extReviews[review]->rotcRating|number_format:2:$pmp_dec_point:$pmp_thousands_sep}/10 ({t}votes{/t}: {$dvd->extReviews[review]->rotcVotes|number_format:0:$pmp_dec_point:$pmp_thousands_sep})</td></tr>
 				{/if}
 
 				{if isset($dvd->extReviews[review]->rotuRating) && $dvd->extReviews[review]->rotuRating > 0}
-					<tr><td class="proptitle">{t}RottenTomatoes User Rating{/t}:</td><td class="propvalue"><img src="include/voting.php?rating={$dvd->extReviews[review]->rotuRating}&maxrate=5" alt="{$dvd->extReviews[review]->rotuRating}" /> {$dvd->extReviews[review]->rotuRating|number_format:2:$pmp_dec_point:$pmp_thousands_sep}/5 ({t}votes{/t}: {$dvd->extReviews[review]->rotuVotes|number_format:0:$pmp_dec_point:$pmp_thousands_sep})</td></tr>
+					<tr><td class="proptitle">{t}RottenTomatoes User Rating{/t}:</td><td class="propvalue"><img src="voting.php?rating={$dvd->extReviews[review]->rotuRating}&maxrate=5" alt="{$dvd->extReviews[review]->rotuRating}" /> {$dvd->extReviews[review]->rotuRating|number_format:2:$pmp_dec_point:$pmp_thousands_sep}/5 ({t}votes{/t}: {$dvd->extReviews[review]->rotuVotes|number_format:0:$pmp_dec_point:$pmp_thousands_sep})</td></tr>
 				{/if}
 			{/section}
 		{/if}

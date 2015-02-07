@@ -1,6 +1,6 @@
 <?php
 /* phpMyProfiler
- * Copyright (C) 2005-2014 The phpMyProfiler project
+ * Copyright (C) 2005-2015 The phpMyProfiler project
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -9,7 +9,7 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
@@ -24,19 +24,19 @@ class pmp_Smarty extends Smarty {
 	public function __construct(){
 		// selfpointer needed by some other class methods
 		$this->smarty = $this;
-		if ( is_callable('mb_internal_encoding') ) {
+		if (is_callable('mb_internal_encoding')) {
 			mb_internal_encoding(SMARTY_RESOURCE_CHAR_SET);
 		}
 		$this->start_time = microtime(true);
 		// set default dirs
-		$this->setTemplateDir('.' . DS . 'templates' . DS);
-		$this->setCompileDir('.' . DS . 'templates_c' . DS);
+		$this->setTemplateDir('.'.DS.'templates'.DS);
+		$this->setCompileDir('.'. DS.'templates_c'.DS);
 		$this->setPluginsDir(SMARTY_PLUGINS_DIR);
-		$this->setCacheDir('.' . DS . 'cache' . DS);
-		$this->setConfigDir('.' . DS . 'configs' . DS);
+		$this->setCacheDir('.'.DS.'cache'.DS);
+		$this->setConfigDir('.'.DS.'configs'.DS);
 
-		$this->debug_tpl = 'file:' . dirname(__FILE__) . '/debug.tpl';
-		if ( isset($_SERVER['SCRIPT_NAME']) ) {
+		$this->debug_tpl = 'file:'.dirname(__FILE__).'/debug.tpl';
+		if (isset($_SERVER['SCRIPT_NAME'])) {
 			$this->assignGlobal('SCRIPT_NAME', $_SERVER['SCRIPT_NAME']);
 		}
 	}
@@ -44,11 +44,11 @@ class pmp_Smarty extends Smarty {
 	public function setTemplateDir($template) {
 		global $pmp_theme;
 
-		if ( file_exists(_PMP_REL_PATH . '/themes/' . $pmp_theme . '/templates/' . $template) ) {
-			$template_dir = _PMP_REL_PATH . '/themes/' . $pmp_theme . '/templates';
+		if (file_exists(_PMP_REL_PATH.'/themes/'.$pmp_theme.'/templates/'.$template)) {
+			$template_dir = _PMP_REL_PATH.'/themes/'.$pmp_theme.'/templates';
 		}
 		else {
-			$template_dir = _PMP_REL_PATH . '/themes/default/templates';
+			$template_dir = _PMP_REL_PATH.'/themes/default/templates';
 		}
 		parent::setTemplateDir($template_dir);
 	}
@@ -58,13 +58,13 @@ class pmp_Smarty extends Smarty {
 
 		$this->setTemplateDir($template);
 
-		foreach ( $GLOBALS as $key => $val ) {
-			if ( substr($key, 0, 4) == 'pmp_' ) {
+		foreach ($GLOBALS as $key => $val) {
+			if (substr($key, 0, 4) == 'pmp_') {
 				$this->assign($key, $val);
 			}
 		}
 
-		parent::display( $template, $cache_id, $pmp_theme . '_' . $_SESSION['lang_id'], $parent);
+		parent::display( $template, $cache_id, $pmp_theme.'_'.$_SESSION['lang_id'], $parent);
 	}
 
 	public function isCached($template = null, $cache_id = null, $compile_id = null, $parent = null) {
@@ -72,7 +72,7 @@ class pmp_Smarty extends Smarty {
 
 		$this->setTemplateDir($template);
 
-		return parent::isCached($template, $cache_id, $pmp_theme . '_' . $_SESSION['lang_id'], $parent);
+		return parent::isCached($template, $cache_id, $pmp_theme.'_'.$_SESSION['lang_id'], $parent);
 	}
 }
 ?>

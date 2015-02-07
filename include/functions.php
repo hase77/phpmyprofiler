@@ -1,7 +1,7 @@
 <?php
 /* phpMyProfiler
  * Copyright (C) 2004 by Tim Reckmann [www.reckmann.org] & Powerplant [www.powerplant.de]
- * Copyright (C) 2005-2014 The phpMyProfiler project
+ * Copyright (C) 2005-2015 The phpMyProfiler project
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -10,7 +10,7 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
@@ -18,7 +18,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
 */
 
-// No direct access
+// Disallow direct access
 defined('_PMP_REL_PATH') or die('Not allowed! Possible hacking attempt detected!');
 
 // Set version
@@ -28,57 +28,59 @@ $pmp_version = '1.2 dev';
 error_reporting(E_ALL ^ E_NOTICE);
 
 // Uncomment for developing/debugging
-@ini_set("display_errors", 1);
-@ini_set("implicit_flush ", "On");
+@ini_set('display_errors', 1);
+@ini_set('implicit_flush', 'On');
 error_reporting(E_ALL | E_STRICT);
 
-// Set include-path for PEAR
+// Set include-path for PEAR lib
 add_include_path(dirname(__FILE__) . '/PEAR');
 
-// Set timezone because strict warning
+// Set timezone because strict warning (if not already set in php.ini)
 @date_default_timezone_set($pmp_timezone);
 
 // Start session if there's none
-if ( !isset($_SESSION) ) {
+if (!isset($_SESSION)) {
 	session_start();
 }
 
 // Check language
-if ( !empty($_GET['lang_id']) ) {
+if (!empty($lang_id)) {
 	// The user wants to change language, save the information to session
-	$_SESSION['lang_id'] = $_GET['lang_id'];
+	$_SESSION['lang_id'] = $lang_id;
 }
-// okay, the user doesn't want to change the language. Then use the language
+// Okay, the user doesn't want to change the language. Then use the language
 // from the Session. Oh, there is no language in the session?
-else if ( empty($_SESSION['lang_id']) ) {
+else if (empty($_SESSION['lang_id'])) {
 	// We need PEAR:HTTP2 to get the right language from the browser.
 	require_once('HTTP2.php');
 	$http = new HTTP2();
 
-	$langs = array(
+	$langs = [
 		'en'	=> true,
 		'de'	=> true,
 		'da'	=> true,
 		'no'	=> true
-	);
+	];
 
 	$_SESSION['lang_id'] = $http->negotiateLanguage($langs, $pmp_lang_default);
 }
 
 // Expire header
 $offset = 60 * 60 ;
-$ExpStr = "Expires: " . gmdate("D, d M Y H:i:s", time() + $offset) . " GMT";
+$ExpStr = 'Expires: '.gmdate('D, d M Y H:i:s', time() + $offset).' GMT';
 
 // Connect to the database
 // Dies on error (with an error message) if $dieonerror is true
 function dbconnect($dieonerror = true) {
+	// mysql* functions are deprecated!
+
 	global $pmp_sqlhost, $pmp_sqluser, $pmp_sqlpass, $pmp_sqldatabase;
-	global $pmp_timezone;
+	global $pmp_timezone, $pmp_mysql_ver;
 
 	$db = @mysql_connect($pmp_sqlhost, $pmp_sqluser, $pmp_sqlpass);
 
 	// Can't connect to the mysql-database
-	if ( !$db && $dieonerror ) {
+	if (!$db && $dieonerror) {
 		$the_error = "\nmySQL error: " . mysql_error() . "\n";
 		$the_error .= "mySQL error code: " . mysql_errno() . "\n";
 		$the_error .= "Date: " . date("Y-m-d H:i:s");
@@ -91,6 +93,9 @@ function dbconnect($dieonerror = true) {
 		exit();
 	}
 
+	// Get MySQL Server version
+	$pmp_mysql_ver = substr(@mysql_get_server_info($db), 0, strpos(@mysql_get_server_info($db), "-"));
+
 	// Set encoding for database
 	@mysql_set_charset('utf8', $db);
 	@mysql_query("SET time_zone='".$pmp_timezone."'");
@@ -98,7 +103,7 @@ function dbconnect($dieonerror = true) {
 	$db_select = @mysql_select_db($pmp_sqldatabase);
 
 	// Can't switch to the database
-	if ( !$db_select && $dieonerror ) {
+	if (!$db_select && $dieonerror) {
 		$the_error .= "\nmySQL error: ".mysql_error()."\n";
 		$the_error .= "mySQL error code: ".mysql_errno()."\n";
 		$the_error .= "Date: ".date("Y-m-d H:i:s");
@@ -114,14 +119,49 @@ function dbconnect($dieonerror = true) {
 	return ($db && $db_select);
 }
 
+// Connect to the database via PDO
+// Dies on error (with an error message) if $dieonerror is true
+function dbconnect_pdo($dieonerror = true) {
+	global $pmp_db, $pmp_timezone, $pmp_mysql_ver;
+	global $pmp_sqlhost, $pmp_sqluser, $pmp_sqlpass, $pmp_sqldatabase;
+
+	try {
+		$pmp_db = new PDO(
+			"mysql:host={$pmp_sqlhost};dbname={$pmp_sqldatabase};charset=utf8",
+			$pmp_sqluser, $pmp_sqlpass,
+			[PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8;']
+		);
+
+		// Enable prepared statements
+		$pmp_db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+
+		// Use exceptions
+		$pmp_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		// ToDo: Set timezone, get mysql version (for what?)
+
+	}
+	catch (PDOException $e) {
+		if ($dieonerror) {
+			echo '<html><head><title>Database Error</title><style>P,BODY{font-family:arial,sans-serif; font-size:11px;}</style>
+				</head><body>&nbsp;<br><br><blockquote><b>There appears to be an error with the database.</b>
+				<br>You can try to refresh the page by clicking <a href="javascript:window.location=window.location;">here</a>
+				, if this does not fix the error, please connect the Webmaster<br><br><b>Error returned:</b><br>
+				<form name="mysql"><textarea rows="15" cols="45">'.htmlspecialchars($e->getMessage()).'</textarea></form>
+				<br></blockquote></body></html>';
+			die;
+		}
+	}
+}
+
 // Replace the table prefix and executes the query
 // If $continueonerror is set to true the script will abort with an error message if the query fails.
 function dbexec($sql, $continueonerror = false) {
 	$sql = replace_table_prefix($sql);
 	$result = @mysql_query($sql);
 
-	if ( !$continueonerror ) {
-		if ( !$result ) {
+	if (!$continueonerror) {
+		if (!$result) {
 			echo "<strong>SQL-Statement failed:</strong><br /><pre>" . mysql_errno() . " - " . mysql_error()
 				. "\n\nQuery:\n$sql</pre>";
 			die;
@@ -131,13 +171,88 @@ function dbexec($sql, $continueonerror = false) {
 	return $result;
 }
 
+// Prepare and execute the query via PDO
+// If $continueonerror is set to true the script will abort with an error message if the query fails.
+function dbquery_pdo($query, $params = null, $type = 'default', $continueonerror = false) {
+	global $pmp_db;
+
+	$result = false;
+	replace_table_prefix($query);
+
+	try {
+		$stmt = $pmp_db->prepare($query);
+		$stmt->execute($params);
+
+		switch ($type) {
+			case 'num';
+				$result = $stmt->fetchAll(PDO::FETCH_NUM);
+				break;
+			case 'assoc';
+				$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+				break;
+			case 'object';
+				$result = $stmt->fetchAll(PDO::FETCH_OBJ);
+				break;
+			case 'default';
+				$result = $stmt->fetchAll(PDO::FETCH_BOTH);
+				break;
+		}
+	}
+	catch (PDOException $e) {
+		if (!$continueonerror) {
+			echo '<html><head><title>Database Error</title><style>P,BODY{font-family:arial,sans-serif; font-size:11px;}</style>
+				</head><body>&nbsp;<br><br><blockquote><b>There appears to be an error with the database.</b>
+				<br>You can try to refresh the page by clicking <a href="javascript:window.location=window.location;">here</a>
+				, if this does not fix the error, please connect the Webmaster<br><br><b>Error returned:</b><br>
+				<form name="mysql"><textarea rows="15" cols="45">'.htmlspecialchars($e->getMessage()).'</textarea></form>
+				<br></blockquote></body></html>';
+			die;
+		}
+	}
+	
+	return $result;
+}
+
+function dbexecute_pdo($query, $params, $continueonerror = false) {
+	global $pmp_db;
+
+	$result = false;
+	replace_table_prefix($query);
+
+	try {
+		$stmt = $pmp_db->prepare($query);
+		$result = $stmt->execute($params);
+	}
+	catch (PDOException $e) {
+		if (!$continueonerror) {
+			echo '<html><head><title>Database Error</title><style>P,BODY{font-family:arial,sans-serif; font-size:11px;}</style>
+				</head><body>&nbsp;<br><br><blockquote><b>There appears to be an error with the database.</b>
+				<br>You can try to refresh the page by clicking <a href="javascript:window.location=window.location;">here</a>
+				, if this does not fix the error, please connect the Webmaster<br><br><b>Error returned:</b><br>
+				<form name="mysql"><textarea rows="15" cols="45">'.htmlspecialchars($e->getMessage()).'</textarea></form>
+				<br></blockquote></body></html>';
+			die;
+		}
+	}
+	
+	$stmt = null;
+	return $result;
+}
+
 // Close database
 function dbclose() {
 	mysql_close();
 }
 
+// Close database
+function dbclose_pdo() {
+	global $pmp_db;
+
+	$pmp_db = null;
+}
+
 // Replace the tableprefix pmp_ with the user defined prefix
-function replace_table_prefix($sql) {
+function replace_table_prefix(& $sql) {
 	global $pmp_table_prefix;
 
 	return str_replace('pmp_', $pmp_table_prefix, $sql);
@@ -146,12 +261,12 @@ function replace_table_prefix($sql) {
 // Cut $string after $length character and add the $suffix
 // Will pay attention to things like &uuml;
 function trunc($string, $length, $suffix = '...') {
-	if ( strlen($string) - strlen($suffix) > $length ) {
-		if ( (strpos($string, '&', $length-5)) && (strpos($string, '&', $length-5) < $length) ) {
-			return trunc($string, $length + (strpos($string, ';', $length-5) -strpos($string, '&', $length-5)), $suffix);
+	if (strlen($string) - strlen($suffix) > $length) {
+		if (strpos($string, '&', $length-5) && strpos($string, '&', $length-5) < $length) {
+			return trunc($string, $length + (strpos($string, ';', $length-5) - strpos($string, '&', $length-5)), $suffix);
 		}
 		else {
-			return substr($string, 0, $length) . $suffix;
+			return substr($string, 0, $length).$suffix;
 		}
 	}
 	else {
@@ -160,9 +275,9 @@ function trunc($string, $length, $suffix = '...') {
 }
 
 function getColumns($col = '', $detail = '') {
-	$columns[0]['Header'] = 'empty'; // displayed name of the column
-	$columns[0]['Output'] = ''; // object-property/function to display
-	$columns[0]['Sort'] = 'Hide column';  // The database field to sort
+	$columns[0]['Header'] = 'empty';		// displayed name of the column
+	$columns[0]['Output'] = '';				// object-property/function to display
+	$columns[0]['Sort'] = 'Hide column';	// The database field to sort
 
 	$columns[1]['Header'] = 'Movie Title';
 	$columns[1]['Output'] = 'Title';
@@ -174,7 +289,7 @@ function getColumns($col = '', $detail = '') {
 
 	$columns[3]['Header'] = 'Country';
 	$columns[3]['Output'] = 'getLocationFlag';
-	$columns[3]['AltOutput'] = 'Locality';  // alternative Text output (eg for pdfs)
+	$columns[3]['AltOutput'] = 'Locality';	// alternative Text output (eg for pdfs)
 	$columns[3]['Sort'] = 'locality';
 
 	$columns[4]['Header'] = 'Nr.';
@@ -201,21 +316,18 @@ function getColumns($col = '', $detail = '') {
 	$columns[9]['Output'] = 'Edition';
 	$columns[9]['Sort'] = 'disttrait';
 
-	/*
-	// Does not work with multiple countries of origin!
 	$columns[10]['Header'] = 'Origin';
 	$columns[10]['Output'] = 'getOriginFlag';
 	$columns[10]['AltOutput'] = 'Origin';  // alternative Text output (eg for pdfs)
 	$columns[10]['Sort'] = 'origin';
-	*/
 
-	if ( empty($col) ) {
+	if (empty($col)) {
 		return $columns;
 	}
-	else if ( empty($detail) ) {
+	else if (empty($detail)) {
 		return $columns[$col];
 	}
-	else if ( ($detail == 'AltOutput') && (!isset($columns[$col][$detail])) ) {
+	else if ($detail == 'AltOutput' && !isset($columns[$col][$detail])) {
 		return $columns[$col]['Output'];
 	}
 	else {
@@ -224,7 +336,7 @@ function getColumns($col = '', $detail = '') {
 }
 
 function getColumnsasOption() {
-	foreach ( getColumns() as $key => $column ) {
+	foreach (getColumns() as $key => $column) {
 		$ret[$key] = $column['Header'];
 	}
 
@@ -358,7 +470,7 @@ function getFlagName($state) {
 	$flags['xhosa'] = 'South_Africa.png';
 	$flags['zulu'] = 'South_Africa.png';
 
-	if ( isset($flags[strtolower($state)]) ) {
+	if (isset($flags[strtolower($state)])) {
 		return $flags[strtolower($state)];
 	}
 	else {
@@ -369,17 +481,17 @@ function getFlagName($state) {
 function getHeadshot($name, $year, $firstname, $middlename, $lastname) {
 	global $pmp_dir_cast;
 
-	$extensions = array (".jpg", ".JPG", ".gif", ".GIF", ".png", ".PNG", ".tif", ".TIF");
+	$extensions = ['.jpg', '.JPG', '.gif', '.GIF', '.png', '.PNG', '.tif', '.TIF'];
 	$found = false;
 	$full_encoded = rawurlencode($name);
 
-	if ( $year != '' ) {
+	if ($year != '') {
 		$searchyear = '('.$year.')';
 
 		// Try to find image file named like "Morgan Freeman(1937).xxx"
 		foreach ($extensions as $ext) {
-			if ( file_exists($pmp_dir_cast . $name . $searchyear . $ext) ) {
-				$picname = $full_encoded . $searchyear . $ext;
+			if (file_exists($pmp_dir_cast.$name .$searchyear.$ext)) {
+				$picname = $full_encoded.$searchyear.$ext;
 				$found = true;
 				break;
 			}
@@ -388,20 +500,20 @@ function getHeadshot($name, $year, $firstname, $middlename, $lastname) {
 		// If not found, maybe with a blank, like "Morgan Freeman (1937).xxx"
 		if (!$found) {
 			foreach ($extensions as $ext) {
-				if ( file_exists($pmp_dir_cast . $name . ' ' . $searchyear . $ext) ) {
-					$picname = $full_encoded . $searchyear . $ext;
-		    			$found = true;
-		    			break;
+				if (file_exists($pmp_dir_cast.$name.' '.$searchyear.$ext) ) {
+					$picname = $full_encoded.$searchyear.$ext;
+		    		$found = true;
+		    		break;
 				}
 			}
 		}
 	}
 
 	// If still no image found yet. Try without the year, like "Morgan Freeman.xxx"
-	if ( !$found ) {
+	if (!$found) {
 		foreach ($extensions as $ext) {
-			if ( file_exists($pmp_dir_cast . $name . $ext) ) {
-				$picname = $full_encoded . $ext;
+			if (file_exists($pmp_dir_cast.$name.$ext)) {
+				$picname = $full_encoded.$ext;
 				$found = true;
 				break;
 			}
@@ -409,12 +521,12 @@ function getHeadshot($name, $year, $firstname, $middlename, $lastname) {
 	}
 
 	// Search for DVDProfiler style name
-	if ( !$found ) {
-		$name = $lastname."_".$firstname."_".$middlename;
-		if ( $year != '' ) $name = $name."_".$year;
+	if (!$found) {
+		$name = $lastname.'_'.$firstname.'_'.$middlename;
+		if ($year != '') $name = $name.'_'.$year;
 		foreach ($extensions as $ext) {
-			if ( file_exists($pmp_dir_cast . $name . $ext) ) {
-				$picname = $name . $ext;
+			if (file_exists($pmp_dir_cast.$name.$ext)) {
+				$picname = $name.$ext;
 				$found = true;
 				break;
 			}
@@ -422,7 +534,7 @@ function getHeadshot($name, $year, $firstname, $middlename, $lastname) {
 	}
 
 	// If still nothing found at this point return blank, otherwise return the image URL
-	if ( !$found ) {
+	if (!$found) {
 		return '';
 	}
 	else {
@@ -432,44 +544,44 @@ function getHeadshot($name, $year, $firstname, $middlename, $lastname) {
 
 function getScreenshots($id, $praefix = '') {
 	$found = false;
-	$dir = $praefix.'screenshots/' . utf8_decode($id) . '/';
-	$thdir = $praefix.'screenshots/thumbs/' . utf8_decode($id) . '/';
+	$dir = $praefix.'screenshots/'.utf8_decode($id).'/';
+	$thdir = $praefix.'screenshots/thumbs/'.utf8_decode($id).'/';
 	$dirfail = false;
 
-	if ( is_dir($dir) ) {
+	if (is_dir($dir)) {
 		$handle = opendir($dir);
-		if ( is_resource($handle) ) {
-			while ( $file = readdir($handle) ) {
-				if ( $file != "." && $file != ".." ) {
-					if (strtolower(substr($file, -4)) == ".jpg" || strtolower(substr($file, -5)) == ".jpeg") {
+		if (is_resource($handle)) {
+			while ($file = readdir($handle)) {
+				if ($file != "." && $file != "..") {
+					if (strtolower(substr($file, -4)) == '.jpg' || strtolower(substr($file, -5)) == '.jpeg') {
 						$files[] = $file;
 
 						// Is there a dir for the thumbnail?
-						if ( !is_dir($thdir) and !$dirfail ) {
-							if ( !mkdir ( $thdir ) ) {
-								$dirfail = $true;
+						if (!is_dir($thdir) && !$dirfail) {
+							if (!mkdir($thdir)) {
+								$dirfail = true;
 							}
 						}
 						// Is there a thumbnail for this screenshot?
-						if ( !file_exists( $thdir . $file ) and !$dirfail ) {
+						if (!file_exists($thdir.$file) && !$dirfail) {
 							// Get original image and size
-							$src_img = imagecreatefromjpeg($dir . $file);
+							$src_img = imagecreatefromjpeg($dir.$file);
 							$old_x = imageSX($src_img);
 							$old_y = imageSY($src_img);
 							// Calculate new size
-							if ( $old_x >= $old_y ) {
+							if ($old_x >= $old_y) {
 								$thumb_x = 90;
-								$thumb_y = 90 * ( $old_y / $old_x );
+								$thumb_y = 90 * ($old_y / $old_x);
 							}
 							else {
 								$thumb_y = 90;
-								$thumb_x = 90 * ( $old_x / $old_y );
+								$thumb_x = 90 * ($old_x / $old_y);
 							}
 							// Create thumb
 							$dst_img = ImageCreateTrueColor($thumb_x, $thumb_y);
 							imagecopyresampled($dst_img, $src_img, 0, 0, 0, 0, $thumb_x, $thumb_y, $old_x, $old_y);
 							// Save thumb
-							imagejpeg($dst_img, $thdir . $file);
+							imagejpeg($dst_img, $thdir.$file);
 						}
 					}
 				}
@@ -482,7 +594,7 @@ function getScreenshots($id, $praefix = '') {
 
 // Get digits for currency
 function get_currency_digits($currency) {
-	switch ( $currency ) {
+	switch ($currency) {
 		case 'JPY':
 		case 'KRW':
 			return 0;
@@ -493,50 +605,61 @@ function get_currency_digits($currency) {
 
 // Counts the visit of a user with a reload lock of two hours
 // If a film id is given the access to a film is counted
-function inccounter($filmid = '') {
+function inccounter($filmid = null) {
 	$sid = session_id();
 
-	if ( $filmid != '' ) {
-		$sql = 'SELECT COUNT(id) AS cnt FROM pmp_counter_profil WHERE sid = \'' . mysql_real_escape_string($sid)
-			. '\' AND NOW() < DATE_ADD(date, INTERVAL 2 HOUR) AND film_id = \'' . mysql_real_escape_string($filmid) . '\'';
-		$result = dbexec($sql);
+	if (!empty($filmid)) {
+		$query = 'SELECT COUNT(id) AS cnt FROM pmp_counter_profil WHERE sid = ? AND NOW() < DATE_ADD(date, INTERVAL 2 HOUR)
+				  AND film_id = ?';
+		$params = [$sid, $filmid];
+		$result = dbquery_pdo($query, $params, 'assoc');
 
-		if ( mysql_result($result, 0) == 0 ) {
-			$query = 'INSERT INTO pmp_counter_profil (date, film_id, sid) VALUES (NOW(),\''
-				. mysql_real_escape_string($filmid) . '\', \'' . mysql_real_escape_string($sid) . '\')';
-			$result = dbexec($query);
+		if (count($result) == 0) {
+			$sql = 'INSERT INTO pmp_counter_profil (date, film_id, sid) VALUES (NOW(), ?, ?)';
+			$params = [$sid, $filmid];
+			dbexecute_pdo($sql, $params);
 		}
 
-		$query = 'SELECT COUNT(id) AS count_all FROM pmp_counter_profil WHERE film_id = \''
-			. mysql_real_escape_string($filmid) . '\'';
-		$result = dbexec($query);
-		$all = mysql_result($result, 0, 'count_all');
+		$query = 'SELECT COUNT(id) AS cnt FROM pmp_counter_profil WHERE film_id = ?';
+		$params = [$filmid];
+		$result = dbquery_pdo($query, $params, 'assoc');
+		if (count($result) > 0) {
+			$all = $result[0]['cnt'];
+		}
 
-		$query = 'SELECT COUNT(id) AS count_today FROM pmp_counter_profil WHERE date LIKE CONCAT(CURRENT_DATE,
-			\'%\') AND film_id = \'' . mysql_real_escape_string($filmid) . '\'';
-		$result = dbexec($query);
-		$today = mysql_result($result, 0, 'count_today');
+		$query = 'SELECT COUNT(id) AS cnt FROM pmp_counter_profil WHERE date LIKE CONCAT(CURRENT_DATE, \'%\')
+				  AND film_id = ?';
+		$params = [$filmid];
+		$result = dbquery_pdo($query, $params, 'assoc');
+		if (count($result) > 0) {
+			$today = $result[0]['cnt'];
+		}
 	}
 	else {
-		$sql = 'SELECT COUNT(id) AS cnt FROM pmp_counter WHERE sid = \'' . mysql_real_escape_string($sid)
-			. '\' AND NOW() < DATE_ADD(date, INTERVAL 2 HOUR)';
-		$result = dbexec($sql);
+		$query = 'SELECT COUNT(id) AS cnt FROM pmp_counter WHERE sid = ? AND NOW() < DATE_ADD(date, INTERVAL 2 HOUR)';
+		$params = [$sid];
+		$result = dbquery_pdo($query, $params, 'assoc');
 
-		if ( mysql_result($result, 0) == 0 ) {
-			$query = 'INSERT INTO pmp_counter (date, sid) VALUES ( NOW(), \'' . mysql_real_escape_string($sid) . '\')';
-			$result = dbexec($query);
+		if (count($result) == 0) {
+			$sql = 'INSERT INTO pmp_counter_profil (date, sid) VALUES (NOW(), ?)';
+			$params = [$sid];
+			dbexecute_pdo($sql, $params);
 		}
 
-		$query = 'SELECT COUNT(id) AS count_all FROM pmp_counter';
-		$result = dbexec($query);
-		$all = mysql_result($result, 0, 'count_all');
+		$query = 'SELECT COUNT(id) AS cnt FROM pmp_counter';
+		$result = dbquery_pdo($query, null, 'assoc');
+		if (count($result) > 0) {
+			$all = $result[0]['cnt'];
+		}
 
-		$query = 'SELECT COUNT(*) AS count_today FROM pmp_counter WHERE date LIKE CONCAT(CURRENT_DATE, \'%\')';
-		$result = dbexec($query);
-		$today = mysql_result($result, 0, 'count_today');
+		$query = 'SELECT COUNT(*) AS cnt FROM pmp_counter WHERE date LIKE CONCAT(CURRENT_DATE, \'%\')';
+		$result = dbquery_pdo($query, null, 'assoc');
+		if (count($result) > 0) {
+			$today = $result[0]['cnt'];
+		}
 	}
 
-	return array('all' => $all, 'today' => $today);
+	return ['all' => $all, 'today' => $today];
 }
 
 // Translates $string. If array $args is given, the values will replaced.
@@ -546,14 +669,14 @@ function inccounter($filmid = '') {
 // echo t("Hello %u. How are you?",  array("%u" => 'Frank'));
 //
 // Output: "Moin Frank. Wie geht es dir?"
-function t($string, $args = array()) {
+function t($string, $args = []) {
 	global $lang_data, $_SESSION;
 
-	if ( !@count($lang_data) ) {
+	if (!@count($lang_data)) {
 		getLang($_SESSION['lang_id']);
 	}
 
-	if ( empty($lang_data[$string]) ) {
+	if (empty($lang_data[$string])) {
 		return strtr($string, $args);
 
 		// Use this line if you want to search missing translations
@@ -569,18 +692,18 @@ function getLang($lang_id) {
 	global $lang_data, $pmp_theme;
 
 	// First we load the language-file from default
-	$data = file_get_contents(_PMP_REL_PATH . '/themes/default/locale/'. $lang_id . '.xml');
+	$data = file_get_contents(_PMP_REL_PATH.'/themes/default/locale/'.$lang_id.'.xml');
 
-	while ( strpos($data, '<message') ) {
+	while (strpos($data, '<message')) {
 		$tmp = gettween($data, '<message', '</message>');
 		$lang_data[gettween($tmp, '<id>', '</id>')] = gettween($tmp, '<string>', '</string>');
 		$data = substr($data, strpos($data, '</message>') + 10);
 	}
 
 	// Now we add and replace the translations from the theme
-	$data = file_get_contents(_PMP_REL_PATH . '/themes/' . $pmp_theme . '/locale/'. $lang_id . '.xml');
+	$data = file_get_contents(_PMP_REL_PATH.'/themes/'.$pmp_theme.'/locale/'.$lang_id.'.xml');
 
-	while ( strpos($data, '<message') ) {
+	while (strpos($data, '<message')) {
 		$tmp = gettween($data, '<message', '</message>');
 		$lang_data[gettween($tmp, '<id>', '</id>')] = gettween($tmp, '<string>', '</string>');
 		$data = substr($data, strpos($data, '</message>') + 10);
@@ -599,11 +722,11 @@ function gettween($string, $after, $before) {
 function getLangs() {
 	global $pmp_theme;
 
-	$dir = _PMP_REL_PATH . '/themes/' . $pmp_theme . '/locale';
+	$dir = _PMP_REL_PATH.'/themes/'.$pmp_theme.'/locale';
 	$handle = opendir($dir);
 
-	while ( ($file = readdir($handle)) !== false ) {
-		if ( is_file($dir . '/' . $file) ) {
+	while (($file = readdir($handle)) !== false) {
+		if (is_file($dir.'/'. $file)) {
 			$lg[] = str_replace('.xml', '', $file);
 		}
 	}
@@ -615,21 +738,31 @@ function getLangs() {
 
 // Converts currenty $from to $to
 function exchange($from, $to, $value) {
-	if ( $from == 'EUR' ) {
+	if ($from == 'EUR') {
 		$ratefrom = 1;
 	}
 	else {
-		$ratefrom = @mysql_result(dbexec('SELECT rate FROM pmp_rates WHERE id = \'' . $from . '\''), 0);
+		$query = 'SELECT rate FROM pmp_rates WHERE id = ?';
+		$params = [$from];
+		$result = dbquery_pdo($query, $params, 'assoc');
+		if (count($result) > 0) {
+			$ratefrom = $result[0]['rate'];
+		}
 	}
 
-	if ( $to == 'EUR' ) {
+	if ($to == 'EUR') {
 		$rateto = 1;
 	}
 	else {
-		$rateto = mysql_result(dbexec('SELECT rate FROM pmp_rates WHERE id = \'' . $to . '\''), 0);
+		$query = 'SELECT rate FROM pmp_rates WHERE id = ?';
+		$params = [$to];
+		$result = dbquery_pdo($query, $params, 'assoc');
+		if (count($result) > 0) {
+			$rateto = $result[0]['rate'];
+		}
 	}
 
-	if ( (is_numeric($ratefrom)) && (is_numeric($rateto)) ) {
+	if (is_numeric($ratefrom) && is_numeric($rateto)) {
 		return sprintf('%01.2f', $rateto * $value / $ratefrom);
 	}
 	else {
@@ -639,7 +772,7 @@ function exchange($from, $to, $value) {
 
 // Check for valid email adress
 function checkEmail($email) {
-	if ( preg_match('/^[-+\\.0-9=a-z_]+@([-0-9a-z]+\\.)+([0-9a-z]){2,4}$/i', $email) ) {
+	if (preg_match('/^[-+\\.0-9=a-z_]+@([-0-9a-z]+\\.)+([0-9a-z]){2,4}$/i', $email)) {
 		return true;
 	}
 	else {
@@ -650,7 +783,7 @@ function checkEmail($email) {
 // Convert html entites to unicode needed for jpgraph
 function entity_to_decimal_value($string) {
 	// Only entities we used in locale translation files
-	$entity_to_decimal = array(
+	$entity_to_decimal = [
 		'&Auml;' => '&#196;',
 		'&Ouml;' => '&#214;',
 		'&Uuml;' => '&#220;',
@@ -667,17 +800,18 @@ function entity_to_decimal_value($string) {
 		'&euml;' => '&#235;',
 		'&Euml;' => '&#203;',
 		'&iuml;' => '&#239;',
-		'&Iuml;' => '&#207;');
+		'&Iuml;' => '&#207;'
+	];
 
-	return preg_replace("/&#38;[A-Za-z]+;/", " ", strtr($string, $entity_to_decimal));
+	return preg_replace('/&#38;[A-Za-z]+;/', ' ', strtr($string, $entity_to_decimal));
 }
 
 function getRemoteContent($site) {
-	if ( ini_get('allow_url_fopen') ) {
+	if (ini_get('allow_url_fopen')) {
 		$content = @file_get_contents($site);
 		return $content;
 	}
-	else if ( extension_loaded('curl') ) {
+	else if (extension_loaded('curl')) {
 		$ch = curl_init($site);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
@@ -685,19 +819,19 @@ function getRemoteContent($site) {
 		$content = curl_exec($ch);
 		$error = curl_error($ch);
 		curl_close($ch);
-		if ( $error == '' ) {
+		if ($error == '') {
 			return $content;
 		}
 		else {
 			return '';
 		}
 	}
-	else if ( function_exists('http_get') ) {
+	else if (function_exists('http_get')) {
 		$tmp = http_parse_message(http_get($site));
 		$content = $tmp->body;
 		return $content;
 	}
-	else if ( function_exists('ini_set') ) {
+	else if (function_exists('ini_set')) {
 		require_once('HTTP/Request2.php');
 
 		$request = new HTTP_Request2($site, HTTP_Request2::METHOD_GET);
@@ -719,12 +853,12 @@ function getRemoteContent($site) {
 
 function add_include_path($strIncludePath) {
 	$strIncludePath = realpath($strIncludePath);
-	if ( empty($strIncludePath) ) {
+	if (empty($strIncludePath)) {
 		return;
 	}
 
-	if ( function_exists('ini_set') ) {
-		ini_set('include_path', ini_get('include_path') . PATH_SEPARATOR . $strIncludePath);
+	if (function_exists('ini_set')) {
+		ini_set('include_path', ini_get('include_path').PATH_SEPARATOR.$strIncludePath);
 	}
 	else {
 		$arrIncludePaths = explode(PATH_SEPARATOR, get_include_path());
@@ -741,11 +875,11 @@ function is__writable($path) {
 	// see http://bugs.php.net/bug.php?id=27609
 	// see http://bugs.php.net/bug.php?id=30931
 
-	if ( $path{strlen($path)-1} == '/' ) {
+	if ($path{strlen($path)-1} == '/') {
 		// recursively return a temporary file path
 		return is__writable($path.uniqid(mt_rand()).'.tmp');
 	}
-	else if ( is_dir($path) ) {
+	else if (is_dir($path)) {
 		return is__writable($path.'/'.uniqid(mt_rand()).'.tmp');
 	}
 
@@ -753,13 +887,13 @@ function is__writable($path) {
 	$rm = file_exists($path);
 	$f = @fopen($path, 'a');
 
-	if ( $f===false ) {
+	if ($f === false) {
 		return false;
 	}
 
 	fclose($f);
 
-	if ( !$rm ) {
+	if (!$rm) {
 		unlink($path);
 	}
 
@@ -768,11 +902,12 @@ function is__writable($path) {
 
 // Taken from http://php.net/strip_tags
 function html2txt($document) {
-	$search = array('@<script[^>]*?>.*?</script>@si',	// Strip out javascript
+	$search = [
+		'@<script[^>]*?>.*?</script>@si',	// Strip out javascript
 		'@<[\/\!]*?[^<>]*?>@si',			// Strip out HTML tags
-		'@<style[^>]*?>.*?</style>@siU',		// Strip style tags properly
+		'@<style[^>]*?>.*?</style>@siU',	// Strip style tags properly
 		'@<![\s\S]*?--[ \t\n\r]*>@'			// Strip multi-line comments including CDATA
-	);
+	];
 
 	$text = preg_replace($search, '', $document);
 	return $text;
@@ -780,13 +915,23 @@ function html2txt($document) {
 
 // Get all available collections
 function get_collections() {
-	$sql = "SELECT collection FROM `pmp_collection` WHERE collection != 'Owned' AND collection != 'Ordered' AND collection != 'Wish List'";
-	$res = dbexec($sql, true);
-	$collections = array('Owned', 'Ordered', 'Wish List');
-	while ( $row = mysql_fetch_object($res) ) {
-		$collections[] = $row->collection;
+	// This "base" is needed because not every user collection has these three standard collections
+	$collections = ['Owned', 'Ordered', 'Wish List'];
+
+	$query = 'SELECT collection FROM pmp_collection WHERE collection NOT IN(\'Owned\', \'Ordered\', \'Wish List\')';
+	$result = dbquery_pdo($query, null, 'assoc');
+	if (count($result) > 0) {
+		foreach ($result as $col) {
+			$collections[] = $col["collection"];
+		}
 	}
+
 	return $collections;
 }
 
+// Get base url
+function get_base_url() {
+	$http = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on'? 'https://' : 'http://';
+	return $http.$_SERVER['SERVER_NAME'].dirname($_SERVER['REQUEST_URI'].'?').'/';
+}
 ?>

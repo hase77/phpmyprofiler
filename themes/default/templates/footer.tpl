@@ -14,7 +14,7 @@
 
 				function getTitle(event) {
 					var url = window.location.pathname;
-					var id = jQuery(this).attr("id").substr(2,jQuery(this).attr("id").length-2);
+					var id = jQuery(this).attr("id").substr(2, jQuery(this).attr("id").length-2);
 					var data = "ajax_call=1&content=filmprofile&id=" + id;
  
 					jQuery.get(url, data, function(response) {
@@ -23,13 +23,15 @@
 						jQuery(".title_page").on("click", getTitlePage);
 						$('.fancybox').fancybox({'type':'image'});
 					}, "html");
+					
+					jQuery('html, body').animate({scrollTop: $("#right-frame").offset().top}, 200);
 
 					return false;
 				}
 				
 				function getTitleSub() {
 					var url = window.location.pathname;
-					var id = jQuery(this).attr("id").substr(2,jQuery(this).attr("id").length-2);
+					var id = jQuery(this).attr("id").substr(2, jQuery(this).attr("id").length-2);
 					var data = "ajax_call=1&content=filmprofile&id=" + id;
  
 					jQuery.get(url, data, function(response) {
@@ -38,6 +40,8 @@
 						jQuery(".title_page").on("click", getTitlePage);
 						$('.fancybox').fancybox({'type':'image'});
 					}, "html");
+					
+					jQuery('html, body').animate({scrollTop: $("#right-frame").offset().top}, 200);
 
 					return false;
 				}
@@ -45,8 +49,8 @@
 
 				function getTitlePage() {
 					var url = window.location.pathname;
-					var id = jQuery(this).parent().attr("id").substr(2,jQuery(this).parent().attr("id").length-2);
-					var page = jQuery(this).attr('id').substr(4,jQuery(this).attr("id").length-4)
+					var id = jQuery(this).parent().attr("id").substr(2, jQuery(this).parent().attr("id").length-2);
+					var page = jQuery(this).attr('id').substr(4, jQuery(this).attr("id").length-4)
 					var data = "ajax_call=1&content=filmprofile&id=" + id + "&page=" + page;
 
 					jQuery.get(url, data, function(response) {

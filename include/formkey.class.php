@@ -12,7 +12,7 @@ class formKey {
 	// The constructor stores the form key (if one excists) in our class variable
 	function __construct() {
 		// We need the previous key so we store it
-		if ( isset($_SESSION['form_key']) ) {
+		if (isset($_SESSION['form_key'])) {
 			$this->old_formKey = $_SESSION['form_key'];
 		}
 	}
@@ -28,7 +28,7 @@ class formKey {
 		$uniqid = uniqid(mt_rand(), true);
 
 		//Return the hash
-		return md5($ip . $uniqid);
+		return md5($ip.$uniqid);
 	}
 
 	//Function to output the form key
@@ -43,10 +43,13 @@ class formKey {
 		return $this->formKey;
 	}
 
-	// Function that validated the form key POST data
-	public function validate() {
+	// Function that validated the form key data
+	public function validate($check_formKey = null) {
+		if ($check_formKey == null) {
+			$check_formKey = $_POST['form_key'];
+		}
 		//We use the old formKey and not the new generated version
-		if ( $_POST['form_key'] == $this->old_formKey ) {
+		if ($check_formKey == $this->old_formKey) {
 			// The key is valid, return true.
 			return true;
 		}

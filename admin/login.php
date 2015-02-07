@@ -43,7 +43,8 @@ $smarty->assign('formkey', $formKey->outputKey());
 
 // Logout
 if ( isset($_POST['logout']) ) {
-	$_SESSION['isadmin'] = '';
+	unset($_SESSION['isadmin']);
+	session_destroy();
 	$_SESSION['lastside'] = 'index.php';
 }
 
@@ -71,7 +72,7 @@ if ( (!empty($pmp_admin)) && (!empty($pmp_passwd)) ) {
 }
 else {
 	saveLastIP();
-	session_regenerate_id(false);
+	session_regenerate_id(true);
 	$smarty->assign('session', session_name() . "=" . session_id() );
 
 	// Without a Passwort everybody can administrate phpMyProfiler!
