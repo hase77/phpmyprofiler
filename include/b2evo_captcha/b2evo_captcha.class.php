@@ -609,13 +609,11 @@ class b2evo_captcha
 				static $gd_version_number = null;
 				if($gd_version_number === null)
 				{
-				   ob_start();
-				   phpinfo(8);
-				   $module_info = ob_get_contents();
-				   ob_end_clean();
-				   if(preg_match("/\bgd\s+version\b[^\d\n\r]+?([\d\.]+)/i", $module_info, $matches))
+				   $module_info = gd_info(); 
+				   if($module_info['GD Version'])
 				   {
-					   $gd_version_number = $matches[1];
+					   $tmp_arr = explode('.', $module_info['GD Version']);
+					   $gd_version_number = $tmp_arr[0];
 				   }
 				   else
 				   {
