@@ -41,6 +41,7 @@ $params = [$pmp_exclude_tag, (((int)$start - 1) * $pmp_cover_page), $pmp_cover_p
 $rows = dbquery_pdo($query, $params, 'assoc');
 
 // Get dvd objects with dvd covers
+$cover = [];
 if (count($rows) > 0) {
 	foreach ($rows as $row) {
 		$cover[] = new smallDVD($row['id']);
