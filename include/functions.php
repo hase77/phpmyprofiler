@@ -127,7 +127,7 @@ function dbconnect_pdo($dieonerror = true) {
 
 	try {
 		$pmp_db = new PDO(
-			"mysql:host={$pmp_sqlhost};dbname={$pmp_sqldatabase};charset=utf8",
+			"mysql:host={$pmp_sqlhost}; dbname={$pmp_sqldatabase}; charset=utf8",
 			$pmp_sqluser, $pmp_sqlpass,
 			[PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8;']
 		);
@@ -151,7 +151,12 @@ function dbconnect_pdo($dieonerror = true) {
 				<br></blockquote></body></html>';
 			die;
 		}
+		else {
+                    return false;
+                }
 	}
+	
+	return true;
 }
 
 // Replace the table prefix and executes the query
@@ -213,12 +218,12 @@ function dbquery_pdo($query, $params = null, $type = 'default', $continueonerror
 	return $result;
 }
 
-function dbexecute_pdo($query, $params, $continueonerror = false) {
+function dbexecute_pdo($query, $params = null, $continueonerror = false) {
 	global $pmp_db;
 
 	$result = false;
 	replace_table_prefix($query);
-
+	
 	try {
 		$stmt = $pmp_db->prepare($query);
 		$result = $stmt->execute($params);

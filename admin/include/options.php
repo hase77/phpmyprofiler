@@ -1,6 +1,6 @@
 <?php
 /* phpMyProfiler
- * Copyright (C) 2005-2014 The phpMyProfiler project
+ * Copyright (C) 2005-2015 The phpMyProfiler project
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -9,7 +9,7 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
@@ -17,7 +17,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
 */
 
-// No direct access
+// Disallow direct access
 defined('_PMP_REL_PATH') or die('Not allowed! Possible hacking attempt detected!');
 
 $Options[] = 'Main settings';
@@ -26,7 +26,6 @@ $Options[] = new option('pmp_sqluser', 'Database user', '', $pmp_sqluser);
 $Options[] = new option('pmp_sqlpass', 'Database password', '', $pmp_sqlpass, OPTION_PASSWORD);
 $Options[] = new option('pmp_sqldatabase', 'Database name', '', $pmp_sqldatabase);
 $Options[] = new option('pmp_table_prefix', 'Table prefix', '', $pmp_table_prefix);
-$Options[] = new option('pmp_basepath', 'URL to phpMyprofiler', 'e.g. http://www.example.com/pmp (without / at the end!)', $pmp_basepath);
 
 $Options[] = 'Basic settings';
 $Options[] = new option('pmp_admin_name', 'Administrator\'s name', '', $pmp_admin_name);
@@ -119,8 +118,8 @@ $Options[] = new option('pmp_menue_column_6', 'Column 6', '', $pmp_menue_column_
 function listthemes() {
 	$data = getThemes();
 
-	foreach ( $data as $th ) {
-		if ( $th->wrongversion ) {
+	foreach ($data as $th) {
+		if ($th->wrongversion) {
 			$res[$th->id] = $th->name . ' ' . t('(Warning: Version mismatch)');
 		}
 		else {

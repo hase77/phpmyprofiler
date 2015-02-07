@@ -1,6 +1,6 @@
 <?php
 /* phpMyProfiler
- * Copyright (C) 2005-2014 The phpMyProfiler project
+ * Copyright (C) 2005-2015 The phpMyProfiler project
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -9,7 +9,7 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
@@ -25,12 +25,12 @@ require_once('../config.inc.php');
 require_once('../passwd.inc.php');
 require_once('../include/functions.php');
 
-if( !dbconnect(false) === false && (!empty($pmp_admin) && !empty($pmp_passwd)) ) {
+if (dbconnect_pdo(false) === true && !empty($pmp_admin) && !empty($pmp_passwd)) {
     header("Location:install4.php");
     exit();
 }
 
-if ( !dbconnect(false) === false && empty($pmp_admin) && empty($pmp_passwd) ) {
+if (dbconnect_pdo(false) === true && empty($pmp_admin) && empty($pmp_passwd)) {
     header("Location:install3.php");
     exit();
 }
@@ -66,11 +66,11 @@ header('Content-type: text/html; charset=utf-8');
 			<tr style="height: 10px"><td>&nbsp;</td></tr>
 			<tr style="height: 30px">
 			    <td width="10">&nbsp;</td>
-			    <td class="step-on"> <?php echo t('Pre-Installation Check'); ?></td>	<td style="width: 3px">&nbsp;</td>
-			    <td class="step-off"><?php echo t('Step 1'); ?></td>					<td style="width: 3px">&nbsp;</td>
-			    <td class="step-off"><?php echo t('Step 2'); ?></td>					<td style="width: 3px">&nbsp;</td>
-			    <td class="step-off"><?php echo t('Step 3'); ?></td>					<td style="width: 3px">&nbsp;</td>
-			    <td class="step-off"><?php echo t('Finish'); ?></td>					<td style="width: 3px">&nbsp;</td>
+			    <td class="step-on"> <?php echo t('Pre-Installation Check'); ?></td><td style="width: 3px">&nbsp;</td>
+			    <td class="step-off"><?php echo t('Step 1'); ?></td><td style="width: 3px">&nbsp;</td>
+			    <td class="step-off"><?php echo t('Step 2'); ?></td><td style="width: 3px">&nbsp;</td>
+			    <td class="step-off"><?php echo t('Step 3'); ?></td><td style="width: 3px">&nbsp;</td>
+			    <td class="step-off"><?php echo t('Finish'); ?></td><td style="width: 3px">&nbsp;</td>
 			    <td style="width: 10px">&nbsp;</td>
 			</tr>
 		    </table>
@@ -80,7 +80,7 @@ header('Content-type: text/html; charset=utf-8');
 		function check_phpversion() {
 		    global $failed;
 
-		    if ( version_compare(phpversion(), '5.3.7', '>=') ) {
+		    if (version_compare(phpversion(), '5.5.0', '>=')) {
 			echo '<b><font color="green">' . t('Yes') . '</font></b>';
 		    }
 		    else {
@@ -89,22 +89,10 @@ header('Content-type: text/html; charset=utf-8');
 		    }
 		}
 
-		function check_mysql() {
-		    global $failed;
-
-		    if ( function_exists( 'mysql_connect' ) ) {
-			echo '<b><font color="green">' . t('Available') . '</font></b>';
-		    }
-		    else {
-			echo '<b><font color="red">' . t('Unavailable') . '</font></b>';
-			$failed = true;
-		    }
-		}
-
 		function check_extension($extension) {
 		    global $failed;
 
-		    if ( extension_loaded($extension) ) {
+		    if (extension_loaded($extension)) {
 			echo '<b><font color="green">' . t('Available') . '</font></b>';
 		    }
 		    else {
@@ -124,20 +112,16 @@ header('Content-type: text/html; charset=utf-8');
 			    <td>
 				<table cellpadding="3" cellspacing="0" border="0" width="100%" class="maintests">
 				    <tr>
-					<td>PHP >= 5.0</td>
+					<td>PHP >= 5.5.0</td>
 					<td style="width: 150px"><?php check_phpversion(); ?></td>
 				    </tr>
 				    <tr>
-					<td>&nbsp; - MySQL Support</td>
-					<td style="width: 150px"><?php check_mysql(); ?></td>
+					<td>&nbsp; - PDO MySQL Support</td>
+					<td style="width: 150px"><?php check_extension('pdo_mysql'); ?></td>
 				    </tr>
 				    <tr>
 					<td>&nbsp; - Session Support</td>
 					<td style="width: 150px"><?php check_extension('session'); ?></td>
-				    </tr>
-				    <tr>
-					<td>&nbsp; - SPL Support</td>
-					<td style="width: 150px"><?php check_extension('SPL'); ?></td>
 				    </tr>
 				    <tr>
 					<td>&nbsp; - PCRE (Perl Compatible Regular Expressions) Support</td>
@@ -177,16 +161,16 @@ header('Content-type: text/html; charset=utf-8');
 		    </table>
 
 		    <?php
-		    function check_permissions( $folder, $type ) {
+		    function check_permissions($folder, $type) {
 			global $failed;
 
 			echo '<tr>';
 			echo '<td>' . $folder . '</td>';
 			echo '<td align="left" style="width: 150px">';
-			if ( $type == '1' && is__writable( "../$folder" ) ) {
+			if ($type == '1' && is__writable( "../$folder")) {
 			    echo '<b><font color="green">' . t('Writeable') . '</font></b></td>';
 			}
-			else if ( $type == '2' && is_writable( "../$folder" ) ) {
+			else if ($type == '2' && is_writable( "../$folder")) {
 			    echo '<b><font color="green">' . t('Writeable') . '</font></b></td>';
 			}
 			else {
@@ -206,17 +190,17 @@ header('Content-type: text/html; charset=utf-8');
 			    <td>
 				<table cellpadding="3" cellspacing="0" border="0" width="100%" class="maintests">
 				<?php
-				check_permissions('awards/', 1);
-				check_permissions('cache/', 1);
-				check_permissions('cover/', 1);
-				check_permissions('pictures/', 1);
-				check_permissions('screenshots/', 1);
-				check_permissions('screenshots/thumbs/', 1);
-				check_permissions('templates_c/', 1);
-				check_permissions('xml/', 1);
-				check_permissions('xml/split/', 1);
-				check_permissions('config.inc.php', 2);
-				check_permissions('passwd.inc.php', 2);
+                                    check_permissions('awards/', 1);
+                                    check_permissions('cache/', 1);
+                                    check_permissions('cover/', 1);
+                                    check_permissions('pictures/', 1);
+                                    check_permissions('screenshots/', 1);
+                                    check_permissions('screenshots/thumbs/', 1);
+                                    check_permissions('templates_c/', 1);
+                                    check_permissions('xml/', 1);
+                                    check_permissions('xml/split/', 1);
+                                    check_permissions('config.inc.php', 2);
+                                    check_permissions('passwd.inc.php', 2);
 				?>
 				</table>
 			    </td>
@@ -228,9 +212,7 @@ header('Content-type: text/html; charset=utf-8');
 			<tr>
 			    <td align="center" style="text-align: center">
 				<input type="submit" name="submit" class="reload" value="<?php echo t('Check Again'); ?>" onclick="window.location=window.location" />
-				<?php
-				if (! $failed) {
-				?>
+				<?php if (! $failed) {?>
 				&nbsp;
 				<form action="install1.php" method="post" target="_self" style="display: inline">
 				    <input type="submit" name="submit" class="next" value="<?php echo t('Next'); ?>" />

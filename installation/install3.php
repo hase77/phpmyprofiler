@@ -1,6 +1,6 @@
 <?php
 /* phpMyProfiler
- * Copyright (C) 2005-2014 The phpMyProfiler project
+ * Copyright (C) 2005-2015 The phpMyProfiler project
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -9,7 +9,7 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
@@ -28,47 +28,53 @@ require_once('../admin/include/functions.php');
 $configfile = '../passwd.inc.php';
 $user = '';
 
-if( (isset($_POST['action'])) && ($_POST['action'] == 'save') ) {
-    if ( empty($_POST['username']) ) {
-		$error = t('You must enter a username.');
+$action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
+$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+$password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+$password2 = filter_input(INPUT_POST, 'password2', FILTER_SANITIZE_STRING);
+
+
+if (!empty($action) && $action == 'save') {
+    if (empty($username)) {
+        $error = t('You must enter a username.');
     }
-    else if ( (empty($_POST['password'])) || (empty($_POST['password2'])) ) {
+    else if (empty($password) || empty($password2)) {
         $error = t('You must enter a password.');
-        $user = $_POST['username'];
+        $user = $username;
     }
-    else if ( $_POST['password'] != $_POST['password2'] ) {
-		$error = t('The Password do not match.');
-		$user = $_POST['username'];
+    else if ($password != $password2) {
+	$error = t('The Password do not match.');
+	$user = $username;
     }
     else {
-		$data  = "<?php\n// " . t('Configuration File of Administration') . "\n// " . t('Generated:') . " " .  date("r") . "\n\n";
-		$data .= '$pmp_admin' ." = '" . $_POST['username'] . "';" . "\n";
-		$data .= '$pmp_passwd' . " = '" . password_hash($_POST['password'], PASSWORD_BCRYPT, array('costs'=>11)) . "';" . "\n";
-		$data .= "\n?>";
+	$data  = "<?php\n// " . t('Configuration File of Administration') . "\n// " . t('Generated:') . " " .  date("r") . "\n\n";
+	$data .= '$pmp_admin' ." = '" . $username . "';" . "\n";
+	$data .= '$pmp_passwd' . " = '" . password_hash($password, PASSWORD_BCRYPT, array('costs'=>11)) . "';" . "\n";
+	$data .= "\n?>";
 
-		if ( !@file_put_contents($configfile, $data) ) {
-			$error = t('An error occurs while writing to') . ' "' . basename($configfile) . '".';
-		}
-		else {
-			// Try and track new installs to see if it is worthwhile continueing development
-			@include_once('../admin/include/PiwikTracker.php');
+	if (!@file_put_contents($configfile, $data)) {
+            $error = t('An error occurs while writing to') . ' "' . basename($configfile) . '".';
+	}
+	else {
+            // Try and track new installs to see if it is worthwhile continueing development
+            @include_once('../admin/include/PiwikTracker.php');
 
-			if ( class_exists( 'PiwikTracker' ) ) {
-				$piwikTracker = new PiwikTracker( $idSite = 1 , 'http://www.phpmyprofiler.de/piwik/');
-				// We don't need or want the dist-version
-				$php_ver = explode("-", phpversion());
-				$piwikTracker->setCustomVariable( 1, 'php_version', $php_ver[0] );
-				$piwikTracker->setCustomVariable( 2, 'pmp_version', $pmp_version );
-				// Don't send url, referrer and user agent!
-				$piwikTracker->setUrl('none');
-				$piwikTracker->setUrlReferrer('none');
-				$piwikTracker->setUserAgent('unknown');
-				$piwikTracker->doTrackPageView( 'Installation completed' );
-			}
+            if (class_exists('PiwikTracker')) {
+		$piwikTracker = new PiwikTracker($idSite = 1 , 'http://www.phpmyprofiler.de/piwik/');
+		// We don't need or want the dist-version
+		$php_ver = explode("-", phpversion());
+                $piwikTracker->setCustomVariable(1, 'php_version', $php_ver[0]);
+		$piwikTracker->setCustomVariable(2, 'pmp_version', $pmp_version);
+		// Don't send url, referrer and user agent!
+		$piwikTracker->setUrl('none');
+		$piwikTracker->setUrlReferrer('none');
+		$piwikTracker->setUserAgent('unknown');
+		$piwikTracker->doTrackPageView( 'Installation completed' );
+            }
 
-			header("Location:install4.php");
-			exit();
-		}
+            header("Location:install4.php");
+            exit();
+	}
     }
 }
 
@@ -110,11 +116,11 @@ header('Content-type: text/html; charset=utf-8');
 
 			<tr style="height: 30px">
 			    <td style="width: 10px">&nbsp;</td>
-			    <td class="step-off"><?php echo t('Pre-Installation Check'); ?></td>	<td style="width: 3px">&nbsp;</td>
-			    <td class="step-off"><?php echo t('Step 1'); ?></td>					<td style="width: 3px">&nbsp;</td>
-			    <td class="step-off"><?php echo t('Step 2'); ?></td>					<td style="width: 3px">&nbsp;</td>
-			    <td class="step-on"> <?php echo t('Step 3'); ?></td>					<td style="width: 3px">&nbsp;</td>
-			    <td class="step-off"><?php echo t('Finish'); ?></td>					<td style="width: 3px">&nbsp;</td>
+			    <td class="step-off"><?php echo t('Pre-Installation Check'); ?></td><td style="width: 3px">&nbsp;</td>
+			    <td class="step-off"><?php echo t('Step 1'); ?></td><td style="width: 3px">&nbsp;</td>
+			    <td class="step-off"><?php echo t('Step 2'); ?></td><td style="width: 3px">&nbsp;</td>
+			    <td class="step-on"> <?php echo t('Step 3'); ?></td><td style="width: 3px">&nbsp;</td>
+			    <td class="step-off"><?php echo t('Finish'); ?></td><td style="width: 3px">&nbsp;</td>
 			    <td style="width: 10px">&nbsp;</td>
 			</tr>
 		    </table>
@@ -122,7 +128,7 @@ header('Content-type: text/html; charset=utf-8');
 		</div>
 
 		<?php
-		if ( isset($error) ) {
+		if (isset($error)) {
 		?>
 
 		<div id="mainerror">

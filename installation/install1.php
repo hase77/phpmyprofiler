@@ -1,6 +1,6 @@
 <?php
 /* phpMyProfiler
- * Copyright (C) 2005-2014 The phpMyProfiler project
+ * Copyright (C) 2005-2015 The phpMyProfiler project
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -9,7 +9,7 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
@@ -29,12 +29,15 @@ require_once('../admin/include/options.php');
 
 $configfile = '../config.inc.php';
 
-// Save the Configuration File
+$action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
 
-if( (isset($_POST['action'])) && ($_POST['action'] == 'save') ) {
+// Save the Configuration File
+if (!empty($action) && $action == 'save') {    
+    $error = false;
+
     $data = "<?php \n// " . t('Generated:') . " " .  date("r") . "\n\n";
-    foreach ( $Options as $item ) {
-	if ( @get_class($item) == 'option' ) {
+    foreach ($Options as $item) {
+	if (@get_class($item) == 'option') {
 	    $data .= $item->getSkript();
 	}
 	else {
@@ -43,19 +46,28 @@ if( (isset($_POST['action'])) && ($_POST['action'] == 'save') ) {
     }
     $data .= "?>";
 
-    if ( !@file_put_contents($configfile, $data) ) {
+    if (!@file_put_contents($configfile, $data)) {
 	$error = t('No write acccess to config.inc.php. Settings not saved.');
     }
     else {
-	require('../config.inc.php');
+        $pmp_sqlhost = filter_input(INPUT_POST, 'pmp_sqlhost', FILTER_SANITIZE_STRING);
+        $pmp_sqluser = filter_input(INPUT_POST, 'pmp_sqluser', FILTER_SANITIZE_STRING);
+        $pmp_sqlpass = filter_input(INPUT_POST, 'pmp_sqlpass', FILTER_SANITIZE_STRING);
 
-	if ( !@mysql_connect($pmp_sqlhost, $pmp_sqluser, $pmp_sqlpass) ) {
+        // We wait 5 seconds because it can happens the config file is not written yet
+        sleep(5);
+    
+	try {
+            $pmp_db = new PDO("mysql:host={$pmp_sqlhost}", $pmp_sqluser, $pmp_sqlpass);
+	}
+	catch (PDOException $e) {
 	    $error = t('Wrong access data for MySQL Database.');
 	}
-	else {
-	    header("Location:install2.php");
-	    exit();
-	}
+
+	if ($error === false) {
+            header("Location:install2.php");
+            exit();
+        }
     }
 }
 
@@ -98,10 +110,10 @@ header('Content-type: text/html; charset=utf-8');
 			    <tr style="height: 30px">
 				<td style="width: 10px">&nbsp;</td>
 				<td class="step-off"><?php echo t('Pre-Installation Check'); ?></td>	<td style="width: 3px">&nbsp;</td>
-				<td class="step-on"> <?php echo t('Step 1'); ?></td>					<td style="width: 3px">&nbsp;</td>
-				<td class="step-off"><?php echo t('Step 2'); ?></td>					<td style="width: 3px">&nbsp;</td>
-				<td class="step-off"><?php echo t('Step 3'); ?></td>					<td style="width: 3px">&nbsp;</td>
-				<td class="step-off"><?php echo t('Finish'); ?></td>					<td style="width: 3px">&nbsp;</td>
+				<td class="step-on"> <?php echo t('Step 1'); ?></td><td style="width: 3px">&nbsp;</td>
+				<td class="step-off"><?php echo t('Step 2'); ?></td><td style="width: 3px">&nbsp;</td>
+				<td class="step-off"><?php echo t('Step 3'); ?></td><td style="width: 3px">&nbsp;</td>
+				<td class="step-off"><?php echo t('Finish'); ?></td><td style="width: 3px">&nbsp;</td>
 				<td style="width: 10px">&nbsp;</td>
 			    </tr>
 			</table>
@@ -109,7 +121,7 @@ header('Content-type: text/html; charset=utf-8');
 		    </div>
 
 		    <?php
-		    if ( isset($error) ) {
+		    if (isset($error)) {
 		    ?>
 
 		    <div id="mainerror">
@@ -136,27 +148,23 @@ header('Content-type: text/html; charset=utf-8');
 				    <table cellpadding="3" cellspacing="0" border="0" width="100%" class="maintests">
 					<tr>
 					    <td><?php echo t('Database server'); ?></td>
-					    <td style="width: 100px"><input type="text" name="pmp_sqlhost" value="<?php echo $pmp_sqlhost; ?>" /></td>
+					    <td style="width: 100px"><input type="text" name="pmp_sqlhost" value="<?php if (isset($pmp_sqlhost)) echo $pmp_sqlhost; ?>" /></td>
 					</tr>
 					<tr>
 					    <td><?php echo t('Database name'); ?></td>
-					    <td style="width: 100px"><input type="text" name="pmp_sqldatabase" value="<?php echo $pmp_sqldatabase; ?>" /></td>
+					    <td style="width: 100px"><input type="text" name="pmp_sqldatabase" value="<?php if (isset($pmp_sqldatabase)) echo $pmp_sqldatabase; ?>" /></td>
 					</tr>
 					<tr>
 					    <td><?php echo t('Database user'); ?></td>
-					    <td style="width: 100px"><input type="text" name="pmp_sqluser" value="<?php echo $pmp_sqluser; ?>" /></td>
+					    <td style="width: 100px"><input type="text" name="pmp_sqluser" value="<?php if (isset($pmp_sqluser)) echo $pmp_sqluser; ?>" /></td>
 					</tr>
 					<tr>
 					    <td><?php echo t('Database password'); ?></td>
-					    <td style="width: 100px"><input type="password" name="pmp_sqlpass" value="<?php echo $pmp_sqlpass; ?>" /></td>
+					    <td style="width: 100px"><input type="password" name="pmp_sqlpass" value="<?php if (isset($pmp_sqlpass)) echo $pmp_sqlpass; ?>" /></td>
 					</tr>
 					<tr>
 					    <td><?php echo t('Tableprefix'); ?></td>
-					    <td style="width: 100px"><input type="text" name="pmp_table_prefix" value="<?php echo $pmp_table_prefix; ?>" /></td>
-					</tr>
-					<tr>
-					    <td><?php echo t('URL to phpMyprofiler'); ?></td>
-					    <td style="width: 100px"><input type="text" name="pmp_basepath" value="<?php echo $pmp_basepath; ?>" /></td>
+					    <td style="width: 100px"><input type="text" name="pmp_table_prefix" value="<?php if (isset($pmp_table_prefix)) echo $pmp_table_prefix; ?>" /></td>
 					</tr>
 				    </table>
 				</td>
