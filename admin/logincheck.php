@@ -22,7 +22,6 @@ define('_PMP_REL_PATH', '..');
 $pmp_module = 'admin_login';
 
 require_once('../config.inc.php');
-require_once('../passwd.inc.php');
 require_once('../admin/include/functions.php');
 require_once('../admin/include/password.php');
 require_once('../include/pmp_Smarty.class.php');
