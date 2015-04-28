@@ -1,6 +1,6 @@
 <?php
 /* phpMyProfiler
- * Copyright (C) 2006-2014 The phpMyProfiler project
+ * Copyright (C) 2006-2015 The phpMyProfiler project
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -9,7 +9,7 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
@@ -22,6 +22,7 @@ define('_PMP_REL_PATH', '..');
 $pmp_module = 'admin_login';
 
 require_once('../config.inc.php');
+require_once('../passwd.inc.php');
 require_once('../admin/include/functions.php');
 require_once('../admin/include/password.php');
 require_once('../include/pmp_Smarty.class.php');
@@ -30,29 +31,29 @@ require_once('../include/formkey.class.php');
 $formKey = new formKey();
 
 // Check Login (User / Password)
-if ( isset($_POST['login']) ) {
-	$session = session_name() . "=" . session_id();
+if (isset($_POST['login'])) {
+	$session = session_name() . '=' . session_id();
 
-	if( !isset($_POST['form_key']) || !$formKey->validate() ) {
+	if(!isset($_POST['form_key']) || !$formKey->validate()) {
 		//Form key is invalid, show an error
 		header("Location:login.php?error=formkey&" . $session);
 	}
-	else if ( empty($_POST['user']) ) {
+	else if (empty($_POST['user'])) {
 		header("Location:login.php?error=user&" . $session);
 	}
-	else if ( empty($_POST['passwd']) ) {
-		header("Location:login.php?error=pass&user=" . $_POST['user'] . "&" . $session);
+	else if (empty($_POST['passwd'])) {
+		header("Location:login.php?error=pass&user=" . $_POST['user'] . '&' . $session);
 	}
-	else if ( ($_POST['user'] != $pmp_admin) || !password_verify($_POST['passwd'], $pmp_passwd) ) {
+	else if (($_POST['user'] != $pmp_admin) || !password_verify($_POST['passwd'], $pmp_passwd)) {
 		header("Location:login.php?error=usrpsw&" . $session);
 	}
 	else {
 		saveLastIP();
 		session_regenerate_id(true);
-		$session = session_name() . "=" . session_id();
+		$session = session_name() . '=' . session_id();
 
 		$_SESSION['isadmin'] = true;
-		header("Location:" . $_SESSION['lastside'] .  "?" . $session);
+		header("Location:" . $_SESSION['lastside'] .  '?' . $session);
 	}
 }
 ?>
