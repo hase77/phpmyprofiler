@@ -7,11 +7,11 @@
 		<link rel="stylesheet" media="screen" href="../themes/{$pmp_theme}/css/admin/admin.css"  type="text/css" />
 		<link rel="stylesheet" media="print" href="../themes/{$pmp_theme}/css/admin/admin-print.css" type="text/css" />
 		<link rel="stylesheet" media="screen" href="../js/fancybox/jquery.fancybox.css?v=v=2.1.5" type="text/css" />
-		<link rel="stylesheet" media="screen" href="../themes/{$pmp_theme}/css/admin/jquery-ui-1.11.2.min.css"  type="text/css" />
+		<link rel="stylesheet" media="screen" href="../themes/{$pmp_theme}/css/admin/jquery-ui.min.css"  type="text/css" />
 		<link rel="shortcut icon" href="../favicon.ico" />
 
-		<script type="text/javascript" src="../js/jquery-2.1.3.min.js"></script>
-		<script type="text/javascript" src="../js/jquery-ui-1.11.2.min.js"></script>
+		<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="../js/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
 		<script type="text/javascript" src="../js/functions.js"></script>
 		<script type="text/javascript" src="../js/overlib.js"></script>

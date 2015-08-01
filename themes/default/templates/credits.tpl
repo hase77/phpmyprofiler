@@ -183,12 +183,12 @@
 						<th>{t}License{/t}</th>
 					</tr>
 					<tr>
-						<td class="td1">Smarty v.3.1.21 Templateengine</td>
+						<td class="td1">Smarty v.3.1.27 Templateengine</td>
 						<td class="td1"><a href="http://www.smarty.net">http://www.smarty.net</a></td>
 						<td class="td1"><a href="http://www.opensource.org/licenses/lgpl-2.1.php">GNU Lesser General Public License (LGPL)</a></td>
 					</tr>
 					<tr>
-						<td class="td0">jQuery 2.1.3</td>
+						<td class="td0">jQuery 2.1.4</td>
 						<td class="td0"><a href="http://jquery.com">http://jquery.com</a></td>
 						<td class="td0"><a href="http://www.opensource.org/licenses/mit-license.php">MIT license</a> &amp; <a href="http://www.opensource.org/licenses/gpl-license.html">GNU General Public License (GPL)</a></td>
 					</tr>
@@ -218,7 +218,7 @@
 						<td class="td1"><a href="http://www.opensource.org/licenses/gpl-license.html">GNU General Public License (GPL)</a></td>
 					</tr>
 					<tr>
-						<td class="td0">jQuery UI 1.11.2</td>
+						<td class="td0">jQuery UI 1.11.4</td>
 						<td class="td0"><a href="http://jqueryui.com">http://jqueryui.com</a></td>
 						<td class="td0"><a href="http://www.opensource.org/licenses/mit-license.php">MIT license</a> &amp; <a href="http://www.opensource.org/licenses/gpl-license.html">GNU General Public License (GPL)</a></td>
 					</tr>
